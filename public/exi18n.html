@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>VanillaJS i18n Complete Example</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 24px; }
+    header { display:flex; gap:8px; align-items:center; margin-bottom:20px; }
+    button { padding:6px 10px; border-radius:6px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; }
+    .example { border:1px dashed #ddd; padding:12px; border-radius:6px; margin-bottom:10px; }
+    label { margin-right:6px; }
+    small { color:#666; }
+  </style>
+</head>
+<body>
+  <header id="cb016">
+    <div id="cb017">
+      <button id="i18n001">English (US)</button>
+      <button id="i18n002">Korean (KR)</button>
+      <button id="i18n005">Japanese (JP)</button>
+      <button id="i18n003">Auto (navigator)</button>
+    </div>
+    <div id="cb021" 
+          style="margin-left:auto">
+      <label id="cb022" 
+             for="i18n004">Quick switch:</label>
+      <select id="i18n004" 
+              aria-label="Language switch">
+        <option id="cb024" 
+                value="en-US">English</option>
+        <option id="cb025" 
+                value="ko-KR">Korean</option>
+        <option id="cb023" 
+                value="ja-JP">Japanese</option>
+      </select>
+    </div>
+  </header>
+  <main id="cb026">
+    <h1 id="cb027" data-i18n="app.title">
+      app.title fallback
+    </h1>
+    <section id="cb028" 
+             class="example" 
+             aria-labelledby="cb029">
+      <h2 id="cb029" data-i18n="user.greeting">
+        user.greeting fallback
+      </h2>
+      <p id="cb030" data-i18n="user.profile.age">
+        user.profile.age fallback
+      </p>
+      <p id="cb031" data-i18n="user.profile.bio">
+        user.profile.bio fallback
+      </p>
+    </section>
+    <section id="cb032" 
+             class="example">
+      <h3 id="cb033" data-i18n="plurals.apples">
+        plurals.apples fallback
+      </h3>
+      <p id="cb034">
+        <span id="cb035" data-i18n="plurals.reviews">
+          plurals.reviews fallback
+        </span>
+      </p>
+      <p id="cb036">
+        <span id="cb037" data-i18n="plurals.reviews">
+          plurals.reviews fallback
+        </span>
+      </p>
+    </section>
+    <section id="cb038" 
+             class="example">
+      <p id="cb039" data-i18n="lastUpdated">
+        lastUpdated fallback
+      </p>
+      <p id="cb040" data-i18n="currencyExample">
+        currencyExample fallback
+      </p>
+      <p id="cb041" data-i18n="numberExample">
+        numberExample fallback
+      </p>
+    </section>
+    <section id="cb042" 
+             class="example">
+      <p id="cb043" data-i18n="htmlExample">
+        htmlExample fallback
+      </p>
+      <p id="cb044" data-i18n="directionExample" data-i18n-dir="auto">
+        directionExample fallback
+      </p>
+      <p id="cb045" data-i18n="missingExample">
+        missingExample fallback
+      </p>
+    </section>
+    <section id="cb046" 
+             class="example">
+      <p id="cb047" data-i18n="complex.nested.deep">
+        complex.nested.deep fallback
+      </p>
+      <p id="cb048"><small id="cb049">Current locale: <span id="cb050">-</span></small></p>
+    </section>
+    <footer id="cb051" 
+            style="margin-top:20px">
+      <small id="cb052">
+        Demo: shows lazy-loading, caching, dot-notation keys, 
+        interpolation, plural rules, Intl formatting, fallback 
+        to English, and RTL detection.
+      </small>
+    </footer>
+  </main>
+</body>
+<script type="module" src="index.js"></script>
+</html>

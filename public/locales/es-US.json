@@ -1,0 +1,215 @@
+﻿{
+  "app": {
+    "title": "Aplicación i18n de ejemplo (Español)"
+  },
+  "user": {
+    "greeting": "¡Hola!",
+    "profile": {
+      "age": "Edad",
+      "bio": "Biografía"
+    }
+  },
+  "plurals": {
+    "apples": {
+      "zero": "Sin manzanas",
+      "one": "1 manzana",
+      "other": "Manzanas"
+    },
+    "reviews": {
+      "one": "1 reseña",
+      "other": "Reseñas"
+    }
+  },
+  "lastUpdated": "Última actualización",
+  "currencyExample": "Precio total",
+  "numberExample": "Número con formato",
+  "htmlExample": "Haga clic <a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">aquí</a> para obtener más información.",
+  "directionExample": "Este texto detectará automáticamente RTL/LTR y establecerá la dirección si se solicita.",
+  "missingExample": "Demostración de respaldo ante claves faltantes",
+  "complex": {
+    "nested": {
+      "deep": "Valor profundo"
+    }
+  },
+
+  "nav": {
+    "title": "JS Law Group",
+    "home": "Inicio",
+    "about": "Acerca de",
+    "careers": "Carreras",
+    "appointment": "Cita",
+    "team": "Nuestro equipo",
+    "services": "Áreas de práctica",
+    "contact": "Contacto",
+    "consultation": "Consulta gratuita"
+  },
+  "hero": {
+    "title": "Soluciones innovadoras, excelencia legal",
+    "subtitle": "Sus defensores legales de confianza para lesiones personales y defensa penal. Luchamos por sus derechos.",
+    "button1": "Nuestras áreas de práctica",
+    "button2": "Póngase en contacto"
+  },
+  "services": {
+    "title": "Áreas de práctica",
+    "subtitle": "Especialización dedicada en áreas críticas del derecho.",
+    "area1": {
+      "title": "Lesiones personales",
+      "desc": "Luchamos por la compensación que merece después de un accidente. Choques automovilísticos, caídas y más."
+    },
+    "area2": {
+      "title": "Defensa penal",
+      "desc": "Defensa agresiva para DUI, delitos de drogas, agresiones y otros cargos penales."
+    },
+    "area3": {
+      "title": "Derecho familiar",
+      "desc": "Acompañamiento compasivo en divorcios, custodia y otros asuntos familiares."
+    }
+  },
+  "pi": {
+    "title": "Lesiones personales",
+    "desc": "Superar las secuelas de una lesión es abrumador. Luchamos por sus derechos y la compensación que merece para que pueda concentrarse en sanar.",
+    "feature1": "Accidentes de automóvil y camión",
+    "feature2": "Incidentes por resbalones y caídas",
+    "feature3": "Reclamaciones por homicidio culposo",
+    "feature4": "Responsabilidad de locales",
+    "article": {
+      "title": "Cómo entender su reclamación por lesiones personales",
+      "lead": "Cuando resulta lesionado por la negligencia de otra persona, las consecuencias legales y financieras pueden doler tanto como la lesión. Conocer sus derechos es el primer paso hacia la recuperación.",
+      "body": "<p>Enfrentar las secuelas de una lesión significa tratar con facturas médicas, pérdida de ingresos y angustia emocional. Nuestro equipo analiza cada detalle para que nada quede sin respuesta mientras usted se concentra en su bienestar.</p>\n<p>Mientras se recupera, reunimos pruebas, hablamos con testigos y coordinamos con especialistas médicos para establecer la magnitud total del daño.</p>\n<h3>¿Qué constituye una reclamación?</h3>\n<p>Cada caso comienza con demostrar que existía un deber de cuidado, que ese deber fue incumplido y que la lesión fue una consecuencia directa. Le guiamos paso a paso por estos elementos.</p>\n<blockquote><p>\"El elemento clave es la negligencia. Debemos demostrar que la otra parte incumplió su deber y que ese incumplimiento causó su lesión y sus pérdidas.\"</p></blockquote>\n<h3>Nuestro proceso: de la investigación a la resolución</h3>\n<p>Recabamos informes policiales, historiales médicos y evaluaciones periciales. Negociamos con aseguradoras desde una posición de fuerza y, cuando es necesario, litigamos para asegurar un resultado justo.</p>"
+    }
+  },
+  "cd": {
+    "title": "Defensa penal",
+    "desc": "Enfrentar cargos penales puede ser una de las experiencias más estresantes de su vida. Ofrecemos una defensa sólida y estratégica para proteger su libertad y su futuro.",
+    "feature1": "DUI / DWI",
+    "feature2": "Delitos relacionados con drogas",
+    "feature3": "Agresiones y lesiones",
+    "feature4": "Delitos contra la propiedad",
+    "article": {
+      "title": "Cómo navegar su defensa penal",
+      "lead": "Un cargo penal puede parecer el fin del camino, pero no tiene por qué definir su futuro. Una defensa estratégica y decidida es esencial.",
+      "body": "<p>Trabajamos rápidamente para evaluar las pruebas, identificar debilidades en el caso de la fiscalía y preparar una narrativa clara en su favor.</p>\n<h3>Tus derechos son fundamentales</h3>\n<p>Desde el momento de su detención, sus derechos constitucionales están vigentes. Nos aseguramos de que entienda cada uno de ellos y de que se respeten rigurosamente.</p>\n<ul>\n<li>El derecho a guardar silencio.</li>\n<li>El derecho a un abogado.</li>\n<li>El derecho a estar libre de registros irrazonables.</li>\n</ul>\n<h3>Estrategias de defensa comunes</h3>\n<p>Analizamos la legalidad de la detención, cuestionamos la cadena de custodia y negociamos cuando beneficia a su situación. Si es necesario, llevamos su caso ante un jurado totalmente preparados.</p>"
+    }
+  },
+  "about": {
+    "title": "Acerca de JS Law Group",
+    "desc": "Somos un equipo apasionado de profesionales legales dedicados a brindar representación de primer nivel. Nos enfocamos en lograr el mejor resultado posible para cada cliente mediante una defensa incansable y atención personalizada.",
+    "feature1": "Enfoque centrado en el cliente",
+    "feature2": "Representación agresiva",
+    "feature3": "Historial comprobado"
+  },
+  "attorney": {
+    "name": "Joan Suh",
+    "title": "서조은 변호사",
+    "p1": "Nos especializamos en servicios legales centrados en el cliente, brindando asesoramiento experto y soluciones rápidas en diversos campos del derecho. Con un compromiso firme con la justicia, priorizamos la comunicación transparente para generar confianza.",
+    "p2": "Confíe en nosotros para ofrecer soluciones seguras y eficientes a sus asuntos legales. Estamos disponibles para usted en cualquier momento.",
+    "p3": "Gracias.",
+    "alt": "Joan Suh, 서조은 변호사"
+  },
+  "partners": {
+    "title": "Nuestros socios",
+    "subtitle": "Nos enorgullece trabajar con líderes de la industria que confían en nosotros.",
+    "testimonial1": {
+      "quote": "\"Apoyo legal excepcional. Su experiencia y dedicación hacen que los asuntos complejos sean sencillos.\"",
+      "name": "Eric Park",
+      "title": "COO, HORIZON"
+    },
+    "testimonial2": {
+      "quote": "\"Profesionalismo y eficiencia impresionantes. Un equipo que realmente se preocupa por el éxito del cliente. Altamente recomendado.\"",
+      "name": "Amanda Cuccia",
+      "title": "Fundadora, PJK"
+    },
+    "testimonial3": {
+      "quote": "\"Servicio sobresaliente. El compromiso del equipo con la excelencia se nota en cada interacción. Confiables y responsables.\"",
+      "name": "Sunny Parda",
+      "title": "CEO, Latch"
+    },
+    "carousel": {
+      "prev": "Anterior",
+      "next": "Siguiente"
+    }
+  },
+  "careers": {
+    "title": "Carreras",
+    "p1": "En JS Law Group, LLC creemos que un servicio legal excepcional comienza con personas excepcionales.",
+    "p2": "Buscamos continuamente a profesionales talentosos que compartan nuestro compromiso con la excelencia.",
+    "p3": "Ya sea que sea un abogado con experiencia, un recién graduado de derecho o un especialista en apoyo legal, ofrecemos una trayectoria profesional dinámica y gratificante.",
+    "p4": "Brindamos capacitación integral, programas de mentoría y desarrollo continuo para ayudarle a alcanzar su máximo potencial.",
+    "p5": "Para postularse, envíe su currículum a <a href=\"mailto:info@jslawgroup.net\">info@jslawgroup.net</a>"
+  },
+  "team": {
+    "title": "Nuestro equipo",
+    "subtitle": "\"Acompañamos a nuestros clientes en cada paso. Sus desafíos son los nuestros y los superamos juntos.\"",
+    "member1": {
+      "name": "Joan Suh",
+      "title": "Abogada directora",
+      "email": "jsuh@jslawgroup.net"
+    },
+    "member2": {
+      "name": "Laura Mayfield",
+      "title": "Of Counsel",
+      "phone": "(770) 910-4545"
+    }
+  },
+  "contactinfo": {
+    "title": "Nuestra ubicación",
+    "map": {
+      "title": "Nuestra ubicación en Google Maps"
+    },
+    "address": {
+      "title": "Dirección",
+      "details": "<p class=\"mb-0\">3296 Summit Ridge Pkwy</p><p class=\"mb-0\">Suite 1010</p><p class=\"mb-0\">Duluth, Georgia 30096</p>"
+    },
+    "contact": {
+      "title": "Contacto",
+      "details": "<p class=\"mb-0\">Oficina: (770) 341-1234</p><p class=\"mb-0\">Fax: (770) 215-2823</p><p class=\"mb-0\">Correo electrónico: <a href=\"mailto:jsuh@jslawgroup.net\">jsuh@jslawgroup.net</a></p>"
+    },
+    "office": "Oficina",
+    "fax": "Fax",
+    "email": "Correo electrónico",
+    "hours": {
+      "title": "Horario de atención"
+    },
+    "weekdays": "Lunes a viernes: 9:00 a. m. - 5:00 p. m."
+  },
+  "contact": {
+    "title": "Consulta gratuita",
+    "subtitle": "Cuéntenos sobre su caso. Toda la información es confidencial.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "inquiryType": "Tipo de consulta",
+    "selectOne": "Seleccione una opción...",
+    "pi": "Lesiones personales",
+    "cd": "Defensa penal",
+    "fl": "Derecho familiar",
+    "other": "Otro",
+    "message": "Cuéntenos sobre su caso",
+    "messagePlaceholder": "Proporcione una breve descripción de su situación...",
+    "submit": "Enviar consulta"
+  },
+  "fab": {
+    "contactForms": "Formularios de contacto",
+    "generalInquiry": "Consulta general",
+    "personalInjury": "Lesiones personales",
+    "criminalDefense": "Defensa penal"
+  },
+  "modal": {
+    "close": "Cerrar"
+  },
+  "footer": {
+    "copyright": "&copy; 2024 por JS LAW Group, LLC. Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso",
+    "copyrightOffice": "&copy; JS LAW Group, LLC. 2024 - 2025",
+    "faqs": "Preguntas frecuentes",
+    "corporateInformation": "Información corporativa",
+    "privacyNotice": "Aviso de privacidad",
+    "cookieNotice": "Aviso de cookies",
+    "termsOfUse": "Condiciones de uso",
+    "digitalId": "ID digital",
+    "whistleblowing": "Denuncias",
+    "importantNote": "<strong>Nota importante:</strong> Este sitio está diseñado para clientes que buscan representación en casos de lesiones personales (PI) y defensa penal (CD). Puede enviarnos un formulario de consulta para contactarnos. JS Law Group, LLC nunca cobra honorarios por adelantado antes de prestar servicios legales. No solicitamos pagos ni información financiera antes de la consulta o la evaluación del caso. Todas las consultas iniciales son gratuitas y los honorarios solo se discuten después de revisar su caso y aceptar representarlo."
+  }
+}

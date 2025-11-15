@@ -1,0 +1,224 @@
+{
+  "app": {
+    "title": "Sample i18n App (English)"
+  },
+  "user": {
+    "greeting": "Hello!",
+    "profile": {
+      "age": "Age",
+      "bio": "Bio"
+    }
+  },
+  "plurals": {
+    "apples": {
+      "zero": "No apples",
+      "one": "1 apple",
+      "other": "Apples"
+    },
+    "reviews": {
+      "one": "1 review",
+      "other": "Reviews"
+    }
+  },
+  "lastUpdated": "Last updated",
+  "currencyExample": "Total price",
+  "numberExample": "Formatted number",
+  "htmlExample": "Click <a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">here</a> to learn more.",
+  "directionExample": "This text will auto-detect RTL/LTR and set direction if requested.",
+  "missingExample": "Missing-key fallback demo",
+  "complex": {
+    "nested": {
+      "deep": "Deep value"
+    }
+  },
+
+
+
+
+
+
+
+
+
+  
+  "nav": {
+    "title": "JS Law Group",
+    "home": "Home",
+    "about": "About",
+    "careers": "Careers",
+    "appointment": "Appointment",
+    "team": "Our Teams",
+    "services": "Practice Areas",
+    "contact": "Contact",
+    "consultation": "Free Consultation"
+  },
+  "hero": {
+    "title": "Innovative Solutions, Legal Excellence",
+    "subtitle": "Your trusted legal advocates for personal injury and criminal defense. We fight for your rights.",
+    "button1": "Our Practice Areas",
+    "button2": "Get in Touch"
+  },
+  "services": {
+    "title": "Practice Areas",
+    "subtitle": "Dedicated expertise in critical areas of law.",
+    "area1": {
+      "title": "Personal Injury",
+      "desc": "Fighting for the compensation you deserve after an accident. Car accidents, slip and fall, and more."
+    },
+    "area2": {
+      "title": "Criminal Defense",
+      "desc": "Aggressive defense for DUI, drug offenses, assault, and other criminal charges."
+    },
+    "area3": {
+      "title": "Family Law",
+      "desc": "Compassionate guidance through divorce, custody, and other family matters."
+    }
+  },
+  "pi": {
+    "title": "Personal Injury",
+    "desc": "Navigating the aftermath of an injury is overwhelming. We are dedicated to fighting for your rights and securing the compensation you deserve, so you can focus on healing.",
+    "feature1": "Car & Truck Accidents",
+    "feature2": "Slip & Fall Incidents",
+    "feature3": "Wrongful Death Claims",
+    "feature4": "Premises Liability",
+    "article": {
+      "title": "Understanding Your Personal Injury Claim",
+      "lead": "When you are injured due to someone else's negligence, the legal and financial aftermath can be as painful as the injury itself. Understanding your rights is the first step toward recovery.",
+      "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed vestibulum felis. Suspendisse potenti. Praesent facilisis, odio vel consequat suscipit, elit libero efficitur ex, non faucibus nulla eros sit amet diam.</p>\n<p>Aenean in risus eget massa fringilla imperdiet. Sed sit amet mi non nulla facilisis feugiat. Vivamus eget tortor non ipsum ultricies feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>\n<h3>What Constitutes a Claim?</h3>\n<p>Donec ullamcorper, lacus ut sodales viverra, turpis tellus tincidunt magna, id scelerisque mi eros in nunc. Nullam ac massa in nisi imperdiet tempor. In hac habitasse platea dictumst.</p>\n<blockquote><p>\"The key element is 'negligence.' We must prove that the other party had a duty of care, breached that duty, and that breach directly caused your injuries and subsequent damages.\"</p></blockquote>\n<h3>Our Process: Investigation to Resolution</h3>\n<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec at sodales nisl. Integer placerat, ipsum in finibus varius, dui erat fermentum ante, a iaculis dui risus inquam.</p>"
+    }
+  },
+  "cd": {
+    "title": "Criminal Defense",
+    "desc": "Facing criminal charges can be one of the most stressful experiences of your life. We provide a robust, strategic defense to protect your freedom, your rights, and your future.",
+    "feature1": "DUI / DWI",
+    "feature2": "Drug Offenses",
+    "feature3": "Assault & Battery",
+    "feature4": "Theft & Property Crimes",
+    "article": {
+      "title": "Navigating Your Criminal Defense",
+      "lead": "A criminal charge can feel like the end of the world, but it doesn't have to define your future. A strategic, aggressive defense is critical.",
+      "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed vestibulum felis. Suspendisse potenti. Praesent facilisis, odio vel consequat suscipit, elit libero efficitur ex, non faucibus nulla eros sit amet diam.</p>\n<h3>Your Rights Are Paramount</h3>\n<p>From the moment of your arrest, your constitutional rights are in effect. Understanding them is your first line of defense.</p>\n<ul>\n<li>The right to remain silent.</li>\n<li>The right to an attorney.</li>\n<li>The right to be free from unreasonable searches.</li>\n</ul>\n<h3>Common Defense Strategies</h3>\n<p>Donec ullamcorper, lacus ut sodales viverra, turpis tellus tincidunt magna, id scelerisque mi eros in nunc. Nullam ac massa in nisi imperdiet tempor. In hac habitasse platea dictumst. We will explore every avenue, from challenging evidence to negotiating for a lesser charge.</p>"
+    }
+  },
+  "about": {
+    "title": "About JS Law Group",
+    "desc": "We are a passionate team of legal professionals dedicated to providing top-tier representation. Our focus is on achieving the best possible outcome for every client through tireless advocacy and personalized attention.",
+    "feature1": "Client-Centric Approach",
+    "feature2": "Aggressive Representation",
+    "feature3": "Proven Track Record"
+  },
+  "attorney": {
+    "name": "Joan Suh",
+    "title": "서조은 변호사",
+    "p1": "We specialize in client-centered legal services, providing expert advice and swift solutions across various legal fields. With a commitment to fairness and justice, our dedicated team prioritizes transparent communication to build trust and ensure effective resolution of legal challenges.",
+    "p2": "Trust us to deliver secure and efficient solutions to your legal matters. Consult with us anytime.",
+    "p3": "Thank you.",
+    "alt": "Joan Suh, 서조은 변호사"
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "We are proud to work with and be trusted by industry leaders.",
+    "testimonial1": {
+      "quote": "\"Exceptional legal support at this firm. Their expertise and dedication make navigating complex matters smooth.\"",
+      "name": "Eric Park",
+      "title": "COO, HORIZON"
+    },
+    "testimonial2": {
+      "quote": "\"Impressed by the professionalism and efficiency. A team that truly cares about client success. Highly recommend.\"",
+      "name": "Amanda Cuccia",
+      "title": "Founder, PJK"
+    },
+    "testimonial3": {
+      "quote": "\"Outstanding service! The team's commitment to excellence is evident in every interaction. Trustworthy and reliable.\"",
+      "name": "Sunny Parda",
+      "title": "CEO, Latch"
+    },
+    "carousel": {
+      "prev": "Previous",
+      "next": "Next"
+    }
+  },
+  "careers": {
+    "title": "Careers",
+    "p1": "At JS Law Group, LLC we believe that exceptional legal service begins with exceptional people.",
+    "p2": "We are continuously seeking talented individuals who share our commitment to excellence.",
+    "p3": "Whether you are an experienced team, a recent law school graduate, or a seasoned professional in legal support services, JS Law Group, LLC offers a dynamic and rewarding career path.",
+    "p4": "We provide comprehensive training, mentorship programs, and ongoing development opportunities to help you reach your full potential.",
+    "p5": "To apply, please submit your resume to <a href=\"mailto:info@jslawgroup.net\">info@jslawgroup.net</a>"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "\"At our firm, we stand by our clients at every step. Your challenges are ours to tackle together. We're with you, every step of the way.\"",
+    "member1": {
+      "name": "Joan Suh",
+      "title": "Managing Attorney",
+      "email": "jsuh@jslawgroup.net"
+    },
+    "member2": {
+      "name": "Laura Mayfield",
+      "title": "Of Counsel",
+      "phone": "(770) 910-4545"
+    }
+  },
+  "contactinfo": {
+    "title": "Our Location",
+    "map": {
+      "title": "Our location on Google Maps"
+    },
+    "address": {
+      "title": "Address",
+      "details": "<p class=\"mb-0\">3296 Summit Ridge Pkwy</p><p class=\"mb-0\">Suite 1010</p><p class=\"mb-0\">Duluth, Georgia 30096</p>"
+    },
+    "contact": {
+      "title": "Contact",
+      "details": "<p class=\"mb-0\">Office: (770) 341-1234</p><p class=\"mb-0\">Facsimile: (770) 215-2823</p><p class=\"mb-0\">E-mail: <a href=\"mailto:jsuh@jslawgroup.net\">jsuh@jslawgroup.net</a></p>"
+    },
+    "office": "Office",
+    "fax": "Facsimile",
+    "email": "E-mail",
+    "hours": {
+      "title": "Opening Hours"
+    },
+    "weekdays": "Weekdays: 9:00 am - 5:00 pm"
+  },
+  "contact": {
+    "title": "Free Consultation",
+    "subtitle": "Tell us about your case. All information is confidential.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "inquiryType": "Inquiry Type",
+    "selectOne": "Please select one...",
+    "pi": "Personal Injury",
+    "cd": "Criminal Defense",
+    "fl": "Family Law",
+    "other": "Other",
+    "message": "Tell us about your case",
+    "messagePlaceholder": "Please provide a brief description of your situation...",
+    "submit": "Submit Inquiry"
+  },
+  "fab": {
+    "contactForms": "Contact Forms",
+    "generalInquiry": "General Inquiry",
+    "personalInjury": "Personal Injury",
+    "criminalDefense": "Criminal Defense"
+  },
+  "modal": {
+    "close": "Close"
+  },
+  "footer": {
+    "copyright": "&copy; 2024 by JS LAW Group, LLC. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "copyrightOffice": "&copy; JS LAW Group, LLC. 2024 - 2025",
+    "faqs": "FAQs",
+    "corporateInformation": "Corporate information",
+    "privacyNotice": "Privacy notice",
+    "cookieNotice": "Cookie notice",
+    "termsOfUse": "Terms of use",
+    "digitalId": "Digital ID",
+    "whistleblowing": "Whistleblowing",
+    "importantNote": "<strong>Important Note:</strong> This website is designed for clients seeking legal representation in Personal Injury (PI) and Criminal Defense (CD) cases. The website allows you to submit an inquiry form to contact our firm. Please be aware that JS Law Group, LLC never charges clients any fees upfront or before providing legal services. We do not request payment, banking details, or personal financial information prior to consultation or case evaluation. All initial consultations are free, and fees are only discussed after we have reviewed your case and agreed to represent you."
+  }
+}

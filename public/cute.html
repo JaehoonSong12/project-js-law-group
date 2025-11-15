@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Cute Characters</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .character-group {
+            padding: 20px;
+            /* Use flexbox to line up the characters */
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Space between characters */
+        }
+
+        /*
+         * --- NEW CHARACTER STRUCTURE ---
+         * .character is the main container.
+         * It needs 'position: relative' so we can place the
+         * eyes on top of the body using 'position: absolute'.
+         */
+        .character {
+            position: relative;
+            width: 150px;
+            height: 200px;
+            /* transition for the body-swap */
+            transition: all 0.3s ease-in-out; 
+        }
+
+        /*
+         * --- BODY ---
+         * We have two SVGs for the body.
+         * We will toggle them with CSS.
+         */
+        .body-svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .body-sitting {
+            /* The sitting body is hidden by default */
+            opacity: 0;
+        }
+
+        /*
+         * --- EYES ---
+         * The 'eye-rig' is the container for the two eyes.
+         * We use 'position: absolute' to place it on the character's "face".
+         */
+        .eye-rig {
+            position: absolute;
+            top: 60px; /* Adjust this to position the eyes vertically */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between eyes */
+        }
+        
+        .eye {
+            width: 40px; /* Smaller eyes for the body */
+            height: 40px;
+            background-color: #fff;
+            border: 3px solid #333;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden; 
+            transition: all 0.2s ease-out;
+        }
+
+        .pupil {
+            width: 15px;
+            height: 15px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s linear;
+        }
+        
+        /* * --- ALL CHARACTER REACTIONS ---
+         * These classes are added to the main .character container
+         */
+
+        /* Left-click: Squint */
+        .clicking .eye {
+            height: 10px;
+        }
+
+        /* Right-click: Wink */
+        .winking .eye:first-child {
+            height: 5px;
+        }
+        .winking .eye:last-child {
+            transform: scale(1.1);
+        }
+
+        /*
+         * --- GROUP "SIT" ACTION ---
+         * This is the key. When '.sitting' is added to .character:
+         */
+        
+        /* 1. The character body changes */
+        .sitting {
+            height: 120px; /* Character gets shorter */
+        }
+        .sitting .body-standing {
+            opacity: 0; /* Hide standing body */
+        }
+        .sitting .body-sitting {
+            opacity: 1; /* Show sitting body */
+        }
+
+        /* 2. The eyes move down and close */
+        .sitting .eye-rig {
+            top: 70px; /* Move eyes down on the shorter body */
+        }
+        .sitting .eye {
+            height: 5px; /* Eyes close */
+            background-color: #eee;
+        }
+        .sitting .pupil {
+            /* Pupils are hidden (moved down) */
+            transform: translate(-50%, 100%); 
+        }
+
+    </style>
+</head>
+<body class="bg-light-subtle">
+
+    <button id="toggleButton" class="btn btn-primary mb-3">Sit Down</button>
+
+    <div class="character-group">
+        
+        <div class="character">
+            <svg class="body-svg body-standing" viewBox="0 0 100 130" fill="#a0c3ff" stroke="#333" stroke-width="3">
+                <ellipse cx="50" cy="70" rx="45" ry="60" />
+            </svg>
+            <svg class="body-svg body-sitting" viewBox="0 0 100 130" fill="#a0c3ff" stroke="#333" stroke-width="3">
+                <ellipse cx="50" cy="95" rx="48" ry="35" />
+            </svg>
+
+            <div class="eye-rig">
+                <div class="eye"><div class="pupil"></div></div>
+                <div class="eye"><div class="pupil"></div></div>
+            </div>
+        </div>
+
+        <div class="character">
+            <svg class="body-svg body-standing" viewBox="0 0 100 130" fill="#ffc1a0" stroke="#333" stroke-width="3">
+                <ellipse cx="50" cy="70" rx="45" ry="60" />
+            </svg>
+            <svg class="body-svg body-sitting" viewBox="0 0 100 130" fill="#ffc1a0" stroke="#333" stroke-width="3">
+                <ellipse cx="50" cy="95" rx="48" ry="35" />
+            </svg>
+
+            <div class="eye-rig">
+                <div class="eye"><div class="pupil"></div></div>
+                <div class="eye"><div class="pupil"></div></div>
+            </div>
+        </div>
+        
+        <div class="character">
+            <svg class="body-svg body-standing" viewBox="0 0 100 130" fill="#a0ffc3" stroke="#333" stroke-width="3">
+                <ellipse cx="50" cy="70" rx="45" ry="60" />
+            </svg>
+            <svg class="body-svg body-sitting" viewBox="0 0 100 130" fill="#a0ffc3" stroke="#333" stroke-width="3">
+                <ellipse cx="50" cy="95" rx="48" ry="35" />
+            </svg>
+
+            <div class="eye-rig">
+                <div class="eye"><div class="pupil"></div></div>
+                <div class="eye"><div class="pupil"></div></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        'use strict'; 
+
+        // --- 1. SELECT THE COLLECTIONS ---
+        const allPupils = document.querySelectorAll('.pupil');
+        const allCharacters = document.querySelectorAll('.character');
+        const toggleButton = document.getElementById('toggleButton');
+
+        // --- 2. "STARE" LOGIC (Mouse Following) ---
+        // This is IDENTICAL to the previous example.
+        // Because it uses .getBoundingClientRect(), it automatically
+        // finds the eyes wherever they are on the page.
+        window.addEventListener('mousemove', (event) => {
+            
+            // Check if they are sitting. If so, don't follow.
+            if (allCharacters[0] && allCharacters[0].classList.contains('sitting')) {
+                return; // Stop here
+            }
+
+            allPupils.forEach(pupil => {
+                const eye = pupil.parentElement;
+                const rect = eye.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+                const mouseX = event.clientX;
+                const mouseY = event.clientY;
+
+                const deltaX = mouseX - eyeX;
+                const deltaY = mouseY - eyeY;
+                const angle = Math.atan2(deltaY, deltaX);
+
+                const pupilRadius = pupil.offsetWidth / 2;
+                const eyeRadius = eye.offsetWidth / 2;
+                const maxDistance = eyeRadius - pupilRadius - 2; // small buffer
+
+                const pupilX = Math.cos(angle) * maxDistance;
+                const pupilY = Math.sin(angle) * maxDistance;
+
+                pupil.style.transform = `translate(-50%, -50%) translate(${pupilX}px, ${pupilY}px)`;
+            });
+        });
+
+        // --- 3. "REACTION" LOGIC (Clicks) ---
+        // This is also identical. We just add/remove classes from the .character.
+        window.addEventListener('mousedown', (event) => {
+            if (event.button === 0) {
+                allCharacters.forEach(char => char.classList.add('clicking'));
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            allCharacters.forEach(char => char.classList.remove('clicking'));
+        });
+
+        window.addEventListener('contextmenu', (event) => {
+            event.preventDefault(); 
+            allCharacters.forEach(char => char.classList.add('winking'));
+            setTimeout(() => {
+                allCharacters.forEach(char => char.classList.remove('winking'));
+            }, 250);
+        });
+
+        // --- 4. "GROUP ACTION" LOGIC (Sit/Stand) ---
+        // This logic is the same, but the CSS it triggers is now
+        // much more complex (changing body and eyes).
+        toggleButton.addEventListener('click', () => {
+            let isSitting = false;
+
+            // Toggle the 'sitting' class on every character
+            allCharacters.forEach(char => {
+                char.classList.toggle('sitting');
+            });
+
+            // Check the state of the first character to update the button
+            isSitting = allCharacters[0].classList.contains('sitting');
+
+            // Update the button text
+            if (isSitting) {
+                toggleButton.textContent = 'Stand Up';
+                toggleButton.classList.remove('btn-primary');
+                toggleButton.classList.add('btn-success');
+                
+                // When sitting, make pupils look down (we do this in CSS,
+                // but an extra JS push ensures it)
+                allPupils.forEach(pupil => {
+                    pupil.style.transform = 'translate(-50%, 100%)';
+                });
+
+            } else {
+                toggleButton.textContent = 'Sit Down';
+                toggleButton.classList.remove('btn-success');
+                toggleButton.classList.add('btn-primary');
+            }
+        });
+
+    </script>
+</body>
+</html>

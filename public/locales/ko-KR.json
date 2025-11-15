@@ -1,0 +1,215 @@
+﻿{
+  "app": {
+    "title": "샘플 i18n 앱 (한국어)"
+  },
+  "user": {
+    "greeting": "안녕하세요!",
+    "profile": {
+      "age": "나이",
+      "bio": "소개"
+    }
+  },
+  "plurals": {
+    "apples": {
+      "zero": "사과가 없습니다",
+      "one": "사과 1개",
+      "other": "사과"
+    },
+    "reviews": {
+      "one": "평가 1개",
+      "other": "평가"
+    }
+  },
+  "lastUpdated": "최종 업데이트",
+  "currencyExample": "총액",
+  "numberExample": "형식화된 숫자",
+  "htmlExample": "더 알아보려면 <a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">여기</a>를 클릭하세요.",
+  "directionExample": "요청하면 RTL/LTR을 자동 감지하여 방향을 설정합니다.",
+  "missingExample": "누락된 키 대체 예시",
+  "complex": {
+    "nested": {
+      "deep": "깊은 값"
+    }
+  },
+
+  "nav": {
+    "title": "JS 로펌",
+    "home": "홈",
+    "about": "소개",
+    "careers": "채용 정보",
+    "appointment": "예약하기",
+    "team": "우리 팀",
+    "services": "전문 분야",
+    "contact": "연락하기",
+    "consultation": "무료 상담"
+  },
+  "hero": {
+    "title": "혁신적인 솔루션, 법률적 탁월함",
+    "subtitle": "개인 상해와 형사 방어에 특화된 신뢰할 수 있는 법률 파트너. 여러분의 권리를 지켜 드립니다.",
+    "button1": "전문 분야",
+    "button2": "문의하기"
+  },
+  "services": {
+    "title": "전문 분야",
+    "subtitle": "핵심 법률 분야에 대한 축적된 전문성.",
+    "area1": {
+      "title": "개인 상해",
+      "desc": "사고 이후 정당한 보상을 받을 수 있도록 싸웁니다. 교통사고, 낙상 사고 등."
+    },
+    "area2": {
+      "title": "형사 방어",
+      "desc": "DUI, 마약, 폭력 등 형사 혐의 전반에 대한 적극적인 방어."
+    },
+    "area3": {
+      "title": "가정법",
+      "desc": "이혼, 양육권 등 가족 문제 전반을 공감과 전문성으로 안내합니다."
+    }
+  },
+  "pi": {
+    "title": "개인 상해",
+    "desc": "부상 이후의 상황은 누구에게나 벅찹니다. 저희는 치유에 집중할 수 있도록 권리를 지키고 정당한 보상을 확보해 드립니다.",
+    "feature1": "자동차·트럭 사고",
+    "feature2": "미끄러짐·낙상 사고",
+    "feature3": "과실치사 청구",
+    "feature4": "부동산 소유자 책임",
+    "article": {
+      "title": "개인 상해 청구 이해하기",
+      "lead": "타인의 과실로 다쳤다면 법적·재정적 여파가 상처만큼이나 고통스러울 수 있습니다. 권리를 이해하는 것이 회복의 첫걸음입니다.",
+      "body": "<p>부상 직후에는 의료비, 소득 손실, 감정적 부담이 한꺼번에 밀려옵니다. 저희는 모든 사실을 세밀하게 분석해 놓치는 부분이 없도록 하고, 의뢰인은 치료에 집중할 수 있게 돕습니다.</p>\n<p>회복에 전념하는 동안 우리는 증거를 수집하고, 증인을 인터뷰하며, 의료 전문가와 협력해 손해 규모를 명확히 제시합니다.</p>\n<h3>청구는 어떻게 성립되나요?</h3>\n<p>모든 사건은 돌봐야 할 의무, 그 의무의 위반, 그리고 위반과 부상 간의 인과관계를 입증하는 일에서 시작합니다. 저희는 이 과정을 단계별로 안내하며 필요한 자료를 준비합니다.</p>\n<blockquote><p>\"핵심은 과실입니다. 상대방이 주의 의무를 위반했고 그 결과로 부상과 손해가 발생했다는 점을 분명히 해야 합니다.\"</p></blockquote>\n<h3>조사부터 합의까지의 절차</h3>\n<p>경찰 보고서, 의료 기록, 전문가 의견을 체계적으로 모읍니다. 보험사와는 확실한 근거를 바탕으로 협상하며, 필요하다면 소송으로 나아가 공정한 결과를 이끌어 냅니다.</p>"
+    }
+  },
+  "cd": {
+    "title": "형사 방어",
+    "desc": "형사 혐의는 삶을 송두리째 흔들 수 있는 사건입니다. 우리는 자유와 권리를 지키기 위해 치밀하고 강력한 방어 전략을 제시합니다.",
+    "feature1": "DUI / DWI",
+    "feature2": "마약 관련 범죄",
+    "feature3": "폭행 및 상해",
+    "feature4": "절도 및 재산 범죄",
+    "article": {
+      "title": "형사 방어 전략 가이드",
+      "lead": "형사 기소는 모든 것이 끝난 듯 느껴질 수 있지만, 전략적이고 과감한 변호가 미래를 지켜 줍니다.",
+      "body": "<p>체포 직후부터 증거를 검토하고, 공소 사실의 취약점을 찾아 방어 논리를 세웁니다. 사건의 흐름을 주도적으로 관리하는 것이 목표입니다.</p>\n<h3>헌법상 권리가 최우선입니다</h3>\n<p>체포 순간부터 헌법상 권리가 적용됩니다. 저희는 각 권리를 명확히 설명하고, 절차 내내 철저히 지켜지도록 합니다.</p>\n<ul>\n<li>진술 거부권</li>\n<li>변호인 조력권</li>\n<li>불합리한 수색·압수로부터의 자유</li>\n</ul>\n<h3>대표적인 방어 전략</h3>\n<p>체포의 적법성, 증거 수집 과정, 체인 오브 커스터디 등을 살펴보고 필요 시 증거 배제를 요구합니다. 협상이 유리하면 적극적으로 나서고, 재판이 불가피하면 완벽히 준비된 상태로 법정에 섭니다.</p>"
+    }
+  },
+  "about": {
+    "title": "JS 로펌 소개",
+    "desc": "저희는 최고 수준의 법률 대리를 제공하기 위해 헌신하는 열정적인 전문가 그룹입니다. 맞춤형 관심과 끊임없는 변호로 최선의 결과를 만들어 냅니다.",
+    "feature1": "고객 중심 접근",
+    "feature2": "공격적인 변호",
+    "feature3": "검증된 성공 사례"
+  },
+  "attorney": {
+    "name": "Joan Suh",
+    "title": "서조은 변호사",
+    "p1": "고객 중심의 법률 서비스를 지향하며 다양한 분야에서 전문 자문과 신속한 해결책을 제공합니다. 공정성과 정의를 최우선 가치로 삼고 투명한 소통을 통해 신뢰를 쌓습니다.",
+    "p2": "법률 문제 전반에 대해 안전하고 효율적인 해법을 제공하겠습니다. 언제든지 상담을 요청하세요.",
+    "p3": "감사합니다.",
+    "alt": "Joan Suh, 서조은 변호사"
+  },
+  "partners": {
+    "title": "파트너",
+    "subtitle": "산업을 선도하는 기업들이 신뢰하는 파트너입니다.",
+    "testimonial1": {
+      "quote": "\"탁월한 법률 지원 덕분에 복잡한 사안도 매끄럽게 해결했습니다.\"",
+      "name": "Eric Park",
+      "title": "COO, HORIZON"
+    },
+    "testimonial2": {
+      "quote": "\"전문성과 효율성이 인상적입니다. 고객 성공을 진심으로 고민하는 팀입니다.\"",
+      "name": "Amanda Cuccia",
+      "title": "Founder, PJK"
+    },
+    "testimonial3": {
+      "quote": "\"모든 접점에서 최고의 서비스를 경험했습니다. 믿을 수 있는 파트너입니다.\"",
+      "name": "Sunny Parda",
+      "title": "CEO, Latch"
+    },
+    "carousel": {
+      "prev": "이전",
+      "next": "다음"
+    }
+  },
+  "careers": {
+    "title": "채용 정보",
+    "p1": "JS Law Group은 탁월한 법률 서비스를 위해 뛰어난 인재가 필요하다고 믿습니다.",
+    "p2": "우리는 헌신과 전문성을 공유하는 인재를 지속적으로 찾고 있습니다.",
+    "p3": "경력 변호사, 신입, 법률 지원 전문가 등 누구든 역동적이고 보람 있는 커리어를 설계할 수 있습니다.",
+    "p4": "체계적인 교육과 멘토링, 지속적인 성장 기회를 제공하여 잠재력을 최대한 발휘하도록 돕습니다.",
+    "p5": "지원서는 <a href=\"mailto:info@jslawgroup.net\">info@jslawgroup.net</a>으로 보내주세요."
+  },
+  "team": {
+    "title": "우리 팀",
+    "subtitle": "\"의뢰인의 여정마다 곁을 지킵니다. 당신의 과제가 곧 우리의 과제입니다.\"",
+    "member1": {
+      "name": "Joan Suh",
+      "title": "대표 변호사",
+      "email": "jsuh@jslawgroup.net"
+    },
+    "member2": {
+      "name": "Laura Mayfield",
+      "title": "Of Counsel",
+      "phone": "(770) 910-4545"
+    }
+  },
+  "contactinfo": {
+    "title": "오시는 길",
+    "map": {
+      "title": "Google 지도에서 위치 보기"
+    },
+    "address": {
+      "title": "주소",
+      "details": "<p class=\"mb-0\">3296 Summit Ridge Pkwy</p><p class=\"mb-0\">Suite 1010</p><p class=\"mb-0\">Duluth, Georgia 30096</p>"
+    },
+    "contact": {
+      "title": "연락처",
+      "details": "<p class=\"mb-0\">사무실: (770) 341-1234</p><p class=\"mb-0\">팩스: (770) 215-2823</p><p class=\"mb-0\">이메일: <a href=\"mailto:jsuh@jslawgroup.net\">jsuh@jslawgroup.net</a></p>"
+    },
+    "office": "사무실",
+    "fax": "팩스",
+    "email": "이메일",
+    "hours": {
+      "title": "영업 시간"
+    },
+    "weekdays": "평일: 오전 9시 - 오후 5시"
+  },
+  "contact": {
+    "title": "무료 상담",
+    "subtitle": "사건에 대해 알려주세요. 모든 정보는 기밀로 유지됩니다.",
+    "firstName": "이름",
+    "lastName": "성",
+    "email": "이메일",
+    "phone": "전화번호",
+    "inquiryType": "문의 유형",
+    "selectOne": "옵션을 선택하세요...",
+    "pi": "개인 상해",
+    "cd": "형사 방어",
+    "fl": "가정법",
+    "other": "기타",
+    "message": "사건을 알려주세요",
+    "messagePlaceholder": "상황을 간략하게 설명해 주세요...",
+    "submit": "문의 보내기"
+  },
+  "fab": {
+    "contactForms": "연락 양식",
+    "generalInquiry": "일반 문의",
+    "personalInjury": "개인 상해",
+    "criminalDefense": "형사 방어"
+  },
+  "modal": {
+    "close": "닫기"
+  },
+  "footer": {
+    "copyright": "&copy; 2024 JS LAW Group, LLC. All rights reserved.",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "copyrightOffice": "&copy; JS LAW Group, LLC. 2024 - 2025",
+    "faqs": "자주 묻는 질문",
+    "corporateInformation": "기업 정보",
+    "privacyNotice": "개인정보 고지",
+    "cookieNotice": "쿠키 고지",
+    "termsOfUse": "이용 약관",
+    "digitalId": "디지털 ID",
+    "whistleblowing": "내부 고발",
+    "importantNote": "<strong>중요 안내:</strong> 본 웹사이트는 개인 상해(PI)와 형사 방어(CD) 사건의 법률 대리를 원하는 고객을 위한 것입니다. 문의 양식을 통해 저희에게 연락할 수 있습니다. JS Law Group, LLC는 법률 서비스를 제공하기 전에 선불 비용을 청구하지 않으며, 상담이나 사건 검토 이전에 결제나 금융 정보를 요구하지 않습니다. 모든 초기 상담은 무료이며, 사건을 검토하고 대리를 수락한 후에만 비용을 논의합니다."
+  }
+}
