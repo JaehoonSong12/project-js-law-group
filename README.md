@@ -136,6 +136,7 @@ Before you begin, ensure you have the following installed:
 
 2. **Install Python dependencies**
    ```bash
+   ./on_venv.sh      # turn on, envrionment, just type in ./on_v then tap it.
    python --version  # Verify Python 3.7+ is installed
    pip install flask
    ```
