@@ -439,7 +439,7 @@ if defined APP_CMD (
 )
 
 @REM Check with winget if the app is installed.
-winget list --id "!APP_ID!" --exact >nul 2>&1
+call winget list --id "!APP_ID!" --exact >nul 2>&1
 if !ERRORLEVEL! EQU 0 (
   echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - winget check!RESET!.
   goto :end_install_app
