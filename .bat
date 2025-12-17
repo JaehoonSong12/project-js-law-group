@@ -103,6 +103,110 @@ goto :EOF
 
 
 
+
+
+@REM ---------------------------------------------------------------------------
+@REM Function: Display-Virtualization-Info
+@REM Purpose:
+@REM   Checks and displays the status of virtualization features required for WSL.
+@REM ---------------------------------------------------------------------------
+:Display-Virtualization-Info
+echo.%CYAN%=========================================================%RESET%
+echo.Checking %YELLOW%Virtualization - "W"indows"S"ubsystemfor"L"inux (WSL) Status%RESET%...
+echo.
+echo.  --- WSL Status Output ---
+echo.
+@REM Check Legacy Hyper-V (Microsoft-Hyper-V)
+echo. Legacy:
+powershell -NoProfile -ExecutionPolicy Bypass -Command "if ((Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).State -eq 'Enabled') { exit 0 } else { exit 1 }" >nul 2>&1
+if %ERRORLEVEL% EQU 0 (
+    echo.  Hyper-V:                  %GREEN%Enabled%RESET%
+) else (
+    echo.  Hyper-V:                  %RED%Disabled%RESET%
+)
+@REM Check Virtual Machine Platform
+echo. New:
+powershell -NoProfile -ExecutionPolicy Bypass -Command "if ((Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform).State -eq 'Enabled') { exit 0 } else { exit 1 }" >nul 2>&1
+if %ERRORLEVEL% EQU 0 (
+    echo.  Virtual Machine Platform: %GREEN%Enabled%RESET%
+) else (
+    echo.  Virtual Machine Platform: %RED%Disabled%RESET%
+)
+@REM Check Windows Subsystem for Linux (Feature)
+powershell -NoProfile -ExecutionPolicy Bypass -Command "if ((Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq 'Enabled') { exit 0 } else { exit 1 }" >nul 2>&1
+if %ERRORLEVEL% EQU 0 (
+    echo.  WSL:                      %GREEN%Enabled%RESET%
+) else (
+    echo.  WSL:                      %RED%Disabled%RESET%
+)
+echo.
+echo.
+@REM Check WSL Status details
+wsl --status 2>nul
+if %ERRORLEVEL% NEQ 0 (
+    echo.%YELLOW%WSL is not installed or not running.%RESET%
+)
+@REM Check WSL Version
+wsl --list --online >nul 2>&1
+if %ERRORLEVEL% NEQ 0 (
+  echo.%YELLOW%No online distros found.%RESET%
+) else (
+  echo.%GREEN%Online distros found.%RESET%
+  echo.
+  echo.  --- Online distros ---
+  echo.
+  wsl --list --online
+)
+@REM Check Installed Distros
+echo.  --- Installed distros ---
+echo.
+wsl --list --verbose >nul 2>&1
+if %ERRORLEVEL% NEQ 0 (
+  echo.%YELLOW%No installed distros found.%RESET%
+) else (
+  echo.%GREEN%Installed distros found.%RESET%
+  echo.
+  wsl --list --verbose
+)
+
+
+@REM instructions for the user to install the online distros
+echo.
+echo.
+echo.%YELLOW%Instructions for the user to install the online distros:%RESET%
+echo.
+echo.%YELLOW%To install the online distros, please run the following command:%RESET%
+echo."wsl --install -d ^<distro-name^>"
+echo.%YELLOW%To start the VM on WSL, please run the following command:%RESET%
+echo."wsl -d ^<distro-name^>"
+echo.%YELLOW%To verify the WSL kernel in the VM, please run the following command:%RESET%
+echo."uname -r"
+echo.%YELLOW%To delete an installed distro, please run the following command:%RESET%
+echo."wsl --unregister ^<distro-name^>"
+@REM wsl --unregister Ubuntu
+
+
+echo.  %YELLOW%For example, to install Ubuntu, run the following command:%RESET%
+echo.  "wsl --install -d Ubuntu"
+echo.  %YELLOW%To install Debian, run the following command:%RESET%
+echo.  "wsl --install -d Debian"
+echo.  %YELLOW%To install Kali Linux, run the following command:%RESET%
+echo.  "wsl --install -d Kali-Linux"
+
+
+
+goto :EOF
+
+
+
+
+
+
+
+
+
+
+
 @REM ---------------------------------------------------------------------------
 @REM Function: Check-Admin
 @REM Purpose:
@@ -138,6 +242,7 @@ set "BASHRC_PATH=%USERPROFILE%\.bashrc"
 if exist "%BASHRC_PATH%" (
   echo.%GREEN%.bashrc exists%RESET%.
   echo.Found at: "%BASHRC_PATH%"
+  echo.
 ) else (
   echo.%YELLOW%.bashrc not found. Creating a new one...%RESET%
   echo.# ~/.bashrc > "%BASHRC_PATH%"
@@ -160,6 +265,7 @@ set "README_PATH=%~dp0README.md"
 if exist "%README_PATH%" (
   echo.%GREEN%README.md exists%RESET%.
   echo.Found at: "%README_PATH%"
+  echo.
 ) else (
   echo.%YELLOW%README.md not found. Creating a new one...%RESET%
   (
@@ -202,21 +308,25 @@ if defined PROGRAM_FOLDER (
   if exist "!ProgramFiles!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files check!RESET!.
     echo.Found at: "!ProgramFiles!\!PROGRAM_FOLDER!"
+    echo.
     goto :vscode_found
   )
   if exist "!ProgramFiles(x86)!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files x86 check!RESET!.
     echo.Found at: "!ProgramFiles(x86)!\!PROGRAM_FOLDER!"
+    echo.
     goto :vscode_found
   )
   if exist "!HOMEDRIVE!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - HOMEDRIVE check!RESET!.
     echo.Found at: "!HOMEDRIVE!\!PROGRAM_FOLDER!"
+    echo.
     goto :vscode_found
   )
   if exist "!USERPROGRAMS!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - USERPROGRAMS check!RESET!.
     echo.Found at: "!USERPROGRAMS!\!PROGRAM_FOLDER!"
+    echo.
     goto :vscode_found
   )
 )
@@ -245,6 +355,23 @@ start "" code %~dp0
 :end_check_vscode
 endlocal
 goto :EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @REM ---------------------------------------------------------------------------
@@ -278,22 +405,26 @@ echo.Checking for !YELLOW!!APP_NAME!!RESET!...
 if defined PROGRAM_FOLDER (
   if exist "!ProgramFiles!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files check!RESET!.
-    echo.Found at: "!ProgramFiles!\!PROGRAM_FOLDER!"
+    echo.!YELLOW!Found at%RESET%: "!ProgramFiles!\!PROGRAM_FOLDER!"
+    echo.
     goto :end_install_app
   )
   if exist "!ProgramFiles(x86)!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files x86 check!RESET!.
-    echo.Found at: "!ProgramFiles(x86)!\!PROGRAM_FOLDER!"
+    echo.!YELLOW!Found at%RESET%: "!ProgramFiles(x86)!\!PROGRAM_FOLDER!"
+    echo.
     goto :end_install_app
   )
   if exist "!HOMEDRIVE!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - HOMEDRIVE check!RESET!.
-    echo.Found at: "!HOMEDRIVE!\!PROGRAM_FOLDER!"
+    echo.!YELLOW!Found at%RESET%: "!HOMEDRIVE!\!PROGRAM_FOLDER!"
+    echo.
     goto :end_install_app
   )
   if exist "!USERPROGRAMS!\!PROGRAM_FOLDER!" (
     echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - USERPROGRAMS check!RESET!.
-    echo.Found at: "!USERPROGRAMS!\!PROGRAM_FOLDER!"
+    echo.!YELLOW!Found at%RESET%: "!USERPROGRAMS!\!PROGRAM_FOLDER!"
+    echo.
     goto :end_install_app
   )
 )
@@ -358,6 +489,28 @@ goto :EOF
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @REM ---------------------------------------------------------------------------
 @REM Function: Duplicate-Make
 @REM Usage: 
@@ -408,6 +561,46 @@ goto :EOF
 
 
 
+@REM ---------------------------------------------------------------------------
+@REM Function: Authenticate-gh
+@REM Purpose:
+@REM   Checks GitHub CLI authentication status and handles login/reset flow.
+@REM   Prompts user to reset authentication if already initialized, otherwise
+@REM   initiates login process.
+@REM ---------------------------------------------------------------------------
+:Authenticate-gh
+setlocal EnableDelayedExpansion
+
+call gh auth status --hostname github.com >NUL 2>&1
+if !ERRORLEVEL! NEQ 0 (
+  @REM Auth is NOT initialized...
+  set "confirm=n"
+) else (
+  @REM Auth is initialized...
+  set /p "confirm=Reset gh auth config? (y/n): "
+)
+if /I "!confirm!"=="y" (
+    echo Resetting configuration...
+    call gh auth logout --hostname github.com
+)
+pause
+call gh auth status --hostname github.com >NUL 2>&1
+if !ERRORLEVEL! NEQ 0 (
+  echo Auth is !RED!NOT initialized!RESET!...
+  echo Starting login...
+  call gh auth login
+) else (
+  echo Auth is !GREEN!initialized!RESET!...
+  echo Skipping login.
+)
+pause
+
+endlocal
+goto :EOF
+
+
+
+
 
 
 
@@ -424,21 +617,17 @@ call :Check-Admin
 
 
 if "%IS_ADMIN%"=="0" (
-  echo.%YELLOW%Running in non-administrator mode...%RESET%
-  echo.%CYAN%=========================================================%RESET%
-  echo.Performing non-admin tasks...
   echo.
-  
-  @REM Check and create .bashrc file
+  echo.
+  echo.
+  echo.
+  echo.%CYAN%=========================================================%RESET%
+  echo.%CYAN%The script is running with %RED%normal user, non-administrator%RESET% privileges.%RESET%
+  echo.%CYAN%=========================================================%RESET%
+  echo.
   call :Check-Bashrc
-  
-  @REM Check and create README.md file
   call :Check-Readme
-  
-  @REM Check for VS Code and handle accordingly
   call :Check-VSCode
-  
-
 
   @REM Open the .bashrc config file asynchronously
   timeout /t 2 /nobreak >nul
@@ -451,93 +640,88 @@ if "%IS_ADMIN%"=="0" (
   echo.%GREEN%Non-admin tasks completed.%RESET%
   pause
   exit /b 0
-)
-
-
-
-
-@REM start "" perl "install-tl"
-
-@REM :: Open the repository based on README.md location asynchronously
-@REM start /B "" code "%~dp0"
-@REM :: Define the location of the .bashrc file
-@REM set BASHRC_PATH=%USERPROFILE%\.bashrc
-@REM set README_PATH=%~dp0\README.md
-@REM start "" "%BASHRC_PATH%"
-@REM start "" "%README_PATH%"
-
-net session >nul 2>&1
-if !ERRORLEVEL! EQU 0 (
-  @REM admin mode, it succeeds. (code: 0)
-  echo The script is running with administrator privileges.
 ) else (
-  @REM normal mode, fails with an "Access is denied" error (error code: 5)
-  echo The script is running with normal user privileges.
+  echo.
+  echo.
+  echo.
+  echo.
+  echo.%CYAN%=========================================================%RESET%
+  echo.%CYAN%The script is running with %GREEN%administrator%RESET% privileges.%RESET%
+  echo.%CYAN%=========================================================%RESET%
+  echo.
+  @REM call :Display-Virtualization-Info
 )
 
-
-
-
-
-@REM install Git (winget ID: Git.Git, command check: git, program folder: Git)
-call :Install-App "Git.Git" "Git" "git" "Git"
-@REM Check for .bashrc file
-call :Check-Bashrc
-
-@REM install Firefox (winget ID: Mozilla.Firefox, command check: firefox, program folder: Mozilla Firefox)
+echo.%CYAN%========================================================= Utilities, Install...%RESET%
+pause
+@REM ---------------------------------------------------------------------------
+@REM Platform Dependents - Web Browsers & IDEs
+@REM ---------------------------------------------------------------------------
 call :Install-App "Mozilla.Firefox" "Firefox" "firefox" "Mozilla Firefox"
-
-@REM install Google Chrome
 call :Install-App "Google.Chrome" "Google Chrome" "chrome" "Google"
-
-
-@REM install Visual Studio Code (winget ID: Microsoft.VisualStudioCode, command check: code, program folder: Microsoft VS Code)
 call :Install-App "Microsoft.VisualStudioCode" "Visual Studio Code" "code" "Microsoft VS Code"
-
-@REM install Adobe Acrobat Reader DC
 call :Install-App "Adobe.Acrobat.Reader.64-bit" "Adobe Acrobat Reader DC" "acrordc.exe" "Adobe"
 
-
-@REM Example: install GitHub CLI
+echo.%CYAN%========================================================= Shell/Container Natives, Install...%RESET%
+pause
+@REM ---------------------------------------------------------------------------
+@REM Platform Dependents - Lightweight POSIX "shell environment" for Windows, with Version Control Systems
+@REM  1. A bash-based shell on Windows
+@REM  2. None (No virtualized Linux environment)
+@REM ---------------------------------------------------------------------------
+call :Install-App "Git.Git" "Git" "git" "Git"
 call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
 
 
 
 
-@REM ---------------------------------------------------------------------------
-@REM Platform Dependents - C/C++ Development Tools with Perl
-@REM ---------------------------------------------------------------------------
-@REM install Strawberry Perl for Windows (including GCC, C/C++ compilers)
-call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Strawberry"
+call :Authenticate-gh
 
-@REM Example: install MinGW (GCC compiler and Make utility)
-@REM MinGW provides the GCC compiler (C/C++) and the 'make' utility.
+
+call :Install-App "GLab.GLab" "GitLab CLI" "glab" "glab"
+call :Check-Bashrc
+@REM @REM ---------------------------------------------------------------------------
+@REM @REM Platform Dependents - POSIX/Unix compatibility "layer (A full environment)" for Windows ("M"inimal "SYS"tem "2".)
+@REM @REM  1. A bash-based shell on Windows
+@REM @REM  2. A "Pacman" package manager (from Arch Linux)
+@REM @REM  3. GNU toolchains (GCC, make, autotools)
+@REM @REM  4. Build Windows-native on virtual Linux environment
+@REM @REM ---------------------------------------------------------------------------
+@REM call :Install-App "MSYS2.MSYS2" "MSYS2" "mintty" "msys64"
+@REM @REM ---------------------------------------------------------------------------
+@REM @REM Platform Independent - Container Platform (Docker Desktop)
+@REM @REM  1. Container runtime and orchestration
+@REM @REM  2. Docker Desktop includes Docker Engine, Docker CLI, Docker Compose
+@REM @REM  3. GUI for managing images and containers
+@REM @REM  4. Build Linux-native (WSL2 processor) on virtual Linux environment
+@REM @REM ---------------------------------------------------------------------------
+@REM call :Install-App "Microsoft.WSL" "Windows Subsystem for Linux" "wsl" "WSL"
+@REM call :Install-App "Docker.DockerDesktop" "Docker Desktop" "docker" "Docker"
+
+echo.%CYAN%========================================================= Windows Natives Dev, Install...%RESET%
+pause
+@REM ---------------------------------------------------------------------------
+@REM Platform Dependents - native C/C++ Development Tools with Perl
+@REM ---------------------------------------------------------------------------
+call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Strawberry"
 call :Install-App "MinGW.MinGW" "C compiler (MinGW)" "gcc" "MinGW"
 call :Install-App "MinGW.MinGW" "C++ compiler (MinGW)" "g++" "MinGW"
-
 call :Duplicate-Make
 call :Install-App "MinGW.MinGW" "Make (MinGW)" "make" "MinGW"
-
-@REM Example: install CMake
 call :Install-App "Kitware.CMake" "CMake" "cmake" "CMake"
-
-
-@REM Example: install NSIS (Nullsoft Scriptable Install System)
-@REM Switched from Nullsoft.NSIS to NSIS.NSIS for better repository reliability
 call :Install-App "NSIS.NSIS" "NSIS (Installer Creator)" "makensis" "NSIS"
-
-
-@REM ---------------------------------------------------------------------------
-@REM Platform Dependents - LaTeX Distribution
-@REM ---------------------------------------------------------------------------
-
-@REM MiKTeX (short for Micro-Kid TeXLive) is well known for its 
-@REM `on-the-fly` package installation, where 
-@REM missing packages are automatically detected and installed the first time they are used. 
-@REM It also offers strong Windows support.
 call :Install-App "MiKTeX.MiKTeX" "MiKTeX" "pdflatex" "MiKTeX"
 
 echo.
 echo.%GREEN%All specified applications have been processed.%RESET%
+
+@REM @REM recommend to reboot the system
+@REM echo.%YELLOW%It is recommended to %RED%reboot%RESET% the system to apply the changes.%RESET%
+@REM echo.%YELLOW%Do you want to %RED%reboot%RESET% the system now? (y/n)%RESET%
+@REM set /p REBOOT=
+@REM if "%REBOOT%"=="y" (
+@REM   shutdown /r /t 0
+@REM )
+
 pause
 exit /b 0
