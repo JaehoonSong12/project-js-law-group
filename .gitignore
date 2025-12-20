@@ -1,6 +1,11 @@
 references/
 
 
+tmp*/
+remote*/
+VSLive*/
+vscode*/
+
 ################# System related
 ext/
 *.zip
