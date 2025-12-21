@@ -51,12 +51,19 @@ JS Law Group Website is a professional, responsive web application built for a l
 
 
 
+## About Copywriter
+
+
+
+
+
 
 
 ## Table of Contents
 
 - [JS Law Group Website](#js-law-group-website)
   - [Key Features](#key-features)
+  - [About Copywriter](#about-copywriter)
   - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
