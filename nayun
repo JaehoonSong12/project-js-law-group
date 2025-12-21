@@ -11,3 +11,14 @@ Google Doc (Shared)
 
 Pull Requests (by Nayun)
 1. https://github.com/JaehoonSong12/project-js-law-group/pull/1
+
+
+
+
+
+
+To run web server easy:
+$ ./on_server.sh
+
+To git easy:
+$ ../vcs-gh-nayun.exe
