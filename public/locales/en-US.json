@@ -25,26 +25,26 @@
       }
    },
    "partners" : {
-      "testimonial1" : {
-         "title" : "COO, HORIZON",
-         "name" : "Eric Park",
-         "quote" : "\"Exceptional legal support at this firm. Their expertise and dedication make navigating complex matters smooth.\""
-      },
+      "title" : "Our Partners",
       "subtitle" : "We are proud to work with and be trusted by industry leaders.",
-      "carousel" : {
-         "next" : "Next",
-         "prev" : "Previous"
+      "testimonial1" : {
+         "quote" : "\"Exceptional legal support at this firm. Their expertise and dedication make navigating complex matters smooth.\"",
+         "name" : "Eric Park",
+         "title" : "COO, HORIZON"
       },
       "testimonial2" : {
-         "name" : "Amanda Cuccia",
          "quote" : "\"Impressed by the professionalism and efficiency. A team that truly cares about client success. Highly recommend.\"",
+         "name" : "Amanda Cuccia",
          "title" : "Founder, PJK"
       },
-      "title" : "Our Partners",
       "testimonial3" : {
-         "title" : "CEO, Latch",
+         "quote" : "\"Outstanding service! The team's commitment to excellence is evident in every interaction. Trustworthy and reliable.\"",
          "name" : "Sunny Parda",
-         "quote" : "\"Outstanding service! The team's commitment to excellence is evident in every interaction. Trustworthy and reliable.\""
+         "title" : "CEO, Latch"
+      },
+      "carousel" : {
+         "prev" : "Previous",
+         "next" : "Next"
       }
    },
    "services" : {
@@ -70,39 +70,23 @@
    },
    "currencyExample" : "Total price",
    "pi" : {
-      "feature3" : "Wrongful Death",
-      "feature4" : "Defective Products",
-      "article" : {
-         "lead" : "When you are injured due to someone else's negligence, the legal and financial aftermath can be just as painful as the injury itself. Understanding your rights and getting legal help is the first step toward recovery.",
-         "title" : "Understanding Personal Injury Claim",
-         "body" : "<p>Personal injury can be a devastating experience. It's never an expected event, and we're here to help you through this tough time. If you are facing personal injury, damages, or wrongful death from the negligence of others, our team of experienced lawyers is here to protect your rights and get you the compensation you deserve. Our team truly understands the pain that you're going through, and we want to get you what you need to start recovering.</p>\r\n<p>As attorneys that focus on a client-centered experience, we only want the best outcome. Through legal expertise, transparent communication, and effective solutions, we will secure your rights and the recompense that you're looking for.</p>\r\n<h3>What Constitutes a Claim?</h3>\r\n<p>If you need to seek compensation for emotional, physical, or psychological harm done by another party, then our team of attorneys is here for you. If the other party committed harm due to negligence, recklessness, or intentional acts, then you might have a claim. When it was their actions - or their lack of actions - that was the direct cause of your pain, then they are potentially liable for the damage that you took. If your situation fits these criteria, then schedule a free consultation with us now to see what we can do for you.</p>\r\n<h3>Our Process: Investigation to Resolution</h3>\r\n<p>Though every case is personal and different, you can have broad expectations of various consultations, followed by dedicated investigation and collection of evidence. Once all records are obtained, then our attorneys will likely move to filing a claim and demand for compensation. If a settlement isn't reached by this point, then we may move to trial, where we will fight fiercely for your rights and the compensation you deserve.</p>"
-      },
-      "title" : "Personal Injury",
-      "feature1" : "Motor Vehicle Accidents",
-      "desc" : "Navigating the aftermath of an injury is overwhelming, but you are not alone. We are dedicated to fighting for your rights and securing the compensation you deserve so you can focus on healing and rebuilding your life.",
-      "feature2" : "Slip & Fall"
+      "content" : "<h2>Personal Injury</h2><p>Navigating the aftermath of an injury is overwhelming, but you are not alone. We are dedicated to fighting for your rights and securing the compensation you deserve so you can focus on healing and rebuilding your life.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>Motor Vehicle Accidents</li><li><i class=\"fa-solid fa-check-circle\"></i>Slip & Fall</li><li><i class=\"fa-solid fa-check-circle\"></i>Wrongful Death</li><li><i class=\"fa-solid fa-check-circle\"></i>Defective Products</li></ul>",
+      "article" : "<h2>Understanding Personal Injury Claim</h2><p>When you are injured due to someone else's negligence, the legal and financial aftermath can be just as painful as the injury itself. Understanding your rights and getting legal help is the first step toward recovery.</p><hr><p>Personal injury can be a devastating experience. It's never an expected event, and we're here to help you through this tough time. If you are facing personal injury, damages, or wrongful death from the negligence of others, our team of experienced lawyers is here to protect your rights and get you the compensation you deserve. Our team truly understands the pain that you're going through, and we want to get you what you need to start recovering.</p><p>As attorneys that focus on a client-centered experience, we only want the best outcome. Through legal expertise, transparent communication, and effective solutions, we will secure your rights and the recompense that you're looking for.</p><h3>What Constitutes a Claim?</h3><p>If you need to seek compensation for emotional, physical, or psychological harm done by another party, then our team of attorneys is here for you. If the other party committed harm due to negligence, recklessness, or intentional acts, then you might have a claim. When it was their actions - or their lack of actions - that was the direct cause of your pain, then they are potentially liable for the damage that you took. If your situation fits these criteria, then schedule a free consultation with us now to see what we can do for you.</p><h3>Our Process: Investigation to Resolution</h3><p>Though every case is personal and different, you can have broad expectations of various consultations, followed by dedicated investigation and collection of evidence. Once all records are obtained, then our attorneys will likely move to filing a claim and demand for compensation. If a settlement isn't reached by this point, then we may move to trial, where we will fight fiercely for your rights and the compensation you deserve.</p>"
    },
    "team" : {
+      "header" : "<h2>Our Team</h2><p>\"At our firm, we stand by our clients at every step of the legal process. Your challenges are ours to tackle together. We're with you, every step of the way.\"</p>",
       "member1" : {
+         "name" : "Joan Suh",
          "email" : "jsuh@jslawgroup.net",
-         "title" : "Managing Attorney",
-         "name" : "Joan Suh"
+         "title" : "Managing Attorney"
       },
-      "title" : "Our Team",
-      "subtitle" : "\"At our firm, we stand by our clients at every step of the legal process. Your challenges are ours to tackle together. We're with you, every step of the way.\"",
       "member2" : {
-         "title" : "Of Counsel",
+         "name" : "Laura Mayfield",
          "phone" : "(770) 910-4545",
-         "name" : "Laura Mayfield"
+         "title" : "Of Counsel"
       }
    },
-   "about" : {
-      "feature2" : "Passionate, Professional Representation",
-      "title" : "About JS Law Group",
-      "feature1" : "Client-Centric Approach",
-      "feature3" : "Proven Track Record",
-      "desc" : "We are a passionate team of legal professionals dedicated to providing top-tier representation. Our focus is on achieving the best possible outcome for every client through tireless advocacy, transparent communication, and personalized attention to every case - including yours."
-   },
+   "about" : "<h2>About JS Law Group</h2><p>We are a passionate team of legal professionals dedicated to providing top-tier representation. Our focus is on achieving the best possible outcome for every client through tireless advocacy, transparent communication, and personalized attention to every case - including yours.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>Client-Centric Approach</li><li><i class=\"fa-solid fa-check-circle\"></i>Passionate, Professional Representation</li><li><i class=\"fa-solid fa-check-circle\"></i>Proven Track Record</li></ul>",
    "fab" : {
       "personalInjury" : "Personal Injury",
       "criminalDefense" : "Criminal Defense",
@@ -110,17 +94,9 @@
       "generalInquiry" : "General Inquiry"
    },
    "contactinfo" : {
-      "address" : {
-         "title" : "Address",
-         "details" : "<p class=\"mb-0\">3296 Summit Ridge Pkwy</p><p class=\"mb-0\">Suite 1010</p><p class=\"mb-0\">Duluth, Georgia 30096</p>"
-      },
-      "contact" : {
-         "title" : "Contact",
-         "details" : "<p class=\"mb-0\">Office: (770) 341-1234</p><p class=\"mb-0\">Facsimile: (770) 215-2823</p><p class=\"mb-0\">E-mail: <a href=\"mailto:jsuh@jslawgroup.net\">jsuh@jslawgroup.net</a></p>"
-      },
-      "hours" : {
-         "title" : "Opening Hours"
-      },
+      "address" : "<h5>Address</h5><p>3296 Summit Ridge Pkwy</p><p>Suite 1010</p><p>Duluth, Georgia 30096</p>",
+      "contact" : "<h5>Contact</h5><p>Office: (770) 341-1234</p><p>Facsimile: (770) 215-2823</p><p>E-mail: <a href=\"mailto:jsuh@jslawgroup.net\">jsuh@jslawgroup.net</a></p>",
+      "hours" : "<h5>Opening Hours</h5><p>Weekdays: 9:00 am - 5:00 pm</p>",
       "map" : {
          "title" : "Our location on Google Maps"
       },
@@ -130,24 +106,10 @@
       "email" : "E-mail",
       "weekdays" : "Weekdays: 9:00 am - 5:00 pm"
    },
-   "attorney" : {
-      "name" : "Joan Suh",
-      "alt" : "Joan Suh, 서조은 변호사",
-      "p3" : "Thank you.",
-      "p1" : "We specialize in client-centered legal services, providing expert advice and swift solutions across various legal fields. With a commitment to fairness and justice, our dedicated team prioritizes transparent communication to build trust and ensure effective resolution of legal challenges.",
-      "p2" : "Trust us to deliver secure and efficient solutions to your legal matters. Consult with us anytime, with a free consultation available to you now.",
-      "title" : "서조은 변호사"
-   },
+   "attorney" : "<h3>Joan Suh</h3><h5>서조은 변호사</h5><p>We specialize in client-centered legal services, providing expert advice and swift solutions across various legal fields. With a commitment to fairness and justice, our dedicated team prioritizes transparent communication to build trust and ensure effective resolution of legal challenges.</p><p>Trust us to deliver secure and efficient solutions to your legal matters. Consult with us anytime, with a free consultation available to you now.</p><p>Thank you.</p>",
    "htmlExample" : "Click <a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">here</a> to learn more.",
    "missingExample" : "Missing-key fallback demo",
-   "careers" : {
-      "p5" : "To apply, please submit your resume to <a href=\"mailto:info@jslawgroup.net\">info@jslawgroup.net</a> today.",
-      "p1" : "At JS Law Group, LLC, we believe that exceptional legal service begins with exceptional people.",
-      "p4" : "We provide comprehensive training, mentorship programs, and ongoing development opportunities to help you reach your full potential. When you're with us, your success is our success too.",
-      "title" : "Careers",
-      "p2" : "We are continuously seeking talented individuals who share our commitment to excellence and our passion for law.",
-      "p3" : "Whether you are an experienced team member, a recent law school graduate, or a seasoned professional in legal support services, JS Law Group, LLC can offer a dynamic and rewarding career path."
-   },
+   "careers" : "<h2>Careers</h2><p>At JS Law Group, LLC, we believe that exceptional legal service begins with exceptional people.</p><p>We are continuously seeking talented individuals who share our commitment to excellence and our passion for law.</p><p>Whether you are an experienced team member, a recent law school graduate, or a seasoned professional in legal support services, JS Law Group, LLC can offer a dynamic and rewarding career path.</p><p>We provide comprehensive training, mentorship programs, and ongoing development opportunities to help you reach your full potential. When you're with us, your success is our success too.</p><p>To apply, please submit your resume to <a href=\"mailto:info@jslawgroup.net\">info@jslawgroup.net</a> today.</p>",
    "app" : {
       "title" : "Sample i18n App (English)"
    },
@@ -158,17 +120,8 @@
       "button1" : "Our Practice Areas"
    },
    "cd" : {
-      "feature3" : "Violent Crimes",
-      "feature4" : "White Collar Crimes",
-      "article" : {
-         "body" : "<p>Being charged, regardless of if it is a felony charge or a misdemeanor, can be one of the most difficult times in your life. Our team understands this and is here to help. As experienced attorneys capable of navigating trial with legal expertise and skillful solutions, we will work with you to get you the best results possible. Defending not just your rights, but also your innocence is our greatest priority.</p>\r\n<h3>Your Rights Are Paramount</h3>\r\n<p>Your constitutional rights are always in effect, and this includes when you get arrested and are held for questioning. Understanding them is your first line of defense.</p>\r\n<ul>\r\n<li>Fourth Amendment Protection Against Unreasonable Searches and Seizures</li>\r\n<li>Fifth Amendment Right to Remain Silent</li>\r\n<li>Sixth Amendment Right to Legal Counsel and to Be Informed of the Charges</li>\r\n</ul>\r\n<h3>Common Defense Strategies</h3>\r\n<p>Every case is different, but our skilled attorneys are ready for anything. Even before the charges go to trial, we will be active and may try to challenge the evidence, negotiate a plea deal, or even attempt to dismiss the case. We will explore every avenue in order to protect your rights. Our team could argue your innocence, citing an alibi or a mistaken identity. We could note that your actions were committed under a legally excusable circumstance, like duress or self-defense. Our team could raise reasonable doubt against the prosecution's case, leading to a favorable outcome. Regardless of the specific method, know that our team is ready to assist and defend your case with legal expertise, effective solutions, and skillful trial maneuvering. Let us offer you a free consultation with us today.</p>",
-         "title" : "Navigating Your Criminal Defense",
-         "lead" : "A criminal charge can feel like the end of the world, but it doesn't have to define you or your future. A strategic, aggressive defense is critical during this time. Let us be the ones to help you."
-      },
-      "title" : "Criminal Defense",
-      "desc" : "Facing criminal charges can be one of the most stressful experiences of your life, but you don't have to face it alone. We provide a robust, strategic defense to protect your freedom, your rights, and your future.",
-      "feature1" : "DUI / DWI",
-      "feature2" : "Drug Offenses"
+      "content" : "<h2>Criminal Defense</h2><p>Facing criminal charges can be one of the most stressful experiences of your life, but you don't have to face it alone. We provide a robust, strategic defense to protect your freedom, your rights, and your future.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>DUI / DWI</li><li><i class=\"fa-solid fa-check-circle\"></i>Drug Offenses</li><li><i class=\"fa-solid fa-check-circle\"></i>Violent Crimes</li><li><i class=\"fa-solid fa-check-circle\"></i>White Collar Crimes</li></ul>",
+      "article" : "<h2>Navigating Your Criminal Defense</h2><p>A criminal charge can feel like the end of the world, but it doesn't have to define you or your future. A strategic, aggressive defense is critical during this time. Let us be the ones to help you.</p><hr><p>Being charged, regardless of if it is a felony charge or a misdemeanor, can be one of the most difficult times in your life. Our team understands this and is here to help. As experienced attorneys capable of navigating trial with legal expertise and skillful solutions, we will work with you to get you the best results possible. Defending not just your rights, but also your innocence is our greatest priority.</p><h3>Your Rights Are Paramount</h3><p>Your constitutional rights are always in effect, and this includes when you get arrested and are held for questioning. Understanding them is your first line of defense.</p><ul><li>Fourth Amendment Protection Against Unreasonable Searches and Seizures</li><li>Fifth Amendment Right to Remain Silent</li><li>Sixth Amendment Right to Legal Counsel and to Be Informed of the Charges</li></ul><h3>Common Defense Strategies</h3><p>Every case is different, but our skilled attorneys are ready for anything. Even before the charges go to trial, we will be active and may try to challenge the evidence, negotiate a plea deal, or even attempt to dismiss the case. We will explore every avenue in order to protect your rights. Our team could argue your innocence, citing an alibi or a mistaken identity. We could note that your actions were committed under a legally excusable circumstance, like duress or self-defense. Our team could raise reasonable doubt against the prosecution's case, leading to a favorable outcome. Regardless of the specific method, know that our team is ready to assist and defend your case with legal expertise, effective solutions, and skillful trial maneuvering. Let us offer you a free consultation with us today.</p>"
    },
    "contact" : {
       "fl" : "Family Law",
@@ -210,5 +163,97 @@
          "one" : "1 apple"
       }
    },
-   "directionExample" : "This text will auto-detect RTL/LTR and set direction if requested."
+   "directionExample" : "This text will auto-detect RTL/LTR and set direction if requested.",
+   "tfs" : {
+      "title" : "JS Law Group - 24/7 Emergency Legal Help (서조은 법률 그룹)",
+      "hero" : {
+         "title" : "24/7 Emergency Legal Rescue",
+         "subtitle" : "When you can't wait, we're here to fight. Available 24 hours a day, 7 days a week for your urgent legal needs.",
+         "koreanTitle" : "서고은 법률 그룹",
+         "button" : "Get Help Now (Main Site)",
+         "videoFallback" : "Your browser does not support the video tag."
+      },
+      "services" : {
+         "title" : "Our Practice Areas",
+         "subtitle" : "We provide 24/7 emergency response for these critical areas.",
+         "pi" : {
+            "title" : "Personal Injury",
+            "desc" : "Hurt in an accident? We fight to get you the maximum compensation you deserve. No fee unless we win."
+         },
+         "cd" : {
+            "title" : "Criminal Defense",
+            "desc" : "Facing charges? Your freedom is on the line. Our aggressive defense starts the moment you call."
+         },
+         "fl" : {
+            "title" : "Family Law",
+            "desc" : "Navigating sensitive family matters requires compassionate yet strong legal counsel. We're here for you."
+         }
+      },
+      "whatToDo" : {
+         "title" : "What To Do In An Emergency",
+         "subtitle" : "Your actions right after an incident are critical. Follow these steps.",
+         "step1" : {
+            "title" : "Stay Safe & Get Help",
+            "desc" : "Ensure you are safe. If you are injured, call 911 immediately. Your health is the first priority."
+         },
+         "step2" : {
+            "title" : "Document Everything",
+            "desc" : "Take photos of the scene, your injuries, and any documents. Get names and numbers of witnesses."
+         },
+         "step3" : {
+            "title" : "Call Us 24/7 (Do Not Talk)",
+            "desc" : "Do NOT give a statement to police or insurance. Call us immediately. We are available 24/7 to protect your rights."
+         }
+      },
+      "incidents" : {
+         "title" : "We Handle All Types of Incidents",
+         "subtitle" : "If you are facing any of these situations, call us 24/7.",
+         "pi" : {
+            "title" : "Personal Injury Incidents",
+            "desc" : "An injury can turn your life upside down. We handle all communication with insurance companies so you can focus on healing.",
+            "item1" : "Car Accidents",
+            "item2" : "Truck Accidents",
+            "item3" : "Motorcycle Accidents",
+            "item4" : "Slip & Fall",
+            "item5" : "Wrongful Death",
+            "item6" : "Premises Liability"
+         },
+         "cd" : {
+            "title" : "Criminal Defense Incidents",
+            "desc" : "An arrest is an emergency. Your first call should be to us, 24/7, to ensure your rights are protected from the very start.",
+            "item1" : "DUI / DWI",
+            "item2" : "Drug Offenses",
+            "item3" : "Theft",
+            "item4" : "Assault & Battery",
+            "item5" : "Warrants",
+            "item6" : "Property Crimes"
+         }
+      },
+      "contact" : {
+         "title" : "Contact Us Anytime, 24/7",
+         "subtitle" : "Your emergency is our priority. Call us for immediate assistance.",
+         "address" : {
+            "title" : "Our Office",
+            "content" : "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096"
+         },
+         "phone" : {
+            "title" : "Call Us 24/7",
+            "content" : "<strong>Emergency:</strong> (770) 910-4545<br><strong>Email:</strong> jsuh@jslawgroup.net"
+         },
+         "hours" : {
+            "title" : "Our Hours",
+            "content" : "<strong>24/7 Emergency Response</strong><br>Standard Office Hours:<br>Monday - Friday, 9:00 AM - 6:00 PM"
+         }
+      },
+      "nav" : {
+         "services" : "Practice Areas",
+         "whatToDo" : "What To Do",
+         "incidents" : "Incident Types",
+         "contact" : "Contact",
+         "emergency" : "24/7 EMERGENCY: (770) 910-4545"
+      },
+      "footer" : {
+         "disclaimer" : "Disclaimer"
+      }
+   }
 }

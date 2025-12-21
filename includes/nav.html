@@ -30,22 +30,27 @@
       <div class="d-none d-lg-flex flex-column w-100 ms-lg-3">
         <!-- Row 2.1: Title & Language -->
         <!-- Changed justify-content-between to justify-content-end -->
-        <div class="d-flex justify-content-end align-items-center pt-2 border-bottom w-100">
-          <h5 data-i18n="nav.title"
-              class="fw-bold mb-0 pb-2">
-            nav.title fallback
-          </h5>
-          <!-- Theme Toggle Icon -->
-          <button id="cthm001"
-                  type="button"
-                  class="btn btn-link nav-link ms-4 mb-0 pb-2"
-                  aria-label="Toggle theme">
-            <i class="fa-solid fa-sun theme-icon-light"></i>
-            <i class="fa-solid fa-moon theme-icon-dark"></i>
-          </button>
-          <!-- Language Selector Dropdown -->
-          <!-- Added ms-4 for spacing -->
-          <ul class="navbar-nav ms-4 mb-0 pb-2">
+        <div class="d-flex justify-content-between align-items-center pt-2 border-bottom w-100">
+          <!-- Simple redirect button (temporary) -->
+          <a class="btn btn-sm btn-outline-secondary btn-redirect" href="index247.html">
+            index247
+          </a>
+          <div class="d-flex align-items-center">
+            <h5 data-i18n="nav.title"
+                class="fw-bold mb-0 pb-2">
+              nav.title fallback
+            </h5>
+            <!-- Theme Toggle Icon -->
+            <button id="cthm001"
+                    type="button"
+                    class="btn btn-link nav-link ms-4 mb-0 pb-2"
+                    aria-label="Toggle theme">
+              <i class="fa-solid fa-sun theme-icon-light"></i>
+              <i class="fa-solid fa-moon theme-icon-dark"></i>
+            </button>
+            <!-- Language Selector Dropdown -->
+            <!-- Added ms-4 for spacing -->
+            <ul class="navbar-nav ms-4 mb-0 pb-2">
             <li class="nav-item dropdown">
               <a id="languageDropdown" 
                  href="#" 
@@ -84,6 +89,7 @@
               </ul>
             </li>
           </ul>
+          </div>
         </div>
 
         <!-- Row 2.2: Nav Items (Aligned Right) -->

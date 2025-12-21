@@ -17,8 +17,8 @@ export default async function main() {
     Util.setupWindowFocusRefresh();
     Util.enableButtonRedirect('btn-redirect');
 
-    Util.loadFragment('nav', 'nav-fixed-1col2row.html').then(() => {
-    Util.loadFragment('footer', 'footer-classic-office.html').then(async () => {
+    Util.loadFragment('nav', 'nav.html').then(() => {
+    Util.loadFragment('footer', 'footer.html').then(async () => {
         FontAwesome.initThemeIcons(['cthm001', 'cthm002']);
         document.addEventListener('click', (e) => {
             if (e.target.closest('#cthm001') || e.target.closest('#cthm002')) {
@@ -125,10 +125,40 @@ ${message}`;
         try {
             await multiLang.initI18n(multiLang.getBaseLocale());
             multiLang.applyTranslations("data-i18n", multiLang.getBaseLocale());
+            // Apply appropriate styles after translations
+            Bootstrap.setStyleCard('pi-content');
+            Bootstrap.setStyleArticle('pi-article-content');
+            Bootstrap.setStyleCard('cd-content');
+            Bootstrap.setStyleArticle('cd-article-content');
+            Bootstrap.setStyleCard('about-content');
+            // partners section uses individual data-i18n attributes, no container styling needed
+            Bootstrap.setStyleCentered('careers-content');
+            Bootstrap.setStyleHeader('team-header');
+            Bootstrap.setStyleProfile('attorney-content');
+            Bootstrap.setStyleContact('contactinfo-address');
+            Bootstrap.setStyleContact('contactinfo-contact');
+            Bootstrap.setStyleContact('contactinfo-hours');
         } catch (error) {
             console.error('[exi18n] Error: Failed to initialize i18n:', error);
             return;
         }
+
+        // Helper function to switch language and apply appropriate styles
+        const switchLanguageWithStyles = async (localeCode) => {
+            await multiLang.switchLanguage(localeCode);
+            Bootstrap.setStyleCard('pi-content');
+            Bootstrap.setStyleArticle('pi-article-content');
+            Bootstrap.setStyleCard('cd-content');
+            Bootstrap.setStyleArticle('cd-article-content');
+            Bootstrap.setStyleCard('about-content');
+            // partners-header is now individual h2/p elements, no container styling needed
+            Bootstrap.setStyleCentered('careers-content');
+            Bootstrap.setStyleHeader('team-header');
+            Bootstrap.setStyleProfile('attorney-content');
+            Bootstrap.setStyleContact('contactinfo-address');
+            Bootstrap.setStyleContact('contactinfo-contact');
+            Bootstrap.setStyleContact('contactinfo-hours');
+        };
 
         // Wire up desktop language dropdown - English
         const enDesktop = document.getElementById('i18n001');
@@ -136,7 +166,7 @@ ${message}`;
             enDesktop.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = enDesktop.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n001" not found.');
@@ -148,7 +178,7 @@ ${message}`;
             koDesktop.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = koDesktop.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n002" not found.');
@@ -160,7 +190,7 @@ ${message}`;
             enMobile.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = enMobile.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n003" not found.');
@@ -172,7 +202,7 @@ ${message}`;
             koMobile.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = koMobile.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n004" not found.');
@@ -184,7 +214,7 @@ ${message}`;
             jaDesktop.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = jaDesktop.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n005" not found.');
@@ -196,7 +226,7 @@ ${message}`;
             esDesktop.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = esDesktop.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n006" not found.');
@@ -208,7 +238,7 @@ ${message}`;
             jaMobile.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = jaMobile.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n007" not found.');
@@ -220,7 +250,7 @@ ${message}`;
             esMobile.addEventListener('click', (e) => {
                 e.preventDefault();
                 const localeCode = esMobile.getAttribute('value-i18n');
-                if (localeCode) multiLang.switchLanguage(localeCode);
+                if (localeCode) switchLanguageWithStyles(localeCode);
             });
         } else {
             console.warn('[exi18n] Warning: Element with ID "i18n008" not found.');

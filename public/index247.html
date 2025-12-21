@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS Law Group - 24/7 Emergency Legal Help (서조은 법률 그룹)</title>
+  <title data-i18n="tfs.title">JS Law Group - 24/7 Emergency Legal Help (서조은 법률 그룹)</title>
 
-  <!-- Bootstrap 5 CSS -->
+  <!-- Font Awesome 6 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap Core: custom.css link -->
+  <!-- <link href="css/custom.min.css" rel="stylesheet"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   
-  <!-- Font Awesome 6 CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,52 +85,38 @@
     }
   </style>
 </head>
-<body>
-
-  <!-- 1. Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" style="height: 80px;">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">
-        <h4 class="mb-0 text-uppercase fw-bold">JS LAW GROUP</h4>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#services">Practice Areas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#what-to-do">What To Do</a></li>
-          <li class="nav-item"><a class="nav-link" href="#incident-types">Incident Types</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-        <a href="tel:7709104545" class="btn btn-danger btn-lg rounded-pill px-4 d-none d-lg-block">
-          <i class="fa-solid fa-phone me-2"></i>
-          24/7 EMERGENCY: (770) 910-4545
-        </a>
-      </div>
-    </div>
-  </nav>
+<body debug-i18n="true">
+  <div id="nav"></div>
 
   <!-- 2. Hero Section -->
   <header class="hero-section">
     <!-- Placeholder video. Replace src with your .mp4 file -->
     <video autoplay muted loop class="hero-video-background">
       <source src="https://placehold.co/v/1920x1080/333333/333333.mp4?text=Background+Video" type="video/mp4">
-      Your browser does not support the video tag.
+      <span data-i18n="tfs.hero.videoFallback">Your browser does not support the video tag.</span>
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content text-white">
       <!-- Placeholder logo. Replace src with your logo -->
       <img src="https://placehold.co/150x150/ffffff/ffffff?text=LOGO" alt="JS Law Group Logo" class="hero-logo img-fluid mb-4">
-      <h1 class="display-3 fw-bold mb-3">24/7 Emergency Legal Rescue</h1>
-      <p class="lead mb-4 col-lg-8 mx-auto">When you can't wait, we're here to fight. Available 24 hours a day, 7 days a week for your urgent legal needs.</p>
-      <p class="h4 mb-5">서고은 법률 그룹</p>
-      <!-- UPDATED BUTTON: Links to main website -->
+      <h1 data-i18n="tfs.hero.title"
+          class="display-3 fw-bold mb-3">
+        tfs.hero.title fallback
+      </h1>
+      <p data-i18n="tfs.hero.subtitle"
+         class="lead mb-4 col-lg-8 mx-auto">
+        tfs.hero.subtitle fallback
+      </p>
+      <p data-i18n="tfs.hero.koreanTitle"
+         class="h4 mb-5">
+        tfs.hero.koreanTitle fallback
+      </p>
       <a class="btn btn-primary btn-lg rounded-pill px-5 py-3" 
          href="https://www.jslawgroup.net"
          target="_blank" 
-         rel="noopener noreferrer">
-         Get Help Now (Main Site)
+         rel="noopener noreferrer"
+         data-i18n="tfs.hero.button">
+        tfs.hero.button fallback
       </a>
     </div>
   </header>
@@ -138,8 +125,14 @@
   <section id="services" class="py-5">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="fw-bold">Our Practice Areas</h2>
-        <p class="lead text-muted">We provide 24/7 emergency response for these critical areas.</p>
+        <h2 data-i18n="tfs.services.title"
+            class="fw-bold">
+          tfs.services.title fallback
+        </h2>
+        <p data-i18n="tfs.services.subtitle"
+           class="lead text-muted">
+          tfs.services.subtitle fallback
+        </p>
       </div>
       <div class="row g-4">
         <!-- Service 1: Personal Injury -->
@@ -147,8 +140,14 @@
           <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
             <div class="card-body">
               <i class="fa-solid fa-car-burst feature-icon mb-3"></i>
-              <h5 class="card-title fw-bold">Personal Injury</h5>
-              <p class="card-text text-muted">Hurt in an accident? We fight to get you the maximum compensation you deserve. No fee unless we win.</p>
+              <h5 data-i18n="tfs.services.pi.title"
+                  class="card-title fw-bold">
+                tfs.services.pi.title fallback
+              </h5>
+              <p data-i18n="tfs.services.pi.desc"
+                 class="card-text text-muted">
+                tfs.services.pi.desc fallback
+              </p>
             </div>
           </div>
         </div>
@@ -157,8 +156,14 @@
           <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
             <div class="card-body">
               <i class="fa-solid fa-gavel feature-icon mb-3"></i>
-              <h5 class="card-title fw-bold">Criminal Defense</h5>
-              <p class="card-text text-muted">Facing charges? Your freedom is on the line. Our aggressive defense starts the moment you call.</p>
+              <h5 data-i18n="tfs.services.cd.title"
+                  class="card-title fw-bold">
+                tfs.services.cd.title fallback
+              </h5>
+              <p data-i18n="tfs.services.cd.desc"
+                 class="card-text text-muted">
+                tfs.services.cd.desc fallback
+              </p>
             </div>
           </div>
         </div>
@@ -167,8 +172,14 @@
           <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
             <div class="card-body">
               <i class="fa-solid fa-users feature-icon mb-3"></i>
-              <h5 class="card-title fw-bold">Family Law</h5>
-              <p class="card-text text-muted">Navigating sensitive family matters requires compassionate yet strong legal counsel. We're here for you.</p>
+              <h5 data-i18n="tfs.services.fl.title"
+                  class="card-title fw-bold">
+                tfs.services.fl.title fallback
+              </h5>
+              <p data-i18n="tfs.services.fl.desc"
+                 class="card-text text-muted">
+                tfs.services.fl.desc fallback
+              </p>
             </div>
           </div>
         </div>
@@ -180,8 +191,14 @@
   <section id="what-to-do" class="py-5 bg-light">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="fw-bold">What To Do In An Emergency</h2>
-        <p class="lead text-muted">Your actions right after an incident are critical. Follow these steps.</p>
+        <h2 data-i18n="tfs.whatToDo.title"
+            class="fw-bold">
+          tfs.whatToDo.title fallback
+        </h2>
+        <p data-i18n="tfs.whatToDo.subtitle"
+           class="lead text-muted">
+          tfs.whatToDo.subtitle fallback
+        </p>
       </div>
       <div class="row g-4">
         <!-- Step 1: Safety -->
@@ -190,8 +207,14 @@
             <div class="card-body d-flex">
               <div class="display-4 fw-bold text-primary me-4">1</div>
               <div>
-                <h5 class="fw-bold">Stay Safe & Get Help</h5>
-                <p class="text-muted">Ensure you are safe. If you are injured, call 911 immediately. Your health is the first priority.</p>
+                <h5 data-i18n="tfs.whatToDo.step1.title"
+                    class="fw-bold">
+                  tfs.whatToDo.step1.title fallback
+                </h5>
+                <p data-i18n="tfs.whatToDo.step1.desc"
+                   class="text-muted">
+                  tfs.whatToDo.step1.desc fallback
+                </p>
               </div>
             </div>
           </div>
@@ -202,8 +225,14 @@
             <div class="card-body d-flex">
               <div class="display-4 fw-bold text-primary me-4">2</div>
               <div>
-                <h5 class="fw-bold">Document Everything</h5>
-                <p class="text-muted">Take photos of the scene, your injuries, and any documents. Get names and numbers of witnesses.</p>
+                <h5 data-i18n="tfs.whatToDo.step2.title"
+                    class="fw-bold">
+                  tfs.whatToDo.step2.title fallback
+                </h5>
+                <p data-i18n="tfs.whatToDo.step2.desc"
+                   class="text-muted">
+                  tfs.whatToDo.step2.desc fallback
+                </p>
               </div>
             </div>
           </div>
@@ -214,8 +243,14 @@
             <div class="card-body d-flex">
               <div class="display-4 fw-bold text-danger me-4">3</div>
               <div>
-                <h5 class="fw-bold">Call Us 24/7 (Do Not Talk)</h5>
-                <p class="text-muted">Do NOT give a statement to police or insurance. Call us immediately. We are available 24/7 to protect your rights.</p>
+                <h5 data-i18n="tfs.whatToDo.step3.title"
+                    class="fw-bold">
+                  tfs.whatToDo.step3.title fallback
+                </h5>
+                <p data-i18n="tfs.whatToDo.step3.desc"
+                   class="text-muted">
+                  tfs.whatToDo.step3.desc fallback
+                </p>
               </div>
             </div>
           </div>
@@ -228,8 +263,14 @@
   <section id="incident-types" class="py-5">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="fw-bold">We Handle All Types of Incidents</h2>
-        <p class="lead text-muted">If you are facing any of these situations, call us 24/7.</p>
+        <h2 data-i18n="tfs.incidents.title"
+            class="fw-bold">
+          tfs.incidents.title fallback
+        </h2>
+        <p data-i18n="tfs.incidents.subtitle"
+           class="lead text-muted">
+          tfs.incidents.subtitle fallback
+        </p>
       </div>
       
       <!-- Incident Row 1: Personal Injury -->
@@ -240,23 +281,27 @@
                alt="Personal Injury cases">
         </div>
         <div class="col-lg-6">
-          <h3 class="fw-bold mb-3">Personal Injury Incidents</h3>
-          <p class="text-muted mb-4">
-            An injury can turn your life upside down. We handle all communication with insurance companies so you can focus on healing.
+          <h3 data-i18n="tfs.incidents.pi.title"
+              class="fw-bold mb-3">
+            tfs.incidents.pi.title fallback
+          </h3>
+          <p data-i18n="tfs.incidents.pi.desc"
+             class="text-muted mb-4">
+            tfs.incidents.pi.desc fallback
           </p>
           <div class="row">
             <div class="col-md-6">
               <ul class="list-unstyled text-muted fs-5">
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Car Accidents</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Truck Accidents</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Motorcycle Accidents</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item1">tfs.incidents.pi.item1 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item2">tfs.incidents.pi.item2 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item3">tfs.incidents.pi.item3 fallback</span></li>
               </ul>
             </div>
             <div class="col-md-6">
               <ul class="list-unstyled text-muted fs-5">
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Slip & Fall</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Wrongful Death</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Premises Liability</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item4">tfs.incidents.pi.item4 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item5">tfs.incidents.pi.item5 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item6">tfs.incidents.pi.item6 fallback</span></li>
               </ul>
             </div>
           </div>
@@ -271,23 +316,27 @@
                alt="Criminal Defense cases">
         </div>
         <div class="col-lg-6 order-lg-1">
-          <h3 class="fw-bold mb-3">Criminal Defense Incidents</h3>
-          <p class="text-muted mb-4">
-            An arrest is an emergency. Your first call should be to us, 24/7, to ensure your rights are protected from the very start.
+          <h3 data-i18n="tfs.incidents.cd.title"
+              class="fw-bold mb-3">
+            tfs.incidents.cd.title fallback
+          </h3>
+          <p data-i18n="tfs.incidents.cd.desc"
+             class="text-muted mb-4">
+            tfs.incidents.cd.desc fallback
           </p>
           <div class="row">
             <div class="col-md-6">
               <ul class="list-unstyled text-muted fs-5">
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>DUI / DWI</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Drug Offenses</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Theft</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item1">tfs.incidents.cd.item1 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item2">tfs.incidents.cd.item2 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item3">tfs.incidents.cd.item3 fallback</span></li>
               </ul>
             </div>
             <div class="col-md-6">
               <ul class="list-unstyled text-muted fs-5">
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Assault & Battery</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Warrants</li>
-                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Property Crimes</li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item4">tfs.incidents.cd.item4 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item5">tfs.incidents.cd.item5 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item6">tfs.incidents.cd.item6 fallback</span></li>
               </ul>
             </div>
           </div>
@@ -302,8 +351,14 @@
   <section id="contact" class="py-5 bg-light">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="fw-bold">Contact Us Anytime, 24/7</h2>
-        <p class="lead text-muted">Your emergency is our priority. Call us for immediate assistance.</p>
+        <h2 data-i18n="tfs.contact.title"
+            class="fw-bold">
+          tfs.contact.title fallback
+        </h2>
+        <p data-i18n="tfs.contact.subtitle"
+           class="lead text-muted">
+          tfs.contact.subtitle fallback
+        </p>
       </div>
       <div class="row g-4 align-items-start">
         <!-- Left Column: Google Maps -->
@@ -325,36 +380,40 @@
             <div class="border rounded-4 p-4 shadow-sm bg-white">
               <div class="d-flex align-items-center gap-3 mb-3">
                 <i class="fa-solid fa-map-marker-alt fa-2x text-primary"></i>
-                <h5 class="fw-bold mb-0">Our Office</h5>
+                <h5 data-i18n="tfs.contact.address.title"
+                    class="fw-bold mb-0">
+                  tfs.contact.address.title fallback
+                </h5>
               </div>
-              <div class="text-muted">
-                3296 Summit Ridge Pkwy<br>
-                Suite 1010<br>
-                Duluth, Georgia 30096
+              <div id="tfs-contact-address" data-i18n="tfs.contact.address.content" class="text-muted">
+                tfs.contact.address.content fallback
               </div>
             </div>
             <!-- Contact -->
             <div class="border rounded-4 p-4 shadow-sm bg-white">
               <div class="d-flex align-items-center gap-3 mb-3">
                 <i class="fa-solid fa-phone fa-2x text-primary"></i>
-                <h5 class="fw-bold mb-0">Call Us 24/7</h5>
+                <h5 data-i18n="tfs.contact.phone.title"
+                    class="fw-bold mb-0">
+                  tfs.contact.phone.title fallback
+                </h5>
               </div>
-              <div class="text-muted">
-                <strong>Emergency:</strong> (770) 910-4545<br>
-                <strong>Email:</strong> jsuh@jslawgroup.net
+              <div id="tfs-contact-phone" data-i18n="tfs.contact.phone.content" class="text-muted">
+                tfs.contact.phone.content fallback
               </div>
             </div>
             <!-- Opening Hours -->
             <div class="border rounded-4 p-4 shadow-sm bg-white">
               <div class="d-flex align-items-center gap-3 mb-3">
                 <i class="fa-solid fa-clock fa-2x text-primary"></i>
-                <h5 class="fw-bold mb-0">Our Hours</h5>
+                <h5 data-i18n="tfs.contact.hours.title"
+                    class="fw-bold mb-0">
+                  tfs.contact.hours.title fallback
+                </h5>
               </div>
-              <p class="text-muted mb-0">
-                <strong>24/7 Emergency Response</strong><br>
-                Standard Office Hours:<br>
-                Monday - Friday, 9:00 AM - 6:00 PM
-              </p>
+              <div id="tfs-contact-hours" data-i18n="tfs.contact.hours.content" class="text-muted">
+                tfs.contact.hours.content fallback
+              </div>
             </div>
           </div>
         </div>
@@ -363,48 +422,10 @@
   </section>
 
   <!-- 7. Footer -->
-  <footer class="border-top bg-dark text-white">
-    <div class="py-5 container">
-      <div class="row mb-4 align-items-center">
-        <!-- Column 1: Logo -->
-        <div class="col-lg-3 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
-          <h4 class="mb-0 text-uppercase fw-bold">JS LAW GROUP</h4>
-        </div>
-        <!-- Column 2: Social Media Icons -->
-        <div class="col-lg-6 col-md-12 text-center mb-3 mb-lg-0">
-          <a id="sns121" href="https://www.facebook.com/share/1G9ZVXTRKj/" class="fs-4 me-3 text-decoration-none text-white" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a id="sns123" href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx" class="fs-4 me-3 text-decoration-none text-white" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <!-- <a href="#" class="fs-4 me-3 text-decoration-none text-white" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="#" class="fs-4 text-decoration-none text-white" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a> -->
-        </div>
-      </div>
-      <hr class="text-white-50">
-      <!-- Column 3: Copyright and Links -->
-      <div class="row mt-4 align-items-center">
-        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-          <small class="text-white-50">&copy; 2025 JS Law Group, LLC. All Rights Reserved.</small>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item"><a href="#" class="text-decoration-none text-white-50"><small>Privacy Policy</small></a></li>
-            <li class="list-inline-item ms-lg-2"><a href="#" class="text-decoration-none text-white-50"><small>Terms of Use</small></a></li>
-            <li class="list-inline-item ms-lg-2"><a href="#" class="text-decoration-none text-white-50"><small>Disclaimer</small></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer"></div>
 
   <!-- Bootstrap 5 JS Bundle (includes Popper.js) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script type="module" src="index.js"></script>
 </body>
 </html>

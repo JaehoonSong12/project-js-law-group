@@ -351,3 +351,341 @@ export function initCollapse(collapseIds) {
         document.addEventListener('click', document._collapseClickHandler);
     }
 }
+
+// ============================================================================
+// Content Styling Functions
+// ============================================================================
+
+/**
+ * Dynamically applies Bootstrap classes to article content elements.
+ * For long-form article content with headings, paragraphs, blockquotes, etc.
+ * @param {string} articleId - The ID of the container element containing the article content
+ * @returns {void}
+ * 
+ * @example
+ * // Apply article styles
+ * setStyleArticle('pi-article-content');
+ */
+export function setStyleArticle(articleId) {
+    const article = document.getElementById(articleId);
+    if (!article) {
+        console.error(`[setStyleArticle] Error: Element with ID "${articleId}" not found in document.`);
+        throw new Error(`Element with ID "${articleId}" not found.`);
+    }
+
+    // Style headings
+    const headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach((heading) => {
+        const tag = heading.tagName.toLowerCase();
+        heading.classList.remove('fw-bold', 'fw-normal', 'text-primary', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        
+        if (tag === 'h1' || tag === 'h2' || tag === 'h3') {
+            heading.classList.add('fw-bold', 'mb-4');
+        } else if (tag === 'h4' || tag === 'h5') {
+            heading.classList.add('text-primary', 'mb-3');
+        } else {
+            heading.classList.add('fw-bold', 'mb-2');
+        }
+    });
+
+    // Style paragraphs
+    const paragraphs = article.querySelectorAll('p');
+    paragraphs.forEach((p, index) => {
+        p.classList.remove('mb-0', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        if (!p.classList.contains('text-primary') && !p.classList.contains('text-danger') && 
+            !p.classList.contains('text-success') && !p.classList.contains('text-warning')) {
+            p.classList.add('text-muted');
+        }
+        if (index === paragraphs.length - 1) {
+            p.classList.add('mb-0');
+        } else {
+            p.classList.add('mb-3');
+        }
+    });
+
+    // Style lists
+    const lists = article.querySelectorAll('ul, ol');
+    lists.forEach(list => {
+        list.classList.add('text-muted', 'mb-3');
+        const items = list.querySelectorAll('li');
+        items.forEach(item => {
+            if (!item.classList.contains('mb-2')) {
+                item.classList.add('mb-2');
+            }
+        });
+    });
+
+    // Style blockquotes
+    const blockquotes = article.querySelectorAll('blockquote');
+    blockquotes.forEach(blockquote => {
+        blockquote.classList.add('border-start', 'border-primary', 'border-3', 'ps-3', 'py-2', 'mb-3', 'fst-italic');
+    });
+
+    // Style links
+    const links = article.querySelectorAll('a');
+    links.forEach(link => {
+        if (!link.classList.contains('btn') && !link.classList.contains('nav-link')) {
+            link.classList.add('text-primary', 'text-decoration-none');
+        }
+    });
+
+    // Style horizontal rules
+    const hrElements = article.querySelectorAll('hr');
+    hrElements.forEach(hr => {
+        hr.classList.add('my-4');
+    });
+}
+
+/**
+ * Dynamically applies Bootstrap classes to card-like content sections.
+ * For sections with title, description, and feature lists (like pi, cd, about).
+ * @param {string} cardId - The ID of the container element
+ * @returns {void}
+ * 
+ * @example
+ * // Apply card styles
+ * setStyleCard('pi-content');
+ */
+export function setStyleCard(cardId) {
+    const card = document.getElementById(cardId);
+    if (!card) {
+        console.error(`[setStyleCard] Error: Element with ID "${cardId}" not found in document.`);
+        throw new Error(`Element with ID "${cardId}" not found.`);
+    }
+
+    // Style headings (h2 for card titles) - preserve existing classes where appropriate
+    const headings = card.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach((heading) => {
+        const tag = heading.tagName.toLowerCase();
+        // Only remove margin classes, preserve font-weight and color if already set
+        heading.classList.remove('mb-0', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        
+        if (tag === 'h2') {
+            if (!heading.classList.contains('fw-bold') && !heading.classList.contains('fw-normal')) {
+                heading.classList.add('fw-bold');
+            }
+            heading.classList.add('mb-3');
+        } else if (tag === 'h3' || tag === 'h4' || tag === 'h5') {
+            if (!heading.classList.contains('fw-bold') && !heading.classList.contains('fw-normal')) {
+                heading.classList.add('fw-bold');
+            }
+            heading.classList.add('mb-2');
+        }
+    });
+
+    // Style paragraphs (descriptions)
+    const paragraphs = card.querySelectorAll('p');
+    paragraphs.forEach((p, index) => {
+        p.classList.remove('mb-0', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        p.classList.add('text-muted');
+        if (index === paragraphs.length - 1) {
+            p.classList.add('mb-4');
+        } else {
+            p.classList.add('mb-3');
+        }
+    });
+
+    // Style lists (feature lists) - add Bootstrap classes and style icons
+    const lists = card.querySelectorAll('ul, ol');
+    lists.forEach(list => {
+        // Add Bootstrap classes for lists
+        list.classList.add('list-unstyled', 'text-muted', 'fs-5');
+        
+        const items = list.querySelectorAll('li');
+        items.forEach(item => {
+            // Add margin to list items
+            item.classList.add('mb-2');
+            
+            // Style checkmark icons if present
+            const icons = item.querySelectorAll('i.fa-check-circle, i.fa-solid.fa-check-circle');
+            icons.forEach(icon => {
+                icon.classList.add('text-primary', 'me-2');
+            });
+        });
+    });
+
+    // Style links
+    const links = card.querySelectorAll('a');
+    links.forEach(link => {
+        if (!link.classList.contains('btn') && !link.classList.contains('nav-link')) {
+            link.classList.add('text-primary', 'text-decoration-none');
+        }
+    });
+}
+
+/**
+ * Dynamically applies Bootstrap classes to header sections.
+ * For simple title + subtitle sections (like partners-header, team-header).
+ * @param {string} headerId - The ID of the container element
+ * @returns {void}
+ * 
+ * @example
+ * // Apply header styles
+ * setStyleHeader('partners-header');
+ */
+export function setStyleHeader(headerId) {
+    const header = document.getElementById(headerId);
+    if (!header) {
+        console.error(`[setStyleHeader] Error: Element with ID "${headerId}" not found in document.`);
+        throw new Error(`Element with ID "${headerId}" not found.`);
+    }
+
+    // Style headings (title)
+    const headings = header.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach((heading) => {
+        const tag = heading.tagName.toLowerCase();
+        heading.classList.remove('fw-bold', 'fw-normal', 'text-primary', 'mb-2', 'mb-3', 'mb-4', 'mb-5', 'display-5');
+        
+        if (tag === 'h2') {
+            heading.classList.add('display-5', 'fw-bold');
+        } else {
+            heading.classList.add('fw-bold');
+        }
+    });
+
+    // Style paragraphs (subtitle)
+    const paragraphs = header.querySelectorAll('p');
+    paragraphs.forEach((p) => {
+        p.classList.remove('mb-0', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5', 'lead');
+        p.classList.add('lead', 'text-muted');
+    });
+}
+
+/**
+ * Dynamically applies Bootstrap classes to contact info sections.
+ * For contact boxes with h5 headings and content (like address, contact, hours).
+ * @param {string} contactId - The ID of the container element
+ * @returns {void}
+ * 
+ * @example
+ * // Apply contact styles
+ * setStyleContact('contactinfo-address');
+ */
+export function setStyleContact(contactId) {
+    const contact = document.getElementById(contactId);
+    if (!contact) {
+        console.error(`[setStyleContact] Error: Element with ID "${contactId}" not found in document.`);
+        throw new Error(`Element with ID "${contactId}" not found.`);
+    }
+
+    // Style h5 headings
+    const headings = contact.querySelectorAll('h5');
+    headings.forEach((heading) => {
+        heading.classList.remove('fw-bold', 'fw-normal', 'text-primary', 'mb-0', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        heading.classList.add('fw-bold', 'mb-0');
+    });
+
+    // Style paragraphs and divs (content)
+    const contentElements = contact.querySelectorAll('p, div');
+    contentElements.forEach((el) => {
+        if (el.tagName.toLowerCase() === 'p') {
+            el.classList.remove('mb-0', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+            el.classList.add('text-muted', 'mb-0');
+        }
+    });
+
+    // Style links
+    const links = contact.querySelectorAll('a');
+    links.forEach(link => {
+        if (!link.classList.contains('btn') && !link.classList.contains('nav-link')) {
+            link.classList.add('text-primary', 'text-decoration-none');
+        }
+    });
+}
+
+/**
+ * Dynamically applies Bootstrap classes to profile/attorney sections.
+ * For sections with h3 name, h5 title, and paragraphs.
+ * @param {string} profileId - The ID of the container element
+ * @returns {void}
+ * 
+ * @example
+ * // Apply profile styles
+ * setStyleProfile('attorney-content');
+ */
+export function setStyleProfile(profileId) {
+    const profile = document.getElementById(profileId);
+    if (!profile) {
+        console.error(`[setStyleProfile] Error: Element with ID "${profileId}" not found in document.`);
+        throw new Error(`Element with ID "${profileId}" not found.`);
+    }
+
+    // Style h3 (name)
+    const h3s = profile.querySelectorAll('h3');
+    h3s.forEach((h3) => {
+        h3.classList.remove('fw-bold', 'fw-normal', 'text-primary', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        h3.classList.add('fw-bold', 'mb-2');
+    });
+
+    // Style h5 (title)
+    const h5s = profile.querySelectorAll('h5');
+    h5s.forEach((h5) => {
+        h5.classList.remove('fw-bold', 'fw-normal', 'text-primary', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        h5.classList.add('text-primary', 'mb-3');
+    });
+
+    // Style paragraphs
+    const paragraphs = profile.querySelectorAll('p');
+    paragraphs.forEach((p, index) => {
+        p.classList.remove('mb-0', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        p.classList.add('text-muted');
+        if (index === paragraphs.length - 1) {
+            p.classList.add('mb-0');
+        } else {
+            p.classList.add('mb-3');
+        }
+    });
+
+    // Style links
+    const links = profile.querySelectorAll('a');
+    links.forEach(link => {
+        if (!link.classList.contains('btn') && !link.classList.contains('nav-link')) {
+            link.classList.add('text-primary', 'text-decoration-none');
+        }
+    });
+}
+
+/**
+ * Dynamically applies Bootstrap classes to centered text sections.
+ * For sections like careers with centered paragraphs.
+ * @param {string} centeredId - The ID of the container element
+ * @returns {void}
+ * 
+ * @example
+ * // Apply centered styles
+ * setStyleCentered('careers-content');
+ */
+export function setStyleCentered(centeredId) {
+    const centered = document.getElementById(centeredId);
+    if (!centered) {
+        console.error(`[setStyleCentered] Error: Element with ID "${centeredId}" not found in document.`);
+        throw new Error(`Element with ID "${centeredId}" not found.`);
+    }
+
+    // Style headings
+    const headings = centered.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach((heading) => {
+        heading.classList.remove('fw-bold', 'fw-normal', 'text-primary', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        heading.classList.add('fw-bold', 'mb-4');
+    });
+
+    // Style paragraphs
+    const paragraphs = centered.querySelectorAll('p');
+    paragraphs.forEach((p, index) => {
+        p.classList.remove('mb-0', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5');
+        p.classList.add('text-muted');
+        if (index === paragraphs.length - 1) {
+            p.classList.add('mb-0');
+        } else {
+            p.classList.add('mb-3');
+        }
+    });
+
+    // Style links
+    const links = centered.querySelectorAll('a');
+    links.forEach(link => {
+        if (!link.classList.contains('btn') && !link.classList.contains('nav-link')) {
+            link.classList.add('text-primary', 'text-decoration-none');
+        }
+    });
+}

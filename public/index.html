@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
-<body debug-i18n="true"> <!-- set to true if you want to see the debug mode --> 
+<body debug-i18n="false"> <!-- set to true if you want to see the debug mode --> 
   <div id="nav"></div>
 
 
@@ -129,41 +129,9 @@
         </div>
   
         <div class="col-lg-6">
-          <h2 data-i18n="pi.title"
-              class="fw-bold mb-3">
-            pi.title fallback
-          </h2>
-          <p data-i18n="pi.desc"
-             class="text-muted mb-4">
-            pi.desc fallback
-          </p>
-          
-          <ul class="list-unstyled text-muted fs-5">
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="pi.feature1">
-                pi.feature1 fallback
-              </span>
-            </li>
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="pi.feature2">
-                pi.feature2 fallback
-              </span>
-            </li>
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="pi.feature3">
-                pi.feature3 fallback
-              </span>
-            </li>
-             <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="pi.feature4">
-                pi.feature4 fallback
-              </span>
-            </li>
-          </ul>
+          <div id="pi-content" data-i18n="pi.content">
+            pi.content fallback
+          </div>
         </div>
   
       </div>
@@ -176,29 +144,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          
-          <h2 data-i18n="pi.article.title"
-              class="fw-bold mb-4">
-            pi.article.title fallback
-          </h2>
-          
-          <p data-i18n="pi.article.lead"
-             class="lead text-muted">
-            pi.article.lead fallback
-          </p>
-          <hr class="my-4">
-          <div data-i18n="pi.article.body"
-               class="article-text text-muted">
-            pi.article.body fallback
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed vestibulum felis. Suspendisse potenti. Praesent facilisis, odio vel consequat suscipit, elit libero efficitur ex, non faucibus nulla eros sit amet diam.</p>
-            <p>Aenean in risus eget massa fringilla imperdiet. Sed sit amet mi non nulla facilisis feugiat. Vivamus eget tortor non ipsum ultricies feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-            <h3>What Constitutes a Claim?</h3>
-            <p>Donec ullamcorper, lacus ut sodales viverra, turpis tellus tincidunt magna, id scelerisque mi eros in nunc. Nullam ac massa in nisi imperdiet tempor. In hac habitasse platea dictumst.</p>
-            <blockquote>
-              <p>"The key element is 'negligence.' We must prove that the other party had a duty of care, breached that duty, and that breach directly caused your injuries and subsequent damages."</p>
-            </blockquote>
-            <h3>Our Process: Investigation to Resolution</h3>
-            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec at sodales nisl. Integer placerat, ipsum in finibus varius, dui erat fermentum ante, a iaculis dui risus inquam.</p> -->
+          <div id="pi-article-content" data-i18n="pi.article">
+            pi.article fallback
           </div>
         </div>
       </div>
@@ -211,41 +158,9 @@
       <div class="row align-items-center g-5">
   
         <div class="col-lg-6">
-          <h2 data-i18n="cd.title"
-              class="fw-bold mb-3">
-            cd.title fallback
-          </h2>
-          <p data-i18n="cd.desc"
-             class="text-muted mb-4">
-            cd.desc fallback
-          </p>
-          
-          <ul class="list-unstyled text-muted fs-5">
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="cd.feature1">
-                cd.feature1 fallback
-              </span>
-            </li>
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="cd.feature2">
-                cd.feature2 fallback
-              </span>
-            </li>
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="cd.feature3">
-                cd.feature3 fallback
-              </span>
-            </li>
-             <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="cd.feature4">
-                cd.feature4 fallback
-              </span>
-            </li>
-          </ul>
+          <div id="cd-content" data-i18n="cd.content">
+            cd.content fallback
+          </div>
         </div>
   
         <div class="col-lg-6">
@@ -261,32 +176,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          
-          <h2 data-i18n="cd.article.title"
-              class="fw-bold mb-4">
-            cd.article.title fallback
-          </h2>
-          
-          <p data-i18n="cd.article.lead"
-             class="lead text-muted">
-            cd.article.lead fallback
-          </p>
-          
-          <hr class="my-4">
-          
-          <div data-i18n="cd.article.body"
-               class="article-text text-muted">
-            cd.article.body fallback
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed vestibulum felis. Suspendisse potenti. Praesent facilisis, odio vel consequat suscipit, elit libero efficitur ex, non faucibus nulla eros sit amet diam.</p>
-            <h3>Your Rights Are Paramount</h3>
-            <p>From the moment of your arrest, your constitutional rights are in effect. Understanding them is your first line of defense.</p>
-            <ul>
-              <li>The right to remain silent.</li>
-              <li>The right to an attorney.</li>
-              <li>The right to be free from unreasonable searches.</li>
-            </ul>
-            <h3>Common Defense Strategies</h3>
-            <p>Donec ullamcorper, lacus ut sodales viverra, turpis tellus tincidunt magna, id scelerisque mi eros in nunc. Nullam ac massa in nisi imperdiet tempor. In hac habitasse platea dictumst. We will explore every avenue, from challenging evidence to negotiating for a lesser charge.</p> -->
+          <div id="cd-article-content" data-i18n="cd.article">
+            cd.article fallback
           </div>
         </div>
       </div>
@@ -312,35 +203,9 @@
                alt="JS Law Group">
         </div>
         <div class="col-lg-6">
-          <h2 data-i18n="about.title"
-              class="fw-bold mb-3">
-            about.title fallback
-          </h2>
-          <p data-i18n="about.desc"
-             class="text-muted mb-4">
-            about.desc fallback
-          </p>
-          <!-- Feature list updated for law -->
-          <ul class="list-unstyled text-muted">
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="about.feature1">
-                about.feature1 fallback
-              </span>
-            </li>
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="about.feature2">
-                about.feature2 fallback
-              </span>
-            </li>
-            <li class="mb-2">
-              <i class="text-primary me-2 fa-solid fa-check-circle"></i>
-              <span data-i18n="about.feature3">
-                about.feature3 fallback
-              </span>
-            </li>
-          </ul>
+          <div id="about-content" data-i18n="about">
+            about fallback
+          </div>
         </div>
       </div>
     </div>
@@ -350,26 +215,10 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-7">
-          <h3 data-i18n="attorney.name"
-              class="fw-bold mb-2">
-            attorney.name fallback
-          </h3>
-          <h5 data-i18n="attorney.title"
-              class="text-primary mb-3">
-            attorney.title fallback
-          </h5>
-          <p data-i18n="attorney.p1"
-             class="text-muted mb-3">
-            attorney.p1 fallback
-          </p>
-          <p data-i18n="attorney.p2"
-             class="text-muted mb-3">
-            attorney.p2 fallback
-          </p>
-          <p data-i18n="attorney.p3"
-             class="text-muted mb-0">
-            attorney.p3 fallback
-          </p>
+          <div id="attorney-content" data-i18n="attorney">
+            <!-- Content will be dynamically inserted here -->
+            attorney fallback
+          </div>
         </div>
         <div class="col-lg-5">
           <!-- Note: This image path is local and may not load in preview -->
@@ -541,45 +390,21 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center"> <!-- Centered layout -->
-          <h2 data-i18n="careers.title"
-              class="fw-bold mb-4">
-            careers.title fallback
-          </h2>
-          <p data-i18n="careers.p1"
-             class="text-muted mb-3">
-            careers.p1 fallback
-          </p>
-          <p data-i18n="careers.p2"
-             class="text-muted mb-3">
-            careers.p2 fallback
-          </p>
-          <p data-i18n="careers.p3"
-             class="text-muted mb-3">
-            careers.p3 fallback
-          </p>
-          <p data-i18n="careers.p4"
-             class="text-muted mb-3">
-            careers.p4 fallback
-          </p>
-          <p data-i18n="careers.p5"
-             class="text-muted mb-0">
-            careers.p5 fallback
-          </p>
+          <div id="careers-content" data-i18n="careers">
+            careers fallback
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 4.1 Attorney / Profile Section (New section from user) -->
-  <section id="team" class="py-5 bg-dark">
+  <section id="team" class="py-5">
     <div class="container">
-      <div class="text-center text-light mb-5">
-        <h2 data-i18n="team.title"
-            class="display-5 fw-bold">team.title fallback</h2>
-        <p data-i18n="team.subtitle"
-           class="lead col-lg-8 mx-auto">
-          team.subtitle fallback
-        </p>
+      <div class="text-center mb-5">
+        <div id="team-header" data-i18n="team.header">
+          team.header fallback
+        </div>
       </div>
       <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-lg-4">
@@ -652,45 +477,30 @@
             <div class="border rounded p-4">
               <div class="d-flex align-items-center gap-2 mb-3">
                 <i class="fa-2x text-primary fa-solid fa-map-marker-alt"></i>
-                <h5 data-i18n="contactinfo.address.title"
-                    class="fw-bold mb-0">
-                  contactinfo.address.title fallback
-                </h5>
-              </div>
-              <div data-i18n="contactinfo.address.details"
-                   class="text-muted">
-                contactinfo.address.details fallback
+                <div id="contactinfo-address" data-i18n="contactinfo.address">
+                  contactinfo.address fallback
+                </div>
               </div>
             </div>
-  
+
             <!-- Contact -->
             <div class="border rounded p-4">
               <div class="d-flex align-items-center gap-2 mb-3">
                 <i class="fa-2x text-primary fa-solid fa-phone"></i>
-                <h5 data-i18n="contactinfo.contact.title"
-                    class="fw-bold mb-0">
-                  contactinfo.contact.title fallback
-                </h5>
-              </div>
-              <div data-i18n="contactinfo.contact.details"
-                   class="text-muted">
-                contactinfo.contact.details fallback
+                <div id="contactinfo-contact" data-i18n="contactinfo.contact">
+                  contactinfo.contact fallback
+                </div>
               </div>
             </div>
-  
+
             <!-- Opening Hours -->
             <div class="border rounded p-4">
               <div class="d-flex align-items-center gap-2 mb-3">
                 <i class="fa-2x text-primary fa-solid fa-clock"></i>
-                <h5 data-i18n="contactinfo.hours.title"
-                    class="fw-bold mb-0">
-                  contactinfo.hours.title fallback
-                </h5>
+                <div id="contactinfo-hours" data-i18n="contactinfo.hours">
+                  contactinfo.hours fallback
+                </div>
               </div>
-              <p data-i18n="contactinfo.weekdays"
-                 class="text-muted mb-0">
-                contactinfo.weekdays fallback
-              </p>
             </div>
           </div>
         </div>
