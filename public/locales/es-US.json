@@ -253,7 +253,109 @@
          "emergency" : "EMERGENCIA 24/7: (770) 910-4545"
       },
       "footer" : {
-         "disclaimer" : "Descargo de responsabilidad"
+         "disclaimer" : "Descargo de responsabilidad",
+         "phone" : "(770) 910-4545",
+         "address" : "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
+         "nav" : {
+            "home" : "Inicio",
+            "motorVehicles" : "Accidente de Vehículo Motor",
+            "personalInjury" : "Lesiones Personales"
+         },
+         "disclaimerText" : "La información en este sitio web es solo para fines informativos generales. Nada en este sitio debe tomarse como asesoramiento legal para ningún caso o situación individual. Esta información no está destinada a crear, y la recepción de visualización no constituye una relación abogado-cliente. La elección de abogado es una decisión importante y no debe basarse únicamente en anuncios. *El veredicto o acuerdo de su propio caso dependerá de sus hechos particulares. Los resultados pasados no ofrecen garantía de resultados futuros. Cada caso es diferente y debe juzgarse por sus propios méritos. Los casos reportados en este sitio web no están destinados a causar expectativas injustificadas con respecto a los méritos de su propia reclamación. *Sin ganar sin honorarios se refiere solo a los honorarios cobrados por el abogado. Los costos judiciales y otros gastos adicionales de acción legal generalmente deben ser pagados por el cliente. Los honorarios contingentes no están permitidos en todos los tipos de casos. Dramatización: clientes retratados por actores pagados. Oficinas en todo el país, no todos los abogados están autorizados en todas las jurisdicciones.",
+         "privacyPolicy" : "Política de Privacidad"
+      },
+      "heroCta" : {
+         "title" : "Abogados de Lesiones Personales",
+         "subtitle" : "Confíe en <span class=\"text-danger fw-bold\">(770) 910-4545</span> para defender su caso de lesiones personales",
+         "message" : "Cuando usted o un ser querido sufre una lesión grave debido a la negligencia de otra persona, necesita asesoramiento legal en el que pueda confiar.",
+         "claim" : "JS Law Group está preparado para defender su reclamación."
+      },
+      "practiceAreas" : {
+         "slipFall" : "Resbalones y Caídas",
+         "bicycleCrash" : "Accidentes de Bicicleta",
+         "pedestrianCollision" : "Colisión de Peatones",
+         "premisesLiability" : "Responsabilidad de Locales",
+         "workersComp" : "Compensación Laboral",
+         "otherInjuries" : "Otros Casos de Lesiones Corporales"
+      },
+      "process" : {
+         "title" : "¿Qué sucede cuando llama?",
+         "step1" : {
+            "title" : "Hablará con una persona real.",
+            "desc" : "Estamos siempre disponibles las 24 horas del día, los 7 días de la semana. Cuando llame, será conectado con nuestro equipo multilingüe que escuchará su descripción del accidente y hará preguntas de seguimiento."
+         },
+         "step2" : {
+            "title" : "Obtendrá asesoramiento directamente de nuestros abogados.",
+            "desc" : "Una vez que tengamos los aspectos básicos del caso, JS Law Group determinará si puede ser elegible para compensación. Si creemos que tiene un caso sólido, puede decidir si desea que luchemos por usted."
+         },
+         "step3" : {
+            "title" : "Trabajaremos para ganar su caso.",
+            "desc" : "Una vez que firme con JS Law Group, nosotros nos encargaremos del resto. Su abogado asignado luchará contra la parte infractora para obtener la máxima compensación que se le debe según la ley estatal."
+         }
+      },
+      "form" : {
+         "firstName" : "Nombre *",
+         "lastName" : "Apellido *",
+         "phone" : "Teléfono *",
+         "phonePlaceholder" : "(201) 555-0123",
+         "email" : "Correo Electrónico *",
+         "message" : "Mensaje",
+         "captcha" : "No soy un robot",
+         "captchaLabel" : "reCAPTCHA<br>Privacidad - Términos",
+         "submit" : "Obtener una Evaluación Gratuita del Caso",
+         "ctaTitle" : "DESCUBRA SI TIENE UN CASO",
+         "ctaSubtitle" : "¡HOY!"
+      },
+      "accidentSteps" : {
+         "title1" : "Pasos Importantes a Seguir en un",
+         "title2" : "Accidente de Vehículo Motor",
+         "step1" : {
+            "title" : "Llame a la Policía",
+            "desc" : "Es importante presentar un informe policial."
+         },
+         "step2" : {
+            "title" : "Tome Fotografías de la Escena",
+            "desc" : "Esto permite a los abogados negociar efectivamente su caso."
+         },
+         "step3" : {
+            "title" : "Prestar Atención",
+            "desc" : "Escuche los detalles de la parte culpable. Cualquier admisión o lo que creen que causó el accidente. Sus respuestas pueden usarse en la corte."
+         },
+         "step4" : {
+            "title" : "Busque atención médica",
+            "desc" : "Cooperar con el personal médico en la escena o buscar a su médico/médico lo antes posible. La curación y la documentación de sus lesiones también ayuda a construir su caso."
+         },
+         "step5" : {
+            "title" : "Busque Asesoramiento Legal",
+            "desc" : "No hable con representantes de seguros (excepto el suyo) hasta que haya recibido orientación de un abogado. Pueden animarle a admitir la culpa para pagarle menos."
+         },
+         "step6" : {
+            "title" : "Sea Paciente",
+            "desc" : "Su salud es lo más importante. Si decide dejarnos luchar su caso, nosotros nos preocuparemos por los aspectos legales mientras usted se concentra en su plan de tratamiento de recuperación."
+         }
+      },
+      "vehicleAccidents" : {
+         "title" : "Confíe en <span class=\"text-danger\">(770) 910-4545</span> después de su Accidente de Vehículo Motor",
+         "subtitle" : "Nuestros abogados en JS Law Group se especializan en casos de accidentes automovilísticos y de vehículos motorizados. Nuestro objetivo es siempre la máxima compensación para la parte lesionada.",
+         "seeMore" : "Ver Más",
+         "car" : {
+            "title" : "Accidentes Automovilísticos",
+            "desc" : "Las lesiones como resultado de un accidente de vehículo motor pueden ser devastadoras. Si ha estado involucrado en un accidente automovilístico y resultó lesionado, podría tener derecho a compensación por tratamiento médico, reparación del vehículo y otros gastos. JS Law Group defenderá su reclamación y luchará por los resultados que se merece."
+         },
+         "motorcycle" : {
+            "title" : "Accidentes de Motocicleta",
+            "desc" : "Los accidentes de motocicleta tienen altas tasas de fatalidad y la mayoría de los estados requieren que los conductores usen protección ocular y cascos. Sin embargo, los automovilistas también tienen el deber de conducir responsablemente cuando hay motociclistas presentes."
+         },
+         "rideshare" : {
+            "title" : "Viajes Compartidos",
+            "backTitle" : "Accidentes de Viajes Compartidos",
+            "desc" : "Navegar las reclamaciones de seguros para accidentes de Uber o Lyft requiere conocimiento especializado de pólizas comerciales. Nosotros manejamos las complejidades mientras usted se concentra en la recuperación."
+         },
+         "truck" : {
+            "title" : "Accidentes de Camiones Comerciales",
+            "backTitle" : "Responsabilidad de Transporte",
+            "desc" : "Los accidentes de vehículos comerciales a menudo involucran violaciones de seguridad federal y múltiples partes responsables. Nuestros abogados luchan contra las compañías de transporte para asegurar pagos máximos."
+         }
       }
-   }
+  }
 }

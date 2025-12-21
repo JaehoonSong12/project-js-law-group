@@ -253,7 +253,119 @@
          "emergency" : "24/7 EMERGENCY: (770) 910-4545"
       },
       "footer" : {
-         "disclaimer" : "Disclaimer"
+         "disclaimer" : "Disclaimer",
+         "phone" : "(770) 910-4545",
+         "address" : "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
+         "nav" : {
+            "home" : "Home",
+            "motorVehicles" : "Motor Vehicles Accident",
+            "personalInjury" : "Personal Injury"
+         },
+         "disclaimerText" : "The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt of viewing does not constitute an attorney-client relationship. The choice of lawyer is an important decision and should not be based solely upon advertisements. *The verdict or settlement of your own case will depend upon its particular facts. Past results afford no guarantee of future results. Every case is different and must be judged on its own merits. The cases reported on this website are not meant to cause any unjustified expectations regarding the merits of your own claim. *No win no fee refers only to fees charged by the attorney. Court costs and other additional expenses of legal action usually must be paid by the client. Contingent fees are not permitted in all types of cases. Dramatization: clients portrayed by paid actors. Offices throughout the country, not all lawyers barred in all jurisdictions.",
+         "privacyPolicy" : "Privacy Policy"
+      },
+      "heroCta" : {
+         "title" : "Personal Injury Lawyers",
+         "subtitle" : "Trust <span class=\"text-danger fw-bold\">(770) 910-4545</span> to defend your Personal Injury Case",
+         "message" : "When you or a loved one suffers a serious injury due to someone else's negligence, you need legal counsel you can trust.",
+         "claim" : "JS Law Group, LLC is prepared to defend your claim."
+      },
+      "practiceAreas" : {
+         "slipFall" : "Slip & Fall",
+         "bicycleCrash" : "Bicycle Crash",
+         "pedestrianCollision" : "Pedestrian Collision",
+         "premisesLiability" : "Premises Liability",
+         "workersComp" : "Workers' Compensation",
+         "otherInjuries" : "Other Bodily Injury Cases"
+      },
+      "process" : {
+         "title" : "What Happens When You Call?",
+         "step1" : {
+            "title" : "You'll speak with a real person.",
+            "desc" : "JS Law Group, LLC is always available 24/7. When you call, you'll be connected with our team who will listen to your description of the accident and ask follow-up questions."
+         },
+         "step2" : {
+            "title" : "You'll get advice directly from our lawyers.",
+            "desc" : "Once we have the basics of the case, JS Law Group, LLC will determine if you may be eligible for compensation. If we think you have a strong case, you can decide if you'd like us to fight for you."
+         },
+         "step3" : {
+            "title" : "We'll work to win your case.",
+            "desc" : "Once you sign with JS Law Group, LLC, we'll handle the rest. Your assigned attorney will fight the offending party to get the maximum compensation owed to you under state law."
+         }
+      },
+      "form" : {
+         "firstName" : "First Name *",
+         "lastName" : "Last Name *",
+         "phone" : "Phone *",
+         "phonePlaceholder" : "(201) 555-0123",
+         "email" : "E-Mail *",
+         "message" : "Message",
+         "captcha" : "I'm not a robot",
+         "captchaLabel" : "reCAPTCHA<br>Privacy - Terms",
+         "submit" : "Get a Free Case Evaluation",
+         "ctaTitle" : "FIND OUT IF YOU HAVE A CASE",
+         "ctaSubtitle" : "TODAY!"
+      },
+      "accidentSteps" : {
+         "title1" : "Important Steps to Take When in a",
+         "title2" : "Motor Vehicle Accident",
+         "step1" : {
+            "title" : "Call the Police",
+            "desc" : "It's important to file a police report."
+         },
+         "step2" : {
+            "title" : "Take Photographs of the Scene",
+            "desc" : "This enables our attorneys to effectively negotiate your case."
+         },
+         "step3" : {
+            "title" : "Pay Attention",
+            "desc" : "Listen for details from the at-fault party. Any admittance or what they believe caused the accident. Their answers can be used in court."
+         },
+         "step4" : {
+            "title" : "Seek Medical Attention",
+            "desc" : "Cooperate with medical personnel either on the scene or seek your doctor/physician as soon as possible. Healing and documenting your injuries also helps build your case."
+         },
+         "step5" : {
+            "title" : "Seek Legal Advice with JS Law Group",
+            "desc" : "Do not talk to insurance representatives (except your own) until you've gotten guidance from an attorney. They may encourage you to admit fault to pay you less."
+         },
+         "step6" : {
+            "title" : "Be Patient",
+            "desc" : "Your health is what's most important. If you decide to let JS Law Group, LLC fight your case, we'll worry about the legalities while you focus on your recovery treatment plan."
+         }
+      },
+      "vehicleAccidents" : {
+         "title" : "Trust <span class=\"text-danger\">(770) 910-4545</span> after your Motor Vehicle Accident",
+         "subtitle" : "Our attorneys at JS Law Group, LLC specialize in car and motor vehicle accident cases. Our goal is always maximum compensation for the injured party.",
+         "seeMore" : "See More",
+         "car" : {
+            "title" : "Car Accidents",
+            "desc" : "Injuries as a result of a motor vehicle accident can be devastating. If you have been involved in a car accident and were injured as a result, you could be entitled to compensation for medical treatment, vehicle repair, and other expenses. JS Law Group, LLC will defend your claim and fight for the results you deserve."
+         },
+         "motorcycle" : {
+            "title" : "Motorcycle Accidents",
+            "desc" : "Motorcycle accidents have high fatality rates and most states require riders to wear protective eyewear and helmets. However, motorists in cars also have a duty to drive responsibly when motorcyclists are present. JS Law Group, LLC provides experienced representation for motorcycle accident victims."
+         },
+         "rideshare" : {
+            "title" : "Rideshare",
+            "backTitle" : "Rideshare Accidents",
+            "desc" : "Navigating insurance claims for Uber or Lyft accidents requires specialized knowledge of commercial policies. JS Law Group, LLC handles the complexities while you focus on recovery."
+         },
+         "truck" : {
+            "title" : "Commercial Truck Accidents",
+            "backTitle" : "Trucking Liability",
+            "desc" : "Commercial vehicle accidents often involve federal safety violations and multiple liable parties. Our attorneys at JS Law Group, LLC fight trucking companies to secure maximum payouts."
+         }
+      },
+      "secondaryNav" : {
+         "phone" : "(770) 910-4545",
+         "firmName" : "JS Law Group, LLC",
+         "home" : "Home",
+         "motorVehicles" : "Motor Vehicle Accident",
+         "personalInjury" : "Personal Injury",
+         "available" : "Available 24/7",
+         "spanish" : "Hablamos Español",
+         "phoneNumber" : "(770) 910-4545"
       }
    }
 }
