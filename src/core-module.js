@@ -91,8 +91,8 @@ export function enableButtonRedirect(className) {
   
   const buttons = document.getElementsByClassName(className);
   if (buttons.length === 0) {
-      console.error(`[enableButtonRedirect] Error: No elements found with class "${className}" in document.`);
-      throw new Error(`No elements found with class "${className}".`);
+      console.warn(`[enableButtonRedirect] Warning: No elements found with class "${className}" in document.`);
+      return;
   }
   
   Array.from(buttons).forEach((button) => {

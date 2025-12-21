@@ -25,14 +25,18 @@ function pageNameFromPath(pathname) {
 
 
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log('[src/index.js] Dispatcher loaded');
     const pageName = pageNameFromPath(window.location.pathname);
+    console.log(`[src/index.js] Detected pageName: "${pageName}"`);
     const relativePagePath = `./js/${pageName}.js`; // relative, no leading '/'
     try {
+        console.log(`[src/index.js] Importing module: ${relativePagePath}`);
         const module = await import(relativePagePath);
         if (module && typeof module.default === 'function') {
-        await module.default(); // page module handles its DOM using core-module
+            console.log(`[src/index.js] Module loaded, executing default function...`);
+            await module.default(); // page module handles its DOM using core-module
         } else {
-        console.warn(`Page module loaded but has no default export function: ${relativePagePath}`);
+            console.warn(`Page module loaded but has no default export function: ${relativePagePath}`);
         }
     } catch (err) {
         // Per your request: no 404 fallback. Just log the error.

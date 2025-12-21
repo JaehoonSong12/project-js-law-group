@@ -11,7 +11,7 @@ import * as FontAwesome from '../ext-module-fa.js';
 export default async function main() {
 
     
-
+    console.log('[src/js/index.js] Main function execution started');
 
 
     Util.setupWindowFocusRefresh();
