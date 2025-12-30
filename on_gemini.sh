@@ -37,40 +37,6 @@ CURRENT_DIR=$PWD
 
 
 
-# --- Color Definitions for Output ---
-# Use tput to make the output more readable. It checks if the terminal
-# supports colors before attempting to use them.
-# Check if tput exists and the terminal supports at least 8 colors
-if command -v tput >/dev/null 2>&1 && [ "$(tput colors)" -ge 8 ]; then
-    # Standard tput colors (Range 0-7)
-    BLACK=$(tput setaf 0)
-    RED=$(tput setaf 1)
-    GREEN=$(tput setaf 2)    # Standard Green (was 10)
-    YELLOW=$(tput setaf 3)
-    BLUE=$(tput setaf 4)
-    MAGENTA=$(tput setaf 5)
-    CYAN=$(tput setaf 6)     # Standard Cyan (was 14)
-    WHITE=$(tput setaf 7)
-    
-    # Text Attribute: Bold/Bright
-    BOLD=$(tput bold)
-    RESET=$(tput sgr0)
-else
-    # Fallback: Manual ANSI codes (Note: Use \e instead of \033 for better compat)
-    BLACK='\033[0;30m'
-    RED='\033[0;31m'
-    GREEN='\033[0;32m'
-    YELLOW='\033[0;33m'
-    BLUE='\033[0;34m'
-    MAGENTA='\033[0;35m'
-    CYAN='\033[0;36m'
-    WHITE='\033[0;37m'
-    
-    BOLD='\033[1m'
-    RESET='\033[0m'
-fi
-
-
 
 
 

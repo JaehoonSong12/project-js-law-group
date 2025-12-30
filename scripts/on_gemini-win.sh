@@ -34,7 +34,12 @@ fi
 TEMP=$PWD
 cd .. || exit
 
-on_v8
+
+on_kt     # JAVA/Kotlin
+on_gradle # Gradle
+on_v8     # Node.js
+on_pvm    # Python (replaced with ./on_venv.sh)
+
 
 cd "$TEMP" || exit
 
