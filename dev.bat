@@ -582,6 +582,9 @@ if !ERRORLEVEL! NEQ 0 (
 if /I "!confirm!"=="y" (
     echo Resetting configuration...
     call gh auth logout --hostname github.com
+    if !ERRORLEVEL! NEQ 0 (
+      echo.!RED!Failed to logout. Continuing...!RESET!
+    )
 )
 pause
 call gh auth status --hostname github.com >NUL 2>&1
@@ -649,7 +652,7 @@ if "%IS_ADMIN%"=="0" (
   echo.%CYAN%The script is running with %GREEN%administrator%RESET% privileges.%RESET%
   echo.%CYAN%=========================================================%RESET%
   echo.
-  @REM call :Display-Virtualization-Info
+  call :Display-Virtualization-Info
 )
 
 echo.%CYAN%========================================================= Utilities, Install...%RESET%
@@ -671,32 +674,26 @@ pause
 @REM ---------------------------------------------------------------------------
 call :Install-App "Git.Git" "Git" "git" "Git"
 call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
-
-
-
-
 call :Authenticate-gh
-
-
 call :Install-App "GLab.GLab" "GitLab CLI" "glab" "glab"
 call :Check-Bashrc
-@REM @REM ---------------------------------------------------------------------------
-@REM @REM Platform Dependents - POSIX/Unix compatibility "layer (A full environment)" for Windows ("M"inimal "SYS"tem "2".)
-@REM @REM  1. A bash-based shell on Windows
-@REM @REM  2. A "Pacman" package manager (from Arch Linux)
-@REM @REM  3. GNU toolchains (GCC, make, autotools)
-@REM @REM  4. Build Windows-native on virtual Linux environment
-@REM @REM ---------------------------------------------------------------------------
-@REM call :Install-App "MSYS2.MSYS2" "MSYS2" "mintty" "msys64"
-@REM @REM ---------------------------------------------------------------------------
-@REM @REM Platform Independent - Container Platform (Docker Desktop)
-@REM @REM  1. Container runtime and orchestration
-@REM @REM  2. Docker Desktop includes Docker Engine, Docker CLI, Docker Compose
-@REM @REM  3. GUI for managing images and containers
-@REM @REM  4. Build Linux-native (WSL2 processor) on virtual Linux environment
-@REM @REM ---------------------------------------------------------------------------
-@REM call :Install-App "Microsoft.WSL" "Windows Subsystem for Linux" "wsl" "WSL"
-@REM call :Install-App "Docker.DockerDesktop" "Docker Desktop" "docker" "Docker"
+@REM ---------------------------------------------------------------------------
+@REM Platform Dependents - POSIX/Unix compatibility "layer (A full environment)" for Windows ("M"inimal "SYS"tem "2".)
+@REM  1. A bash-based shell on Windows
+@REM  2. A "Pacman" package manager (from Arch Linux)
+@REM  3. GNU toolchains (GCC, make, autotools)
+@REM  4. Build Windows-native on virtual Linux environment
+@REM ---------------------------------------------------------------------------
+call :Install-App "MSYS2.MSYS2" "MSYS2" "mintty" "msys64"
+@REM ---------------------------------------------------------------------------
+@REM Platform Independent - Container Platform (Docker Desktop)
+@REM  1. Container runtime and orchestration
+@REM  2. Docker Desktop includes Docker Engine, Docker CLI, Docker Compose
+@REM  3. GUI for managing images and containers
+@REM  4. Build Linux-native (WSL2 processor) on virtual Linux environment
+@REM ---------------------------------------------------------------------------
+call :Install-App "Microsoft.WSL" "Windows Subsystem for Linux" "wsl" "WSL"
+call :Install-App "Docker.DockerDesktop" "Docker Desktop" "docker" "Docker"
 
 echo.%CYAN%========================================================= Windows Natives Dev, Install...%RESET%
 pause
@@ -715,13 +712,13 @@ call :Install-App "MiKTeX.MiKTeX" "MiKTeX" "pdflatex" "MiKTeX"
 echo.
 echo.%GREEN%All specified applications have been processed.%RESET%
 
-@REM @REM recommend to reboot the system
-@REM echo.%YELLOW%It is recommended to %RED%reboot%RESET% the system to apply the changes.%RESET%
-@REM echo.%YELLOW%Do you want to %RED%reboot%RESET% the system now? (y/n)%RESET%
-@REM set /p REBOOT=
-@REM if "%REBOOT%"=="y" (
-@REM   shutdown /r /t 0
-@REM )
+@REM recommend to reboot the system
+echo.%YELLOW%It is recommended to %RED%reboot%RESET% the system to apply the changes.%RESET%
+echo.%YELLOW%Do you want to %RED%reboot%RESET% the system now? (y/n)%RESET%
+set /p REBOOT=
+if "%REBOOT%"=="y" (
+  shutdown /r /t 0
+)
 
 pause
 exit /b 0
