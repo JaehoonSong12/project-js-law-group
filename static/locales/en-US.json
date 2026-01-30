@@ -1,0 +1,371 @@
+{
+   "tfs" : {
+      "secondaryNav" : {
+         "motorVehicles" : "Motor Vehicle Accident",
+         "phoneNumber" : "(770) 910-4545",
+         "phone" : "(770) 910-4545",
+         "personalInjury" : "Personal Injury",
+         "available" : "Available 24/7",
+         "home" : "Home",
+         "firmName" : "JS Law Group, LLC",
+         "spanish" : "Hablamos Español"
+      },
+      "whatToDo" : {
+         "step2" : {
+            "desc" : "Take photos, recordings, and notes of everything. Secure important documents and facts.",
+            "title" : "Document Everything"
+         },
+         "title" : "What To Do In An Emergency",
+         "step1" : {
+            "desc" : "Ensure you are safe. If you are in danger or injured, call 911 immediately. Your health is the first priority.",
+            "title" : "Secure Safety"
+         },
+         "step3" : {
+            "title" : "Call Us - 24/7 Availability",
+            "desc" : "Do NOT give a statement to police or insurance. Call us immediately. You have a right to an attorney."
+         },
+         "subtitle" : "Your immediate action is critical. During an emergency, try to stay calm and follow these steps."
+      },
+      "process" : {
+         "step3" : {
+            "title" : "We'll work to win your case.",
+            "desc" : "Once you sign with JS Law Group, LLC, we'll handle the rest. Your assigned attorney will fight the offending party to get the maximum compensation owed to you under state law."
+         },
+         "step2" : {
+            "title" : "You'll get advice directly from our lawyers.",
+            "desc" : "Once we have the basics of the case, JS Law Group, LLC will determine if you may be eligible for compensation. If we think you have a strong case, you can decide if you'd like us to fight for you."
+         },
+         "step1" : {
+            "title" : "You'll speak with a real person.",
+            "desc" : "JS Law Group, LLC is always available 24/7. When you call, you'll be connected with our team who will listen to your description of the accident and ask follow-up questions."
+         },
+         "title" : "What Happens When You Call?"
+      },
+      "footer" : {
+         "address" : "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
+         "disclaimerText" : "The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt of viewing does not constitute an attorney-client relationship. The choice of lawyer is an important decision and should not be based solely upon advertisements. *The verdict or settlement of your own case will depend upon its particular facts. Past results afford no guarantee of future results. Every case is different and must be judged on its own merits. The cases reported on this website are not meant to cause any unjustified expectations regarding the merits of your own claim. *No win no fee refers only to fees charged by the attorney. Court costs and other additional expenses of legal action usually must be paid by the client. Contingent fees are not permitted in all types of cases. Dramatization: clients portrayed by paid actors. Offices throughout the country, not all lawyers barred in all jurisdictions.",
+         "nav" : {
+            "personalInjury" : "Personal Injury",
+            "motorVehicles" : "Motor Vehicles Accident",
+            "home" : "Home"
+         },
+         "disclaimer" : "Disclaimer",
+         "privacyPolicy" : "Privacy Policy",
+         "phone" : "(770) 910-4545"
+      },
+      "contact" : {
+         "subtitle" : "Your emergency is our priority. Call us for immediate assistance.",
+         "phone" : {
+            "title" : "Call Us 24/7",
+            "content" : "<strong>Emergency:</strong> (770) 910-4545<br><strong>Email:</strong> jsuh@jslawgroup.net"
+         },
+         "hours" : {
+            "title" : "Our Hours",
+            "content" : "<strong>24/7 Emergency Response</strong><br>Standard Office Hours:<br>Monday - Friday, 9:00 AM - 6:00 PM"
+         },
+         "title" : "Contact Us Anytime, 24/7",
+         "address" : {
+            "content" : "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
+            "title" : "Our Office"
+         }
+      },
+      "vehicleAccidents" : {
+         "car" : {
+            "desc" : "Injuries as a result of a motor vehicle accident can be devastating. If you have been involved in a car accident and were injured as a result, you could be entitled to compensation for medical treatment, vehicle repair, and other expenses. JS Law Group, LLC will defend your claim and fight for the results you deserve.",
+            "title" : "Car Accidents"
+         },
+         "subtitle" : "Our attorneys at JS Law Group, LLC specialize in car and motor vehicle accident cases. Our goal is always maximum compensation for the injured party.",
+         "rideshare" : {
+            "desc" : "Navigating insurance claims for Uber or Lyft accidents requires specialized knowledge of commercial policies. JS Law Group, LLC handles the complexities while you focus on recovery.",
+            "title" : "Rideshare",
+            "backTitle" : "Rideshare Accidents"
+         },
+         "truck" : {
+            "desc" : "Commercial vehicle accidents often involve federal safety violations and multiple liable parties. Our attorneys at JS Law Group, LLC fight trucking companies to secure maximum payouts.",
+            "backTitle" : "Trucking Liability",
+            "title" : "Commercial Truck Accidents"
+         },
+         "seeMore" : "See More",
+         "motorcycle" : {
+            "desc" : "Motorcycle accidents have high fatality rates and most states require riders to wear protective eyewear and helmets. However, motorists in cars also have a duty to drive responsibly when motorcyclists are present. JS Law Group, LLC provides experienced representation for motorcycle accident victims.",
+            "title" : "Motorcycle Accidents"
+         },
+         "title" : "Trust <span class=\"text-danger\">(770) 910-4545</span> after your Motor Vehicle Accident"
+      },
+      "services" : {
+         "cd" : {
+            "title" : "Criminal Defense",
+            "desc" : "Facing charges? Your freedom is on the line. Our aggressive defense starts the moment you call."
+         },
+         "subtitle" : "We provide a 24/7 emergency response for these critical fields.",
+         "pi" : {
+            "desc" : "Hurt in an accident? We will fight to get you the compensation you deserve. No fee until we win.",
+            "title" : "Personal Injury"
+         },
+         "fl" : {
+            "title" : "Family Law",
+            "desc" : "In this tough time, we're here for you. We navigate sensitive family matters with compassion and legal expertise."
+         },
+         "title" : "Our Practice Areas"
+      },
+      "form" : {
+         "email" : "E-Mail *",
+         "phone" : "Phone *",
+         "submit" : "Get a Free Case Evaluation",
+         "message" : "Message",
+         "firstName" : "First Name *",
+         "lastName" : "Last Name *",
+         "phonePlaceholder" : "(201) 555-0123",
+         "ctaSubtitle" : "TODAY!",
+         "ctaTitle" : "FIND OUT IF YOU HAVE A CASE",
+         "captcha" : "I'm not a robot",
+         "captchaLabel" : "reCAPTCHA<br>Privacy - Terms"
+      },
+      "heroCta" : {
+         "claim" : "JS Law Group, LLC is prepared to defend your claim.",
+         "subtitle" : "Trust <span class=\"text-danger fw-bold\">(770) 910-4545</span> to defend your Personal Injury Case",
+         "message" : "When you or a loved one suffers a serious injury due to someone else's negligence, you need legal counsel you can trust.",
+         "title" : "Personal Injury Lawyers"
+      },
+      "title" : "JS Law Group - 24/7 Emergency Legal Help (서조은 법률 그룹)",
+      "accidentSteps" : {
+         "step2" : {
+            "title" : "Take Photographs of the Scene",
+            "desc" : "This enables our attorneys to effectively negotiate your case."
+         },
+         "step1" : {
+            "desc" : "It's important to file a police report.",
+            "title" : "Call the Police"
+         },
+         "step6" : {
+            "title" : "Be Patient",
+            "desc" : "Your health is what's most important. If you decide to let JS Law Group, LLC fight your case, we'll worry about the legalities while you focus on your recovery treatment plan."
+         },
+         "step3" : {
+            "desc" : "Listen for details from the at-fault party. Any admittance or what they believe caused the accident. Their answers can be used in court.",
+            "title" : "Pay Attention"
+         },
+         "step5" : {
+            "desc" : "Do not talk to insurance representatives (except your own) until you've gotten guidance from an attorney. They may encourage you to admit fault to pay you less.",
+            "title" : "Seek Legal Advice with JS Law Group"
+         },
+         "title1" : "Important Steps to Take When in a",
+         "step4" : {
+            "title" : "Seek Medical Attention",
+            "desc" : "Cooperate with medical personnel either on the scene or seek your doctor/physician as soon as possible. Healing and documenting your injuries also helps build your case."
+         },
+         "title2" : "Motor Vehicle Accident"
+      },
+      "hero" : {
+         "subtitle" : "Can't wait? Don't worry, we're here to fight. Available 24 hours a day and 7 days a week for your urgent legal needs.",
+         "koreanTitle" : "서고은 법률 그룹",
+         "button" : "Get Help Now (Main Site)",
+         "title" : "24/7 Emergency Legal Rescue",
+         "videoFallback" : "Your browser does not support the video tag."
+      },
+      "practiceAreas" : {
+         "premisesLiability" : "Premises Liability",
+         "pedestrianCollision" : "Pedestrian Collision",
+         "bicycleCrash" : "Bicycle Crash",
+         "slipFall" : "Slip & Fall",
+         "otherInjuries" : "Other Bodily Injury Cases",
+         "workersComp" : "Workers' Compensation"
+      },
+      "nav" : {
+         "contact" : "Contact",
+         "services" : "Practice Areas",
+         "emergency" : "24/7 EMERGENCY: (770) 910-4545",
+         "incidents" : "Incident Types",
+         "whatToDo" : "What To Do"
+      },
+      "incidents" : {
+         "pi" : {
+            "item3" : "Motorcycle Accidents",
+            "item6" : "Premises Liability",
+            "item5" : "Wrongful Death",
+            "title" : "Personal Injury",
+            "item4" : "Slip & Fall",
+            "desc" : "An injury can turn your life upside down. We handle all legal aspects, communication with insurance, and give expert counsel so you can focus on healing.",
+            "item2" : "Truck Accidents",
+            "item1" : "Car Accidents"
+         },
+         "title" : "We Handle All Types of Incidents",
+         "cd" : {
+            "title" : "Criminal Defense",
+            "item4" : "Assault & Battery",
+            "item5" : "Warrants",
+            "item3" : "Theft",
+            "item6" : "Property Crimes",
+            "item2" : "Drug Offenses",
+            "item1" : "DUI / DWI",
+            "desc" : "An arrest is an emergency. Your first call should be to us to ensure your rights are protected from the very start."
+         },
+         "subtitle" : "If you are facing any of these situations, call us 24/7."
+      }
+   },
+   "modal" : {
+      "close" : "Close"
+   },
+   "nav" : {
+      "about" : "About",
+      "appointment" : "Appointment",
+      "home" : "Home",
+      "team" : "Our Teams",
+      "title" : "JS Law Group",
+      "contact" : "Contact",
+      "careers" : "Careers",
+      "consultation" : "Free Consultation",
+      "services" : "Practice Areas"
+   },
+   "attorney" : "<h3>Joan Suh</h3><h5>서조은 변호사</h5><p>We specialize in client-centered legal services, providing expert advice and swift solutions across various legal fields. With a commitment to fairness and justice, our dedicated team prioritizes transparent communication to build trust and ensure effective resolution of legal challenges.</p><p>Trust us to deliver secure and efficient solutions to your legal matters. Consult with us anytime, with a free consultation available to you now.</p><p>Thank you.</p>",
+   "user" : {
+      "profile" : {
+         "bio" : "Bio",
+         "age" : "Age"
+      },
+      "greeting" : "Hello!"
+   },
+   "contact" : {
+      "cd" : "Criminal Defense",
+      "lastName" : "Last Name",
+      "title" : "Free Consultation",
+      "message" : "Tell us about your case",
+      "submit" : "Submit Inquiry",
+      "other" : "Other",
+      "fl" : "Family Law",
+      "selectOne" : "Please select one...",
+      "messagePlaceholder" : "Please provide a brief description of your situation...",
+      "inquiryType" : "Inquiry Type",
+      "firstName" : "First Name",
+      "pi" : "Personal Injury",
+      "phone" : "Phone",
+      "subtitle" : "Tell us about your case. All information is confidential.",
+      "email" : "Email"
+   },
+   "services" : {
+      "area2" : {
+         "title" : "Criminal Defense",
+         "desc" : "You have rights, and we're here to defend them. We provide support for DUI, drug offenses, assault, and other criminal charges."
+      },
+      "title" : "Practice Areas",
+      "area1" : {
+         "title" : "Personal Injury",
+         "desc" : "Let us help you get your life back to normal. Seek compensation for car accidents, slip and fall, and more."
+      },
+      "subtitle" : "Dedicated expertise in critical areas of law.",
+      "area3" : {
+         "desc" : "Compassionate guidance through divorce, custody, and other family matters.",
+         "title" : "Family Law"
+      }
+   },
+   "footer" : {
+      "importantNote" : "<strong>Important Note:</strong> This website is designed for clients seeking legal representation in Personal Injury (PI) and Criminal Defense (CD) cases. The website allows you to submit an inquiry form to contact our firm. Please be aware that JS Law Group, LLC never charges clients any fees upfront or before providing legal services. We do not request payment, banking details, or personal financial information prior to consultation or case evaluation. All initial consultations are free, and fees are only discussed after we have reviewed your case and agreed to represent you.",
+      "terms" : "Terms of Use",
+      "privacyNotice" : "Privacy notice",
+      "whistleblowing" : "Whistleblowing",
+      "cookieNotice" : "Cookie notice",
+      "copyrightOffice" : "&copy; JS LAW Group, LLC. 2024 - 2025",
+      "privacy" : "Privacy Policy",
+      "copyright" : "&copy; 2024 by JS LAW Group, LLC. All rights reserved.",
+      "faqs" : "FAQs",
+      "corporateInformation" : "Corporate information",
+      "digitalId" : "Digital ID",
+      "termsOfUse" : "Terms of use"
+   },
+   "app" : {
+      "title" : "Sample i18n App (English)"
+   },
+   "plurals" : {
+      "apples" : {
+         "one" : "1 apple",
+         "zero" : "No apples",
+         "other" : "Apples"
+      },
+      "reviews" : {
+         "one" : "1 review",
+         "other" : "Reviews"
+      }
+   },
+   "missingExample" : "Missing-key fallback demo",
+   "fab" : {
+      "criminalDefense" : "Criminal Defense",
+      "generalInquiry" : "General Inquiry",
+      "contactForms" : "Contact Forms",
+      "personalInjury" : "Personal Injury"
+   },
+   "htmlExample" : "Click <a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">here</a> to learn more.",
+   "partners" : {
+      "testimonial1" : {
+         "quote" : "\"Exceptional legal support at this firm. Their expertise and dedication make navigating complex matters smooth.\"",
+         "title" : "COO, HORIZON",
+         "name" : "Eric Park"
+      },
+      "testimonial2" : {
+         "quote" : "\"Impressed by the professionalism and efficiency. A team that truly cares about client success. Highly recommend.\"",
+         "title" : "Founder, PJK",
+         "name" : "Amanda Cuccia"
+      },
+      "subtitle" : "We are proud to work with and be trusted by industry leaders.",
+      "testimonial3" : {
+         "quote" : "\"Outstanding service! The team's commitment to excellence is evident in every interaction. Trustworthy and reliable.\"",
+         "title" : "CEO, Latch",
+         "name" : "Sunny Parda"
+      },
+      "title" : "Our Partners",
+      "carousel" : {
+         "next" : "Next",
+         "prev" : "Previous"
+      }
+   },
+   "about" : "<h2>About JS Law Group</h2><p>We are a passionate team of legal professionals dedicated to providing top-tier representation. Our focus is on achieving the best possible outcome for every client through tireless advocacy, transparent communication, and personalized attention to every case - including yours.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>Client-Centric Approach</li><li><i class=\"fa-solid fa-check-circle\"></i>Passionate, Professional Representation</li><li><i class=\"fa-solid fa-check-circle\"></i>Proven Track Record</li></ul>",
+   "cd" : {
+      "article" : "<h2>Navigating Your Criminal Defense</h2><p>A criminal charge can feel like the end of the world, but it doesn't have to define you or your future. A strategic, aggressive defense is critical during this time. Let us be the ones to help you.</p><hr><p>Being charged, regardless of if it is a felony charge or a misdemeanor, can be one of the most difficult times in your life. Our team understands this and is here to help. As experienced attorneys capable of navigating trial with legal expertise and skillful solutions, we will work with you to get you the best results possible. Defending not just your rights, but also your innocence is our greatest priority.</p><h3>Your Rights Are Paramount</h3><p>Your constitutional rights are always in effect, and this includes when you get arrested and are held for questioning. Understanding them is your first line of defense.</p><ul><li>Fourth Amendment Protection Against Unreasonable Searches and Seizures</li><li>Fifth Amendment Right to Remain Silent</li><li>Sixth Amendment Right to Legal Counsel and to Be Informed of the Charges</li></ul><h3>Common Defense Strategies</h3><p>Every case is different, but our skilled attorneys are ready for anything. Even before the charges go to trial, we will be active and may try to challenge the evidence, negotiate a plea deal, or even attempt to dismiss the case. We will explore every avenue in order to protect your rights. Our team could argue your innocence, citing an alibi or a mistaken identity. We could note that your actions were committed under a legally excusable circumstance, like duress or self-defense. Our team could raise reasonable doubt against the prosecution's case, leading to a favorable outcome. Regardless of the specific method, know that our team is ready to assist and defend your case with legal expertise, effective solutions, and skillful trial maneuvering. Let us offer you a free consultation with us today.</p>",
+      "content" : "<h2>Criminal Defense</h2><p>Facing criminal charges can be one of the most stressful experiences of your life, but you don't have to face it alone. We provide a robust, strategic defense to protect your freedom, your rights, and your future.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>DUI / DWI</li><li><i class=\"fa-solid fa-check-circle\"></i>Drug Offenses</li><li><i class=\"fa-solid fa-check-circle\"></i>Violent Crimes</li><li><i class=\"fa-solid fa-check-circle\"></i>White Collar Crimes</li></ul>"
+   },
+   "complex" : {
+      "nested" : {
+         "deep" : "Deep value"
+      }
+   },
+   "hero" : {
+      "button1" : "Our Practice Areas",
+      "button2" : "Consult Now",
+      "subtitle" : "Your trusted legal advocates that care. We will fight for you through any legal challenge, and your needs are our priority. Get a free consultation with us now.",
+      "title" : "Innovative Solutions, Legal Excellence"
+   },
+   "numberExample" : "Formatted number",
+   "lastUpdated" : "Last updated",
+   "team" : {
+      "member2" : {
+         "title" : "Of Counsel",
+         "name" : "Laura Mayfield",
+         "phone" : "(770) 910-4545"
+      },
+      "member1" : {
+         "title" : "Managing Attorney",
+         "name" : "Joan Suh",
+         "email" : "jsuh@jslawgroup.net"
+      },
+      "header" : "<h2>Our Team</h2><p>\"At our firm, we stand by our clients at every step of the legal process. Your challenges are ours to tackle together. We're with you, every step of the way.\"</p>"
+   },
+   "pi" : {
+      "article" : "<h2>Understanding Personal Injury Claim</h2><p>When you are injured due to someone else's negligence, the legal and financial aftermath can be just as painful as the injury itself. Understanding your rights and getting legal help is the first step toward recovery.</p><hr><p>Personal injury can be a devastating experience. It's never an expected event, and we're here to help you through this tough time. If you are facing personal injury, damages, or wrongful death from the negligence of others, our team of experienced lawyers is here to protect your rights and get you the compensation you deserve. Our team truly understands the pain that you're going through, and we want to get you what you need to start recovering.</p><p>As attorneys that focus on a client-centered experience, we only want the best outcome. Through legal expertise, transparent communication, and effective solutions, we will secure your rights and the recompense that you're looking for.</p><h3>What Constitutes a Claim?</h3><p>If you need to seek compensation for emotional, physical, or psychological harm done by another party, then our team of attorneys is here for you. If the other party committed harm due to negligence, recklessness, or intentional acts, then you might have a claim. When it was their actions - or their lack of actions - that was the direct cause of your pain, then they are potentially liable for the damage that you took. If your situation fits these criteria, then schedule a free consultation with us now to see what we can do for you.</p><h3>Our Process: Investigation to Resolution</h3><p>Though every case is personal and different, you can have broad expectations of various consultations, followed by dedicated investigation and collection of evidence. Once all records are obtained, then our attorneys will likely move to filing a claim and demand for compensation. If a settlement isn't reached by this point, then we may move to trial, where we will fight fiercely for your rights and the compensation you deserve.</p>",
+      "content" : "<h2>Personal Injury</h2><p>Navigating the aftermath of an injury is overwhelming, but you are not alone. We are dedicated to fighting for your rights and securing the compensation you deserve so you can focus on healing and rebuilding your life.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>Motor Vehicle Accidents</li><li><i class=\"fa-solid fa-check-circle\"></i>Slip & Fall</li><li><i class=\"fa-solid fa-check-circle\"></i>Wrongful Death</li><li><i class=\"fa-solid fa-check-circle\"></i>Defective Products</li></ul>"
+   },
+   "directionExample" : "This text will auto-detect RTL/LTR and set direction if requested.",
+   "contactinfo" : {
+      "address" : "<h5>Address</h5><p>3296 Summit Ridge Pkwy</p><p>Suite 1010</p><p>Duluth, Georgia 30096</p>",
+      "map" : {
+         "title" : "Our location on Google Maps"
+      },
+      "fax" : "Facsimile",
+      "office" : "Office",
+      "weekdays" : "Weekdays: 9:00 am - 5:00 pm",
+      "title" : "Our Location",
+      "email" : "E-mail",
+      "hours" : "<h5>Opening Hours</h5><p>Weekdays: 9:00 am - 5:00 pm</p>",
+      "contact" : "<h5>Contact</h5><p>Office: (770) 341-1234</p><p>Facsimile: (770) 215-2823</p><p>E-mail: <a href=\"mailto:jsuh@jslawgroup.net\">jsuh@jslawgroup.net</a></p>"
+   },
+   "currencyExample" : "Total price",
+   "careers" : "<h2>Careers</h2><p>At JS Law Group, LLC, we believe that exceptional legal service begins with exceptional people.</p><p>We are continuously seeking talented individuals who share our commitment to excellence and our passion for law.</p><p>Whether you are an experienced team member, a recent law school graduate, or a seasoned professional in legal support services, JS Law Group, LLC can offer a dynamic and rewarding career path.</p><p>We provide comprehensive training, mentorship programs, and ongoing development opportunities to help you reach your full potential. When you're with us, your success is our success too.</p><p>To apply, please submit your resume to <a href=\"mailto:info@jslawgroup.net\">info@jslawgroup.net</a> today.</p>"
+}
