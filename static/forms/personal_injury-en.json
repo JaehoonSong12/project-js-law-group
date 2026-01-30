@@ -1,0 +1,179 @@
+{
+    "form_title": "Personal Injury Case Intake",
+    "contact_email": "info@jslawgroup.net",
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "phone_number",
+        "label": "Phone Number",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "id": "email_address",
+        "label": "Email Address",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "preferred_contact_method",
+        "label": "Preferred Method of Contact",
+        "type": "radio",
+        "options": [
+          "Phone call",
+          "Text message",
+          "Email"
+        ]
+      },
+      {
+        "id": "date_of_incident",
+        "label": "Date of Incident",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "incident_type",
+        "label": "What type of incident was it?",
+        "type": "radio",
+        "options": [
+          "Car accident",
+          "Slip and fall",
+          "Truck accident",
+          "Dog bite",
+          "Other"
+        ]
+      },
+      {
+        "id": "incident_description",
+        "label": "Briefly describe what happened.",
+        "type": "textarea"
+      },
+      {
+        "id": "medical_visit",
+        "label": "Did you go to a hospital or ER?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "medical_facility_name",
+        "label": "Name of hospital or clinic visited",
+        "type": "text",
+        "conditional_on": "medical_visit"
+      },
+      {
+        "id": "injury_details",
+        "label": "What injuries did you sustain?",
+        "type": "textarea"
+      },
+      {
+        "id": "ongoing_treatment",
+        "label": "Are you currently receiving treatment?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "has_auto_insurance",
+        "label": "Do you have auto insurance?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "auto_claim_number",
+        "label": "Claim number",
+        "type": "text",
+        "conditional_on": "has_auto_insurance"
+      },
+      {
+        "id": "police_responded",
+        "label": "Did police respond to the scene?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "police_report_number",
+        "label": "Police report number (if any)",
+        "type": "text",
+        "conditional_on": "police_responded"
+      },
+      {
+        "id": "fault_party_cited",
+        "label": "Was the at-fault party cited by police (ticket, warning, etc.)?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No",
+          "I don't know"
+        ]
+      },
+      {
+        "id": "vehicle_damaged",
+        "label": "Was your vehicle damaged?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "has_photos",
+        "label": "Do you have photos of the vehicle or scene?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "has_health_insurance",
+        "label": "Do you have health insurance?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "health_insurance_provider",
+        "label": "Health insurance provider name",
+        "type": "text",
+        "conditional_on": "has_health_insurance"
+      },
+      {
+        "id": "health_insurance_policy_number",
+        "label": "Health insurance policy number",
+        "type": "text",
+        "conditional_on": "has_health_insurance"
+      },
+      {
+        "id": "additional_notes",
+        "label": "Anything else you'd like us to know?",
+        "type": "textarea"
+      },
+      {
+        "id": "legal_disclaimer_agreement",
+        "label": "I understand that submitting this form does not create an attorney-client relationship.",
+        "type": "checkbox",
+        "options": [
+          "I agree"
+        ],
+        "required": true
+      }
+    ]
+  }

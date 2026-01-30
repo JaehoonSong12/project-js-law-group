@@ -17,8 +17,8 @@ export default async function main() {
     Util.setupWindowFocusRefresh();
     Util.enableButtonRedirect('btn-redirect');
 
-    Util.loadFragment('nav', 'nav.html').then(() => {
-    Util.loadFragment('footer', 'footer.html').then(async () => {
+    Util.loadFragment('nav', '/static/nav.html').then(() => {
+    Util.loadFragment('footer', '/static/footer.html').then(async () => {
         FontAwesome.initThemeIcons(['cthm001', 'cthm002']);
         document.addEventListener('click', (e) => {
             if (e.target.closest('#cthm001') || e.target.closest('#cthm002')) {
@@ -261,3 +261,5 @@ ${message}`;
     });
     });
 }
+
+main();

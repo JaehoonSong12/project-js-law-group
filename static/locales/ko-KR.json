@@ -82,7 +82,7 @@
       },
       "member2" : {
          "name" : "Laura Mayfield",
-         "phone" : "(770) 910-4545",
+         "phone" : "(770) 222-4444",
          "title" : "Of Counsel"
       }
    },
@@ -238,7 +238,7 @@
          },
          "phone" : {
             "title" : "24시간 전화하세요",
-            "content" : "<strong>비상:</strong> (770) 910-4545<br><strong>이메일:</strong> jsuh@jslawgroup.net"
+            "content" : "<strong>비상:</strong> (770) 222-4444<br><strong>이메일:</strong> jsuh@jslawgroup.net"
          },
          "hours" : {
             "title" : "영업 시간",
@@ -250,11 +250,11 @@
          "whatToDo" : "해야 할 일",
          "incidents" : "사건 유형",
          "contact" : "연락하기",
-         "emergency" : "24시간 비상: (770) 910-4545"
+         "emergency" : "24시간 비상: (770) 222-4444"
       },
       "footer" : {
          "disclaimer" : "면책 조항",
-         "phone" : "(770) 910-4545",
+         "phone" : "(770) 222-4444",
          "address" : "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
          "nav" : {
             "home" : "홈",
@@ -266,7 +266,7 @@
       },
       "heroCta" : {
          "title" : "개인 상해 변호사",
-         "subtitle" : "<span class=\"text-danger fw-bold\">(770) 910-4545</span>를 신뢰하여 개인 상해 사건을 방어하세요",
+         "subtitle" : "<span class=\"text-danger fw-bold\">(770) 222-4444</span>를 신뢰하여 개인 상해 사건을 방어하세요",
          "message" : "여러분이나 사랑하는 사람이 타인의 과실로 인해 심각한 부상을 입었을 때, 신뢰할 수 있는 법률 자문이 필요합니다.",
          "claim" : "JS Law Group은 여러분의 청구를 방어할 준비가 되어 있습니다."
       },
@@ -335,7 +335,7 @@
          }
       },
       "vehicleAccidents" : {
-         "title" : "자동차 사고 후 <span class=\"text-danger\">(770) 910-4545</span>를 신뢰하세요",
+         "title" : "자동차 사고 후 <span class=\"text-danger\">(770) 222-4444</span>를 신뢰하세요",
          "subtitle" : "JS Law Group의 변호사는 자동차 및 자동차 사고 사건을 전문으로 합니다. 저희의 목표는 항상 부상당한 당사자를 위한 최대 보상입니다.",
          "seeMore" : "자세히 보기",
          "car" : {

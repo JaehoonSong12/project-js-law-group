@@ -82,7 +82,7 @@
       },
       "member2" : {
          "name" : "Laura Mayfield",
-         "phone" : "(770) 910-4545",
+         "phone" : "(770) 222-4444",
          "title" : "Of Counsel"
       }
    },
@@ -238,7 +238,7 @@
          },
          "phone" : {
             "title" : "Llámenos 24/7",
-            "content" : "<strong>Emergencia:</strong> (770) 910-4545<br><strong>Correo electrónico:</strong> jsuh@jslawgroup.net"
+            "content" : "<strong>Emergencia:</strong> (770) 222-4444<br><strong>Correo electrónico:</strong> jsuh@jslawgroup.net"
          },
          "hours" : {
             "title" : "Nuestro horario",
@@ -250,11 +250,11 @@
          "whatToDo" : "Qué hacer",
          "incidents" : "Tipos de incidentes",
          "contact" : "Contacto",
-         "emergency" : "EMERGENCIA 24/7: (770) 910-4545"
+         "emergency" : "EMERGENCIA 24/7: (770) 222-4444"
       },
       "footer" : {
          "disclaimer" : "Descargo de responsabilidad",
-         "phone" : "(770) 910-4545",
+         "phone" : "(770) 222-4444",
          "address" : "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
          "nav" : {
             "home" : "Inicio",
@@ -266,7 +266,7 @@
       },
       "heroCta" : {
          "title" : "Abogados de Lesiones Personales",
-         "subtitle" : "Confíe en <span class=\"text-danger fw-bold\">(770) 910-4545</span> para defender su caso de lesiones personales",
+         "subtitle" : "Confíe en <span class=\"text-danger fw-bold\">(770) 222-4444</span> para defender su caso de lesiones personales",
          "message" : "Cuando usted o un ser querido sufre una lesión grave debido a la negligencia de otra persona, necesita asesoramiento legal en el que pueda confiar.",
          "claim" : "JS Law Group está preparado para defender su reclamación."
       },
@@ -335,7 +335,7 @@
          }
       },
       "vehicleAccidents" : {
-         "title" : "Confíe en <span class=\"text-danger\">(770) 910-4545</span> después de su Accidente de Vehículo Motor",
+         "title" : "Confíe en <span class=\"text-danger\">(770) 222-4444</span> después de su Accidente de Vehículo Motor",
          "subtitle" : "Nuestros abogados en JS Law Group se especializan en casos de accidentes automovilísticos y de vehículos motorizados. Nuestro objetivo es siempre la máxima compensación para la parte lesionada.",
          "seeMore" : "Ver Más",
          "car" : {

@@ -1,4 +1,4 @@
-# --- Generated from ./.gitignores on Mon Jan 26 15:46:01 2026 ---
+# --- Generated from ./.gitignores on Thu Jan 29 23:52:05 2026 ---
 
 #############################################
 # A.gitignore
@@ -3055,8 +3055,8 @@ junit*.properties
 *.psm
 *.bak
 *.cmp
-*.jpg
-*.html
+# *.jpg
+# *.html
 *.bsf
 
 # ignore simulation output of ModelSim
@@ -6227,7 +6227,7 @@ TestReports
 
 # Report generators and templates
 #   * if you want to provide (f.e.) your own report generators exclude the directory here and ignore only the unnecessary subdirectories
-Templates
+# Templates
 
 # optional, default for external Python libraries
 PyLibs
