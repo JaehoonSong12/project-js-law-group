@@ -300,32 +300,15 @@ echo.%CYAN%=========================================================%RESET%
 echo.Checking for Visual Studio Code...
 
 setlocal EnableDelayedExpansion
-set APP_NAME="Visual Studio Code"
-set PROGRAM_FOLDER="Microsoft VS Code"
+set APP_NAME=Visual Studio Code
+set PROGRAM_FOLDER=Microsoft VS Code
 
 @REM Check if VS Code command is available
 if defined PROGRAM_FOLDER (
-  if exist "!ProgramFiles!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files check!RESET!.
-    echo.Found at: "!ProgramFiles!\!PROGRAM_FOLDER!"
-    echo.
-    goto :vscode_found
-  )
-  if exist "!ProgramFiles(x86)!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files x86 check!RESET!.
-    echo.Found at: "!ProgramFiles(x86)!\!PROGRAM_FOLDER!"
-    echo.
-    goto :vscode_found
-  )
-  if exist "!HOMEDRIVE!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - HOMEDRIVE check!RESET!.
-    echo.Found at: "!HOMEDRIVE!\!PROGRAM_FOLDER!"
-    echo.
-    goto :vscode_found
-  )
-  if exist "!USERPROGRAMS!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - USERPROGRAMS check!RESET!.
-    echo.Found at: "!USERPROGRAMS!\!PROGRAM_FOLDER!"
+  call :Find-Directory "!PROGRAM_FOLDER!"
+  if !FOUND_DIR! EQU 1 (
+    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - directory check!RESET!.
+    echo.Found at: "!FOUND_DIR_PATH!"
     echo.
     goto :vscode_found
   )
@@ -375,6 +358,71 @@ goto :EOF
 
 
 @REM ---------------------------------------------------------------------------
+@REM Function: Find-Directory
+@REM Usage: call :Find-Directory "<Folder_Name>"
+@REM
+@REM Parameters:
+@REM   %1: The folder name to search for (e.g., "Git" or "Google\Drive File Stream").
+@REM
+@REM Purpose:
+@REM   Searches for a directory in common installation paths:
+@REM   - ProgramFiles
+@REM   - ProgramFiles(x86)
+@REM   - HOMEDRIVE
+@REM   - USERPROGRAMS
+@REM
+@REM Output:
+@REM   Sets FOUND_DIR_PATH to the full path if found, empty if not found.
+@REM   Sets FOUND_DIR to 1 if found, 0 if not found.
+@REM
+@REM Note:
+@REM   This function does not use setlocal/endlocal to allow return values
+@REM   to persist in the calling scope.
+@REM ---------------------------------------------------------------------------
+:Find-Directory
+set "FOUND_DIR_PATH="
+set "FOUND_DIR=0"
+set "SEARCH_FOLDER=%~1"
+
+if not defined SEARCH_FOLDER (
+  goto :EOF
+)
+
+@REM Ensure USERPROGRAMS is defined
+if not defined USERPROGRAMS (
+  set "USERPROGRAMS=%LOCALAPPDATA%\Programs"
+)
+
+if exist "%ProgramFiles%\%SEARCH_FOLDER%" (
+  set "FOUND_DIR_PATH=%ProgramFiles%\%SEARCH_FOLDER%"
+  set "FOUND_DIR=1"
+  goto :EOF
+)
+
+if exist "%ProgramFiles(x86)%\%SEARCH_FOLDER%" (
+  set "FOUND_DIR_PATH=%ProgramFiles(x86)%\%SEARCH_FOLDER%"
+  set "FOUND_DIR=1"
+  goto :EOF
+)
+
+if exist "%HOMEDRIVE%\%SEARCH_FOLDER%" (
+  set "FOUND_DIR_PATH=%HOMEDRIVE%\%SEARCH_FOLDER%"
+  set "FOUND_DIR=1"
+  goto :EOF
+)
+
+if defined USERPROGRAMS (
+  if exist "%USERPROGRAMS%\%SEARCH_FOLDER%" (
+    set "FOUND_DIR_PATH=%USERPROGRAMS%\%SEARCH_FOLDER%"
+    set "FOUND_DIR=1"
+    goto :EOF
+  )
+)
+
+goto :EOF
+
+
+@REM ---------------------------------------------------------------------------
 @REM Function: Install-App
 @REM Usage: call :Install-App "<winget_ID>" "<Application_Name>" "<Executable_Command>" "<Program_Files_Folder_Name>"
 @REM
@@ -403,27 +451,10 @@ echo.Checking for !YELLOW!!APP_NAME!!RESET!...
 
 @REM Check if the PROGRAM_FOLDER variable is defined.
 if defined PROGRAM_FOLDER (
-  if exist "!ProgramFiles!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files check!RESET!.
-    echo.!YELLOW!Found at%RESET%: "!ProgramFiles!\!PROGRAM_FOLDER!"
-    echo.
-    goto :end_install_app
-  )
-  if exist "!ProgramFiles(x86)!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - Program Files x86 check!RESET!.
-    echo.!YELLOW!Found at%RESET%: "!ProgramFiles(x86)!\!PROGRAM_FOLDER!"
-    echo.
-    goto :end_install_app
-  )
-  if exist "!HOMEDRIVE!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - HOMEDRIVE check!RESET!.
-    echo.!YELLOW!Found at%RESET%: "!HOMEDRIVE!\!PROGRAM_FOLDER!"
-    echo.
-    goto :end_install_app
-  )
-  if exist "!USERPROGRAMS!\!PROGRAM_FOLDER!" (
-    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - USERPROGRAMS check!RESET!.
-    echo.!YELLOW!Found at%RESET%: "!USERPROGRAMS!\!PROGRAM_FOLDER!"
+  call :Find-Directory "!PROGRAM_FOLDER!"
+  if !FOUND_DIR! EQU 1 (
+    echo.!YELLOW!!APP_NAME!!RESET! is !GREEN!already installed - directory check!RESET!.
+    echo.!YELLOW!Found at%RESET%: "!FOUND_DIR_PATH!"
     echo.
     goto :end_install_app
   )
@@ -582,6 +613,9 @@ if !ERRORLEVEL! NEQ 0 (
 if /I "!confirm!"=="y" (
     echo Resetting configuration...
     call gh auth logout --hostname github.com
+    if !ERRORLEVEL! NEQ 0 (
+      echo.!RED!Failed to logout. Continuing...!RESET!
+    )
 )
 pause
 call gh auth status --hostname github.com >NUL 2>&1
@@ -649,7 +683,7 @@ if "%IS_ADMIN%"=="0" (
   echo.%CYAN%The script is running with %GREEN%administrator%RESET% privileges.%RESET%
   echo.%CYAN%=========================================================%RESET%
   echo.
-  @REM call :Display-Virtualization-Info
+  call :Display-Virtualization-Info
 )
 
 echo.%CYAN%========================================================= Utilities, Install...%RESET%
@@ -658,7 +692,21 @@ pause
 @REM Platform Dependents - Web Browsers & IDEs
 @REM ---------------------------------------------------------------------------
 call :Install-App "Mozilla.Firefox" "Firefox" "firefox" "Mozilla Firefox"
-call :Install-App "Google.Chrome" "Google Chrome" "chrome" "Google"
+call :Install-App "Google.Chrome" "Google Chrome" "chrome" "Google\Chrome"
+call :Install-App "Google.GoogleDrive" "Google Drive for Desktop" "GoogleDriveFS" "Google\Drive File Stream"
+@REM Here, 1. look up Google\Drive File Stream directory, if there is found, start (open) the directory. If not found, just skip.
+@REM 2. Also check if G drive exists. Only open the directory if folder is found AND G drive does not exist.
+call :Find-Directory "Google\Drive File Stream"
+if %FOUND_DIR% EQU 1 (
+  if not exist "G:\" (
+    echo.%CYAN%Opening Google Drive File Stream directory...%RESET%
+    echo.Found at: "%FOUND_DIR_PATH%"
+    echo.%GREEN%Google Drive File Stream directory opened successfully.%RESET%
+    start "" "%FOUND_DIR_PATH%"
+  ) else (
+    echo.%YELLOW%G drive already exists. Skipping directory open.%RESET%
+  )
+)
 call :Install-App "Microsoft.VisualStudioCode" "Visual Studio Code" "code" "Microsoft VS Code"
 call :Install-App "Adobe.Acrobat.Reader.64-bit" "Adobe Acrobat Reader DC" "acrordc.exe" "Adobe"
 
@@ -671,32 +719,26 @@ pause
 @REM ---------------------------------------------------------------------------
 call :Install-App "Git.Git" "Git" "git" "Git"
 call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
-
-
-
-
 call :Authenticate-gh
-
-
 call :Install-App "GLab.GLab" "GitLab CLI" "glab" "glab"
 call :Check-Bashrc
-@REM @REM ---------------------------------------------------------------------------
-@REM @REM Platform Dependents - POSIX/Unix compatibility "layer (A full environment)" for Windows ("M"inimal "SYS"tem "2".)
-@REM @REM  1. A bash-based shell on Windows
-@REM @REM  2. A "Pacman" package manager (from Arch Linux)
-@REM @REM  3. GNU toolchains (GCC, make, autotools)
-@REM @REM  4. Build Windows-native on virtual Linux environment
-@REM @REM ---------------------------------------------------------------------------
-@REM call :Install-App "MSYS2.MSYS2" "MSYS2" "mintty" "msys64"
-@REM @REM ---------------------------------------------------------------------------
-@REM @REM Platform Independent - Container Platform (Docker Desktop)
-@REM @REM  1. Container runtime and orchestration
-@REM @REM  2. Docker Desktop includes Docker Engine, Docker CLI, Docker Compose
-@REM @REM  3. GUI for managing images and containers
-@REM @REM  4. Build Linux-native (WSL2 processor) on virtual Linux environment
-@REM @REM ---------------------------------------------------------------------------
-@REM call :Install-App "Microsoft.WSL" "Windows Subsystem for Linux" "wsl" "WSL"
-@REM call :Install-App "Docker.DockerDesktop" "Docker Desktop" "docker" "Docker"
+@REM ---------------------------------------------------------------------------
+@REM Platform Dependents - POSIX/Unix compatibility "layer (A full environment)" for Windows ("M"inimal "SYS"tem "2".)
+@REM  1. A bash-based shell on Windows
+@REM  2. A "Pacman" package manager (from Arch Linux)
+@REM  3. GNU toolchains (GCC, make, autotools)
+@REM  4. Build Windows-native on virtual Linux environment
+@REM ---------------------------------------------------------------------------
+call :Install-App "MSYS2.MSYS2" "MSYS2" "mintty" "msys64"
+@REM ---------------------------------------------------------------------------
+@REM Platform Independent - Container Platform (Docker Desktop)
+@REM  1. Container runtime and orchestration
+@REM  2. Docker Desktop includes Docker Engine, Docker CLI, Docker Compose
+@REM  3. GUI for managing images and containers
+@REM  4. Build Linux-native (WSL2 processor) on virtual Linux environment
+@REM ---------------------------------------------------------------------------
+call :Install-App "Microsoft.WSL" "Windows Subsystem for Linux" "wsl" "WSL"
+call :Install-App "Docker.DockerDesktop" "Docker Desktop" "docker" "Docker"
 
 echo.%CYAN%========================================================= Windows Natives Dev, Install...%RESET%
 pause
@@ -715,13 +757,13 @@ call :Install-App "MiKTeX.MiKTeX" "MiKTeX" "pdflatex" "MiKTeX"
 echo.
 echo.%GREEN%All specified applications have been processed.%RESET%
 
-@REM @REM recommend to reboot the system
-@REM echo.%YELLOW%It is recommended to %RED%reboot%RESET% the system to apply the changes.%RESET%
-@REM echo.%YELLOW%Do you want to %RED%reboot%RESET% the system now? (y/n)%RESET%
-@REM set /p REBOOT=
-@REM if "%REBOOT%"=="y" (
-@REM   shutdown /r /t 0
-@REM )
+@REM recommend to reboot the system
+echo.%YELLOW%It is recommended to %RED%reboot%RESET% the system to apply the changes.%RESET%
+echo.%YELLOW%Do you want to %RED%reboot%RESET% the system now? (y/n)%RESET%
+set /p REBOOT=
+if "%REBOOT%"=="y" (
+  shutdown /r /t 0
+)
 
 pause
 exit /b 0
