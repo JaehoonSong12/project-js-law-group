@@ -20,7 +20,7 @@ let translations = {};
  * @throws {Error} Throws an error if the locale file cannot be loaded
  * @throws {Error} Throws an error if the locale file format is invalid
  */
-async function loadLocale(locale, dir = 'locales') {
+async function loadLocale(locale, dir = '/static/locales') {
   const url = `${dir}/${locale}.json`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to load locale file "${url}". Status: ${res.status}. Locale "${locale}" is not available.`);
@@ -45,7 +45,7 @@ async function loadLocale(locale, dir = 'locales') {
  * 
  * @throws {Error} Throws an error if the locale file cannot be loaded
  */
-export async function switchLocale(locale, dir = 'locales') {
+export async function switchLocale(locale, dir = '/static/locales') {
     const data = await loadLocale(locale, dir);
     translations = data || {};
     document.documentElement.lang = locale;
@@ -155,7 +155,7 @@ export function applyTranslations(i18nAttr = 'data-i18n', locale = 'en-US') {
  * 
  * @throws {Error} Throws an error if the locale file cannot be loaded
  */
-export async function switchLanguage(localeCode, dir = 'locales', i18nAttr = 'data-i18n') {
+export async function switchLanguage(localeCode, dir = '/static/locales', i18nAttr = 'data-i18n') {
   try {
     await switchLocale(localeCode, dir);
     applyTranslations(i18nAttr, localeCode);
@@ -180,7 +180,7 @@ export async function switchLanguage(localeCode, dir = 'locales', i18nAttr = 'da
  * 
  * @throws {Error} Throws an error if the locale file cannot be loaded
  */
-export async function initI18n(locale, dir = 'locales') {
+export async function initI18n(locale, dir = '/static/locales') {
   await switchLocale(locale, dir);
 }
 

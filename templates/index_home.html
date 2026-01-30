@@ -7,13 +7,13 @@
   <title>JS Law Group (서조은 법률 그룹)</title>
   
   <!-- Bootstrap 5 CSS (Reactivated CDN link) -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
- 
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
   <!-- Font Awesome 6 CSS (Restored integrity) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Bootstrap Core: ser's custom.css link (Commented out to allow preview) -->
-  <link href="css/custom.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/custom.min.css') }}" rel="stylesheet">
 
 
   <!-- Google Fonts - Inter -->
@@ -24,12 +24,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
-<body debug-i18n="true"> <!-- set to true if you want to see the debug mode --> 
+<body debug-i18n="false"> <!-- set to true if you want to see the debug mode --> 
   <div id="nav"></div>
 
-
-
-
+  <!-- Flash Messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container mt-3 fixed-top" style="z-index: 2000; top: 80px;">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show shadow" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
 
   <!-- 1. Hero Animation -->
    
@@ -197,7 +207,7 @@
         <div class="col-lg-6">
           <!-- Placeholder image updated -->
           <!-- Note: This image path is local and may not load in preview -->
-          <img src="images/JSlawGroupLOGO.avif" 
+          <img src="{{ url_for('static', filename='images/JSlawGroupLOGO.avif') }}" 
                style="width:250px !important; height:auto !important;"
                class="img-fluid rounded-4 shadow" 
                alt="JS Law Group">
@@ -222,7 +232,7 @@
         </div>
         <div class="col-lg-5">
           <!-- Note: This image path is local and may not load in preview -->
-          <img src="images/about_Joan_Suh.avif" 
+          <img src="{{ url_for('static', filename='images/about_Joan_Suh.avif') }}" 
                style="width:300px !important; height:auto !important;"
                class="img-fluid rounded-4 shadow" 
                alt="Joan Suh">
@@ -346,35 +356,35 @@
       <div class="row g-4 justify-content-center align-items-center">
         
         <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="images/partner01-auto_star.avif" 
+          <img src="{{ url_for('static', filename='images/partner01-auto_star.avif') }}" 
                class="img-fluid" 
                alt="Auto Star Partner Logo" 
                style="max-height: 400px;">
         </div>
         
         <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="images/partner02-kdj.avif" 
+          <img src="{{ url_for('static', filename='images/partner02-kdj.avif') }}" 
                class="img-fluid" 
                alt="KDJ Partner Logo"
                style="max-height: 400px;">
         </div>
         
         <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="images/partner03-kmnl.avif" 
+          <img src="{{ url_for('static', filename='images/partner03-kmnl.avif') }}" 
                class="img-fluid" 
                alt="KMNL Partner Logo"
                style="max-height: 400px;">
         </div>
         
         <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="images/partner04-comics.avif" 
+          <img src="{{ url_for('static', filename='images/partner04-comics.avif') }}" 
                class="img-fluid" 
                alt="Comics Partner Logo"
                style="max-height: 400px;">
         </div>
         
         <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="images/partner05-ck_finance.avif" 
+          <img src="{{ url_for('static', filename='images/partner05-ck_finance.avif') }}" 
                class="img-fluid" 
                alt="CK Finance Partner Logo"
                style="max-height: 400px;">
@@ -409,7 +419,7 @@
       <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-lg-4">
           <div class="card shadow border-0 text-center align-items-center">
-            <img src="images/about_Joan_Suh.avif" 
+            <img src="{{ url_for('static', filename='images/about_Joan_Suh.avif') }}" 
                  style="width:250px !important; height:auto !important;"
                  class="card-img-top" 
                  alt="Joan Suh, Managing Attorney">
@@ -427,7 +437,7 @@
         </div>
         <div class="col-md-6 col-lg-4">
           <div class="card shadow border-0 text-center align-items-center">
-            <img src="images/about_Joan_Suh.avif" 
+            <img src="{{ url_for('static', filename='images/about_Joan_Suh.avif') }}" 
                  style="width:250px !important; height:auto !important;"
                  class="card-img-top" 
                  alt="Laura Mayfield, Of Counsel">
@@ -618,106 +628,36 @@
             <span class="badge rounded-pill text-bg-primary"></span>
           </div>
 
-
-
-          
-          <!-- Existing Form (unchanged) -->
-          <form id="contactForm">
+          <!-- Existing Form (Flask-WTF Integration) -->
+          <form id="contactForm" method="POST" action="{{ url_for('home') }}">
+            {{ form.hidden_tag() }}
             <div class="row g-3">
               <div class="col-md-6">
-                <label data-i18n="contact.firstName"
-                       for="modalFirstName"
-                       class="form-label">
-                  contact.firstName fallback
-                </label>
-                <input type="text"
-                       id="modalFirstName"
-                       required
-                       class="form-control rounded-pill">
+                {{ form.first_name.label(class="form-label") }}
+                {{ form.first_name(class="form-control rounded-pill", placeholder="First Name") }}
               </div>
               <div class="col-md-6">
-                <label data-i18n="contact.lastName"
-                       for="modalLastName"
-                       class="form-label">
-                  contact.lastName fallback
-                </label>
-                <input type="text"
-                       id="modalLastName"
-                       required
-                       class="form-control rounded-pill">
+                {{ form.last_name.label(class="form-label") }}
+                {{ form.last_name(class="form-control rounded-pill", placeholder="Last Name") }}
               </div>
               <div class="col-md-6">
-                <label data-i18n="contact.email"
-                       for="modalEmail"
-                       class="form-label">
-                  contact.email fallback
-                </label>
-                <input type="email"
-                       id="modalEmail"
-                       required
-                       class="form-control rounded-pill">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control rounded-pill", placeholder="Email") }}
               </div>
               <div class="col-md-6">
-                <label data-i18n="contact.phone"
-                       for="modalPhone"
-                       class="form-label">
-                  contact.phone fallback
-                </label>
-                <input type="tel"
-                       id="modalPhone"
-                       class="form-control rounded-pill">
+                {{ form.phone.label(class="form-label") }}
+                {{ form.phone(class="form-control rounded-pill", placeholder="Phone") }}
               </div>
               <div class="col-12">
-                <label data-i18n="contact.inquiryType"
-                       for="inquiryType"
-                       class="form-label">
-                  contact.inquiryType fallback
-                </label>
-                <select id="inquiryType"
-                        class="form-select rounded-pill">
-                  <option value="default"
-                          data-i18n="contact.selectOne">
-                    contact.selectOne fallback
-                  </option>
-                  <option value="pi"
-                          data-i18n="contact.pi">
-                    contact.pi fallback
-                  </option>
-                  <option value="cd"
-                          data-i18n="contact.cd">
-                    contact.cd fallback
-                  </option>
-                  <option value="fl"
-                          data-i18n="contact.fl">
-                    contact.fl fallback
-                  </option>
-                  <option value="other"
-                          data-i18n="contact.other">
-                    contact.other fallback
-                  </option>
-                </select>
+                {{ form.inquiry_type.label(class="form-label") }}
+                {{ form.inquiry_type(class="form-select rounded-pill") }}
               </div>
               <div class="col-12">
-                <label data-i18n="contact.message"
-                       for="modalMessage"
-                       class="form-label">
-                  contact.message fallback
-                </label>
-                <textarea id="modalMessage"
-                          data-i18n="contact.messagePlaceholder"
-                          rows="5"
-                          required
-                          placeholder="contact.messagePlaceholder fallback"
-                          style="border-radius: 1.5rem;"
-                          class="form-control">
-                </textarea>
+                {{ form.message.label(class="form-label") }}
+                {{ form.message(class="form-control", rows="5", style="border-radius: 1.5rem;", placeholder="Tell us about your case...") }}
               </div>
               <div class="col-12 text-center">
-                <button data-i18n="contact.submit"
-                        type="submit"
-                        class="btn btn-primary btn-lg rounded-pill px-5">
-                  contact.submit fallback
-                </button>
+                <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">Submit Inquiry</button>
               </div>
             </div>
           </form>
@@ -732,5 +672,5 @@
 <!-- bootstrap: relative path, type=module -->  
 <!-- Bootstrap 5 JS Bundle (includes Popper.js) (Restored integrity) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script type="module" src="index.js"></script>
+<script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
 </html>

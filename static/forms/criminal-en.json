@@ -1,0 +1,141 @@
+{
+    "form_title": "Criminal Case Intake",
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "phone_number",
+        "label": "Phone Number",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "id": "email_address",
+        "label": "Email Address",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "preferred_contact_method",
+        "label": "Preferred Method of Contact",
+        "type": "radio",
+        "options": [
+          "Phone call",
+          "Text message",
+          "Email"
+        ]
+      },
+      {
+        "id": "date_of_incident",
+        "label": "Date of Incident",
+        "type": "date"
+      },
+      {
+        "id": "county_of_incident",
+        "label": "County Where Incident Occurred",
+        "type": "text"
+      },
+      {
+        "id": "arrest_status",
+        "label": "Were You Arrested?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "custody_status",
+        "label": "Are you currently in custody, on bond, or released on your own recognizance?",
+        "type": "radio",
+        "options": [
+          "In custody",
+          "On bond",
+          "Release without bond"
+        ]
+      },
+      {
+        "id": "court_date_given",
+        "label": "Were You Given a Court Date?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No",
+          "I don't know"
+        ]
+      },
+      {
+        "id": "court_date",
+        "label": "If Yes, What is the Date?",
+        "type": "date",
+        "conditional_on": "court_date_given"
+      },
+      {
+        "id": "incident_description",
+        "label": "Briefly describe what happened.",
+        "type": "textarea"
+      },
+      {
+        "id": "prior_convictions",
+        "label": "Have you ever been convicted of a crime before?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "probation_status",
+        "label": "Are you currently on probation?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "witnesses_present",
+        "label": "Were there any witnesses?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "witness_details",
+        "label": "If Yes, what is his/her name and his/her contact info?",
+        "type": "textarea",
+        "conditional_on": "witnesses_present"
+      },
+      {
+        "id": "has_documents",
+        "label": "Do you have any documents related to the case (ticket, warrant, court notice)?",
+        "type": "radio",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "referral_source",
+        "label": "How did you hear about us?",
+        "type": "radio",
+        "options": [
+          "Google",
+          "Social Media",
+          "Friend or Family",
+          "Other"
+        ]
+      },
+      {
+        "id": "additional_notes",
+        "label": "Anything else you'd like us to know?",
+        "type": "textarea"
+      }
+    ]
+  }

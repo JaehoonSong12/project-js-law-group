@@ -1,0 +1,136 @@
+{
+    "form_title": "형사 사건 상담 신청서",
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "성함",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "phone_number",
+        "label": "전화번호",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "id": "email_address",
+        "label": "이메일 주소",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "preferred_contact_method",
+        "label": "선호하는 연락 방법",
+        "type": "radio",
+        "options": [
+          "전화",
+          "문자",
+          "이메일"
+        ]
+      },
+      {
+        "id": "date_of_incident",
+        "label": "사건 발생일",
+        "type": "date"
+      },
+      {
+        "id": "county_of_incident",
+        "label": "사건이 발생한 카운티",
+        "type": "text"
+      },
+      {
+        "id": "arrest_status",
+        "label": "체포되셨습니까?",
+        "type": "radio",
+        "options": [
+          "예",
+          "아니오"
+        ]
+      },
+      {
+        "id": "custody_status",
+        "label": "현재 구금 중이십니까, 보석 중이십니까, 아니면 조건 없이 석방되셨습니까?",
+        "type": "radio",
+        "options": [
+          "구금 중",
+          "보석 중",
+          "조건 없이 석방됨"
+        ]
+      },
+      {
+        "id": "court_date_received",
+        "label": "법원 출석 날짜를 받으셨습니까?",
+        "type": "radio",
+        "options": [
+          "예",
+          "아니오"
+        ]
+      },
+      {
+        "id": "court_date",
+        "label": "받으셨다면, 날짜는 언제입니까?",
+        "type": "date",
+        "conditional_on": "court_date_received"
+      },
+      {
+        "id": "charges_received",
+        "label": "받은 혐의는 무엇입니까?",
+        "type": "text"
+      },
+      {
+        "id": "incident_description",
+        "label": "사건에 대해 간단히 설명해주세요.",
+        "type": "textarea"
+      },
+      {
+        "id": "has_documents",
+        "label": "티켓, 영장, 법원 통지서 등 사건 관련 문서를 가지고 계십니까?",
+        "type": "radio",
+        "options": [
+          "예",
+          "아니오"
+        ]
+      },
+      {
+        "id": "prior_convictions",
+        "label": "이전에 범죄로 유죄 판결을 받은 적이 있습니까?",
+        "type": "radio",
+        "options": [
+          "예",
+          "아니오"
+        ]
+      },
+      {
+        "id": "prior_conviction_details",
+        "label": "있다면, 간단히 설명해주세요.",
+        "type": "textarea",
+        "conditional_on": "prior_convictions"
+      },
+      {
+        "id": "probation_status",
+        "label": "현재 집행 유예 (Probation) 기간이십니까?",
+        "type": "radio",
+        "options": [
+          "예",
+          "아니오"
+        ]
+      },
+      {
+        "id": "referral_source",
+        "label": "저희를 어떻게 알게 되셨습니까?",
+        "type": "radio",
+        "options": [
+          "구글",
+          "소셜 미디어",
+          "가족이나 친구 소개",
+          "기타"
+        ]
+      },
+      {
+        "id": "additional_comments",
+        "label": "추가로 남기고 싶은 말씀이 있으신가요?",
+        "type": "textarea"
+      }
+    ]
+  }
