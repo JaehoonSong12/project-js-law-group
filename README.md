@@ -53,7 +53,27 @@ JS Law Group Website is a professional, responsive web application built for a l
 
 ## About Copywriter
 
+Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
 
+- **Google Drive**: [shared folder](https://drive.google.com/drive/folders/1KxDCyep_wjzljJFg4_3VhuLtFhbTFJq_?usp=sharing)
+- **Google Doc**: [shared document](https://docs.google.com/document/d/1ktVLaH3LRAZYLbDIvD55MNlNusYgBo8_NEND8peRMCM/edit?usp=sharing)
+- **Pull requests**: [PR #2](https://github.com/JaehoonSong12/project-js-law-group/pull/2), [PR #8](https://github.com/JaehoonSong12/project-js-law-group/pull/8), [PR #9](https://github.com/JaehoonSong12/project-js-law-group/pull/9) (by Nayun)
+
+
+- **PR #2** ([link](https://github.com/JaehoonSong12/project-js-law-group/pull/2)) - Content edits for pi.article.body, cd.article.body, about.desc, and related scripts.
+  - Grammar/vocabulary edits.
+  - Filler text replaced with informational content.
+  - Rephrased sentences; added/removed phrases.
+
+- **PR #8** ([link](https://github.com/JaehoonSong12/project-js-law-group/pull/8)) - Content writing for 24/7 Emergency Legal Rescue page (first half).
+  - Grammar/vocabulary edits; rephrased sentences; added/removed phrases.
+  - Requested: Move "What to Do in an Emergency" above "Our Practice Areas"; remove `tfs.incidents.title` / `tfs.incidents.subtitle` and merge "Our Practice Areas" with "We Handle All Types of Incidents".
+
+- **PR #9** ([link](https://github.com/JaehoonSong12/project-js-law-group/pull/9)) - Content writing for 24/7 Emergency Legal Rescue page (second half).
+  - Grammar/vocabulary edits; rephrased sentences; added/removed phrases.
+  - Requested: Reorder Index sections (top to bottom): Personal Injury Lawyers -> Trust (770)-910-4545 After Your Motor Vehicle Accident -> Important Steps to Take When in a Motor Vehicle Accident -> What Happens When You Call? -> Case Evaluation Form. [Order in doc](https://docs.google.com/document/d/1QIYvsppMaTWNkEwfl84qfEmJMOyuRRv24sh1y7GCmXs/edit?usp=sharing).
+
+**Quick reference (student contributors):** Run the dev server with `./on_server.sh`; use `../vcs-gh-nayun.exe` for git/PR workflow.
 
 
 
@@ -199,44 +219,44 @@ python server.py --build <subdirectory>
 
 ```
 base-web/
-│
-├── public/                 # Public-facing HTML files and static assets
-│   ├── jslaw.html          # Main law firm website page
-│   ├── index.html           # Landing page
-│   ├── locales/            # Translation JSON files
-│   │   ├── en-US.json      # English translations
-│   │   ├── ko-KR.json      # Korean translations
-│   │   ├── ja-JP.json      # Japanese translations
-│   │   └── es-US.json      # Spanish translations
-│   ├── images/             # Image assets
-│   └── css/                # Compiled CSS files
-│
-├── src/                    # Source code
-│   ├── js/                 # JavaScript modules
-│   │   ├── jslaw.js        # Main page controller
-│   │   └── *.js            # Other page controllers
-│   ├── core-module.js      # Core utility functions
-│   ├── ext-module-i18n.js  # Internationalization module
-│   ├── ext-module-bs.js    # Bootstrap extensions
-│   ├── ext-module-fa.js    # Font Awesome extensions
-│   ├── scss/               # SCSS source files
-│   │   └── custom.scss     # Custom Bootstrap overrides
-│   └── css/                # Compiled CSS output
-│
-├── includes/               # Reusable HTML fragments
-│   ├── nav-*.html          # Navigation components
-│   └── footer-*.html       # Footer components
-│
-├── scripts-*/              # Translation workspace directories
-│   ├── scripts-en-US/      # English copywriter workspace
-│   ├── scripts-ko-KR/      # Korean copywriter workspace
-│   ├── scripts-ja-JP/      # Japanese copywriter workspace
-│   └── scripts-es-US/      # Spanish copywriter workspace
-│
-├── docs/                   # Documentation and agreements
-├── server.py               # Python development server
-├── server.js               # Node.js server (alternative)
-└── README.md              # This file
+|
++-- public/                 # Public-facing HTML files and static assets
+|   +-- jslaw.html          # Main law firm website page
+|   +-- index.html           # Landing page
+|   +-- locales/            # Translation JSON files
+|   |   +-- en-US.json      # English translations
+|   |   +-- ko-KR.json      # Korean translations
+|   |   +-- ja-JP.json      # Japanese translations
+|   |   +-- es-US.json      # Spanish translations
+|   +-- images/             # Image assets
+|   +-- css/                # Compiled CSS files
+|
++-- src/                    # Source code
+|   +-- js/                 # JavaScript modules
+|   |   +-- jslaw.js        # Main page controller
+|   |   +-- *.js            # Other page controllers
+|   +-- core-module.js      # Core utility functions
+|   +-- ext-module-i18n.js  # Internationalization module
+|   +-- ext-module-bs.js    # Bootstrap extensions
+|   +-- ext-module-fa.js    # Font Awesome extensions
+|   +-- scss/               # SCSS source files
+|   |   +-- custom.scss     # Custom Bootstrap overrides
+|   +-- css/                # Compiled CSS output
+|
++-- includes/               # Reusable HTML fragments
+|   +-- nav-*.html          # Navigation components
+|   +-- footer-*.html       # Footer components
+|
++-- scripts-*/              # Translation workspace directories
+|   +-- scripts-en-US/      # English copywriter workspace
+|   +-- scripts-ko-KR/      # Korean copywriter workspace
+|   +-- scripts-ja-JP/      # Japanese copywriter workspace
+|   +-- scripts-es-US/      # Spanish copywriter workspace
+|
++-- docs/                   # Documentation and agreements
++-- server.py               # Python development server
++-- server.js               # Node.js server (alternative)
++-- README.md              # This file
 ```
 
 **Note**: The `scripts-en-US` directory is the primary workspace for copywriters (Nayun's workspace).
@@ -430,11 +450,11 @@ The project is deployed using **GitHub Pages** for high availability and accessi
 
 **Personal Injury Forms:**
 - [Personal Injury - English](https://docs.google.com/forms/d/e/1FAIpQLSfUtcNBRymBfjurq5eoeKHAiNh-ZtO7x8sNgVP01F2pIW80Aw/viewform?usp=header)
-- [Personal Injury - Korean (상해 한국어)](https://docs.google.com/forms/d/e/1FAIpQLSf62nW3gun6QiLc157Cs-CWc1vzMgS7EzMZ4fj6S1KNONu8xQ/viewform?usp=header)
+- [Personal Injury - Korean](https://docs.google.com/forms/d/e/1FAIpQLSf62nW3gun6QiLc157Cs-CWc1vzMgS7EzMZ4fj6S1KNONu8xQ/viewform?usp=header)
 
 **Criminal Defense Forms:**
-- [Criminal Defense - English (형사 영어)](https://docs.google.com/forms/d/e/1FAIpQLSc7v4ccD3KJjcuS4AYfqrO3eTTt8dMtg5KNd89B-zwwJRwIUw/viewform?usp=header)
-- [Criminal Defense - Korean (형사 한국어)](https://docs.google.com/forms/d/e/1FAIpQLSf62nW3gun6QiLc157Cs-CWc1vzMgS7EzMZ4fj6S1KNONu8xQ/viewform?usp=header)
+- [Criminal Defense - English](https://docs.google.com/forms/d/e/1FAIpQLSc7v4ccD3KJjcuS4AYfqrO3eTTt8dMtg5KNd89B-zwwJRwIUw/viewform?usp=header)
+- [Criminal Defense - Korean](https://docs.google.com/forms/d/e/1FAIpQLSf62nW3gun6QiLc157Cs-CWc1vzMgS7EzMZ4fj6S1KNONu8xQ/viewform?usp=header)
 
 **General Inquiry:**
 - [General Contact Form](https://docs.google.com/forms/d/e/1FAIpQLSdvEg_la4wmUD77wIJ1EZ4c_2HkOkGNZ9ThIiFpj-JU7swFZw/viewform?usp=header)
