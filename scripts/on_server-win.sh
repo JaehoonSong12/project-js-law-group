@@ -33,7 +33,8 @@ cd "$TEMP" || exit
 
 
 # # pip install flask
-python server.py
+# python server.py
+python main.py
 
 
 
