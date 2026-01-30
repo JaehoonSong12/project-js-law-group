@@ -131,17 +131,8 @@ else
     # Execute the OS-specific script, passing along any arguments
     # that were given to this wrapper script ('$@').
     # mintty "${SOURCE_PATH}"
-    # start bash -lc "cd $CURRENT_DIR && $SOURCE_PATH"
     run_terminal "${CURRENT_DIR}" "${SOURCE_PATH}" "$@"
 fi
-
-
-
-
-
-
-
-
 
 
 
