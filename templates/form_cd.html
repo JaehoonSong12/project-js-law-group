@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Defense Intake Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: white; padding: 20px; }
+        .form-control:focus, .form-select:focus, .form-check-input:focus { border-color: #0d6efd; box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
+        .btn-blue { background-color: #0d6efd; color: white; border: none; }
+        .btn-blue:hover { background-color: #0b5ed7; color: white; }
+        .section-title { font-weight: bold; margin-top: 20px; margin-bottom: 10px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('form_cd') }}">
+        {{ form.hidden_tag() }}
+        <div class="row g-3">
+             <!-- Contact Info -->
+             <div class="col-12"><h5 class="section-title">Personal Information</h5></div>
+             <div class="col-md-6">
+                {{ form.full_name.label(class="form-label") }} <span class="text-danger">*</span>
+                {{ form.full_name(class="form-control", required=True) }}
+            </div>
+            <div class="col-md-6">
+                {{ form.phone_number.label(class="form-label") }} <span class="text-danger">*</span>
+                {{ form.phone_number(class="form-control", required=True) }}
+            </div>
+            <div class="col-md-6">
+                {{ form.email_address.label(class="form-label") }} <span class="text-danger">*</span>
+                {{ form.email_address(class="form-control", required=True) }}
+            </div>
+            <div class="col-md-6">
+                 <label class="form-label">{{ form.preferred_contact_method.label.text }}</label>
+                 <div>
+                    {% for subfield in form.preferred_contact_method %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                 </div>
+            </div>
+            
+            <!-- Incident Details -->
+            <div class="col-12"><h5 class="section-title">Case Details</h5></div>
+            
+            <div class="col-md-6">
+                 {{ form.date_of_incident.label(class="form-label") }}
+                 {{ form.date_of_incident(class="form-control", type="date") }}
+            </div>
+            <div class="col-md-6">
+                {{ form.county_of_incident.label(class="form-label") }}
+                {{ form.county_of_incident(class="form-control") }}
+            </div>
+
+            <div class="col-12">
+                {{ form.incident_description.label(class="form-label") }}
+                {{ form.incident_description(class="form-control", rows="3") }}
+            </div>
+
+            <div class="col-md-6">
+                {{ form.arrest_status.label(class="form-label") }}
+                <div>
+                    {% for subfield in form.arrest_status %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                {{ form.custody_status.label(class="form-label") }}
+                 <div>
+                    {% for subfield in form.custody_status %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Court Info -->
+            <div class="col-md-6">
+                {{ form.court_date_given.label(class="form-label") }}
+                 <div>
+                    {% for subfield in form.court_date_given %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                 {{ form.court_date.label(class="form-label") }}
+                 {{ form.court_date(class="form-control", type="date") }}
+            </div>
+
+            <!-- History & Other -->
+            <div class="col-12"><h5 class="section-title">History & Additional Info</h5></div>
+
+            <div class="col-md-6">
+                {{ form.prior_convictions.label(class="form-label") }}
+                 <div>
+                    {% for subfield in form.prior_convictions %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                {{ form.probation_status.label(class="form-label") }}
+                 <div>
+                    {% for subfield in form.probation_status %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                {{ form.witnesses_present.label(class="form-label") }}
+                 <div>
+                    {% for subfield in form.witnesses_present %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                {{ form.has_documents.label(class="form-label") }}
+                 <div>
+                    {% for subfield in form.has_documents %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="col-12">
+                {{ form.witness_details.label(class="form-label") }}
+                {{ form.witness_details(class="form-control", rows="2") }}
+            </div>
+
+            <div class="col-12">
+                 <label class="form-label">{{ form.referral_source.label.text }}</label>
+                 <div>
+                    {% for subfield in form.referral_source %}
+                        <div class="form-check form-check-inline">
+                            {{ subfield(class="form-check-input") }}
+                            {{ subfield.label(class="form-check-label") }}
+                        </div>
+                    {% endfor %}
+                 </div>
+            </div>
+
+             <div class="col-12">
+                {{ form.additional_notes.label(class="form-label") }}
+                {{ form.additional_notes(class="form-control", rows="2") }}
+            </div>
+
+            <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-blue btn-lg w-100 rounded-pill">Submit Confidential Intake</button>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

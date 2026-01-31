@@ -1,4 +1,3 @@
-# gmailproxy/core.py
 import os
 import smtplib
 import ssl
@@ -8,30 +7,17 @@ from abc import ABC, abstractmethod
 from email.message import EmailMessage
 from typing import List, Optional, Tuple
 import sys
+from dotenv import load_dotenv
 
 # Load .env
-SRC_DIR = Path(sys._MEIPASS) if getattr(sys, "frozen", False) else Path("").resolve() # absolute path
-ENV_PATH = SRC_DIR / Path(".env")                                                     # absolute path to the .env file 
-from dotenv import load_dotenv                                       # dotenv is used to load the environment variables from the .env file
+SRC_DIR = Path(sys._MEIPASS) if getattr(sys, "frozen", False) else Path("").resolve()
+ENV_PATH = SRC_DIR / Path(".env")
 load_dotenv(dotenv_path=ENV_PATH)
-
 
 class IEmailService(ABC):
     """Interface for Email Service."""
     @abstractmethod
     def send_email(self, recipients: List[str], subject: str, body_html: str, attachments: Optional[List[str]] = None) -> Tuple[bool, Optional[str]]:
-        """
-        Send an email.
-
-        Args:
-            recipients (List[str]): List of recipient email addresses.
-            subject (str): Email subject.
-            body_html (str): Email body in HTML format.
-            attachments (Optional[List[str]]): List of file paths to attach.
-
-        Returns:
-            Tuple[bool, Optional[str]]: (Success, Error Message).
-        """
         pass
 
 class RealGmailService(IEmailService):
@@ -46,18 +32,6 @@ class RealGmailService(IEmailService):
         self.timeout = int(os.getenv("EMAIL_TIMEOUT", "10"))
 
     def send_email(self, recipients: List[str], subject: str, body_html: str, attachments: Optional[List[str]] = None) -> Tuple[bool, Optional[str]]:
-        """
-        Send an email via SMTP.
-
-        Args:
-            recipients (List[str]): List of recipient email addresses.
-            subject (str): Email subject.
-            body_html (str): Email body in HTML format.
-            attachments (Optional[List[str]]): List of file paths to attach.
-
-        Returns:
-            Tuple[bool, Optional[str]]: (Success, Error Message).
-        """
         if not self.username or not self.password:
              return False, "Missing SMTP_USERNAME or SMTP_PASSWORD in environment."
 
@@ -106,37 +80,17 @@ class RealGmailService(IEmailService):
             return False, f"Email Error: {str(e)}"
 
 class GmailProxy(IEmailService):
-    """
-    Proxy for RealGmailService.
-    Adds logging and pre-checks.
-    """
+    """Proxy for RealGmailService."""
     def __init__(self):
         self._real_service = RealGmailService()
 
     def send_email(self, recipients: List[str], subject: str, body_html: str, attachments: Optional[List[str]] = None) -> Tuple[bool, Optional[str]]:
-        """
-        Delegates email sending to RealGmailService.
-
-        Args:
-            recipients (List[str]): List of recipient email addresses.
-            subject (str): Email subject.
-            body_html (str): Email body in HTML format.
-            attachments (Optional[List[str]]): List of file paths to attach.
-
-        Returns:
-            Tuple[bool, Optional[str]]: (Success, Error Message).
-        """
         print(f"[GmailProxy] Sending email to {recipients} with subject '{subject}'...")
-        
-        # Pre-check
         if not recipients:
              return False, "No recipients provided"
-        
         success, error = self._real_service.send_email(recipients, subject, body_html, attachments)
-        
         if success:
             print("[GmailProxy] Email sent successfully.")
         else:
             print(f"[GmailProxy] Failed: {error}")
-            
         return success, error

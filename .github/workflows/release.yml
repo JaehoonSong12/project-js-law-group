@@ -9,25 +9,11 @@ permissions:
   contents: write
 
 jobs:
-  build:
-    name: Build for ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        include:
-          - os: windows-latest
-            artifact_name: jslawgroup-windows-x64.exe
-            asset_name: jslawgroup-windows-x64.zip
-            sep: ';'
-          - os: ubuntu-latest
-            artifact_name: jslawgroup-linux-x64
-            asset_name: jslawgroup-linux-x64.tar.gz
-            sep: ':'
-          - os: macos-latest
-            artifact_name: jslawgroup-macos-x64
-            asset_name: jslawgroup-macos-x64.zip
-            sep: ':'
-
+  # ------------------------------------------------------------------
+  # 1. Build for Windows (x64)
+  # ------------------------------------------------------------------
+  build-windows-x64:
+    runs-on: windows-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -35,71 +21,306 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' 
+          python-version: '3.11'
+          architecture: 'x64'
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flask flask-wtf email-validator wtforms pyinstaller
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
 
-      - name: Build with PyInstaller (Windows)
-        if: runner.os == 'Windows'
+      - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --add-data "static;static" --add-data "templates;templates" --add-data "submissions;submissions"
+          pyinstaller main.py --onefile --name jslawgroup --add-data "static;static" --add-data "templates;templates" --add-data "submissions;submissions" --add-data "core;core"
 
-      - name: Build with PyInstaller (Unix)
-        if: runner.os != 'Windows'
+      - name: Archive Bundle (Zip)
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions"
-
-      - name: Package Artifact (Windows)
-        if: runner.os == 'Windows'
-        run: |
-          Compress-Archive -Path dist/jslawgroup.exe -DestinationPath dist/${{ matrix.asset_name }}
-
-      - name: Package Artifact (Linux)
-        if: runner.os == 'Linux'
-        run: |
-          cd dist
-          tar -czvf ${{ matrix.asset_name }} jslawgroup
-
-      - name: Package Artifact (macOS)
-        if: runner.os == 'macOS'
-        run: |
-          cd dist
-          zip -r ${{ matrix.asset_name }} jslawgroup
+          Compress-Archive -Path dist/jslawgroup.exe -DestinationPath dist/jslawgroup-windows-x64.zip
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.asset_name }}
-          path: dist/${{ matrix.asset_name }}
+          name: jslawgroup-windows-x64
+          path: dist/jslawgroup-windows-x64.zip
 
-  release:
-    needs: build
+  # ------------------------------------------------------------------
+  # 2. Build for Ubuntu (x64)
+  # ------------------------------------------------------------------
+  build-ubuntu-x64:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+
+      - name: Archive Bundle (Tar)
+        run: |
+          cd dist
+          tar -czvf jslawgroup-ubuntu-x64.tar.gz jslawgroup
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jslawgroup-ubuntu-x64
+          path: dist/jslawgroup-ubuntu-x64.tar.gz
+
+  # ------------------------------------------------------------------
+  # 3. Build for Ubuntu (ARM64)
+  # ------------------------------------------------------------------
+  build-ubuntu-arm64:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: 'arm64'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+
+      - name: Archive Bundle (Tar)
+        run: |
+          cd dist
+          tar -czvf jslawgroup-ubuntu-arm64.tar.gz jslawgroup
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jslawgroup-ubuntu-arm64
+          path: dist/jslawgroup-ubuntu-arm64.tar.gz
+
+  # ------------------------------------------------------------------
+  # 4. Build for MacOS (x64 / Intel)
+  # ------------------------------------------------------------------
+  build-macos-x64:
+    runs-on: macos-13
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+
+      - name: Archive Bundle (Zip)
+        run: |
+          cd dist
+          zip -r jslawgroup-macos-x64.zip jslawgroup
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jslawgroup-macos-x64
+          path: dist/jslawgroup-macos-x64.zip
+
+  # ------------------------------------------------------------------
+  # 5. Build for MacOS (ARM64 / Apple Silicon)
+  # ------------------------------------------------------------------
+  build-macos-arm64:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: 'arm64'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+
+      - name: Archive Bundle (Zip)
+        run: |
+          cd dist
+          zip -r jslawgroup-macos-arm64.zip jslawgroup
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jslawgroup-macos-arm64
+          path: dist/jslawgroup-macos-arm64.zip
+
+  # ------------------------------------------------------------------
+  # 6. Build for Oracle Linux (x64)
+  # ------------------------------------------------------------------
+  build-oracle-linux-x64:
+    runs-on: ubuntu-latest
+    container: oraclelinux:9
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies (System)
+        run: |
+          dnf update -y
+          dnf install -y python3.11 python3.11-devel python3.11-pip tar gzip binutils findutils gcc
+
+      - name: Install Dependencies (Python)
+        run: |
+          python3.11 -m pip install --upgrade pip
+          python3.11 -m pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+
+      - name: Build with PyInstaller
+        run: |
+          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+
+      - name: Archive Bundle (Tar)
+        run: |
+          cd dist
+          tar -czvf jslawgroup-oracle-linux-x64.tar.gz jslawgroup
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jslawgroup-oracle-linux-x64
+          path: dist/jslawgroup-oracle-linux-x64.tar.gz
+
+  # ------------------------------------------------------------------
+  # 7. Build for Oracle Linux (ARM64)
+  # ------------------------------------------------------------------
+  build-oracle-linux-arm64:
+    runs-on: ubuntu-24.04-arm
+    container: oraclelinux:9
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies (System)
+        run: |
+          dnf update -y
+          dnf install -y python3.11 python3.11-devel python3.11-pip tar gzip binutils findutils gcc
+
+      - name: Install Dependencies (Python)
+        run: |
+          python3.11 -m pip install --upgrade pip
+          python3.11 -m pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+
+      - name: Build with PyInstaller
+        run: |
+          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+
+      - name: Archive Bundle (Tar)
+        run: |
+          cd dist
+          tar -czvf jslawgroup-oracle-linux-arm64.tar.gz jslawgroup
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jslawgroup-oracle-linux-arm64
+          path: dist/jslawgroup-oracle-linux-arm64.tar.gz
+
+  # ------------------------------------------------------------------
+  # 8. Create GitHub Release
+  # ------------------------------------------------------------------
+  release:
+    needs: 
+      - build-windows-x64
+      - build-ubuntu-x64
+      - build-ubuntu-arm64
+      - build-macos-x64
+      - build-macos-arm64
+      - build-oracle-linux-x64
+      - build-oracle-linux-arm64
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Download Windows Artifact
         uses: actions/download-artifact@v4
         with:
-          name: jslawgroup-windows-x64.zip
-      
-      - name: Download Linux Artifact
+          name: jslawgroup-windows-x64
+          path: artifacts/windows-x64
+
+      - name: Download Ubuntu x64 Artifact
         uses: actions/download-artifact@v4
         with:
-          name: jslawgroup-linux-x64.tar.gz
+          name: jslawgroup-ubuntu-x64
+          path: artifacts/ubuntu-x64
 
-      - name: Download macOS Artifact
+      - name: Download Ubuntu ARM64 Artifact
         uses: actions/download-artifact@v4
         with:
-          name: jslawgroup-macos-x64.zip
+          name: jslawgroup-ubuntu-arm64
+          path: artifacts/ubuntu-arm64
 
-      - name: Create Release
+      - name: Download MacOS x64 Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: jslawgroup-macos-x64
+          path: artifacts/macos-x64
+
+      - name: Download MacOS ARM64 Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: jslawgroup-macos-arm64
+          path: artifacts/macos-arm64
+
+      - name: Download Oracle Linux x64 Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: jslawgroup-oracle-linux-x64
+          path: artifacts/oracle-x64
+
+      - name: Download Oracle Linux ARM64 Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: jslawgroup-oracle-linux-arm64
+          path: artifacts/oracle-arm64
+
+      - name: Publish Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            jslawgroup-windows-x64.zip
-            jslawgroup-linux-x64.tar.gz
-            jslawgroup-macos-x64.zip
+            artifacts/windows-x64/jslawgroup-windows-x64.zip
+            artifacts/ubuntu-x64/jslawgroup-ubuntu-x64.tar.gz
+            artifacts/ubuntu-arm64/jslawgroup-ubuntu-arm64.tar.gz
+            artifacts/macos-x64/jslawgroup-macos-x64.zip
+            artifacts/macos-arm64/jslawgroup-macos-arm64.zip
+            artifacts/oracle-x64/jslawgroup-oracle-linux-x64.tar.gz
+            artifacts/oracle-arm64/jslawgroup-oracle-linux-arm64.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

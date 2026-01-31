@@ -1,0 +1,56 @@
+{% extends "final.html" %}
+
+{% block content %}
+<section class="py-5 bg-dark-custom text-white">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">CONTACT US</h1>
+        <p class="lead">Get in touch with us 24/7 for legal assistance.</p>
+    </div>
+</section>
+
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-7 col-md-12">
+          <div class="ratio ratio-16x9 rounded shadow-sm" style="min-height: 450px;">   
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.295841048027!2d-84.16645362403345!3d33.98493412128111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5a2477092bceb%3A0x2ab38eaef841b6f2!2s3296%20Summit%20Ridge%20Pkwy%20Suite%201010%2C%20Duluth%2C%20GA%2030096!5e0!3m2!1sen!2sus!4v1762896374211!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12">
+          <div class="d-flex flex-column gap-4">
+            <div class="border rounded-4 p-4 shadow-sm bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="fa-solid fa-map-marker-alt fa-2x text-red"></i>
+                <h5 class="fw-bold mb-0">Address</h5>
+              </div>
+              <div class="text-muted">
+                3296 Summit Ridge Pkwy Suite 1010<br>
+                Duluth, GA 30096
+              </div>
+            </div>
+            <div class="border rounded-4 p-4 shadow-sm bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="fa-solid fa-phone fa-2x text-red"></i>
+                <h5 class="fw-bold mb-0">Phone</h5>
+              </div>
+              <div class="text-muted">
+                <a href="tel:7702224444" class="text-decoration-none text-muted">(770) 222-4444</a>
+              </div>
+            </div>
+            <div class="border rounded-4 p-4 shadow-sm bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="fa-solid fa-clock fa-2x text-red"></i>
+                <h5 class="fw-bold mb-0">Hours</h5>
+              </div>
+              <div class="text-muted">
+                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                Saturday - Sunday: Closed<br>
+                24/7 Emergency Line Available
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock %}
