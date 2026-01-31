@@ -6,7 +6,7 @@ class GeneralContactForm(FlaskForm):
     first_name = StringField('First Name', validators=[DataRequired()])
     last_name = StringField('Last Name', validators=[DataRequired()])
     email = EmailField('Email', validators=[DataRequired(), Email()])
-    phone = TelField('Phone', validators=[Optional()])
+    phone = TelField('Phone', validators=[DataRequired()])
     inquiry_type = SelectField('Inquiry Type', choices=[
         ('default', 'Please select one...'),
         ('pi', 'Personal Injury'),

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
-from forms import GeneralContactForm, PersonalInjuryForm, CriminalCaseForm
+from core.forms import GeneralContactForm, PersonalInjuryForm, CriminalCaseForm
 import os
 import json
 import csv
@@ -140,6 +140,66 @@ def demo2():
         flash('There was an error with your submission. Please check the form.', 'danger')
 
     return render_template('index247_demo2.html', form=form)
+
+# ==========================================
+# New Final Website Routes
+# ==========================================
+
+@app.route('/final')
+def final():
+    return render_template('final.html')
+
+@app.route('/final/about')
+def final_about():
+    return render_template('final-about.html')
+
+@app.route('/final/accident')
+def final_accident():
+    return render_template('final-accident.html')
+
+@app.route('/final/personal-injury')
+def final_personal_injury():
+    return render_template('final-personal_injury.html')
+
+@app.route('/final/criminal')
+def final_criminal():
+    return render_template('final-criminal.html')
+
+@app.route('/final/contact')
+def final_contact():
+    return render_template('final-contact.html')
+
+# ==========================================
+# Form Fragment Routes (for Iframe)
+# ==========================================
+
+@app.route('/form/general', methods=['GET', 'POST'])
+def form_general():
+    form = GeneralContactForm()
+    if form.validate_on_submit():
+        save_submission(form.data, 'general_contact')
+        flash('Message sent! We will contact you soon.', 'success')
+        return redirect(url_for('form_general'))
+    return render_template('form_general.html', form=form)
+
+@app.route('/form/pi', methods=['GET', 'POST'])
+def form_pi():
+    form = PersonalInjuryForm()
+    if form.validate_on_submit():
+        save_submission(form.data, 'personal_injury')
+        flash('Request submitted! Reviewing now.', 'success')
+        return redirect(url_for('form_pi'))
+    return render_template('form_pi.html', form=form)
+
+@app.route('/form/cd', methods=['GET', 'POST'])
+def form_cd():
+    form = CriminalCaseForm()
+    if form.validate_on_submit():
+        save_submission(form.data, 'criminal_defense')
+        flash('Intake received. Confidential review in progress.', 'success')
+        return redirect(url_for('form_cd'))
+    return render_template('form_cd.html', form=form)
+
 
 if __name__ == '__main__':
     print("Starting Flask server in production mode on http://0.0.0.0:5000")
