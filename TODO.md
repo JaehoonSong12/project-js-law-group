@@ -9,7 +9,9 @@
 - [x] **SSL/HTTPS:** Enabled and working (Let's Encrypt/Certbot).
 - [x] **Email Integration:** `GmailProxy` implemented with attachments (JSON/CSV) and HTML body.
 - [x] **App Architecture:** Reorganized into `core/app.py` (Flask App) and `main.py` (Production/Dev Wrapper).
-- [x] **Build Pipeline:** Updated PyInstaller builds to bundle `gunicorn` (via `main.py` programmatic use) for standalone Linux/MacOS executables.
+- [x] **Build Pipeline:** Updated PyInstaller builds to bundle:
+    - **Linux/Mac:** `gunicorn` (via `main.py` programmatic use).
+    - **Windows:** `waitress` (for true production serving on Windows).
 
 ## 2. Production Hardening (Next Steps)
 
@@ -51,9 +53,11 @@ python main.py
 ```
 
 **How it works:**
-1.  **Dependencies:** It automatically uses `gunicorn` (bundled in the exe or installed via pip) on Linux/Mac.
-2.  **Windows:** If detected, it falls back to the standard Flask development server (`app.run()`).
-3.  **Production (Linux):** It automatically launches the **Gunicorn** WSGI server via Python API with optimal settings (4 workers, bound to 0.0.0.0:5000), utilizing the `FLASK_DEBUG` setting from your environment.
+1.  **Dependencies:** It automatically uses `gunicorn` (bundled in the exe or installed via pip) on Linux/Mac, and `waitress` on Windows.
+2.  **Windows (Production):** Detects Windows and uses **Waitress** WSGI server.
+    - *Note:* If `waitress` is missing, it falls back to Flask Dev Server with a warning.
+    - *Debug:* Set `FLASK_DEBUG=True` to force Flask Dev Server (useful for local coding).
+3.  **Linux/Mac (Production):** Detects non-Windows and uses **Gunicorn** WSGI server (4 workers).
 
 ### C. Persistent Service (Systemd)
 To ensure the app keeps running after a reboot or crash, create a systemd service.

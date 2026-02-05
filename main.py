@@ -8,12 +8,24 @@ def main():
     is_windows = platform.system().lower() == "windows"
     
     if is_windows:
-        print("Detected Windows environment. Falling back to Flask development server.")
-        print("Running core/app.py directly...")
+        print("Detected Windows environment.")
         
         # Respect environment variable for debug mode
         debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
-        app.run(host='0.0.0.0', port=5000, debug=debug_mode)
+
+        if debug_mode:
+            print("Debug mode enabled. Running with Flask Development Server...")
+            app.run(host='0.0.0.0', port=5000, debug=True)
+        else:
+            # Production Mode on Windows -> Use Waitress
+            try:
+                from waitress import serve
+                print("Starting Waitress (Production WSGI Server for Windows) on http://0.0.0.0:5000")
+                serve(app, host='0.0.0.0', port=5000)
+            except ImportError:
+                print("Waitress not installed. Falling back to Flask Development Server.")
+                print("TIP: For production on Windows, install waitress: pip install waitress")
+                app.run(host='0.0.0.0', port=5000, debug=False)
         
     else:
         print("Detected non-Windows environment. Starting Gunicorn via Python API...")
