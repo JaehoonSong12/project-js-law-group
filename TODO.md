@@ -11,6 +11,7 @@
 - [x] **App Architecture:** Reorganized into `core/app.py` (Flask App) and `main.py` (Production/Dev Wrapper).
 - [x] **Build Pipeline:** Updated PyInstaller builds to bundle:
     - **Linux/Mac:** `gunicorn` (via `main.py` programmatic use).
+        - Fixed `ModuleNotFoundError` for `glogging` and `workers.sync` via `--hidden-import` flags and explicit imports in `main.py`.
     - **Windows:** `waitress` (for true production serving on Windows).
 
 ## 2. Production Hardening (Next Steps)
