@@ -9,10 +9,11 @@ from typing import List, Optional, Tuple
 import sys
 from dotenv import load_dotenv
 
-# Load .env
-SRC_DIR = Path(sys._MEIPASS) if getattr(sys, "frozen", False) else Path("").resolve()
-ENV_PATH = SRC_DIR / Path(".env")
-load_dotenv(dotenv_path=ENV_PATH)
+# # Load .env
+# SRC_DIR = Path(sys._MEIPASS) if getattr(sys, "frozen", False) else Path("").resolve()
+# ENV_PATH = SRC_DIR / Path(".env")
+# load_dotenv(dotenv_path=ENV_PATH)
+load_dotenv()
 
 class IEmailService(ABC):
     """Interface for Email Service."""

@@ -1,206 +1,60 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
-from core.forms import GeneralContactForm, PersonalInjuryForm, CriminalCaseForm
 import os
-import json
-import csv
-from datetime import datetime, date
+import sys
+import subprocess
+import platform
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
-app.config['SECRET_KEY'] = 'dev-secret-key-change-in-prod'
+def install_package(package_name):
+    print(f"Installing {package_name}...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
 
-@app.route('/robots.txt')
-def robots():
-    return send_from_directory('static', 'robots.txt')
-
-@app.route('/sitemap.xml')
-def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
-
-def save_submission(form_data, form_type):
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+def main():
+    # 1. Check for Gunicorn (Only on non-Windows)
+    is_windows = platform.system().lower() == "windows"
     
-    # 1. Prepare Data
-    # Filter out CSRF token and convert objects (like dates) to strings
-    data_to_save = {}
-    for k, v in form_data.items():
-        if k == 'csrf_token':
-            continue
-        if isinstance(v, (datetime, date)):
-            data_to_save[k] = v.isoformat()
-        else:
-            data_to_save[k] = str(v) if v is not None else ""
-    
-    # Ensure submissions directory exists
-    if not os.path.exists('submissions'):
-        os.makedirs('submissions')
+    if not is_windows:
+        try:
+            import gunicorn
+            print("Gunicorn is already installed.")
+        except ImportError:
+            print("Gunicorn not found.")
+            install_package("gunicorn")
+
+    # 2. Execution
+    if is_windows:
+        print("Detected Windows environment. Falling back to Flask development server (or Waitress if configured).")
+        print("Running core/app.py directly...")
         
-    base_filename = f"submissions/{form_type}_{timestamp}"
-
-    # 2. Save JSON (Attachment)
-    try:
-        with open(f"{base_filename}.json", 'w', encoding='utf-8') as f:
-            json.dump(data_to_save, f, indent=4, ensure_ascii=False)
-        print(f"Saved JSON to {base_filename}.json")
-    except Exception as e:
-        print(f"Error saving JSON: {e}")
-
-    # 3. Save CSV (Attachment)
-    try:
-        with open(f"{base_filename}.csv", 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(data_to_save.keys())
-            writer.writerow(data_to_save.values())
-        print(f"Saved CSV to {base_filename}.csv")
-    except Exception as e:
-        print(f"Error saving CSV: {e}")
-
-    # 4. Save HTML (Email Body)
-    try:
-        html_content = f"""
-        <html>
-        <head>
-            <style>
-                body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; }}
-                .container {{ width: 100%; max-width: 600px; margin: 0 auto; }}
-                .header {{ background-color: #f8f9fa; padding: 20px; text-align: center; border-bottom: 3px solid #dc3545; }}
-                h2 {{ margin: 0; color: #dc3545; }}
-                .meta {{ color: #777; font-size: 0.9em; margin-bottom: 20px; text-align: center; }}
-                table {{ border-collapse: collapse; width: 100%; margin-top: 20px; }}
-                th, td {{ padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }}
-                th {{ background-color: #f8f9fa; font-weight: bold; width: 35%; color: #555; }}
-                tr:hover {{ background-color: #f1f1f1; }}
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <div class="header">
-                    <h2>New Submission: {form_type.replace('_', ' ').title()}</h2>
-                </div>
-                <div class="meta">
-                    Received on: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-                </div>
-                <table>
-        """
-        for key, value in data_to_save.items():
-            # Format key for display
-            readable_key = key.replace('_', ' ').title()
-            html_content += f"<tr><th>{readable_key}</th><td>{value}</td></tr>"
-
-        html_content += """
-                </table>
-            </div>
-        </body>
-        </html>
-        """
-        with open(f"{base_filename}.html", 'w', encoding='utf-8') as f:
-            f.write(html_content)
-        print(f"Saved HTML to {base_filename}.html")
-    except Exception as e:
-        print(f"Error saving HTML: {e}")
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/home', methods=['GET', 'POST'])
-def home():
-    form = GeneralContactForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'general_contact')
-        flash('Thank you for your inquiry. We will contact you shortly.', 'success')
-        return redirect(url_for('home'))
-    elif form.errors:
-        print("Form errors:", form.errors)
-        flash('There was an error with your submission. Please check the form.', 'danger')
+        # Import and run the app from core
+        from core.app import app
         
-    return render_template('index_home.html', form=form)
+        # Respect environment variable for debug mode
+        debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+        app.run(host='0.0.0.0', port=5000, debug=debug_mode)
+        
+    else:
+        print("Detected non-Windows environment. Starting Gunicorn...")
+        
+        # Construct Gunicorn command
+        # -w 4: 4 worker processes
+        # -b 0.0.0.0:5000: Bind to all interfaces on port 5000
+        # --chdir .: Ensure we are running from root
+        # core.app:app : The application object
+        cmd = [
+            "gunicorn",
+            "-w", "4",
+            "-b", "0.0.0.0:5000",
+            "core.app:app"
+        ]
+        
+        # Use subprocess to replace current process with gunicorn or run it
+        # Using subprocess.run to keep this script as the parent wrapper
+        try:
+            subprocess.run(cmd, check=True)
+        except KeyboardInterrupt:
+            print("\nServer stopped.")
+        except subprocess.CalledProcessError as e:
+            print(f"Gunicorn failed with error: {e}")
+            sys.exit(1)
 
-@app.route('/247/demo1', methods=['GET', 'POST'])
-def demo1():
-    form = PersonalInjuryForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'personal_injury')
-        flash('Case evaluation request submitted. We will review it immediately.', 'success')
-        return redirect(url_for('demo1'))
-    elif form.errors:
-        print("Form errors:", form.errors)
-        flash('There was an error with your submission. Please check the form.', 'danger')
-
-    return render_template('index247_demo1.html', form=form)
-
-@app.route('/247/demo2', methods=['GET', 'POST'])
-def demo2():
-    form = CriminalCaseForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'criminal_defense')
-        flash('Criminal case intake submitted. We are reviewing your details.', 'success')
-        return redirect(url_for('demo2'))
-    elif form.errors:
-        print("Form errors:", form.errors)
-        flash('There was an error with your submission. Please check the form.', 'danger')
-
-    return render_template('index247_demo2.html', form=form)
-
-# ==========================================
-# New Final Website Routes
-# ==========================================
-
-@app.route('/final')
-def final():
-    return render_template('final.html')
-
-@app.route('/final/about')
-def final_about():
-    return render_template('final-about.html')
-
-@app.route('/final/accident')
-def final_accident():
-    return render_template('final-accident.html')
-
-@app.route('/final/personal-injury')
-def final_personal_injury():
-    return render_template('final-personal_injury.html')
-
-@app.route('/final/criminal')
-def final_criminal():
-    return render_template('final-criminal.html')
-
-@app.route('/final/contact')
-def final_contact():
-    return render_template('final-contact.html')
-
-# ==========================================
-# Form Fragment Routes (for Iframe)
-# ==========================================
-
-@app.route('/form/general', methods=['GET', 'POST'])
-def form_general():
-    form = GeneralContactForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'general_contact')
-        flash('Message sent! We will contact you soon.', 'success')
-        return redirect(url_for('form_general'))
-    return render_template('form_general.html', form=form)
-
-@app.route('/form/pi', methods=['GET', 'POST'])
-def form_pi():
-    form = PersonalInjuryForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'personal_injury')
-        flash('Request submitted! Reviewing now.', 'success')
-        return redirect(url_for('form_pi'))
-    return render_template('form_pi.html', form=form)
-
-@app.route('/form/cd', methods=['GET', 'POST'])
-def form_cd():
-    form = CriminalCaseForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'criminal_defense')
-        flash('Intake received. Confidential review in progress.', 'success')
-        return redirect(url_for('form_cd'))
-    return render_template('form_cd.html', form=form)
-
-
-if __name__ == '__main__':
-    print("Starting Flask server in production mode on http://0.0.0.0:5000")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == "__main__":
+    main()
