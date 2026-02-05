@@ -20,7 +20,8 @@ def main():
             # Production Mode on Windows -> Use Waitress
             try:
                 from waitress import serve
-                print("Starting Waitress (Production WSGI Server for Windows) on http://0.0.0.0:5000")
+                print("Starting Waitress (Production WSGI Server for Windows).")
+                print("Serving on http://0.0.0.0:5000 (Accessible via http://localhost:5000 or your LAN IP)")
                 serve(app, host='0.0.0.0', port=5000)
             except ImportError:
                 print("Waitress not installed. Falling back to Flask Development Server.")
