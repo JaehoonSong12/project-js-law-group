@@ -34,6 +34,7 @@ def main():
         try:
             from gunicorn.app.base import BaseApplication
             import gunicorn.glogging  # Explicit import to help PyInstaller
+            import gunicorn.workers.sync  # Explicit import for sync worker
 
             class StandaloneApplication(BaseApplication):
                 def __init__(self, app, options=None):

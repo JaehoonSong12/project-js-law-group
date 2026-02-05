@@ -65,7 +65,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |
@@ -100,7 +100,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |
@@ -135,7 +135,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Zip)
         run: |
@@ -170,7 +170,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Zip)
         run: |
@@ -205,7 +205,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |
@@ -240,7 +240,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |
