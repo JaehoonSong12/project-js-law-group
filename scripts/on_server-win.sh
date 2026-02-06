@@ -32,10 +32,9 @@ cd "$TEMP" || exit
 
 
 
-# # pip install flask
-# python server.py
-pip install waitress
+pip install flask flask_wtf waitress
 python main.py
+# python server.py
 
 
 
