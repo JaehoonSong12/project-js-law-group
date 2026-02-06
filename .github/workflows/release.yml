@@ -27,7 +27,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv waitress gunicorn
 
       - name: Build with PyInstaller
         run: |
@@ -61,11 +61,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv waitress gunicorn
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |
@@ -96,11 +96,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv waitress gunicorn
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |
@@ -131,11 +131,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv waitress gunicorn
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Zip)
         run: |
@@ -166,11 +166,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+          pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv waitress gunicorn
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Zip)
         run: |
@@ -201,11 +201,11 @@ jobs:
       - name: Install Dependencies (Python)
         run: |
           python3.11 -m pip install --upgrade pip
-          python3.11 -m pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+          python3.11 -m pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv gunicorn waitress
 
       - name: Build with PyInstaller
         run: |
-          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |
@@ -236,11 +236,11 @@ jobs:
       - name: Install Dependencies (Python)
         run: |
           python3.11 -m pip install --upgrade pip
-          python3.11 -m pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv
+          python3.11 -m pip install flask flask-wtf email-validator wtforms pyinstaller python-dotenv gunicorn waitress
 
       - name: Build with PyInstaller
         run: |
-          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
+          python3.11 -m PyInstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions" --add-data "core:core"
 
       - name: Archive Bundle (Tar)
         run: |

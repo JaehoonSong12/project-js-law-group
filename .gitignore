@@ -1,4 +1,4 @@
-# --- Generated from ./.gitignores on Thu Feb  5 03:12:41 2026 ---
+# --- Generated from ./.gitignores on Thu Feb  5 14:16:58 2026 ---
 
 #############################################
 # A.gitignore
@@ -629,8 +629,8 @@ files/tmp/*
 # ignore updates folder
 /updates/*
 
-# ignore sitemap.xml
-/sitemap.xml
+# # ignore sitemap.xml
+# /sitemap.xml
 
 #############################################
 # Coq.gitignore
@@ -2702,9 +2702,9 @@ fp-info-cache
 *.dsn
 *.ses
 
-# Exported BOM files
-*.xml
-*.csv
+# # Exported BOM files
+# *.xml
+# *.csv
 
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip
@@ -3766,7 +3766,7 @@ themes/default-bootstrap/modules/*/mails/*
 
 # MISC
 
-*sitemap.xml
+# *sitemap.xml
 /robots.txt
 
 # Symfony
