@@ -9,11 +9,27 @@ from typing import List, Optional, Tuple
 import sys
 from dotenv import load_dotenv
 
+
+
+
+
 # # Load .env
 # SRC_DIR = Path(sys._MEIPASS) if getattr(sys, "frozen", False) else Path("").resolve()
 # ENV_PATH = SRC_DIR / Path(".env")
 # load_dotenv(dotenv_path=ENV_PATH)
 load_dotenv()
+"""
+Comparison of Dotenv Loading Strategies in Python
+--------------------------------------------------
+
+| Feature             | load_dotenv()                                            | load_dotenv(dotenv_path=ENV_PATH)                   |
+|---------------------|----------------------------------------------------------|-----------------------------------------------------|
+| Search Logic        | Looks in the folder where the terminal is currently open.| Looks in the folder where the script actually lives.|
+| Pyinstaller Support | Usually fails when bundled.                              | Native support for bundled assets.                  |
+| Path Type           | Relative (Implicit).                                     | Absolute (Explicit).                                |
+| Code Complexity     | Low.                                                     | Moderate.                                           |
+"""
+
 
 class IEmailService(ABC):
     """Interface for Email Service."""
