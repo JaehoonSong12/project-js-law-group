@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="tfs.title">JS Law Group - 24/7 Emergency Legal Help (서조은 법률 그룹)</title>
+
+  <!-- Font Awesome 6 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap Core: custom.css link -->
+  <!-- <link href="css/custom.min.css" rel="stylesheet"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Internal Stylesheet -->
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Inter', 'Noto Sans KR', sans-serif;
+      /* Smooth scrolling for anchor links */
+      scroll-behavior: smooth;
+      /* Add padding-top to body to offset the fixed navbar */
+      padding-top: 80px; 
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      position: relative;
+      height: 90vh;
+      min-height: 700px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-video-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 0;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Dark overlay for text readability */
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+
+    .hero-logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Feature Icon Style */
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--bs-primary);
+    }
+  </style>
+</head>
+<body debug-i18n="false">
+  <div id="nav"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 2. Hero Section -->
+  <header class="hero-section">
+    <!-- Placeholder video. Replace src with your .mp4 file -->
+    <video autoplay muted loop class="hero-video-background">
+      <source src="https://placehold.co/v/1920x1080/333333/333333.mp4?text=Background+Video" type="video/mp4">
+      <span data-i18n="tfs.hero.videoFallback">Your browser does not support the video tag.</span>
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-white">
+      <!-- Placeholder logo. Replace src with your logo -->
+      <img src="https://placehold.co/150x150/ffffff/ffffff?text=LOGO" alt="JS Law Group Logo" class="hero-logo img-fluid mb-4">
+      <h1 data-i18n="tfs.hero.title"
+          class="display-3 fw-bold mb-3">
+        tfs.hero.title fallback
+      </h1>
+      <p data-i18n="tfs.hero.subtitle"
+         class="lead mb-4 col-lg-8 mx-auto">
+        tfs.hero.subtitle fallback
+      </p>
+      <p data-i18n="tfs.hero.koreanTitle"
+         class="h4 mb-5">
+        tfs.hero.koreanTitle fallback
+      </p>
+      <a class="btn btn-primary btn-lg rounded-pill px-5 py-3" 
+         href="https://www.jslawgroup.net"
+         target="_blank" 
+         rel="noopener noreferrer"
+         data-i18n="tfs.hero.button">
+        tfs.hero.button fallback
+      </a>
+    </div>
+  </header>
+
+
+
+
+  <!-- 4. What To Do In An Emergency (NEW) -->
+  <section id="what-to-do" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 data-i18n="tfs.whatToDo.title"
+            class="fw-bold">
+          tfs.whatToDo.title fallback
+        </h2>
+        <p data-i18n="tfs.whatToDo.subtitle"
+           class="lead text-muted">
+          tfs.whatToDo.subtitle fallback
+        </p>
+      </div>
+      <div class="row g-4">
+        <!-- Step 1: Safety -->
+        <div class="col-md-4">
+          <div class="card h-100 border-primary border-2 shadow-sm rounded-4 p-3">
+            <div class="card-body d-flex">
+              <div class="display-4 fw-bold text-primary me-4">1</div>
+              <div>
+                <h5 data-i18n="tfs.whatToDo.step1.title"
+                    class="fw-bold">
+                  tfs.whatToDo.step1.title fallback
+                </h5>
+                <p data-i18n="tfs.whatToDo.step1.desc"
+                   class="text-muted">
+                  tfs.whatToDo.step1.desc fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Step 2: Document -->
+        <div class="col-md-4">
+          <div class="card h-100 border-primary border-2 shadow-sm rounded-4 p-3">
+            <div class="card-body d-flex">
+              <div class="display-4 fw-bold text-primary me-4">2</div>
+              <div>
+                <h5 data-i18n="tfs.whatToDo.step2.title"
+                    class="fw-bold">
+                  tfs.whatToDo.step2.title fallback
+                </h5>
+                <p data-i18n="tfs.whatToDo.step2.desc"
+                   class="text-muted">
+                  tfs.whatToDo.step2.desc fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Step 3: Call Us -->
+        <div class="col-md-4">
+          <div class="card h-100 border-danger border-2 shadow-sm rounded-4 p-3">
+            <div class="card-body d-flex">
+              <div class="display-4 fw-bold text-danger me-4">3</div>
+              <div>
+                <h5 data-i18n="tfs.whatToDo.step3.title"
+                    class="fw-bold">
+                  tfs.whatToDo.step3.title fallback
+                </h5>
+                <p data-i18n="tfs.whatToDo.step3.desc"
+                   class="text-muted">
+                  tfs.whatToDo.step3.desc fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Services Section -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 data-i18n="tfs.services.title"
+            class="fw-bold">
+          tfs.services.title fallback
+        </h2>
+        <p data-i18n="tfs.services.subtitle"
+           class="lead text-muted">
+          tfs.services.subtitle fallback
+        </p>
+      </div>
+      <div class="row g-4">
+        <!-- Service 1: Personal Injury -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+            <div class="card-body">
+              <i class="fa-solid fa-car-burst feature-icon mb-3"></i>
+              <h5 data-i18n="tfs.services.pi.title"
+                  class="card-title fw-bold">
+                tfs.services.pi.title fallback
+              </h5>
+              <p data-i18n="tfs.services.pi.desc"
+                 class="card-text text-muted">
+                tfs.services.pi.desc fallback
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Service 2: Criminal Defense -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+            <div class="card-body">
+              <i class="fa-solid fa-gavel feature-icon mb-3"></i>
+              <h5 data-i18n="tfs.services.cd.title"
+                  class="card-title fw-bold">
+                tfs.services.cd.title fallback
+              </h5>
+              <p data-i18n="tfs.services.cd.desc"
+                 class="card-text text-muted">
+                tfs.services.cd.desc fallback
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Service 3: Family Law -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+            <div class="card-body">
+              <i class="fa-solid fa-users feature-icon mb-3"></i>
+              <h5 data-i18n="tfs.services.fl.title"
+                  class="card-title fw-bold">
+                tfs.services.fl.title fallback
+              </h5>
+              <p data-i18n="tfs.services.fl.desc"
+                 class="card-text text-muted">
+                tfs.services.fl.desc fallback
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. Types of Incidents We Handle (NEW) -->
+  <section id="incident-types" class="py-5">
+    <div class="container">
+      <!-- <div class="text-center mb-5">
+        <h2 data-i18n="tfs.incidents.title"
+            class="fw-bold">
+          tfs.incidents.title fallback
+        </h2>
+        <p data-i18n="tfs.incidents.subtitle"
+           class="lead text-muted">
+          tfs.incidents.subtitle fallback
+        </p>
+      </div> -->
+      
+      <!-- Incident Row 1: Personal Injury -->
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-6">
+          <img src="https://placehold.co/600x400/555/fff?text=Personal+Injury+Incidents" 
+               class="img-fluid rounded-4 shadow-sm" 
+               alt="Personal Injury cases">
+        </div>
+        <div class="col-lg-6">
+          <h3 data-i18n="tfs.incidents.pi.title"
+              class="fw-bold mb-3">
+            tfs.incidents.pi.title fallback
+          </h3>
+          <p data-i18n="tfs.incidents.pi.desc"
+             class="text-muted mb-4">
+            tfs.incidents.pi.desc fallback
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled text-muted fs-5">
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item1">tfs.incidents.pi.item1 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item2">tfs.incidents.pi.item2 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item3">tfs.incidents.pi.item3 fallback</span></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-unstyled text-muted fs-5">
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item4">tfs.incidents.pi.item4 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item5">tfs.incidents.pi.item5 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.pi.item6">tfs.incidents.pi.item6 fallback</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Incident Row 2: Criminal Defense -->
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <img src="https://placehold.co/600x400/343a40/ffffff?text=Criminal+Defense+Incidents" 
+               class="img-fluid rounded-4 shadow-sm" 
+               alt="Criminal Defense cases">
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h3 data-i18n="tfs.incidents.cd.title"
+              class="fw-bold mb-3">
+            tfs.incidents.cd.title fallback
+          </h3>
+          <p data-i18n="tfs.incidents.cd.desc"
+             class="text-muted mb-4">
+            tfs.incidents.cd.desc fallback
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled text-muted fs-5">
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item1">tfs.incidents.cd.item1 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item2">tfs.incidents.cd.item2 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item3">tfs.incidents.cd.item3 fallback</span></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-unstyled text-muted fs-5">
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item4">tfs.incidents.cd.item4 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item5">tfs.incidents.cd.item5 fallback</span></li>
+                <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i><span data-i18n="tfs.incidents.cd.item6">tfs.incidents.cd.item6 fallback</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 6. Contact Info Section -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 data-i18n="tfs.contact.title"
+            class="fw-bold">
+          tfs.contact.title fallback
+        </h2>
+        <p data-i18n="tfs.contact.subtitle"
+           class="lead text-muted">
+          tfs.contact.subtitle fallback
+        </p>
+      </div>
+      <div class="row g-4 align-items-start">
+        <!-- Left Column: Google Maps -->
+        <div class="col-lg-7 col-md-12">
+          <div class="ratio ratio-16x9 rounded shadow-sm" style="min-height: 450px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.295841048027!2d-84.16645362403345!3d33.98493412128111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5a2477092bceb%3A0x2ab38eaef841b6f2!2s3296%20Summit%20Ridge%20Pkwy%20Suite%201010%2C%20Duluth%2C%20GA%2030096!5e0!3m2!1sen!2sus!4v1762896374211!5m2!1sen!2sus" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+        <!-- Right Column: Contact Info -->
+        <div class="col-lg-5 col-md-12">
+          <div class="d-flex flex-column gap-4">
+            <!-- Address -->
+            <div class="border rounded-4 p-4 shadow-sm bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="fa-solid fa-map-marker-alt fa-2x text-primary"></i>
+                <h5 data-i18n="tfs.contact.address.title"
+                    class="fw-bold mb-0">
+                  tfs.contact.address.title fallback
+                </h5>
+              </div>
+              <div id="tfs-contact-address" data-i18n="tfs.contact.address.content" class="text-muted">
+                tfs.contact.address.content fallback
+              </div>
+            </div>
+            <!-- Contact -->
+            <div class="border rounded-4 p-4 shadow-sm bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="fa-solid fa-phone fa-2x text-primary"></i>
+                <h5 data-i18n="tfs.contact.phone.title"
+                    class="fw-bold mb-0">
+                  tfs.contact.phone.title fallback
+                </h5>
+              </div>
+              <div id="tfs-contact-phone" data-i18n="tfs.contact.phone.content" class="text-muted">
+                tfs.contact.phone.content fallback
+              </div>
+            </div>
+            <!-- Opening Hours -->
+            <div class="border rounded-4 p-4 shadow-sm bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="fa-solid fa-clock fa-2x text-primary"></i>
+                <h5 data-i18n="tfs.contact.hours.title"
+                    class="fw-bold mb-0">
+                  tfs.contact.hours.title fallback
+                </h5>
+              </div>
+              <div id="tfs-contact-hours" data-i18n="tfs.contact.hours.content" class="text-muted">
+                tfs.contact.hours.content fallback
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 14. Secondary Navigation Bar -->
+  <div id="secondary-nav" class="bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-xl navbar-light py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" 
+           href="#">
+          <div class="d-flex flex-column">
+            <h1 class="h2 fw-bold mb-0 lh-1 text-dark" 
+                style="letter-spacing: -1px;"
+                data-i18n="tfs.secondaryNav.phone">
+              1-800 <span class="text-dark">411-PAIN</span>
+            </h1>
+            <small class="text-danger fw-bold" 
+                   style="font-size: 10px; letter-spacing: 0.5px;"
+                   data-i18n="tfs.secondaryNav.firmName">
+              Law Offices of Kanner & Pintaluga, P.A.
+            </small>
+          </div>
+        </a>
+        <button class="navbar-toggler border-0" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#secondaryMainNav"
+                aria-controls="secondaryMainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" 
+             id="secondaryMainNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-dark px-3" 
+                 href="#"
+                 data-i18n="tfs.secondaryNav.home">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-danger px-3 border-start border-secondary d-none d-xl-block" 
+                 href="#"
+                 data-i18n="tfs.secondaryNav.motorVehicles">
+                Motor Vehicles Accident
+              </a>
+              <a class="nav-link fw-bold text-danger d-xl-none" 
+                 href="#"
+                 data-i18n="tfs.secondaryNav.motorVehicles">
+                Motor Vehicles Accident
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-dark px-3 border-start border-secondary d-none d-xl-block" 
+                 href="#"
+                 data-i18n="tfs.secondaryNav.personalInjury">
+                Personal Injury
+              </a>
+              <a class="nav-link fw-bold text-dark d-xl-none" 
+                 href="#"
+                 data-i18n="tfs.secondaryNav.personalInjury">
+                Personal Injury
+              </a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
+            <div class="me-xl-3">
+              <p class="mb-0 fw-bold text-dark lh-1"
+                 data-i18n="tfs.secondaryNav.available">
+                Available 24/7
+              </p>
+              <small class="text-danger fw-bold"
+                     data-i18n="tfs.secondaryNav.spanish">
+                Hablamos Español
+              </small>
+            </div>
+            <a href="tel:7709104545" 
+               class="btn btn-danger rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
+              <span style="transform: rotate(90deg); display: inline-block; font-size: 1.2rem;">)</span>
+              <span class="fw-bold fs-5"
+                    data-i18n="tfs.secondaryNav.phoneNumber">
+                (770) 910-4545
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 8. Hero CTA Section -->
+  <section id="hero-cta" class="pb-5">
+    <div class="position-relative overflow-hidden" 
+         style="background-image: url('https://picsum.photos/1920/1080?random=1'); background-size: cover; background-position: center; min-height: 60vh;">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25"></div>
+      <div class="container position-relative z-1 py-5">
+        <div class="row align-items-center py-5">
+          <div class="col-lg-7 py-5">
+            <h1 data-i18n="tfs.heroCta.title"
+                class="display-3 fw-bold text-danger mb-3">
+              tfs.heroCta.title fallback
+            </h1>
+            <p class="lead fs-3 text-dark">
+              <span data-i18n="tfs.heroCta.subtitle">tfs.heroCta.subtitle fallback</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container position-relative z-3" style="margin-top: -5rem;">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div id="tfs-hero-cta-box" 
+               class="bg-danger text-white text-center p-4 p-md-5 rounded-5 shadow-lg">
+            <p data-i18n="tfs.heroCta.message"
+               class="fs-5 mb-2">
+              tfs.heroCta.message fallback
+            </p>
+            <h2 data-i18n="tfs.heroCta.claim"
+                class="h3 fw-bold mb-0">
+              tfs.heroCta.claim fallback
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Practice Areas Grid -->
+  <section id="practice-areas" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Practice Area 1: Slip & Fall -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" 
+               style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=10" 
+                 class="w-100 h-100 object-fit-cover position-absolute" 
+                 alt="Slip and Fall">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" 
+                   style="width: 70px; height: 70px;">
+                <img src="https://picsum.photos/40/40?random=11" 
+                     alt="icon" 
+                     class="rounded-circle">
+              </div>
+              <h3 data-i18n="tfs.practiceAreas.slipFall"
+                  class="h5 fw-bold text-center">
+                tfs.practiceAreas.slipFall fallback
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Practice Area 2: Bicycle Crash -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" 
+               style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=20" 
+                 class="w-100 h-100 object-fit-cover position-absolute" 
+                 alt="Bicycle Crash">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" 
+                   style="width: 70px; height: 70px;">
+                <img src="https://picsum.photos/40/40?random=21" 
+                     alt="icon" 
+                     class="rounded-circle">
+              </div>
+              <h3 data-i18n="tfs.practiceAreas.bicycleCrash"
+                  class="h5 fw-bold text-center">
+                tfs.practiceAreas.bicycleCrash fallback
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Practice Area 3: Pedestrian Collision -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" 
+               style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=30" 
+                 class="w-100 h-100 object-fit-cover position-absolute" 
+                 alt="Pedestrian">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" 
+                   style="width: 70px; height: 70px;">
+                <img src="https://picsum.photos/40/40?random=31" 
+                     alt="icon" 
+                     class="rounded-circle">
+              </div>
+              <h3 data-i18n="tfs.practiceAreas.pedestrianCollision"
+                  class="h5 fw-bold text-center">
+                tfs.practiceAreas.pedestrianCollision fallback
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Practice Area 4: Premises Liability -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" 
+               style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=40" 
+                 class="w-100 h-100 object-fit-cover position-absolute" 
+                 alt="Premises">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" 
+                   style="width: 70px; height: 70px;">
+                <img src="https://picsum.photos/40/40?random=41" 
+                     alt="icon" 
+                     class="rounded-circle">
+              </div>
+              <h3 data-i18n="tfs.practiceAreas.premisesLiability"
+                  class="h5 fw-bold text-center">
+                tfs.practiceAreas.premisesLiability fallback
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Practice Area 5: Workers' Compensation -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" 
+               style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=50" 
+                 class="w-100 h-100 object-fit-cover position-absolute" 
+                 alt="Workers Comp">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" 
+                   style="width: 70px; height: 70px;">
+                <img src="https://picsum.photos/40/40?random=51" 
+                     alt="icon" 
+                     class="rounded-circle">
+              </div>
+              <h3 data-i18n="tfs.practiceAreas.workersComp"
+                  class="h5 fw-bold text-center">
+                tfs.practiceAreas.workersComp fallback
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Practice Area 6: Other Bodily Injuries -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" 
+               style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=60" 
+                 class="w-100 h-100 object-fit-cover position-absolute" 
+                 alt="Other Injuries">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" 
+                   style="width: 70px; height: 70px;">
+                <img src="https://picsum.photos/40/40?random=61" 
+                     alt="icon" 
+                     class="rounded-circle">
+              </div>
+              <h3 data-i18n="tfs.practiceAreas.otherInjuries"
+                  class="h5 fw-bold text-center">
+                tfs.practiceAreas.otherInjuries fallback
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Accident Steps Guide -->
+  <section id="accident-steps" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 data-i18n="tfs.accidentSteps.title1"
+            class="h1 fw-bold text-dark mb-0">
+          tfs.accidentSteps.title1 fallback
+        </h2>
+        <h2 data-i18n="tfs.accidentSteps.title2"
+            class="h1 fw-bold text-danger">
+          tfs.accidentSteps.title2 fallback
+        </h2>
+      </div>
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <img src="https://picsum.photos/800/600?random=105" 
+               class="img-fluid rounded-5 shadow-sm" 
+               alt="Woman on phone after car accident">
+        </div>
+        <div class="col-lg-7">
+          <div class="d-flex flex-column gap-4">
+            <!-- Step 1 -->
+            <div class="d-flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" 
+                     style="width: 22px; height: 22px; font-size: 12px;">
+                  V
+                </div>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0 text-dark">
+                  <span class="fw-bold" 
+                        data-i18n="tfs.accidentSteps.step1.title">
+                    tfs.accidentSteps.step1.title fallback
+                  </span> - 
+                  <span data-i18n="tfs.accidentSteps.step1.desc">
+                    tfs.accidentSteps.step1.desc fallback
+                  </span>
+                </p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="d-flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" 
+                     style="width: 22px; height: 22px; font-size: 12px;">
+                  V
+                </div>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0 text-dark">
+                  <span class="fw-bold" 
+                        data-i18n="tfs.accidentSteps.step2.title">
+                    tfs.accidentSteps.step2.title fallback
+                  </span> - 
+                  <span data-i18n="tfs.accidentSteps.step2.desc">
+                    tfs.accidentSteps.step2.desc fallback
+                  </span>
+                </p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="d-flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" 
+                     style="width: 22px; height: 22px; font-size: 12px;">
+                  V
+                </div>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0 text-dark">
+                  <span class="fw-bold" 
+                        data-i18n="tfs.accidentSteps.step3.title">
+                    tfs.accidentSteps.step3.title fallback
+                  </span> - 
+                  <span data-i18n="tfs.accidentSteps.step3.desc">
+                    tfs.accidentSteps.step3.desc fallback
+                  </span>
+                </p>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="d-flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" 
+                     style="width: 22px; height: 22px; font-size: 12px;">
+                  V
+                </div>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0 text-dark">
+                  <span class="fw-bold" 
+                        data-i18n="tfs.accidentSteps.step4.title">
+                    tfs.accidentSteps.step4.title fallback
+                  </span> - 
+                  <span data-i18n="tfs.accidentSteps.step4.desc">
+                    tfs.accidentSteps.step4.desc fallback
+                  </span>
+                </p>
+              </div>
+            </div>
+            <!-- Step 5 -->
+            <div class="d-flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" 
+                     style="width: 22px; height: 22px; font-size: 12px;">
+                  V
+                </div>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0 text-dark">
+                  <span class="fw-bold" 
+                        data-i18n="tfs.accidentSteps.step5.title">
+                    tfs.accidentSteps.step5.title fallback
+                  </span> - 
+                  <span data-i18n="tfs.accidentSteps.step5.desc">
+                    tfs.accidentSteps.step5.desc fallback
+                  </span>
+                </p>
+              </div>
+            </div>
+            <!-- Step 6 -->
+            <div class="d-flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" 
+                     style="width: 22px; height: 22px; font-size: 12px;">
+                  V
+                </div>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0 text-dark">
+                  <span class="fw-bold" 
+                        data-i18n="tfs.accidentSteps.step6.title">
+                    tfs.accidentSteps.step6.title fallback
+                  </span> - 
+                  <span data-i18n="tfs.accidentSteps.step6.desc">
+                    tfs.accidentSteps.step6.desc fallback
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Process Info Section -->
+  <section id="process-info" class="py-5 bg-white overflow-hidden">
+    <div class="container py-lg-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h2 data-i18n="tfs.process.title"
+              class="display-5 fw-bold text-dark mb-5">
+            tfs.process.title fallback
+          </h2>
+          <!-- Step 1 -->
+          <div class="d-flex mb-4">
+            <div class="flex-shrink-0">
+              <div class="bg-danger rounded-circle d-flex align-items-center justify-content-center" 
+                   style="width: 65px; height: 65px;">
+                <img src="https://picsum.photos/30/30?random=101" 
+                     alt="person" 
+                     class="rounded-circle">
+              </div>
+            </div>
+            <div class="ms-4">
+              <h4 data-i18n="tfs.process.step1.title"
+                  class="fw-bold text-dark">
+                tfs.process.step1.title fallback
+              </h4>
+              <p data-i18n="tfs.process.step1.desc"
+                 class="text-secondary">
+                tfs.process.step1.desc fallback
+              </p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="d-flex mb-4">
+            <div class="flex-shrink-0">
+              <div class="bg-dark rounded-circle d-flex align-items-center justify-content-center" 
+                   style="width: 65px; height: 65px;">
+                <img src="https://picsum.photos/30/30?random=102" 
+                     alt="legal" 
+                     class="rounded-circle">
+              </div>
+            </div>
+            <div class="ms-4">
+              <h4 data-i18n="tfs.process.step2.title"
+                  class="fw-bold text-dark">
+                tfs.process.step2.title fallback
+              </h4>
+              <p data-i18n="tfs.process.step2.desc"
+                 class="text-secondary">
+                tfs.process.step2.desc fallback
+              </p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <div class="bg-danger rounded-circle d-flex align-items-center justify-content-center" 
+                   style="width: 65px; height: 65px;">
+                <img src="https://picsum.photos/30/30?random=103" 
+                     alt="gavel" 
+                     class="rounded-circle">
+              </div>
+            </div>
+            <div class="ms-4">
+              <h4 data-i18n="tfs.process.step3.title"
+                  class="fw-bold text-dark">
+                tfs.process.step3.title fallback
+              </h4>
+              <p data-i18n="tfs.process.step3.desc"
+                 class="text-secondary">
+                tfs.process.step3.desc fallback
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 position-relative">
+          <div class="bg-danger bg-opacity-10 rounded-5 p-5 d-flex justify-content-center align-items-center">
+            <img src="https://picsum.photos/500/600?random=200" 
+                 alt="Contacting via phone" 
+                 class="img-fluid rounded-4 shadow">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- 11. Case Evaluation Form -->
+  <section id="case-evaluation" class="py-5">
+    <div class="container">
+      <div class="bg-danger rounded-5 p-4 p-md-5 shadow-lg position-relative overflow-hidden">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-8">
+            <form id="injury-contact-form" 
+                  action="#" 
+                  method="POST">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" 
+                         class="form-label text-white fw-semibold" 
+                         data-i18n="tfs.form.firstName">
+                    tfs.form.firstName fallback
+                  </label>
+                  <input type="text" 
+                         class="form-control bg-white bg-opacity-75 border-0 py-2" 
+                         id="firstName" 
+                         required>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" 
+                         class="form-label text-white fw-semibold" 
+                         data-i18n="tfs.form.lastName">
+                    tfs.form.lastName fallback
+                  </label>
+                  <input type="text" 
+                         class="form-control bg-white bg-opacity-75 border-0 py-2" 
+                         id="lastName" 
+                         required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" 
+                         class="form-label text-white fw-semibold" 
+                         data-i18n="tfs.form.phone">
+                    tfs.form.phone fallback
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white bg-opacity-75 border-0">
+                      <small>🇺🇸</small>
+                    </span>
+                    <input type="tel" 
+                           class="form-control bg-white bg-opacity-75 border-0 py-2" 
+                           id="phone" 
+                           placeholder="(201) 555-0123" 
+                           required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" 
+                         class="form-label text-white fw-semibold" 
+                         data-i18n="tfs.form.email">
+                    tfs.form.email fallback
+                  </label>
+                  <input type="email" 
+                         class="form-control bg-white bg-opacity-75 border-0 py-2" 
+                         id="email" 
+                         required>
+                </div>
+                <div class="col-12">
+                  <label for="message" 
+                         class="form-label text-white fw-semibold" 
+                         data-i18n="tfs.form.message">
+                    tfs.form.message fallback
+                  </label>
+                  <textarea class="form-control bg-white bg-opacity-75 border-0" 
+                            id="message" 
+                            rows="4"></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" 
+                          class="btn btn-dark rounded-pill w-100 py-3 fw-bold shadow" 
+                          data-i18n="tfs.form.submit">
+                    tfs.form.submit fallback
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <div class="bg-white rounded-4 overflow-hidden h-100 d-flex flex-column shadow">
+              <img src="https://picsum.photos/400/300?random=99" 
+                   class="img-fluid object-fit-cover" 
+                   alt="Injury Assessment" 
+                   style="height: 250px;">
+              <div class="p-4 text-center flex-grow-1 d-flex flex-column justify-content-center">
+                <h3 data-i18n="tfs.form.ctaTitle"
+                    class="h5 fw-normal text-muted mb-0">
+                  tfs.form.ctaTitle fallback
+                </h3>
+                <p data-i18n="tfs.form.ctaSubtitle"
+                   class="h4 fw-bold text-danger italic mt-1">
+                  tfs.form.ctaSubtitle fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- 13. Vehicle Accidents Categories -->
+  <section id="vehicle-accidents" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="h1 fw-bold text-dark">
+          <span data-i18n="tfs.vehicleAccidents.title">
+            tfs.vehicleAccidents.title fallback
+          </span>
+        </h2>
+        <p class="text-secondary mx-auto" 
+           style="max-width: 750px;" 
+           data-i18n="tfs.vehicleAccidents.subtitle">
+          tfs.vehicleAccidents.subtitle fallback
+        </p>
+      </div>
+      <div class="row g-4">
+        <!-- Car Accidents Card -->
+        <div class="col-md-6">
+          <div class="position-relative" 
+               style="perspective: 1000px; height: 400px;">
+            <div id="inner-car-card" 
+                 class="w-100 h-100 position-relative shadow rounded-5" 
+                 style="transition: transform 0.6s; transform-style: preserve-3d;">
+              <div class="position-absolute w-100 h-100 top-0 start-0 overflow-hidden rounded-5" 
+                   style="backface-visibility: hidden;">
+                <img src="https://picsum.photos/800/600?random=1" 
+                     class="w-100 h-100 object-fit-cover" 
+                     alt="Car Accident">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" 
+                       style="width: 70px; height: 70px;">
+                    <span class="text-dark fw-bold" 
+                          style="font-size: 10px;">
+                      CAR ICON
+                    </span>
+                  </div>
+                  <h3 data-i18n="tfs.vehicleAccidents.car.title"
+                      class="h4 fw-bold mb-3">
+                    tfs.vehicleAccidents.car.title fallback
+                  </h3>
+                  <button class="btn btn-danger rounded-pill px-5 fw-bold shadow" 
+                          onclick="document.getElementById('inner-car-card').style.transform='rotateY(180deg)'" 
+                          data-i18n="tfs.vehicleAccidents.seeMore">
+                    tfs.vehicleAccidents.seeMore fallback
+                  </button>
+                </div>
+              </div>
+              <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" 
+                   style="backface-visibility: hidden; transform: rotateY(180deg);">
+                <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" 
+                        onclick="document.getElementById('inner-car-card').style.transform='rotateY(0deg)'"></button>
+                <p data-i18n="tfs.vehicleAccidents.car.desc"
+                   class="text-secondary small">
+                  tfs.vehicleAccidents.car.desc fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Motorcycle Accidents Card -->
+        <div class="col-md-6">
+          <div class="position-relative" 
+               style="perspective: 1000px; height: 400px;">
+            <div id="inner-moto-card" 
+                 class="w-100 h-100 position-relative shadow rounded-5" 
+                 style="transition: transform 0.6s; transform-style: preserve-3d;">
+              <div class="position-absolute w-100 h-100 top-0 start-0 overflow-hidden rounded-5" 
+                   style="backface-visibility: hidden;">
+                <img src="https://picsum.photos/800/600?random=2" 
+                     class="w-100 h-100 object-fit-cover" 
+                     alt="Motorcycle Accident">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" 
+                       style="width: 70px; height: 70px;">
+                    <span class="text-danger fw-bold" 
+                          style="font-size: 10px;">
+                      MOTO ICON
+                    </span>
+                  </div>
+                  <h3 data-i18n="tfs.vehicleAccidents.motorcycle.title"
+                      class="h4 fw-bold mb-3">
+                    tfs.vehicleAccidents.motorcycle.title fallback
+                  </h3>
+                  <button class="btn btn-light rounded-pill px-5 fw-bold text-danger shadow" 
+                          onclick="document.getElementById('inner-moto-card').style.transform='rotateY(180deg)'" 
+                          data-i18n="tfs.vehicleAccidents.seeMore">
+                    tfs.vehicleAccidents.seeMore fallback
+                  </button>
+                </div>
+              </div>
+              <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" 
+                   style="backface-visibility: hidden; transform: rotateY(180deg);">
+                <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" 
+                        onclick="document.getElementById('inner-moto-card').style.transform='rotateY(0deg)'"></button>
+                <p data-i18n="tfs.vehicleAccidents.motorcycle.desc"
+                   class="text-secondary small">
+                  tfs.vehicleAccidents.motorcycle.desc fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Rideshare Card -->
+        <div class="col-md-6">
+          <div class="position-relative" 
+               style="perspective: 1000px; height: 400px;">
+            <div id="inner-ride-card" 
+                 class="w-100 h-100 position-relative shadow rounded-5" 
+                 style="transition: transform 0.6s; transform-style: preserve-3d;">
+              <div class="position-absolute w-100 h-100 top-0 start-0 overflow-hidden rounded-5" 
+                   style="backface-visibility: hidden;">
+                <img src="https://picsum.photos/800/600?random=3" 
+                     class="w-100 h-100 object-fit-cover" 
+                     alt="Rideshare">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" 
+                       style="width: 70px; height: 70px;">
+                    <span class="text-danger fw-bold" 
+                          style="font-size: 10px;">
+                      RIDE ICON
+                    </span>
+                  </div>
+                  <h3 data-i18n="tfs.vehicleAccidents.rideshare.title"
+                      class="h4 fw-bold mb-3">
+                    tfs.vehicleAccidents.rideshare.title fallback
+                  </h3>
+                  <button class="btn btn-light rounded-pill px-5 fw-bold text-danger shadow" 
+                          onclick="document.getElementById('inner-ride-card').style.transform='rotateY(180deg)'" 
+                          data-i18n="tfs.vehicleAccidents.seeMore">
+                    tfs.vehicleAccidents.seeMore fallback
+                  </button>
+                </div>
+              </div>
+              <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" 
+                   style="backface-visibility: hidden; transform: rotateY(180deg);">
+                <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" 
+                        onclick="document.getElementById('inner-ride-card').style.transform='rotateY(0deg)'"></button>
+                <h5 data-i18n="tfs.vehicleAccidents.rideshare.backTitle"
+                    class="fw-bold text-danger mb-3">
+                  tfs.vehicleAccidents.rideshare.backTitle fallback
+                </h5>
+                <p data-i18n="tfs.vehicleAccidents.rideshare.desc"
+                   class="text-secondary small">
+                  tfs.vehicleAccidents.rideshare.desc fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Truck Accidents Card -->
+        <div class="col-md-6">
+          <div class="position-relative" 
+               style="perspective: 1000px; height: 400px;">
+            <div id="inner-truck-card" 
+                 class="w-100 h-100 position-relative shadow rounded-5" 
+                 style="transition: transform 0.6s; transform-style: preserve-3d;">
+              <div class="position-absolute w-100 h-100 top-0 start-0 overflow-hidden rounded-5" 
+                   style="backface-visibility: hidden;">
+                <img src="https://picsum.photos/800/600?random=4" 
+                     class="w-100 h-100 object-fit-cover" 
+                     alt="Truck Accident">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" 
+                       style="width: 70px; height: 70px;">
+                    <span class="text-dark fw-bold" 
+                          style="font-size: 10px;">
+                      TRUCK ICON
+                    </span>
+                  </div>
+                  <h3 data-i18n="tfs.vehicleAccidents.truck.title"
+                      class="h4 fw-bold mb-3 text-center">
+                    tfs.vehicleAccidents.truck.title fallback
+                  </h3>
+                  <button class="btn btn-danger rounded-pill px-5 fw-bold shadow" 
+                          onclick="document.getElementById('inner-truck-card').style.transform='rotateY(180deg)'" 
+                          data-i18n="tfs.vehicleAccidents.seeMore">
+                    tfs.vehicleAccidents.seeMore fallback
+                  </button>
+                </div>
+              </div>
+              <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" 
+                   style="backface-visibility: hidden; transform: rotateY(180deg);">
+                <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" 
+                        onclick="document.getElementById('inner-truck-card').style.transform='rotateY(0deg)'"></button>
+                <h5 data-i18n="tfs.vehicleAccidents.truck.backTitle"
+                    class="fw-bold text-dark mb-3">
+                  tfs.vehicleAccidents.truck.backTitle fallback
+                </h5>
+                <p data-i18n="tfs.vehicleAccidents.truck.desc"
+                   class="text-secondary small">
+                  tfs.vehicleAccidents.truck.desc fallback
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- 7. Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h2 data-i18n="tfs.footer.phone"
+              class="display-5 fw-bold text-danger mb-4">
+            tfs.footer.phone fallback
+          </h2>
+          <div class="d-flex gap-2 mb-4">
+            <a id="sns121" 
+               href="https://www.facebook.com/share/1G9ZVXTRKj/" 
+               class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold" 
+               style="width: 36px; height: 36px; font-size: 10px; text-decoration: none;" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a id="sns123" 
+               href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx" 
+               class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold" 
+               style="width: 36px; height: 36px; font-size: 10px; text-decoration: none;" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+          <p class="small text-secondary lh-sm mb-0"
+             data-i18n="tfs.footer.address">
+            tfs.footer.address fallback
+          </p>
+        </div>
+        <div class="col-lg-8">
+          <ul class="nav justify-content-end mb-2">
+            <li class="nav-item">
+              <a href="#" 
+                 class="nav-link text-white fw-bold px-3 py-0" 
+                 data-i18n="tfs.footer.nav.home">
+                tfs.footer.nav.home fallback
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" 
+                 class="nav-link text-white fw-bold px-3 py-0" 
+                 data-i18n="tfs.footer.nav.motorVehicles">
+                tfs.footer.nav.motorVehicles fallback
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" 
+                 class="nav-link text-danger fw-bold px-3 py-0" 
+                 data-i18n="tfs.footer.nav.personalInjury">
+                tfs.footer.nav.personalInjury fallback
+              </a>
+            </li>
+          </ul>
+          <hr class="border-secondary my-3">
+          <div class="small text-secondary text-end lh-sm">
+            <p class="mb-3" 
+               style="font-size: 0.8rem;"
+               data-i18n="tfs.footer.disclaimerText">
+              tfs.footer.disclaimerText fallback
+            </p>
+            <a href="#" 
+               class="text-white text-decoration-none fw-bold small" 
+               data-i18n="tfs.footer.privacyPolicy">
+              tfs.footer.privacyPolicy fallback
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap 5 JS Bundle (includes Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script type="module" src="index.js"></script>
+</body>
+</html>
