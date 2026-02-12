@@ -94,6 +94,9 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
     - [Building Executables](#building-executables)
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
+- [Deployment & Production Hardening](#deployment--production-hardening)
+  - [Environment Variables (.env)](#environment-variables-env)
+  - [Persistent Service (Systemd)](#persistent-service-systemd)
 - [Technologies](#technologies)
   - [Backend](#backend)
   - [Frontend](#frontend)
@@ -105,23 +108,11 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
   - [Internationalization (i18n)](#internationalization-i18n)
   - [Styling](#styling)
   - [Features in Detail](#features-in-detail)
-    - [Bilingual Support](#bilingual-support)
-    - [Contact Forms](#contact-forms)
-    - [Responsive Design](#responsive-design)
-    - [Performance](#performance)
+- [SEO & Roadmap](#seo--roadmap)
 - [Contributing](#contributing)
   - [For Developers](#for-developers)
   - [For Copywriters](#for-copywriters)
 - [References](#references)
-  - [Website References](#website-references)
-  - [Official Law Firm Website Examples](#official-law-firm-website-examples)
-  - [Contact Form Examples](#contact-form-examples)
-  - [24/7 Commercial/Marketing Websites](#247-commercialmarketing-websites)
-  - [UI/UX Resources](#uiux-resources)
-  - [Additional Resources](#additional-resources)
-    - [Documentation \& Frameworks](#documentation--frameworks)
-    - [Standards \& Guidelines](#standards--guidelines)
-    - [Development Tools](#development-tools-1)
 - [License](#license)
 - [Contact](#contact)
 
@@ -185,11 +176,19 @@ The server will typically run on `http://localhost:5000`.
 
 ### Production Mode
 
-Simply run the wrapper script. It automatically detects the OS and launches the appropriate production server (Waitress on Windows, Gunicorn on Linux/Mac).
+Simply run the smart wrapper script (`main.py`). It automatically detects the OS and launches the appropriate production server (Waitress on Windows, Gunicorn on Linux/Mac).
 
 ```bash
 python main.py
+# OR if using the built executable:
+./jslawgroup-oracle-linux-x64
 ```
+
+**How it works:**
+1.  **Dependencies:** Automatically uses `gunicorn` (bundled in the exe or installed via pip) on Linux/Mac, and `waitress` on Windows.
+2.  **Windows (Production):** Detects Windows and uses **Waitress** WSGI server.
+    - *Note:* If `waitress` is missing, it falls back to Flask Dev Server with a warning.
+3.  **Linux/Mac (Production):** Detects non-Windows and uses **Gunicorn** WSGI server (4 workers).
 
 ### Building Executables
 
@@ -248,18 +247,65 @@ For production, creating a `.env` file is **mandatory** to secure the applicatio
 **Create a `.env` file in the root directory:**
 
 ```ini
-# Flask Security
-SECRET_KEY=your-super-secure-random-string
+# Flask Configuration
+# SECRET_KEY: Used for session security. Generate a random strong string (e.g., `openssl rand -hex 32`).
+SECRET_KEY=replace-this-with-a-secure-random-string
+
+# FLASK_APP: Tells Flask where the application instance is located.
 FLASK_APP=app:app
+
+# FLASK_DEBUG: Set to 'False' for production security. Set to 'True' ONLY for local development.
 FLASK_DEBUG=False
 
-# Email Configuration (Required for forms to send emails)
-SMTP_HOST=...
-SMTP_PORT=...
-SMTP_USERNAME=...
+# Email Configuration (Gmail)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USERNAME=info@jslawgroup.net
 SMTP_PASSWORD=your-google-app-password
 SMTP_SECURITY=SSL
 ```
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br /><br /><br />
+
+---
+
+# Deployment & Production Hardening
+
+## Persistent Service (Systemd)
+
+To ensure the app keeps running after a reboot or crash on Linux servers, create a systemd service.
+
+1.  **Create Service File:** `sudo nano /etc/systemd/system/jslaw.service`
+2.  **Content (Source Code Deployment):**
+    ```ini
+    [Unit]
+    Description=Gunicorn instance to serve JS Law Group
+    After=network.target
+
+    [Service]
+    User=opc
+    Group=www-data
+    WorkingDirectory=/home/opc/source/repo/_references/_jh07-jslaw
+    Environment="PATH=/home/opc/source/repo/_references/_jh07-jslaw/venv/bin"
+    ExecStart=/home/opc/source/repo/_references/_jh07-jslaw/venv/bin/python main.py
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+    *(Note: If using the PyInstaller executable, point `ExecStart` to the executable path instead)*
+
+3.  **Enable & Start:**
+    ```bash
+    sudo systemctl start jslaw
+    sudo systemctl enable jslaw
+    ```
+
+## Maintenance & Monitoring
+- **Backups:** Schedule regular backups of the `submissions/` directory.
+- **Logs:** Monitor service logs using `journalctl -u jslaw`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -325,7 +371,7 @@ Enable debug mode to visualize i18n attributes:
 
 The project uses a custom i18n system:
 
-1. **Translation Files**: Located in `public/locales/`
+1. **Translation Files**: Located in `static/locales/`
    - Format: `{locale-code}.json` (e.g., `en-US.json`, `ko-KR.json`)
 
 2. **Using Translations in HTML**:
@@ -348,14 +394,14 @@ The project uses a custom i18n system:
 
 ## Styling
 
-- **SCSS Source**: `src/scss/custom.scss`
-- **Compiled CSS**: `src/css/custom.min.css`
+- **SCSS Source**: `static/scss/custom.scss`
+- **Compiled CSS**: `static/css/custom.min.css`
 - **Bootstrap Customization**: Custom variables and overrides in SCSS
 
 To compile SCSS:
 ```bash
 # Use the provided script or your preferred SCSS compiler
-sass src/scss/custom.scss src/css/custom.min.css --style compressed
+sass static/scss/custom.scss static/css/custom.min.css --style compressed
 ```
 
 ## Features in Detail
@@ -387,6 +433,46 @@ sass src/scss/custom.scss src/css/custom.min.css --style compressed
 - Minimal dependencies
 
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br /><br /><br />
+
+---
+
+# SEO & Roadmap
+
+## 1. Domain & Server Configuration (Done)
+- [x] **Domain Acquisition:** `jslawgroup.net` acquired.
+- [x] **DNS Setup:** Pointed to OCI IP address.
+- [x] **Infrastructure:** OCI Instance configured.
+- [x] **Web Server:** Nginx configured as reverse proxy.
+- [x] **SSL/HTTPS:** Enabled and working (Let's Encrypt/Certbot).
+- [x] **Email Integration:** `GmailProxy` implemented with attachments (JSON/CSV) and HTML body.
+- [x] **App Architecture:** Reorganized into `app/__init__.py` (Flask App) and `app/__main__.py` (Server Entry Point), with `main.py` wrapper.
+- [x] **Wizard Integration:** Embedded 'Auto Accident Wizard' multi-step form into `index.html` with WTForms (`AutoAccidentWizardForm`) and backend processing.
+- [x] **Build Pipeline:** Updated PyInstaller builds to bundle dependencies and configurations.
+
+## 2. Frontend & UX Improvements (Done)
+- [x] **Prototype Index (`index.html`):** Consistent validation, success feedback modal, and layout fixes.
+- [x] **Dependencies:** Installed `email-validator` to resolve backend validation issues.
+
+## 3. SEO Optimization (Pending)
+### A. Technical SEO
+- [x] **Robots.txt:** Created and serving at `/robots.txt`.
+- [x] **Sitemap.xml:** Serving at `/sitemap.xml` (Ensure content is up to date).
+- [ ] **Canonical Tags:** Verify `<link rel="canonical" href="...">` is present in templates.
+- [ ] **Submission:** Submit `https://www.jslawgroup.net/sitemap.xml` to Google Search Console.
+
+### B. Content & Meta Data
+- [ ] **Title Tags:** Ensure unique titles for `/final/about`, `/final/accident`, etc.
+- [ ] **Meta Descriptions:** Add description tags to all final templates.
+- [ ] **Open Graph (OG) Tags:** Add for social sharing.
+- [ ] **Schema.org:** Add JSON-LD for "LegalService".
+
+### C. Google Tools
+- [ ] **Google Search Console (GSC):** Verify domain ownership.
+- [ ] **Google My Business:** Claim profile and match NAP (Name, Address, Phone).
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -412,7 +498,7 @@ The translation workspace is located in `scripts-*/` directories:
 - **Japanese**: `scripts-ja-JP/`
 - **Spanish**: `scripts-es-US/`
 
-Translation files are managed in JSON format in `public/locales/`.
+Translation files are managed in JSON format in `static/locales/`.
 
 
 

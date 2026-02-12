@@ -8,8 +8,8 @@ project2305*
 _*
 _*/
 # Do not ignore Python dunder files (e.g. __init__.py, __main__.py)
-!__*
-!__*/
+!__*__
+!__*__/
 tmp*/
 remote*/
 VSLive*/

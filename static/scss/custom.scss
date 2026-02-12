@@ -10,9 +10,10 @@
 
 @use "bootstrap/scss/bootstrap" with ( // implies @charset "utf-8";
   // $primary: #910dfd,
+  $primary: #c8102e, // red
   // $primary: #6610f2, // indigo
   // $primary: #198754, // green
-  $primary: #6f42c1, // purple
+  // $primary: #6f42c1, // purple
   // $primary: #0dcaf0, // cyan
   // $primary: #910dfd,
   // $primary: var(--bs-indigo),
@@ -21,6 +22,21 @@
   // $body-bg: #fff,
 );
 
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+/* Global Font Style - JetBrains Mono */
+body {
+  /* "JetBrains Mono" first, with a solid fallback stack */
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', Courier, monospace;
+  font-weight: 600; /* JetBrains Mono looks great at 600 */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Keeps mono fonts crisp */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em; /* Tighten headings slightly for mono fonts */
+}
 
 /* lightweight runtime CSS variables (override Bootstrap's CSS vars if needed) */
 // :root {
@@ -77,6 +93,27 @@ footer li {
 
 
 
+
+// Floating language switcher: primary shade on hover (match other components)
+.btn-lang-switcher {
+  transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+
+  &:hover {
+    background-color: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+    border-color: var(--bs-primary);
+  }
+}
+
+// Language dropdown: national flag icons (flag-icons library) next to language strings
+.dropdown-flag.dropdown-flag {
+  // flag-icons .fi uses background-image; size the box so the flag is visible
+  width: 1.5em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
 
 // Nav links: start bright, transition to primary on hover
 .nav-link {
