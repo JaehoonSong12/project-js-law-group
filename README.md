@@ -148,7 +148,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd _jh07-jslaw
+   cd <repository-name>
    ```
 
 2. **Create virtual environment**
@@ -468,7 +468,7 @@ The project is deployed using **GitHub Pages** for high availability and accessi
 ## 24/7 Commercial/Marketing Websites
 - [411 Pain - Atlanta Motor Vehicle Accident](https://411pain.com/atlanta-georgia/motor-vehicle-accident/#free-case-review)
 - [1-800-Hurt 911 - Georgia injury treatment and attorney referrals](https://1800hurt911ga.com/)
-- [BEST](https://eliteaccidentattorneys.com/)
+- [Elite Accident Attorneys](https://eliteaccidentattorneys.com/)
 
 
 
