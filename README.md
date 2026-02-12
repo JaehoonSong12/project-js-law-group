@@ -33,12 +33,8 @@
 
 
 
-
-
-
-
 # JS Law Group Website
-JS Law Group Website is a professional, responsive web application built for a law firm specializing in Personal Injury and Criminal Defense cases. The website features bilingual support (English/Korean), a modern UI built with Bootstrap 5, and an integrated contact form system.
+JS Law Group Website is a professional, responsive web application built for a law firm specializing in Personal Injury and Criminal Defense cases. The website features bilingual support (English/Korean), a modern UI built with Bootstrap 5, and an integrated contact form system. This project has been re-architected from a static/Node.js setup to a robust **Python Flask** application to support dynamic form processing, email automation, and secure backend logic.
 
 ## Key Features
 - **Bilingual Support**: Full English/Korean language switching with i18n implementation
@@ -48,6 +44,11 @@ JS Law Group Website is a professional, responsive web application built for a l
 - **Debug Mode**: Built-in debugging tools for development
 - **Performance**: Optimized loading with modular JavaScript architecture
 - **Accessibility**: WCAG-compliant design practices
+- **Dynamic Backend**: Built with Python Flask
+- **Production-Ready Server**: Auto-switching server logic (Waitress for Windows, Gunicorn for Linux/Mac)
+- **Secure Form Handling**: Integrated with Flask-WTF and WTForms for CSRF protection and validation
+- **Email Automation**: Custom GmailProxy service to send structured case inquiries (HTML/JSON/CSV attachments)
+- **Executable Builds**: Automated CI/CD pipeline (GitHub Actions) compiling standalone executables via PyInstaller for all major OS platforms (Windows, macOS, Ubuntu, Oracle Linux)
 
 
 
@@ -78,7 +79,6 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
 
 
 
-
 ## Table of Contents
 
 - [JS Law Group Website](#js-law-group-website)
@@ -89,10 +89,13 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Usage](#usage)
-    - [Development Server](#development-server)
-    - [Building for Production](#building-for-production)
+    - [Development Mode](#development-mode)
+    - [Production Mode](#production-mode)
+    - [Building Executables](#building-executables)
 - [Project Structure](#project-structure)
+- [Configuration](#configuration)
 - [Technologies](#technologies)
+  - [Backend](#backend)
   - [Frontend](#frontend)
   - [Internationalization](#internationalization)
   - [Development Tools](#development-tools)
@@ -125,23 +128,11 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
 
 
 
-
-
-
-
-
-
-
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <br /><br /><br />
 
 ---
-
-
 
 # Installation
 
@@ -149,62 +140,68 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
 
 Before you begin, ensure you have the following installed:
 
-- **Python 3.7+** (for development server)
-- **Node.js** (for build tools and dependencies)
-- **npm** or **yarn** (package manager)
+- **Python 3.11+** (for development and production server)
+- **Git**
 
 ## Setup
 
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd base-web
+   cd _jh07-jslaw
    ```
 
-2. **Install Python dependencies**
+2. **Create virtual environment**
    ```bash
-   ./on_venv.sh      # turn on, envrionment, just type in ./on_v then tap it.
-   python --version  # Verify Python 3.7+ is installed
-   pip install flask
+   # Windows
+   python -m venv venv
+   venv\Scripts\activate
+
+   # Mac/Linux
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
-3. **Install Node.js dependencies** (if applicable)
+3. **Install dependencies**
    ```bash
-   npm install
-   ```
-
-4. **Verify installation**
-   ```bash
-   python server.py --help
+   pip install -r requirements.txt
    ```
 
 ## Usage
 
-### Development Server
+### Development Mode
 
-Start the local development server:
-
-```bash
-# Start server in root directory
-python server.py
-
-# Start server in a specific subdirectory
-python server.py <subdirectory>
-```
-
-The server will typically run on `http://localhost:5000` (or the port specified in `server.py`).
-
-### Building for Production
-
-Build the project for production deployment:
+To run the server locally with debug mode enabled:
 
 ```bash
-# Build all assets
-python server.py --build
+# Windows (PowerShell)
+$env:FLASK_DEBUG="True"; python main.py
 
-# Build for a specific subdirectory
-python server.py --build <subdirectory>
+# Mac/Linux
+export FLASK_DEBUG=True && python main.py
 ```
+
+The server will typically run on `http://localhost:5000`.
+
+### Production Mode
+
+Simply run the wrapper script. It automatically detects the OS and launches the appropriate production server (Waitress on Windows, Gunicorn on Linux/Mac).
+
+```bash
+python main.py
+```
+
+### Building Executables
+
+The project includes a GitHub Actions workflow (`.github/workflows/release.yml`) that automatically builds standalone executables when a tag starting with `v*` is pushed.
+
+To build locally:
+
+```bash
+pyinstaller main.py --onefile --name jslawgroup --add-data "static;static" --add-data "templates;templates" --add-data "submissions;submissions"
+```
+
+*(Note: Separators for `--add-data` use `;` on Windows and `:` on Linux/Mac.)*
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -212,55 +209,30 @@ python server.py --build <subdirectory>
 <br /><br /><br />
 
 ---
-
-
 
 # Project Structure
 
 ```
-base-web/
-|
-+-- public/                 # Public-facing HTML files and static assets
-|   +-- jslaw.html          # Main law firm website page
-|   +-- index.html           # Landing page
-|   +-- locales/            # Translation JSON files
-|   |   +-- en-US.json      # English translations
-|   |   +-- ko-KR.json      # Korean translations
-|   |   +-- ja-JP.json      # Japanese translations
-|   |   +-- es-US.json      # Spanish translations
-|   +-- images/             # Image assets
-|   +-- css/                # Compiled CSS files
-|
-+-- src/                    # Source code
-|   +-- js/                 # JavaScript modules
-|   |   +-- jslaw.js        # Main page controller
-|   |   +-- *.js            # Other page controllers
-|   +-- core-module.js      # Core utility functions
-|   +-- ext-module-i18n.js  # Internationalization module
-|   +-- ext-module-bs.js    # Bootstrap extensions
-|   +-- ext-module-fa.js    # Font Awesome extensions
-|   +-- scss/               # SCSS source files
-|   |   +-- custom.scss     # Custom Bootstrap overrides
-|   +-- css/                # Compiled CSS output
-|
-+-- includes/               # Reusable HTML fragments
-|   +-- nav-*.html          # Navigation components
-|   +-- footer-*.html       # Footer components
-|
-+-- scripts-*/              # Translation workspace directories
-|   +-- scripts-en-US/      # English copywriter workspace
-|   +-- scripts-ko-KR/      # Korean copywriter workspace
-|   +-- scripts-ja-JP/      # Japanese copywriter workspace
-|   +-- scripts-es-US/      # Spanish copywriter workspace
-|
-+-- docs/                   # Documentation and agreements
-+-- server.py               # Python development server
-+-- server.js               # Node.js server (alternative)
-+-- README.md              # This file
+/
+├── app/                    # Backend Application Logic
+│   ├── __init__.py         # Flask App Factory & Route Logic
+│   ├── __main__.py         # Server Entry Point (Waitress/Gunicorn selection)
+│   ├── forms.py            # WTForms Definitions (Validation logic)
+│   └── gmailproxy.py       # Email Service (SMTP/Gmail integration)
+├── templates/              # HTML Templates (Jinja2)
+│   ├── final*.html         # Production-ready pages
+│   ├── index.html          # Prototype Hub & Wizard
+│   └── form_*.html         # Form fragments (for modals/iframes)
+├── static/                 # Static Assets
+│   ├── css/                # Compiled Styles
+│   ├── js/                 # Frontend Scripts
+│   └── images/             # Visual Assets
+├── submissions/            # Local storage for form submissions (JSON/CSV)
+├── main.py                 # Application Wrapper Script
+├── requirements.txt        # Python Dependencies
+├── .env.example            # Example Environment Variables
+└── README.md               # Project Documentation
 ```
-
-**Note**: The `scripts-en-US` directory is the primary workspace for copywriters (Nayun's workspace).
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -269,15 +241,48 @@ base-web/
 
 ---
 
+# Configuration
 
+For production, creating a `.env` file is **mandatory** to secure the application.
+
+**Create a `.env` file in the root directory:**
+
+```ini
+# Flask Security
+SECRET_KEY=your-super-secure-random-string
+FLASK_APP=app:app
+FLASK_DEBUG=False
+
+# Email Configuration (Required for forms to send emails)
+SMTP_HOST=...
+SMTP_PORT=...
+SMTP_USERNAME=...
+SMTP_PASSWORD=your-google-app-password
+SMTP_SECURITY=SSL
+```
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br /><br /><br />
+
+---
 
 # Technologies
+
+## Backend
+- **Flask**: Web Framework
+- **Flask-WTF / WTForms**: Form handling and validation
+- **Waitress**: Production WSGI server for Windows
+- **Gunicorn**: Production WSGI server for UNIX
+- **PyInstaller**: For bundling the app into a single executable file
 
 ## Frontend
 - **HTML5** - Semantic markup
 - **CSS3 / SCSS** - Styling and theming
 - **Bootstrap 5** - Responsive framework
-- **JavaScript (ES6+)** - Modern JavaScript with modules
+- **Jinja2** - Templating engine
+- **JavaScript (ES6+)** - Modern JavaScript with modules; client-side validation and interactivity
 - **Font Awesome 6** - Icon library
 
 ## Internationalization
@@ -285,7 +290,7 @@ base-web/
 - **JSON-based Translations** - Easy-to-manage locale files
 
 ## Development Tools
-- **Python Flask** - Development server
+- **Python Flask** - Development and production server
 - **SCSS Compiler** - CSS preprocessing
 - **Git** - Version control
 
@@ -294,13 +299,11 @@ base-web/
 - **Noto Sans KR** - Korean text support
 
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <br /><br /><br />
 
 ---
-
 
 # Development
 
@@ -414,7 +417,6 @@ Translation files are managed in JSON format in `public/locales/`.
 
 
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -512,7 +514,7 @@ For questions or support regarding this project, please contact the development 
 
 **Built for JS Law Group**
 
-*Last updated: 14 Nov 2025*
+*Last updated: Feb 2026*
 
 </div>
 

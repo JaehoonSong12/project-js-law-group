@@ -1,41 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Law Group - Prototype Index</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Law Group - Prototype Index</title>
+  <!-- Use standard project CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="/static/css/custom.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Minimal custom styles for Wizard specific layout */
+    #wizard-container {
+      background: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 1rem;
+      border-radius: 1rem;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wizard-card {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border: none;
+    }
+
+    .step-transition {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      display: none;
+    }
+
+    .step-transition.active {
+      opacity: 1;
+      display: block;
+    }
+
+    .btn-option {
+      transition: all 0.2s ease;
+      text-align: left;
+      border: 1px solid #dee2e6;
+      background: white;
+    }
+    .btn-option:hover {
+      border-color: var(--bs-primary);
+      background-color: var(--bs-primary-bg-subtle);
+      color: var(--bs-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
-<body class="bg-light">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h1 class="display-4 fw-bold mb-4">JS Law Group Prototypes</h1>
-                <p class="lead mb-5">Select a prototype page to view:</p>
-                
-                <div class="d-grid gap-3">
-                    <a href="/final" class="btn btn-danger btn-lg shadow-sm p-4 border border-3 border-warning">
-                        <h3 class="h5 mb-1 fw-bold">FINAL PROTOTYPE</h3>
-                        <small class="text-white-50">final.html (Main Layout)</small>
-                    </a>
-                    
-                    <a href="/home" class="btn btn-primary btn-lg shadow-sm p-4">
-                        <h3 class="h5 mb-1">Main Website</h3>
-                        <small class="text-white-50">index_home.html</small>
-                    </a>
-                    
-                    <a href="/247/demo1" class="btn btn-danger btn-lg shadow-sm p-4">
-                        <h3 class="h5 mb-1">24/7 Emergency - Demo 1</h3>
-                        <small class="text-white-50">index247_demo1.html</small>
-                    </a>
-                    
-                    <a href="/247/demo2" class="btn btn-dark btn-lg shadow-sm p-4">
-                        <h3 class="h5 mb-1">24/7 Emergency - Demo 2</h3>
-                        <small class="text-white-50">index247_demo2.html</small>
-                    </a>
-                </div>
+<body class="bg-light">`
+  <!-- Secondary Navigation Bar (same implementation as index247_demo2, with i18n) -->
+  <div id="secondary-nav" class="bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-xl navbar-light py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
+          <div class="d-flex flex-column">
+            <h1 class="h2 fw-bold mb-0 lh-1 text-dark" style="letter-spacing: -1px;" data-i18n="tfs.secondaryNav.phone">1-800 <span class="text-dark">411-PAIN</span></h1>
+            <small class="text-danger fw-bold" style="font-size: 10px; letter-spacing: 0.5px;" data-i18n="tfs.secondaryNav.firmName">Law Offices of Kanner & Pintaluga, P.A.</small>
+          </div>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#secondaryMainNav" aria-controls="secondaryMainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="secondaryMainNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-dark px-3" href="{{ url_for('index') }}" data-i18n="tfs.secondaryNav.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-danger px-3 border-start border-secondary d-none d-xl-block" href="#" data-i18n="tfs.secondaryNav.motorVehicles">Motor Vehicle Accident</a>
+              <a class="nav-link fw-bold text-danger d-xl-none" href="#" data-i18n="tfs.secondaryNav.motorVehicles">Motor Vehicle Accident</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-dark px-3 border-start border-secondary d-none d-xl-block" href="#" data-i18n="tfs.secondaryNav.personalInjury">Personal Injury</a>
+              <a class="nav-link fw-bold text-dark d-xl-none" href="#" data-i18n="tfs.secondaryNav.personalInjury">Personal Injury</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
+            <div class="me-xl-3">
+              <p class="mb-0 fw-bold text-dark lh-1" data-i18n="tfs.secondaryNav.available">Available 24/7</p>
+              <small class="text-danger fw-bold" data-i18n="tfs.secondaryNav.spanish">Hablamos Español</small>
             </div>
+            <a href="tel:7702224444" class="btn btn-danger rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
+              <span style="transform: rotate(90deg); display: inline-block; font-size: 1.2rem;">)</span>
+              <span class="fw-bold fs-5" data-i18n="tfs.secondaryNav.phoneNumber">(770) 222-4444</span>
+            </a>
+          </div>
         </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center">
+        <h1 class="display-4 fw-bold mb-4">JS Law Group Prototypes</h1>
+        
+        <!-- Wizard Component -->
+        <div id="wizard-container" class="shadow-lg mb-5">
+          <div class="card wizard-card shadow">
+            <div class="card-body p-4 p-md-5">
+              <!-- Flash Messages -->
+              {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  {% if category != 'success' %}
+                  <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+              {% endwith %}
+
+              <form id="wizardForm" method="POST" action="{{ url_for('index') }}" novalidate>
+                {{ form.hidden_tag() }}
+                <!-- Hidden Data Fields -->
+                {{ form.accident_type(type="hidden") }}
+                {{ form.medical_treatment(type="hidden") }}
+                {{ form.police_report(type="hidden") }}
+                {{ form.at_fault(type="hidden") }}
+                {{ form.has_lawyer(type="hidden") }}
+                {{ form.accident_date(type="hidden") }}
+
+                <!-- Progress Bar -->
+                <div class="progress mb-4" style="height: 6px;">
+                  <div id="progressBar" class="progress-bar bg-primary" role="progressbar" style="width: 10%"></div>
+                </div>
+
+                <!-- Step 1: Accident Type -->
+                <div class="step-transition active" id="step1">
+                  <h3 class="fw-bold mb-3">Top Auto Accident Lawyers</h3>
+                  <p class="text-muted mb-4">Compare top attorneys and find the best match for your case.</p>
+                  <h5 class="fw-semibold mb-4">What best describes the accident?</h5>
+                  
+                  <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Car Accident')">
+                      <i class="fas fa-car me-3 fa-lg text-secondary"></i>Car Accident
+                    </button>
+                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Motorcycle Accident')">
+                      <i class="fas fa-motorcycle me-3 fa-lg text-secondary"></i>Motorcycle Accident
+                    </button>
+                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Truck Accident')">
+                      <i class="fas fa-truck-moving me-3 fa-lg text-secondary"></i>Commercial Truck / Semi
+                    </button>
+                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Pedestrian')">
+                      <i class="fas fa-walking me-3 fa-lg text-secondary"></i>Pedestrian / Hit by Car
+                    </button>
+                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Rideshare')">
+                      <i class="fas fa-taxi me-3 fa-lg text-secondary"></i>Rideshare (Uber/Lyft)
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Step 2: Zip Code -->
+                <div class="step-transition" id="step2">
+                  <h4 class="fw-bold mb-4">What is your zip code?</h4>
+                  <div class="form-floating mb-4">
+                    {{ form.zip_code(class="form-control form-control-lg text-center fs-4", placeholder="Zip Code", id="zip_code") }}
+                    <label for="zip_code">Zip Code</label>
+                    <div class="invalid-feedback">Please enter a valid 5-digit zip code.</div>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-lg w-100 mb-3" onclick="validateAndNext(2)">Next</button>
+                  <div class="text-muted small"><i class="fas fa-lock me-1"></i> 100% Secure</div>
+                </div>
+
+                <!-- Step 3: Medical Treatment -->
+                <div class="step-transition" id="step3">
+                  <h4 class="fw-bold mb-4">Did the injured person receive medical treatment?</h4>
+                  <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-option p-3" onclick="next(3, 'medical_treatment', 'Hospital')">Treated in Hospital</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(3, 'medical_treatment', 'Doctor')">Treated in Doctor's Office</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(3, 'medical_treatment', 'No')">Not Yet / No</button>
+                  </div>
+                </div>
+
+                <!-- Step 4: Police Report -->
+                <div class="step-transition" id="step4">
+                  <h4 class="fw-bold mb-4">Was a police report filed?</h4>
+                  <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-option p-3" onclick="next(4, 'police_report', 'Yes')">Yes</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(4, 'police_report', 'No')">No</button>
+                  </div>
+                </div>
+
+                <!-- Step 5: At Fault -->
+                <div class="step-transition" id="step5">
+                  <h4 class="fw-bold mb-4">Did the police report say you are at fault?</h4>
+                  <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-option p-3" onclick="next(5, 'at_fault', 'No')">No</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(5, 'at_fault', 'Yes')">Yes</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(5, 'at_fault', 'Unknown')">I don't know</button>
+                  </div>
+                </div>
+
+                <!-- Step 6: Lawyer -->
+                <div class="step-transition" id="step6">
+                  <h4 class="fw-bold mb-4">Are you currently represented by a lawyer?</h4>
+                  <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-option p-3" onclick="next(6, 'has_lawyer', 'No')">No</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(6, 'has_lawyer', 'Yes')">Yes</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(6, 'has_lawyer', 'Yes - Want New')">Yes, but I want a new one</button>
+                  </div>
+                </div>
+
+                <!-- Step 7: Date -->
+                <div class="step-transition" id="step7">
+                  <h4 class="fw-bold mb-4">When did the accident happen?</h4>
+                  <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Within 30 days')">Within last 30 days</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Within 1 year')">Within last year</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Within 2 years')">Within last 2 years</button>
+                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Over 2 years')">More than 2 years ago</button>
+                  </div>
+                </div>
+
+                <!-- Step 8: Primary Injury -->
+                <div class="step-transition" id="step8">
+                  <h4 class="fw-bold mb-4">What is the primary injury?</h4>
+                  <div class="mb-4">
+                    <select class="form-select form-select-lg" id="primary_injury" name="primary_injury">
+                      <option value="" disabled selected>Select primary injury...</option>
+                      <option value="Broken Bones">Broken Bones</option>
+                      <option value="Head Injury">Head Injury / Concussion</option>
+                      <option value="Back Pain">Back / Neck Pain</option>
+                      <option value="Scrapes">Scrapes / Bruises</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your primary injury.</div>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-lg w-100" onclick="validateAndNext(8)">Next</button>
+                </div>
+
+                <!-- Step 9: Name -->
+                <div class="step-transition" id="step9">
+                  <h4 class="fw-bold mb-2">What is your name?</h4>
+                  <p class="text-muted small mb-4">Your info is 100% private & secure.</p>
+                  <div class="row g-3 mb-4">
+                    <div class="col-6">
+                      <div class="form-floating">
+                        {{ form.first_name(class="form-control", placeholder="First", id="first_name") }}
+                        <label for="first_name">First Name</label>
+                        <div class="invalid-feedback">Required</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        {{ form.last_name(class="form-control", placeholder="Last", id="last_name") }}
+                        <label for="last_name">Last Name</label>
+                        <div class="invalid-feedback">Required</div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-lg w-100" onclick="validateAndNext(9)">Next</button>
+                </div>
+
+                <!-- Step 10: Contact -->
+                <div class="step-transition" id="step10">
+                  <h4 class="fw-bold mb-2">Contact Details</h4>
+                  <p class="text-muted small mb-4">Your Privacy is Our Priority.</p>
+                  <div class="form-floating mb-3">
+                    {{ form.email(class="form-control", placeholder="name@example.com", id="email", required=True) }}
+                    <label for="email">Email Address</label>
+                  </div>
+                  <div class="form-floating mb-4">
+                    {{ form.phone(class="form-control", placeholder="Phone", id="phone", required=True) }}
+                    <label for="phone">Phone Number</label>
+                  </div>
+                  <button type="submit" class="btn btn-success btn-lg w-100 mb-3 fw-bold">Analyze My Case!</button>
+                  <p class="text-muted x-small" style="font-size: 0.75rem; text-align: justify;">
+                    By clicking "Analyze My Case", you agree to our Terms & Conditions and Privacy Policy. You consent to receive phone calls and SMS messages from our legal partners to provide information and assistance with your case. Message and data rates may apply.
+                  </p>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="d-grid gap-3 col-md-8 mx-auto mb-5">
+          <a href="/final" class="btn btn-outline-danger btn-lg p-4 border-2">
+            <h3 class="h5 fw-bold mb-0">FINAL PROTOTYPE</h3>
+            <small>final.html (Main Layout)</small>
+          </a>
+          <a href="/home" class="btn btn-outline-primary btn-lg p-4">
+            <h3 class="h5 fw-bold mb-0">Main Website</h3>
+            <small>index_home.html</small>
+          </a>
+          <div class="row g-3">
+            <div class="col-6">
+              <a href="/247/demo1" class="btn btn-outline-dark w-100 p-3">
+                <span class="fw-bold">24/7 Demo 1</span>
+              </a>
+            </div>
+            <div class="col-6">
+              <a href="/247/demo2" class="btn btn-outline-dark w-100 p-3">
+                <span class="fw-bold">24/7 Demo 2</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-5 rounded-4 border-0 shadow">
+        <div class="mb-4 text-success display-1">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h2 class="fw-bold mb-3">Assessment Complete!</h2>
+        <p class="text-muted mb-4 lead">We have received your details. Our legal team is analyzing your case and will contact you shortly.</p>
+        <button type="button" class="btn btn-primary btn-lg px-5 rounded-pill" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/static/index.js"></script>
+  <script>
+    const totalSteps = 10;
+    
+    function updateProgress(step) {
+      const width = Math.min(Math.round((step / totalSteps) * 100), 100);
+      document.getElementById('progressBar').style.width = width + '%';
+    }
+
+    function showStep(stepId) {
+      document.querySelectorAll('.step-transition').forEach(el => {
+        el.classList.remove('active');
+      });
+      const nextStep = document.getElementById('step' + stepId);
+      if(nextStep) {
+        // Small delay to allow display:block to apply before opacity transition
+        setTimeout(() => nextStep.classList.add('active'), 10);
+        updateProgress(stepId);
+      }
+    }
+
+    window.next = function(currentStep, fieldId, value) {
+      if (fieldId) {
+        document.getElementById(fieldId).value = value;
+      }
+      showStep(currentStep + 1);
+    };
+
+    window.validateAndNext = function(currentStep) {
+      let isValid = true;
+      const fields = document.querySelectorAll(`#step${currentStep} .form-control, #step${currentStep} .form-select`);
+      
+      fields.forEach(field => {
+        field.classList.remove('is-invalid');
+        if (!field.value.trim() || (field.id === 'zip_code' && field.value.length < 5)) {
+          field.classList.add('is-invalid');
+          isValid = false;
+        }
+      });
+
+      if (isValid) {
+        showStep(currentStep + 1);
+      }
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check for success flash message
+      {% with messages = get_flashed_messages(category_filter=["success"]) %}
+        {% if messages %}
+          new bootstrap.Modal(document.getElementById('successModal')).show();
+        {% endif %}
+      {% endwith %}
+
+      // Native validation for final step
+      const form = document.getElementById('wizardForm');
+      form.addEventListener('submit', (e) => {
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        
+        if (!email.checkValidity()) {
+          email.reportValidity();
+          e.preventDefault();
+          e.stopPropagation();
+        } else if (!phone.checkValidity()) {
+          phone.reportValidity();
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -30,11 +30,12 @@ on_pvm
 cd "$TEMP" || exit
 
 
+pip install pipreqs
+pipreqs . --force
+pip install -r requirements.txt
 
-
-pip install flask flask_wtf waitress
-# python main.py
-python server.py
+python main.py
+# python server.py
 
 
 

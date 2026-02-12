@@ -8,13 +8,23 @@
 - [x] **Web Server:** Nginx configured as reverse proxy.
 - [x] **SSL/HTTPS:** Enabled and working (Let's Encrypt/Certbot).
 - [x] **Email Integration:** `GmailProxy` implemented with attachments (JSON/CSV) and HTML body.
-- [x] **App Architecture:** Reorganized into `core/app.py` (Flask App) and `main.py` (Production/Dev Wrapper).
+- [x] **App Architecture:** Reorganized into `app/__init__.py` (Flask App) and `app/__main__.py` (Server Entry Point), with `main.py` wrapper.
+- [x] **Wizard Integration:** Embedded 'Auto Accident Wizard' multi-step form into `index.html` with WTForms (`AutoAccidentWizardForm`) and backend processing.
 - [x] **Build Pipeline:** Updated PyInstaller builds to bundle:
     - **Linux/Mac:** `gunicorn` (via `main.py` programmatic use).
         - Fixed `ModuleNotFoundError` for `glogging` and `workers.sync` via `--hidden-import` flags and explicit imports in `main.py`.
     - **Windows:** `waitress` (for true production serving on Windows).
+    - **Dependencies:** Refactored GitHub Actions to use `requirements.txt` instead of hardcoded packages.
 
-## 2. Production Hardening (Next Steps)
+## 2. Frontend & UX Improvements (Done)
+
+- [x] **Prototype Index (`index.html`):**
+    - **Consistent Validation:** Implemented inline validation for Wizard steps and restored native browser validation for the final "Contact Details" section.
+    - **Success Feedback:** Added a Bootstrap "Success Modal" that automatically triggers upon successful form submission.
+    - **Fix:** Resolved `novalidate` conflict to ensure browser prompts appear correctly for visible fields while ignoring hidden ones.
+- [x] **Dependencies:** Installed `email-validator` to resolve backend crash with WTForms validation.
+
+## 3. Production Hardening (Next Steps)
 
 ### A. Environment Variables (`.env`)
 You must create a `.env` file in the project root on the production server (or next to the executable). This file keeps your secrets safe and configures the app behavior.
@@ -29,7 +39,7 @@ You must create a `.env` file in the project root on the production server (or n
 SECRET_KEY=replace-this-with-a-secure-random-string
 
 # FLASK_APP: Tells Flask where the application instance is located.
-FLASK_APP=core.app:app
+FLASK_APP=app:app
 
 # FLASK_DEBUG: Set to 'False' for production security. Set to 'True' ONLY for local development.
 FLASK_DEBUG=False
@@ -88,7 +98,7 @@ To ensure the app keeps running after a reboot or crash, create a systemd servic
     sudo systemctl enable jslaw
     ```
 
-## 3. SEO Optimization (Google)
+## 4. SEO Optimization (Google)
 
 ### A. Technical SEO
 - [x] **Robots.txt:** Created and serving at `/robots.txt`.
@@ -107,6 +117,6 @@ To ensure the app keeps running after a reboot or crash, create a systemd servic
 - [ ] **Google Search Console (GSC):** Verify domain ownership.
 - [ ] **Google My Business:** Claim profile and match NAP (Name, Address, Phone).
 
-## 4. Maintenance & Monitoring
+## 5. Maintenance & Monitoring
 - [ ] **Backups:** Schedule regular backups of the `submissions/` directory.
 - [ ] **Logs:** Monitor service logs: `journalctl -u jslaw`
