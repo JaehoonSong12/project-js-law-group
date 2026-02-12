@@ -83,3 +83,17 @@ class PersonalInjuryForm(FlaskForm):
     health_insurance_policy_number = StringField('Health insurance policy number', validators=[Optional()])
     additional_notes = TextAreaField('Anything else you\'d like us to know?', validators=[Optional()])
     legal_disclaimer_agreement = BooleanField('I understand that submitting this form does not create an attorney-client relationship.', validators=[DataRequired()])
+
+class AutoAccidentWizardForm(FlaskForm):
+    accident_type = StringField('Accident Type', validators=[DataRequired()])
+    zip_code = StringField('Zip Code', validators=[DataRequired()])
+    medical_treatment = StringField('Medical Treatment', validators=[DataRequired()])
+    police_report = StringField('Police Report', validators=[DataRequired()])
+    at_fault = StringField('At Fault', validators=[DataRequired()])
+    has_lawyer = StringField('Has Lawyer', validators=[DataRequired()])
+    accident_date = StringField('Accident Date', validators=[DataRequired()])
+    primary_injury = StringField('Primary Injury', validators=[DataRequired()])
+    first_name = StringField('First Name', validators=[DataRequired()])
+    last_name = StringField('Last Name', validators=[DataRequired()])
+    email = EmailField('Email', validators=[DataRequired(), Email()])
+    phone = TelField('Phone', validators=[DataRequired()])

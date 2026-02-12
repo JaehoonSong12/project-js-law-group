@@ -9,18 +9,10 @@ import * as FontAwesome from '../ext-module-fa.js';
  * @returns {Promise<void>} Promise that resolves when initialization is complete
  */
 export default async function main() {
+
+    
     console.log('[src/js/index.js] Main function execution started');
 
-    // Wizard page (e.g. templates/index.html) has no #nav; run only i18n and exit.
-    if (!document.getElementById('nav')) {
-        try {
-            await multiLang.initI18n(multiLang.getBaseLocale());
-            multiLang.applyTranslations('data-i18n', multiLang.getBaseLocale());
-        } catch (error) {
-            console.error('[exi18n] Error: Failed to initialize i18n:', error);
-        }
-        return;
-    }
 
     Util.setupWindowFocusRefresh();
     Util.enableButtonRedirect('btn-redirect');

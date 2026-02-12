@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
-from core.forms import GeneralContactForm, PersonalInjuryForm, CriminalCaseForm
-from core.gmailproxy import GmailProxy
+from .forms import GeneralContactForm, PersonalInjuryForm, CriminalCaseForm, AutoAccidentWizardForm
+from .gmailproxy import GmailProxy
 import os
 import json
 import csv
@@ -9,6 +9,28 @@ from datetime import datetime, date
 app = Flask(__name__, static_folder='../static', template_folder='../templates')
 # Load SECRET_KEY from environment variable, fallback to dev key if not set
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-prod')
+
+@app.route('/wizard', methods=['GET', 'POST'])
+def wizard():
+    form = AutoAccidentWizardForm()
+    if form.validate_on_submit():
+        save_submission(form.data, 'auto_accident_wizard')
+        flash('Assessment complete! We are analyzing your case.', 'success')
+        return redirect(url_for('wizard'))
+    elif form.errors:
+        print("Form errors:", form.errors)
+        flash('Please fill in all required fields.', 'danger')
+        
+    return render_template('wizard.html', form=form)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = AutoAccidentWizardForm()
+    if form.validate_on_submit():
+        save_submission(form.data, 'auto_accident_wizard')
+        flash('Assessment complete! We are analyzing your case.', 'success')
+        return redirect(url_for('index'))
+    return render_template('index.html', form=form)
 
 @app.route('/robots.txt')
 def robots():
@@ -132,10 +154,6 @@ def save_submission(form_data, form_type):
             print(f"Failed to send email: {error}")
     except Exception as e:
         print(f"Error in email sending block: {e}")
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
