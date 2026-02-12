@@ -4,27 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS Law Group - Prototype Index</title>
-  <!-- Use standard project CSS -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  
+  <!-- Standard project CSS -->
   <link href="/static/css/custom.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  
   <style>
     /* Minimal custom styles for Wizard specific layout */
+    .wizard-section {
+      width: 100%;
+    }
     #wizard-container {
-      background: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background-image: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1767972463877-b64ba4283cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       padding: 3rem 1rem;
-      border-radius: 1rem;
+      border-radius: 0;
       min-height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 100%;
     }
 
     .wizard-card {
       width: 100%;
       max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
       border: none;
@@ -54,44 +70,99 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+
+    /* Language switcher dropdown: light-primary on hover */
+    .lang-switcher-float .dropdown-item:hover {
+      background-color: var(--bs-primary-bg-subtle);
+      color: var(--bs-primary);
+    }
   </style>
 </head>
-<body class="bg-light">`
-  <!-- Secondary Navigation Bar (same implementation as index247_demo2, with i18n) -->
-  <div id="secondary-nav" class="bg-white sticky-top shadow-sm">
+<body debug-i18n="false" class="bg-light">
+
+  <!-- Secondary Navigation Bar (Bootstrap theme colors, fallback strings for i18n) -->
+  <div id="secondary-nav" 
+       class="bg-white sticky-top shadow-sm">
     <nav class="navbar navbar-expand-xl navbar-light py-3">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
+        <a class="navbar-brand d-flex align-items-center" 
+           href="{{ url_for('index') }}">
           <div class="d-flex flex-column">
-            <h1 class="h2 fw-bold mb-0 lh-1 text-dark" style="letter-spacing: -1px;" data-i18n="tfs.secondaryNav.phone">1-800 <span class="text-dark">411-PAIN</span></h1>
-            <small class="text-danger fw-bold" style="font-size: 10px; letter-spacing: 0.5px;" data-i18n="tfs.secondaryNav.firmName">Law Offices of Kanner & Pintaluga, P.A.</small>
+            <h1 data-i18n="tfs.secondaryNav.phone"
+                class="h2 fw-bold mb-0 lh-1 text-dark" 
+                style="letter-spacing: -1px;">
+              tfs.secondaryNav.phone fallback
+            </h1>
+            <small data-i18n="tfs.secondaryNav.firmName"
+                   class="text-primary fw-bold" 
+                   style="font-size: 10px; letter-spacing: 0.5px;">
+              tfs.secondaryNav.firmName fallback
+            </small>
           </div>
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#secondaryMainNav" aria-controls="secondaryMainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#secondaryMainNav" 
+                aria-controls="secondaryMainNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="secondaryMainNav">
+        <div class="collapse navbar-collapse" 
+             id="secondaryMainNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
-              <a class="nav-link fw-bold text-dark px-3" href="{{ url_for('index') }}" data-i18n="tfs.secondaryNav.home">Home</a>
+              <a data-i18n="tfs.secondaryNav.home"
+                 class="nav-link fw-bold px-3 text-primary" 
+                 href="{{ url_for('index') }}">
+                tfs.secondaryNav.home fallback
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold text-danger px-3 border-start border-secondary d-none d-xl-block" href="#" data-i18n="tfs.secondaryNav.motorVehicles">Motor Vehicle Accident</a>
-              <a class="nav-link fw-bold text-danger d-xl-none" href="#" data-i18n="tfs.secondaryNav.motorVehicles">Motor Vehicle Accident</a>
+              <a data-i18n="tfs.secondaryNav.motorVehicles"
+                 class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
+                 href="{{ url_for('motor_vehicle_accident') }}">
+                tfs.secondaryNav.motorVehicles fallback
+              </a>
+              <a data-i18n="tfs.secondaryNav.motorVehicles"
+                 class="nav-link fw-bold d-xl-none"
+                 href="{{ url_for('motor_vehicle_accident') }}">
+                tfs.secondaryNav.motorVehicles fallback
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold text-dark px-3 border-start border-secondary d-none d-xl-block" href="#" data-i18n="tfs.secondaryNav.personalInjury">Personal Injury</a>
-              <a class="nav-link fw-bold text-dark d-xl-none" href="#" data-i18n="tfs.secondaryNav.personalInjury">Personal Injury</a>
+              <a data-i18n="tfs.secondaryNav.personalInjury"
+                 class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
+                 href="{{ url_for('personal_injury') }}">
+                tfs.secondaryNav.personalInjury fallback
+              </a>
+              <a data-i18n="tfs.secondaryNav.personalInjury"
+                 class="nav-link fw-bold d-xl-none"
+                 href="{{ url_for('personal_injury') }}">
+                tfs.secondaryNav.personalInjury fallback
+              </a>
             </li>
           </ul>
           <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
-            <div class="me-xl-3">
-              <p class="mb-0 fw-bold text-dark lh-1" data-i18n="tfs.secondaryNav.available">Available 24/7</p>
-              <small class="text-danger fw-bold" data-i18n="tfs.secondaryNav.spanish">Hablamos Español</small>
+            <div class="d-flex flex-column align-items-end me-xl-3">
+              <p class="mb-1 fw-bold lh-1 small text-muted" 
+                 data-i18n="tfs.secondaryNav.visitWebsite">
+                tfs.secondaryNav.visitWebsite fallback
+              </p>
+              <a href="https://www.jslawgroup.net/" 
+                 class="btn btn-outline-primary btn-sm rounded-3" 
+                 data-i18n="tfs.secondaryNav.goToWebsite">
+                tfs.secondaryNav.goToWebsite fallback
+              </a>
             </div>
-            <a href="tel:7702224444" class="btn btn-danger rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
-              <span style="transform: rotate(90deg); display: inline-block; font-size: 1.2rem;">)</span>
-              <span class="fw-bold fs-5" data-i18n="tfs.secondaryNav.phoneNumber">(770) 222-4444</span>
+            <a href="tel:7702224444" 
+               class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
+              <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
+              <span data-i18n="tfs.secondaryNav.phoneNumber"
+                    class="fw-bold fs-5">
+                tfs.secondaryNav.phoneNumber fallback
+              </span>
             </a>
           </div>
         </div>
@@ -99,234 +170,481 @@
     </nav>
   </div>
 
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-md-10 text-center">
-        <h1 class="display-4 fw-bold mb-4">JS Law Group Prototypes</h1>
-        
-        <!-- Wizard Component -->
-        <div id="wizard-container" class="shadow-lg mb-5">
-          <div class="card wizard-card shadow">
-            <div class="card-body p-4 p-md-5">
-              <!-- Flash Messages -->
-              {% with messages = get_flashed_messages(with_categories=true) %}
-              {% if messages %}
-                {% for category, message in messages %}
-                  {% if category != 'success' %}
-                  <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-              {% endwith %}
-
-              <form id="wizardForm" method="POST" action="{{ url_for('index') }}" novalidate>
-                {{ form.hidden_tag() }}
-                <!-- Hidden Data Fields -->
-                {{ form.accident_type(type="hidden") }}
-                {{ form.medical_treatment(type="hidden") }}
-                {{ form.police_report(type="hidden") }}
-                {{ form.at_fault(type="hidden") }}
-                {{ form.has_lawyer(type="hidden") }}
-                {{ form.accident_date(type="hidden") }}
-
-                <!-- Progress Bar -->
-                <div class="progress mb-4" style="height: 6px;">
-                  <div id="progressBar" class="progress-bar bg-primary" role="progressbar" style="width: 10%"></div>
-                </div>
-
-                <!-- Step 1: Accident Type -->
-                <div class="step-transition active" id="step1">
-                  <h3 class="fw-bold mb-3">Top Auto Accident Lawyers</h3>
-                  <p class="text-muted mb-4">Compare top attorneys and find the best match for your case.</p>
-                  <h5 class="fw-semibold mb-4">What best describes the accident?</h5>
-                  
-                  <div class="d-grid gap-3">
-                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Car Accident')">
-                      <i class="fas fa-car me-3 fa-lg text-secondary"></i>Car Accident
-                    </button>
-                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Motorcycle Accident')">
-                      <i class="fas fa-motorcycle me-3 fa-lg text-secondary"></i>Motorcycle Accident
-                    </button>
-                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Truck Accident')">
-                      <i class="fas fa-truck-moving me-3 fa-lg text-secondary"></i>Commercial Truck / Semi
-                    </button>
-                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Pedestrian')">
-                      <i class="fas fa-walking me-3 fa-lg text-secondary"></i>Pedestrian / Hit by Car
-                    </button>
-                    <button type="button" class="btn btn-option p-3 rounded-3" onclick="next(1, 'accident_type', 'Rideshare')">
-                      <i class="fas fa-taxi me-3 fa-lg text-secondary"></i>Rideshare (Uber/Lyft)
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Step 2: Zip Code -->
-                <div class="step-transition" id="step2">
-                  <h4 class="fw-bold mb-4">What is your zip code?</h4>
-                  <div class="form-floating mb-4">
-                    {{ form.zip_code(class="form-control form-control-lg text-center fs-4", placeholder="Zip Code", id="zip_code") }}
-                    <label for="zip_code">Zip Code</label>
-                    <div class="invalid-feedback">Please enter a valid 5-digit zip code.</div>
-                  </div>
-                  <button type="button" class="btn btn-primary btn-lg w-100 mb-3" onclick="validateAndNext(2)">Next</button>
-                  <div class="text-muted small"><i class="fas fa-lock me-1"></i> 100% Secure</div>
-                </div>
-
-                <!-- Step 3: Medical Treatment -->
-                <div class="step-transition" id="step3">
-                  <h4 class="fw-bold mb-4">Did the injured person receive medical treatment?</h4>
-                  <div class="d-grid gap-3">
-                    <button type="button" class="btn btn-option p-3" onclick="next(3, 'medical_treatment', 'Hospital')">Treated in Hospital</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(3, 'medical_treatment', 'Doctor')">Treated in Doctor's Office</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(3, 'medical_treatment', 'No')">Not Yet / No</button>
-                  </div>
-                </div>
-
-                <!-- Step 4: Police Report -->
-                <div class="step-transition" id="step4">
-                  <h4 class="fw-bold mb-4">Was a police report filed?</h4>
-                  <div class="d-grid gap-3">
-                    <button type="button" class="btn btn-option p-3" onclick="next(4, 'police_report', 'Yes')">Yes</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(4, 'police_report', 'No')">No</button>
-                  </div>
-                </div>
-
-                <!-- Step 5: At Fault -->
-                <div class="step-transition" id="step5">
-                  <h4 class="fw-bold mb-4">Did the police report say you are at fault?</h4>
-                  <div class="d-grid gap-3">
-                    <button type="button" class="btn btn-option p-3" onclick="next(5, 'at_fault', 'No')">No</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(5, 'at_fault', 'Yes')">Yes</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(5, 'at_fault', 'Unknown')">I don't know</button>
-                  </div>
-                </div>
-
-                <!-- Step 6: Lawyer -->
-                <div class="step-transition" id="step6">
-                  <h4 class="fw-bold mb-4">Are you currently represented by a lawyer?</h4>
-                  <div class="d-grid gap-3">
-                    <button type="button" class="btn btn-option p-3" onclick="next(6, 'has_lawyer', 'No')">No</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(6, 'has_lawyer', 'Yes')">Yes</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(6, 'has_lawyer', 'Yes - Want New')">Yes, but I want a new one</button>
-                  </div>
-                </div>
-
-                <!-- Step 7: Date -->
-                <div class="step-transition" id="step7">
-                  <h4 class="fw-bold mb-4">When did the accident happen?</h4>
-                  <div class="d-grid gap-3">
-                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Within 30 days')">Within last 30 days</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Within 1 year')">Within last year</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Within 2 years')">Within last 2 years</button>
-                    <button type="button" class="btn btn-option p-3" onclick="next(7, 'accident_date', 'Over 2 years')">More than 2 years ago</button>
-                  </div>
-                </div>
-
-                <!-- Step 8: Primary Injury -->
-                <div class="step-transition" id="step8">
-                  <h4 class="fw-bold mb-4">What is the primary injury?</h4>
-                  <div class="mb-4">
-                    <select class="form-select form-select-lg" id="primary_injury" name="primary_injury">
-                      <option value="" disabled selected>Select primary injury...</option>
-                      <option value="Broken Bones">Broken Bones</option>
-                      <option value="Head Injury">Head Injury / Concussion</option>
-                      <option value="Back Pain">Back / Neck Pain</option>
-                      <option value="Scrapes">Scrapes / Bruises</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    <div class="invalid-feedback">Please select your primary injury.</div>
-                  </div>
-                  <button type="button" class="btn btn-primary btn-lg w-100" onclick="validateAndNext(8)">Next</button>
-                </div>
-
-                <!-- Step 9: Name -->
-                <div class="step-transition" id="step9">
-                  <h4 class="fw-bold mb-2">What is your name?</h4>
-                  <p class="text-muted small mb-4">Your info is 100% private & secure.</p>
-                  <div class="row g-3 mb-4">
-                    <div class="col-6">
-                      <div class="form-floating">
-                        {{ form.first_name(class="form-control", placeholder="First", id="first_name") }}
-                        <label for="first_name">First Name</label>
-                        <div class="invalid-feedback">Required</div>
-                      </div>
+  <!-- Wizard: full-width background section -->
+  <section class="wizard-section py-5">
+    <div id="wizard-container" 
+         class="shadow-lg mb-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
+            <div class="card wizard-card shadow">
+              <div class="card-body p-4 p-md-5">
+                <!-- Flash Messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                  {% for category, message in messages %}
+                    {% if category != 'success' %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                      {{ message }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <div class="col-6">
-                      <div class="form-floating">
-                        {{ form.last_name(class="form-control", placeholder="Last", id="last_name") }}
-                        <label for="last_name">Last Name</label>
-                        <div class="invalid-feedback">Required</div>
-                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <form id="wizardForm"
+                    method="POST"
+                    action="{{ url_for('index') }}"
+                    novalidate>
+                  {{ form.hidden_tag() }}
+                  <!-- Hidden Data Fields -->
+                  {{ form.accident_type(type="hidden") }}
+                  {{ form.medical_treatment(type="hidden") }}
+                  {{ form.police_report(type="hidden") }}
+                  {{ form.at_fault(type="hidden") }}
+                  {{ form.has_lawyer(type="hidden") }}
+                  {{ form.accident_date(type="hidden") }}
+
+                  <!-- Progress Bar -->
+                  <div class="progress mb-4"
+                     style="height: 6px;">
+                    <div id="progressBar"
+                         class="progress-bar bg-primary"
+                         role="progressbar"
+                         style="width: 10%">
                     </div>
                   </div>
-                  <button type="button" class="btn btn-primary btn-lg w-100" onclick="validateAndNext(9)">Next</button>
-                </div>
 
-                <!-- Step 10: Contact -->
-                <div class="step-transition" id="step10">
-                  <h4 class="fw-bold mb-2">Contact Details</h4>
-                  <p class="text-muted small mb-4">Your Privacy is Our Priority.</p>
-                  <div class="form-floating mb-3">
-                    {{ form.email(class="form-control", placeholder="name@example.com", id="email", required=True) }}
-                    <label for="email">Email Address</label>
-                  </div>
-                  <div class="form-floating mb-4">
-                    {{ form.phone(class="form-control", placeholder="Phone", id="phone", required=True) }}
-                    <label for="phone">Phone Number</label>
-                  </div>
-                  <button type="submit" class="btn btn-success btn-lg w-100 mb-3 fw-bold">Analyze My Case!</button>
-                  <p class="text-muted x-small" style="font-size: 0.75rem; text-align: justify;">
-                    By clicking "Analyze My Case", you agree to our Terms & Conditions and Privacy Policy. You consent to receive phone calls and SMS messages from our legal partners to provide information and assistance with your case. Message and data rates may apply.
-                  </p>
-                </div>
+                  <!-- Step 1: Accident Type -->
+                  <div id="step1"
+                     class="step-transition active">
+                    <h3 class="fw-bold mb-3" data-i18n="wizard.step1Title">wizard.step1Title fallback</h3>
+                    <p class="text-muted mb-4" data-i18n="wizard.step1Subtitle">wizard.step1Subtitle fallback</p>
+                    <h5 class="fw-semibold mb-4" data-i18n="wizard.step1Question">wizard.step1Question fallback</h5>
 
-              </form>
+                    <div class="d-grid gap-3">
+                      <button type="button"
+                            class="btn btn-option p-3 rounded-3"
+                            onclick="next(1, 'accident_type', 'Car Accident')">
+                        <i class="fas fa-car me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Car">wizard.step1Car fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3 rounded-3"
+                            onclick="next(1, 'accident_type', 'Motorcycle Accident')">
+                        <i class="fas fa-motorcycle me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Motorcycle">wizard.step1Motorcycle fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3 rounded-3"
+                            onclick="next(1, 'accident_type', 'Truck Accident')">
+                        <i class="fas fa-truck-moving me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Truck">wizard.step1Truck fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3 rounded-3"
+                            onclick="next(1, 'accident_type', 'Pedestrian')">
+                        <i class="fas fa-walking me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Pedestrian">wizard.step1Pedestrian fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3 rounded-3"
+                            onclick="next(1, 'accident_type', 'Rideshare')">
+                        <i class="fas fa-taxi me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Rideshare">wizard.step1Rideshare fallback</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Step 2: Zip Code -->
+                  <div id="step2"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-4" data-i18n="wizard.step2Question">wizard.step2Question fallback</h4>
+                    <div class="form-floating mb-4">
+                      {{ form.zip_code(class="form-control form-control-lg text-center fs-4", placeholder="Zip Code", id="zip_code") }}
+                      <label for="zip_code" data-i18n="wizard.step2ZipLabel">wizard.step2ZipLabel fallback</label>
+                      <div class="invalid-feedback" data-i18n="wizard.step2ZipInvalid">wizard.step2ZipInvalid fallback</div>
+                    </div>
+                    <button type="button"
+                          class="btn btn-primary btn-lg w-100 mb-3"
+                          onclick="validateAndNext(2)">
+                      <span data-i18n="wizard.next">wizard.next fallback</span>
+                    </button>
+                    <div class="text-muted small"><i class="fas fa-lock me-1"></i> <span data-i18n="wizard.secure">wizard.secure fallback</span></div>
+                  </div>
+
+                  <!-- Step 3: Medical Treatment -->
+                  <div id="step3"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-4" data-i18n="wizard.step3Question">wizard.step3Question fallback</h4>
+                    <div class="d-grid gap-3">
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(3, 'medical_treatment', 'Hospital')">
+                        <span data-i18n="wizard.step3Hospital">wizard.step3Hospital fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(3, 'medical_treatment', 'Doctor')">
+                        <span data-i18n="wizard.step3Doctor">wizard.step3Doctor fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(3, 'medical_treatment', 'No')">
+                        <span data-i18n="wizard.step3No">wizard.step3No fallback</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Step 4: Police Report -->
+                  <div id="step4"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-4" data-i18n="wizard.step4Question">wizard.step4Question fallback</h4>
+                    <div class="d-grid gap-3">
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(4, 'police_report', 'Yes')">
+                        <span data-i18n="wizard.yes">wizard.yes fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(4, 'police_report', 'No')">
+                        <span data-i18n="wizard.no">wizard.no fallback</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Step 5: At Fault -->
+                  <div id="step5"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-4" data-i18n="wizard.step5Question">wizard.step5Question fallback</h4>
+                    <div class="d-grid gap-3">
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(5, 'at_fault', 'No')">
+                        <span data-i18n="wizard.no">wizard.no fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(5, 'at_fault', 'Yes')">
+                        <span data-i18n="wizard.yes">wizard.yes fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(5, 'at_fault', 'Unknown')">
+                        <span data-i18n="wizard.step5Unknown">wizard.step5Unknown fallback</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Step 6: Lawyer -->
+                  <div id="step6"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-4" data-i18n="wizard.step6Question">wizard.step6Question fallback</h4>
+                    <div class="d-grid gap-3">
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(6, 'has_lawyer', 'No')">
+                        <span data-i18n="wizard.no">wizard.no fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(6, 'has_lawyer', 'Yes')">
+                        <span data-i18n="wizard.yes">wizard.yes fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(6, 'has_lawyer', 'Yes - Want New')">
+                        <span data-i18n="wizard.step6WantNew">wizard.step6WantNew fallback</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Step 7: Date -->
+                  <div id="step7"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-4" data-i18n="wizard.step7Question">wizard.step7Question fallback</h4>
+                    <div class="d-grid gap-3">
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(7, 'accident_date', 'Within 30 days')">
+                        <span data-i18n="wizard.step7Thirty">wizard.step7Thirty fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(7, 'accident_date', 'Within 1 year')">
+                        <span data-i18n="wizard.step7OneYear">wizard.step7OneYear fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(7, 'accident_date', 'Within 2 years')">
+                        <span data-i18n="wizard.step7TwoYears">wizard.step7TwoYears fallback</span>
+                      </button>
+                      <button type="button"
+                            class="btn btn-option p-3"
+                            onclick="next(7, 'accident_date', 'Over 2 years')">
+                        <span data-i18n="wizard.step7OverTwo">wizard.step7OverTwo fallback</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Step 8: Primary Injury -->
+                  <div id="step8"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-4" data-i18n="wizard.step8Question">wizard.step8Question fallback</h4>
+                    <div class="mb-4">
+                      <select id="primary_injury"
+                            class="form-select form-select-lg"
+                            name="primary_injury">
+                        <option value="" disabled selected data-i18n="wizard.step8SelectPlaceholder">wizard.step8SelectPlaceholder fallback</option>
+                        <option value="Broken Bones" data-i18n="wizard.step8BrokenBones">wizard.step8BrokenBones fallback</option>
+                        <option value="Head Injury" data-i18n="wizard.step8HeadInjury">wizard.step8HeadInjury fallback</option>
+                        <option value="Back Pain" data-i18n="wizard.step8BackPain">wizard.step8BackPain fallback</option>
+                        <option value="Scrapes" data-i18n="wizard.step8Scrapes">wizard.step8Scrapes fallback</option>
+                        <option value="Other" data-i18n="wizard.step8Other">wizard.step8Other fallback</option>
+                      </select>
+                      <div class="invalid-feedback" data-i18n="wizard.step8Invalid">wizard.step8Invalid fallback</div>
+                    </div>
+                    <button type="button"
+                          class="btn btn-primary btn-lg w-100"
+                          onclick="validateAndNext(8)">
+                      <span data-i18n="wizard.next">wizard.next fallback</span>
+                    </button>
+                  </div>
+
+                  <!-- Step 9: Name -->
+                  <div id="step9"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-2" data-i18n="wizard.step9Question">wizard.step9Question fallback</h4>
+                    <p class="text-muted small mb-4" data-i18n="wizard.step9Privacy">wizard.step9Privacy fallback</p>
+                    <div class="row g-3 mb-4">
+                      <div class="col-6">
+                        <div class="form-floating">
+                          {{ form.first_name(class="form-control", placeholder="First", id="first_name") }}
+                          <label for="first_name" data-i18n="wizard.step9FirstName">wizard.step9FirstName fallback</label>
+                          <div class="invalid-feedback" data-i18n="wizard.required">wizard.required fallback</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-floating">
+                          {{ form.last_name(class="form-control", placeholder="Last", id="last_name") }}
+                          <label for="last_name" data-i18n="wizard.step9LastName">wizard.step9LastName fallback</label>
+                          <div class="invalid-feedback" data-i18n="wizard.required">wizard.required fallback</div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button"
+                          class="btn btn-primary btn-lg w-100"
+                          onclick="validateAndNext(9)">
+                      <span data-i18n="wizard.next">wizard.next fallback</span>
+                    </button>
+                  </div>
+
+                  <!-- Step 10: Contact -->
+                  <div id="step10"
+                     class="step-transition">
+                    <h4 class="fw-bold mb-2" data-i18n="wizard.step10Title">wizard.step10Title fallback</h4>
+                    <p class="text-muted small mb-4" data-i18n="wizard.step10Subtitle">wizard.step10Subtitle fallback</p>
+                    <div class="form-floating mb-3">
+                      {{ form.email(class="form-control", placeholder="name@example.com", id="email", required=True) }}
+                      <label for="email" data-i18n="wizard.step10EmailLabel">wizard.step10EmailLabel fallback</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                      {{ form.phone(class="form-control", placeholder="Phone", id="phone", required=True) }}
+                      <label for="phone" data-i18n="wizard.step10PhoneLabel">wizard.step10PhoneLabel fallback</label>
+                    </div>
+                    <button type="submit"
+                          class="btn btn-primary btn-lg w-100 mb-3 fw-bold">
+                      <span data-i18n="wizard.submit">wizard.submit fallback</span>
+                    </button>
+                    <p class="text-muted x-small"
+                       style="font-size: 0.75rem; text-align: justify;"
+                       data-i18n="wizard.step10Consent">
+                      wizard.step10Consent fallback
+                    </p>
+                  </div>
+
+                </form>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center">
+        <h1 class="display-4 fw-bold mb-4" data-i18n="wizard.prototypesTitle">wizard.prototypesTitle fallback</h1>
 
         <!-- Navigation Links -->
         <div class="d-grid gap-3 col-md-8 mx-auto mb-5">
-          <a href="/final" class="btn btn-outline-danger btn-lg p-4 border-2">
-            <h3 class="h5 fw-bold mb-0">FINAL PROTOTYPE</h3>
-            <small>final.html (Main Layout)</small>
+          <a href="/final" 
+             class="btn btn-outline-danger btn-lg p-4 border-2">
+            <h3 class="h5 fw-bold mb-0" data-i18n="wizard.finalPrototype">wizard.finalPrototype fallback</h3>
+            <small data-i18n="wizard.finalPrototypeSmall">wizard.finalPrototypeSmall fallback</small>
           </a>
-          <a href="/home" class="btn btn-outline-primary btn-lg p-4">
-            <h3 class="h5 fw-bold mb-0">Main Website</h3>
-            <small>index_home.html</small>
+          <a href="/home" 
+             class="btn btn-outline-primary btn-lg p-4">
+            <h3 class="h5 fw-bold mb-0" data-i18n="wizard.mainWebsite">wizard.mainWebsite fallback</h3>
+            <small data-i18n="wizard.mainWebsiteSmall">wizard.mainWebsiteSmall fallback</small>
           </a>
-          <div class="row g-3">
-            <div class="col-6">
-              <a href="/247/demo1" class="btn btn-outline-dark w-100 p-3">
-                <span class="fw-bold">24/7 Demo 1</span>
-              </a>
-            </div>
-            <div class="col-6">
-              <a href="/247/demo2" class="btn btn-outline-dark w-100 p-3">
-                <span class="fw-bold">24/7 Demo 2</span>
-              </a>
-            </div>
-          </div>
+          <a href="{{ url_for('motor_vehicle_accident') }}"
+             class="btn btn-outline-dark w-100 p-3">
+            <span class="fw-bold" data-i18n="wizard.demo2">wizard.demo2 fallback</span>
+          </a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Success Modal -->
-  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div id="successModal" 
+       tabindex="-1" 
+       aria-hidden="true" 
+       class="modal fade">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content text-center p-5 rounded-4 border-0 shadow">
         <div class="mb-4 text-success display-1">
           <i class="fas fa-check-circle"></i>
         </div>
-        <h2 class="fw-bold mb-3">Assessment Complete!</h2>
-        <p class="text-muted mb-4 lead">We have received your details. Our legal team is analyzing your case and will contact you shortly.</p>
-        <button type="button" class="btn btn-primary btn-lg px-5 rounded-pill" data-bs-dismiss="modal">Close</button>
+        <h2 class="fw-bold mb-3" data-i18n="wizard.successTitle">wizard.successTitle fallback</h2>
+        <p class="text-muted mb-4 lead" data-i18n="wizard.successMessage">wizard.successMessage fallback</p>
+        <button type="button" 
+                class="btn btn-primary btn-lg px-5 rounded-pill" 
+                data-bs-dismiss="modal">
+          <span data-i18n="wizard.close">wizard.close fallback</span>
+        </button>
       </div>
     </div>
   </div>
+
+  <!-- Floating Language Switcher (Bottom Right) -->
+  <div class="position-fixed bottom-0 end-0 p-4 lang-switcher-float" 
+       style="margin-bottom: 20px; z-index: 1040;">
+    <div class="dropup">
+      <button type="button" 
+              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center btn-lang-switcher" 
+              style="width: 50px; height: 50px;"
+              data-bs-toggle="dropdown" 
+              aria-expanded="false"
+              aria-label="Select Language">
+        <i class="fa-solid fa-globe fa-lg"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow rounded-4 p-2">
+        <li><h6 class="dropdown-header" data-i18n="wizard.selectLanguage">wizard.selectLanguage fallback</h6></li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" 
+             href="#" 
+             id="i18n001" 
+             value-i18n="en-US">
+            <span class="fi fi-us dropdown-flag" aria-hidden="true" title="United States"></span>
+            <span data-i18n="wizard.langEn">wizard.langEn fallback</span>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" 
+             href="#" 
+             id="i18n002" 
+             value-i18n="ko-KR">
+            <span class="fi fi-kr dropdown-flag" aria-hidden="true" title="South Korea"></span>
+            <span data-i18n="wizard.langKo">wizard.langKo fallback</span>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" 
+             href="#" 
+             id="i18n006" 
+             value-i18n="es-US">
+            <span class="fi fi-es dropdown-flag" aria-hidden="true" title="Spain"></span>
+            <span data-i18n="wizard.langEs">wizard.langEs fallback</span>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" 
+             href="#" 
+             id="i18n005" 
+             value-i18n="ja-JP">
+            <span class="fi fi-jp dropdown-flag" aria-hidden="true" title="Japan"></span>
+            <span data-i18n="wizard.langJa">wizard.langJa fallback</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="border-top bg-dark text-white">
+    <div class="py-5 container">
+      <div class="row mb-4 align-items-center">
+        <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
+          <h4 class="mb-0 text-uppercase fw-bold" data-i18n="wizard.footerBrand">wizard.footerBrand fallback</h4>
+          <p class="small text-white-50 lh-sm mt-2 mb-0" data-i18n="tfs.footer.address">tfs.footer.address fallback</p>
+        </div>
+        <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
+          <!-- Social Media Icons -->
+          <a id="sns121" href="https://www.facebook.com/share/1G9ZVXTRKj/"
+             class="fs-5 me-3 text-decoration-none"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a id="sns123" href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx"
+             class="fs-5 me-3 text-decoration-none"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-top"></div>
+      <div class="row my-4 align-items-center">
+        <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
+          <small class="text-white-50"
+                 data-i18n="footer.copyrightOffice">
+            footer.copyrightOffice fallback
+          </small>
+        </div>
+        <div class="col-md-7 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.faqs">footer.faqs fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.corporateInformation">footer.corporateInformation fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.privacyNotice">footer.privacyNotice fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.cookieNotice">footer.cookieNotice fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.termsOfUse">footer.termsOfUse fallback</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-0 text-white-50">
+            <small data-i18n="footer.importantNote">
+              footer.importantNote fallback
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="/static/index.js"></script>

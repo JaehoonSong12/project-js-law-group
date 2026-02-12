@@ -1,11 +1,11 @@
-// static/js/index247_demo2.js
+// static/js/motor-vehicle-accident.js — page module for /motor-vehicle-accident
 import * as multiLang from '../ext-module-i18n.js';
 import * as Bootstrap from '../ext-module-bs.js';
 import * as Util from '../core-module.js';
 import * as FontAwesome from '../ext-module-fa.js';
 
 export default async function main() {
-    console.log('[src/js/index247_demo2.js] Main function execution started');
+    console.log('[static/js/motor-vehicle-accident.js] Main function execution started');
 
     Util.setupWindowFocusRefresh();
 
@@ -22,11 +22,9 @@ export default async function main() {
 
     try {
         await multiLang.initI18n(multiLang.getBaseLocale());
-        multiLang.applyTranslations("data-i18n", multiLang.getBaseLocale());
+        multiLang.applyTranslations('data-i18n', multiLang.getBaseLocale());
     } catch (error) {
-        console.error('[tfs] Error: Failed to initialize i18n:', error);
+        console.error('[motor-vehicle-accident] Error: Failed to initialize i18n:', error);
         return;
     }
 }
-
-main();

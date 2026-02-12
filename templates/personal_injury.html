@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="tfs.title">JS Law Group - Personal Injury</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="/static/css/custom.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', 'Noto Sans KR', sans-serif; scroll-behavior: smooth; }
+  </style>
+</head>
+<body debug-i18n="false">
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container mt-3 fixed-top" style="z-index: 2000; top: 80px;">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show shadow" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Secondary Nav: Personal Injury = current page -->
+  <div id="secondary-nav" class="bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-xl navbar-light py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
+          <div class="d-flex flex-column">
+            <h1 data-i18n="tfs.secondaryNav.phone" class="h2 fw-bold mb-0 lh-1 text-dark" style="letter-spacing: -1px;">tfs.secondaryNav.phone fallback</h1>
+            <small data-i18n="tfs.secondaryNav.firmName" class="text-primary fw-bold" style="font-size: 10px; letter-spacing: 0.5px;">tfs.secondaryNav.firmName fallback</small>
+          </div>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#secondaryMainNav" aria-controls="secondaryMainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="secondaryMainNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+            <li class="nav-item">
+              <a data-i18n="tfs.secondaryNav.home" class="nav-link fw-bold px-3" href="{{ url_for('index') }}">tfs.secondaryNav.home fallback</a>
+            </li>
+            <li class="nav-item">
+              <a data-i18n="tfs.secondaryNav.motorVehicles" class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block" href="{{ url_for('motor_vehicle_accident') }}">tfs.secondaryNav.motorVehicles fallback</a>
+              <a data-i18n="tfs.secondaryNav.motorVehicles" class="nav-link fw-bold d-xl-none" href="{{ url_for('motor_vehicle_accident') }}">tfs.secondaryNav.motorVehicles fallback</a>
+            </li>
+            <li class="nav-item">
+              <a data-i18n="tfs.secondaryNav.personalInjury" class="nav-link fw-bold text-primary px-3 border-start border-secondary d-none d-xl-block" href="{{ url_for('personal_injury') }}">tfs.secondaryNav.personalInjury fallback</a>
+              <a data-i18n="tfs.secondaryNav.personalInjury" class="nav-link fw-bold text-primary d-xl-none" href="{{ url_for('personal_injury') }}">tfs.secondaryNav.personalInjury fallback</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
+            <div class="d-flex flex-column align-items-end me-xl-3">
+              <p class="mb-1 fw-bold lh-1 small text-muted" data-i18n="tfs.secondaryNav.visitWebsite">tfs.secondaryNav.visitWebsite fallback</p>
+              <a href="https://www.jslawgroup.net/" class="btn btn-outline-primary btn-sm rounded-3" data-i18n="tfs.secondaryNav.goToWebsite">tfs.secondaryNav.goToWebsite fallback</a>
+            </div>
+            <a href="tel:7702224444" class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
+              <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
+              <span data-i18n="tfs.secondaryNav.phoneNumber" class="fw-bold fs-5">tfs.secondaryNav.phoneNumber fallback</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero CTA -->
+  <section id="hero-cta" class="pb-5">
+    <div class="position-relative overflow-hidden" style="background-image: url('https://picsum.photos/1920/1080?random=1'); background-size: cover; background-position: center; min-height: 60vh;">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25"></div>
+      <div class="container position-relative z-1 py-5">
+        <div class="row align-items-center py-5">
+          <div class="col-lg-7 py-5">
+            <h1 data-i18n="tfs.heroCta.title" class="display-3 fw-bold text-danger mb-3">tfs.heroCta.title fallback</h1>
+            <p class="lead fs-3 text-dark"><span data-i18n="tfs.heroCta.subtitle">tfs.heroCta.subtitle fallback</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container position-relative z-3" style="margin-top: -5rem;">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div id="tfs-hero-cta-box" class="bg-danger text-white text-center p-4 p-md-5 rounded-5 shadow-lg">
+            <p data-i18n="tfs.heroCta.message" class="fs-5 mb-2">tfs.heroCta.message fallback</p>
+            <h2 data-i18n="tfs.heroCta.claim" class="h3 fw-bold mb-0">tfs.heroCta.claim fallback</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Areas Grid (Personal Injury focus) -->
+  <section id="practice-areas" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=10" class="w-100 h-100 object-fit-cover position-absolute" alt="Slip and Fall">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;"><img src="https://picsum.photos/40/40?random=11" alt="icon" class="rounded-circle"></div>
+              <h3 data-i18n="tfs.practiceAreas.slipFall" class="h5 fw-bold text-center">tfs.practiceAreas.slipFall fallback</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=20" class="w-100 h-100 object-fit-cover position-absolute" alt="Bicycle Crash">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;"><img src="https://picsum.photos/40/40?random=21" alt="icon" class="rounded-circle"></div>
+              <h3 data-i18n="tfs.practiceAreas.bicycleCrash" class="h5 fw-bold text-center">tfs.practiceAreas.bicycleCrash fallback</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=30" class="w-100 h-100 object-fit-cover position-absolute" alt="Pedestrian">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;"><img src="https://picsum.photos/40/40?random=31" alt="icon" class="rounded-circle"></div>
+              <h3 data-i18n="tfs.practiceAreas.pedestrianCollision" class="h5 fw-bold text-center">tfs.practiceAreas.pedestrianCollision fallback</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=40" class="w-100 h-100 object-fit-cover position-absolute" alt="Premises">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;"><img src="https://picsum.photos/40/40?random=41" alt="icon" class="rounded-circle"></div>
+              <h3 data-i18n="tfs.practiceAreas.premisesLiability" class="h5 fw-bold text-center">tfs.practiceAreas.premisesLiability fallback</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=50" class="w-100 h-100 object-fit-cover position-absolute" alt="Workers Comp">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;"><img src="https://picsum.photos/40/40?random=51" alt="icon" class="rounded-circle"></div>
+              <h3 data-i18n="tfs.practiceAreas.workersComp" class="h5 fw-bold text-center">tfs.practiceAreas.workersComp fallback</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
+            <img src="https://picsum.photos/600/400?random=60" class="w-100 h-100 object-fit-cover position-absolute" alt="Other Injuries">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;"><img src="https://picsum.photos/40/40?random=61" alt="icon" class="rounded-circle"></div>
+              <h3 data-i18n="tfs.practiceAreas.otherInjuries" class="h5 fw-bold text-center">tfs.practiceAreas.otherInjuries fallback</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Process Info -->
+  <section id="process-info" class="py-5 bg-white overflow-hidden">
+    <div class="container py-lg-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h2 data-i18n="tfs.process.title" class="display-5 fw-bold text-dark mb-5">tfs.process.title fallback</h2>
+          <div class="d-flex mb-4">
+            <div class="flex-shrink-0"><div class="bg-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;"><img src="https://picsum.photos/30/30?random=101" alt="person" class="rounded-circle"></div></div>
+            <div class="ms-4"><h4 data-i18n="tfs.process.step1.title" class="fw-bold text-dark">tfs.process.step1.title fallback</h4><p data-i18n="tfs.process.step1.desc" class="text-secondary">tfs.process.step1.desc fallback</p></div>
+          </div>
+          <div class="d-flex mb-4">
+            <div class="flex-shrink-0"><div class="bg-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;"><img src="https://picsum.photos/30/30?random=102" alt="legal" class="rounded-circle"></div></div>
+            <div class="ms-4"><h4 data-i18n="tfs.process.step2.title" class="fw-bold text-dark">tfs.process.step2.title fallback</h4><p data-i18n="tfs.process.step2.desc" class="text-secondary">tfs.process.step2.desc fallback</p></div>
+          </div>
+          <div class="d-flex">
+            <div class="flex-shrink-0"><div class="bg-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;"><img src="https://picsum.photos/30/30?random=103" alt="gavel" class="rounded-circle"></div></div>
+            <div class="ms-4"><h4 data-i18n="tfs.process.step3.title" class="fw-bold text-dark">tfs.process.step3.title fallback</h4><p data-i18n="tfs.process.step3.desc" class="text-secondary">tfs.process.step3.desc fallback</p></div>
+          </div>
+        </div>
+        <div class="col-lg-6 position-relative">
+          <div class="bg-danger bg-opacity-10 rounded-5 p-5 d-flex justify-content-center align-items-center">
+            <img src="https://picsum.photos/500/600?random=200" alt="Contact" class="img-fluid rounded-4 shadow">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Injury content & article (from index_home) -->
+  <section id="personal-injury" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="https://placehold.co/600x400/555/fff?text=Personal+Injury"
+               class="img-fluid rounded-4 shadow-sm"
+               alt="Personal Injury cases including car accidents">
+        </div>
+        <div class="col-lg-6">
+          <div id="pi-content" data-i18n="pi.content">
+            pi.content fallback
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="personal-injury-article" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div id="pi-article-content" data-i18n="pi.article">
+            pi.article fallback
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Criminal Defense content & article (from index_home) -->
+  <section id="criminal-defense" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div id="cd-content" data-i18n="cd.content">
+            cd.content fallback
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://placehold.co/600x400/343a40/ffffff?text=Criminal+Defense"
+               class="img-fluid rounded-4 shadow-sm"
+               alt="Criminal Defense legal representation">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="criminal-defense-article" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div id="cd-article-content" data-i18n="cd.article">
+            cd.article fallback
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-top bg-dark text-white">
+    <div class="py-5 container">
+      <div class="row mb-4 align-items-center">
+        <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
+          <h4 class="mb-0 text-uppercase fw-bold" data-i18n="wizard.footerBrand">wizard.footerBrand fallback</h4>
+          <p class="small text-white-50 lh-sm mt-2 mb-0" data-i18n="tfs.footer.address">tfs.footer.address fallback</p>
+        </div>
+        <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
+          <a id="sns121" href="https://www.facebook.com/share/1G9ZVXTRKj/" class="fs-5 me-3 text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+          <a id="sns123" href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx" class="fs-5 me-3 text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="border-top"></div>
+      <div class="row my-4 align-items-center">
+        <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
+          <small class="text-white-50" data-i18n="footer.copyrightOffice">footer.copyrightOffice fallback</small>
+        </div>
+        <div class="col-md-7 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-white"><small data-i18n="footer.faqs">footer.faqs fallback</small></a></li>
+            <li class="list-inline-item ms-lg-2"><a href="#" class="text-decoration-none text-white"><small data-i18n="footer.corporateInformation">footer.corporateInformation fallback</small></a></li>
+            <li class="list-inline-item ms-lg-2"><a href="#" class="text-decoration-none text-white"><small data-i18n="footer.privacyNotice">footer.privacyNotice fallback</small></a></li>
+            <li class="list-inline-item ms-lg-2"><a href="#" class="text-decoration-none text-white"><small data-i18n="footer.cookieNotice">footer.cookieNotice fallback</small></a></li>
+            <li class="list-inline-item ms-lg-2"><a href="#" class="text-decoration-none text-white"><small data-i18n="footer.termsOfUse">footer.termsOfUse fallback</small></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-0 text-white-50"><small data-i18n="footer.importantNote">footer.importantNote fallback</small></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script type="module" src="/static/index.js"></script>
+</body>
+</html>

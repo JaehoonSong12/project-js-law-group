@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-
+  <!-- Standard project CSS (theme + primary color) -->
+  <link href="/static/css/custom.min.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,22 +46,23 @@
     {% endif %}
   {% endwith %}
 
-  <!-- 14. Secondary Navigation Bar -->
-  <div id="secondary-nav" class="bg-white sticky-top shadow-sm">       
+  <!-- Secondary Navigation Bar (same as home; Motor Vehicles = current page) -->
+  <div id="secondary-nav"
+       class="bg-white sticky-top shadow-sm">
     <nav class="navbar navbar-expand-xl navbar-light py-3">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center"
-           href="#">
+           href="{{ url_for('index') }}">
           <div class="d-flex flex-column">
-            <h1 class="h2 fw-bold mb-0 lh-1 text-dark" 
-                style="letter-spacing: -1px;"
-                data-i18n="tfs.secondaryNav.phone">
-              1-800 <span class="text-dark">411-PAIN</span>
+            <h1 data-i18n="tfs.secondaryNav.phone"
+                class="h2 fw-bold mb-0 lh-1 text-dark"
+                style="letter-spacing: -1px;">
+              tfs.secondaryNav.phone fallback
             </h1>
-            <small class="text-danger fw-bold"
-                   style="font-size: 10px; letter-spacing: 0.5px;"     
-                   data-i18n="tfs.secondaryNav.firmName">
-              Law Offices of Kanner & Pintaluga, P.A.
+            <small data-i18n="tfs.secondaryNav.firmName"
+                   class="text-primary fw-bold"
+                   style="font-size: 10px; letter-spacing: 0.5px;">
+              tfs.secondaryNav.firmName fallback
             </small>
           </div>
         </a>
@@ -77,54 +79,55 @@
              id="secondaryMainNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
-              <a class="nav-link fw-bold text-dark px-3"
-                 href="#"
-                 data-i18n="tfs.secondaryNav.home">
-                Home
+              <a data-i18n="tfs.secondaryNav.home"
+                 class="nav-link fw-bold px-3"
+                 href="{{ url_for('index') }}">
+                tfs.secondaryNav.home fallback
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold text-danger px-3 border-start border-secondary d-none d-xl-block"
-                 href="#"
-                 data-i18n="tfs.secondaryNav.motorVehicles">
-                Motor Vehicles Accident
+              <a data-i18n="tfs.secondaryNav.motorVehicles"
+                 class="nav-link fw-bold text-primary px-3 border-start border-secondary d-none d-xl-block"
+                 href="{{ url_for('motor_vehicle_accident') }}">
+                tfs.secondaryNav.motorVehicles fallback
               </a>
-              <a class="nav-link fw-bold text-danger d-xl-none"        
-                 href="#"
-                 data-i18n="tfs.secondaryNav.motorVehicles">
-                Motor Vehicles Accident
+              <a data-i18n="tfs.secondaryNav.motorVehicles"
+                 class="nav-link fw-bold text-primary d-xl-none"
+                 href="{{ url_for('motor_vehicle_accident') }}">
+                tfs.secondaryNav.motorVehicles fallback
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold text-dark px-3 border-start border-secondary d-none d-xl-block"
-                 href="#"
-                 data-i18n="tfs.secondaryNav.personalInjury">
-                Personal Injury
+              <a data-i18n="tfs.secondaryNav.personalInjury"
+                 class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
+                 href="{{ url_for('personal_injury') }}">
+                tfs.secondaryNav.personalInjury fallback
               </a>
-              <a class="nav-link fw-bold text-dark d-xl-none"
-                 href="#"
-                 data-i18n="tfs.secondaryNav.personalInjury">
-                Personal Injury
+              <a data-i18n="tfs.secondaryNav.personalInjury"
+                 class="nav-link fw-bold d-xl-none"
+                 href="{{ url_for('personal_injury') }}">
+                tfs.secondaryNav.personalInjury fallback
               </a>
             </li>
           </ul>
           <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
-            <div class="me-xl-3">
-              <p class="mb-0 fw-bold text-dark lh-1"
-                 data-i18n="tfs.secondaryNav.available">
-                Available 24/7
+            <div class="d-flex flex-column align-items-end me-xl-3">
+              <p class="mb-1 fw-bold lh-1 small text-muted"
+                 data-i18n="tfs.secondaryNav.visitWebsite">
+                tfs.secondaryNav.visitWebsite fallback
               </p>
-              <small class="text-danger fw-bold"
-                     data-i18n="tfs.secondaryNav.spanish">
-                Hablamos Español
-              </small>
+              <a href="https://www.jslawgroup.net/"
+                 class="btn btn-outline-primary btn-sm rounded-3"
+                 data-i18n="tfs.secondaryNav.goToWebsite">
+                tfs.secondaryNav.goToWebsite fallback
+              </a>
             </div>
             <a href="tel:7702224444"
-               class="btn btn-danger rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
-              <span style="transform: rotate(90deg); display: inline-block; font-size: 1.2rem;">)</span>
-              <span class="fw-bold fs-5"
-                    data-i18n="tfs.secondaryNav.phoneNumber">
-                (770) 222-4444
+               class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
+              <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
+              <span data-i18n="tfs.secondaryNav.phoneNumber"
+                    class="fw-bold fs-5">
+                tfs.secondaryNav.phoneNumber fallback
               </span>
             </a>
           </div>
@@ -132,126 +135,8 @@
       </div>
     </nav>
   </div>
-
-  <!-- 8. Hero CTA Section -->
-  <section id="hero-cta" class="pb-5">
-    <div class="position-relative overflow-hidden"
-         style="background-image: url('https://picsum.photos/1920/1080?random=1'); background-size: cover; background-position: center; min-height: 60vh;">
-      <div class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25"></div>
-      <div class="container position-relative z-1 py-5">
-        <div class="row align-items-center py-5">
-          <div class="col-lg-7 py-5">
-            <h1 data-i18n="tfs.heroCta.title"
-                class="display-3 fw-bold text-danger mb-3">
-              tfs.heroCta.title fallback
-            </h1>
-            <p class="lead fs-3 text-dark">
-              <span data-i18n="tfs.heroCta.subtitle">tfs.heroCta.subtitle fallback</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container position-relative z-3" style="margin-top: -5rem;">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div id="tfs-hero-cta-box"
-               class="bg-danger text-white text-center p-4 p-md-5 rounded-5 shadow-lg">
-            <p data-i18n="tfs.heroCta.message"
-               class="fs-5 mb-2">
-              tfs.heroCta.message fallback
-            </p>
-            <h2 data-i18n="tfs.heroCta.claim"
-                class="h3 fw-bold mb-0">
-              tfs.heroCta.claim fallback
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Practice Areas Grid -->
-  <section id="practice-areas" class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <!-- Practice Area 1: Slip & Fall -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
-            <img src="https://picsum.photos/600/400?random=10" class="w-100 h-100 object-fit-cover position-absolute" alt="Slip and Fall">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <img src="https://picsum.photos/40/40?random=11" alt="icon" class="rounded-circle">
-              </div>
-              <h3 data-i18n="tfs.practiceAreas.slipFall" class="h5 fw-bold text-center">tfs.practiceAreas.slipFall fallback</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Practice Area 2: Bicycle Crash -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
-            <img src="https://picsum.photos/600/400?random=20" class="w-100 h-100 object-fit-cover position-absolute" alt="Bicycle Crash">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <img src="https://picsum.photos/40/40?random=21" alt="icon" class="rounded-circle">
-              </div>
-              <h3 data-i18n="tfs.practiceAreas.bicycleCrash" class="h5 fw-bold text-center">tfs.practiceAreas.bicycleCrash fallback</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Practice Area 3: Pedestrian Collision -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
-            <img src="https://picsum.photos/600/400?random=30" class="w-100 h-100 object-fit-cover position-absolute" alt="Pedestrian">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <img src="https://picsum.photos/40/40?random=31" alt="icon" class="rounded-circle">
-              </div>
-              <h3 data-i18n="tfs.practiceAreas.pedestrianCollision" class="h5 fw-bold text-center">tfs.practiceAreas.pedestrianCollision fallback</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Practice Area 4: Premises Liability -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
-            <img src="https://picsum.photos/600/400?random=40" class="w-100 h-100 object-fit-cover position-absolute" alt="Premises">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <img src="https://picsum.photos/40/40?random=41" alt="icon" class="rounded-circle">
-              </div>
-              <h3 data-i18n="tfs.practiceAreas.premisesLiability" class="h5 fw-bold text-center">tfs.practiceAreas.premisesLiability fallback</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Practice Area 5: Workers' Compensation -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
-            <img src="https://picsum.photos/600/400?random=50" class="w-100 h-100 object-fit-cover position-absolute" alt="Workers Comp">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <img src="https://picsum.photos/40/40?random=51" alt="icon" class="rounded-circle">
-              </div>
-              <h3 data-i18n="tfs.practiceAreas.workersComp" class="h5 fw-bold text-center">tfs.practiceAreas.workersComp fallback</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Practice Area 6: Other Bodily Injuries -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="height: 250px;">
-            <img src="https://picsum.photos/600/400?random=60" class="w-100 h-100 object-fit-cover position-absolute" alt="Other Injuries">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <img src="https://picsum.photos/40/40?random=61" alt="icon" class="rounded-circle">
-              </div>
-              <h3 data-i18n="tfs.practiceAreas.otherInjuries" class="h5 fw-bold text-center">tfs.practiceAreas.otherInjuries fallback</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 12. Accident Steps Guide -->
+  
+  <!-- Accident Steps Guide -->
   <section id="accident-steps" class="py-5 bg-white">
     <div class="container">
       <div class="text-center mb-5">
@@ -318,73 +203,6 @@
         <div class="col-lg-6 position-relative">
           <div class="bg-danger bg-opacity-10 rounded-5 p-5 d-flex justify-content-center align-items-center">
             <img src="https://picsum.photos/500/600?random=200" alt="Contacting via phone" class="img-fluid rounded-4 shadow">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Criminal Defense Intake Form -->
-  <section id="criminal-intake" class="py-5 bg-dark">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card shadow-lg rounded-4 border-0">
-            <div class="card-header bg-primary text-white p-4 rounded-top-4">
-              <h3 class="mb-0 fw-bold">Criminal Case Intake</h3>
-              <p class="mb-0 opacity-75">Confidential Consultation</p>
-            </div>
-            <div class="card-body p-4 p-md-5">
-              <form action="{{ url_for('demo2') }}" method="POST">
-                {{ form.hidden_tag() }}
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    {{ form.full_name.label(class="form-label fw-bold") }}
-                    {{ form.full_name(class="form-control") }}
-                  </div>
-                  <div class="col-md-6">
-                    {{ form.phone_number.label(class="form-label fw-bold") }}
-                    {{ form.phone_number(class="form-control", placeholder="(555) 555-5555") }}
-                  </div>
-                  <div class="col-md-12">
-                    {{ form.email_address.label(class="form-label fw-bold") }}
-                    {{ form.email_address(class="form-control") }}
-                  </div>
-                  
-                  <div class="col-12"><hr></div>
-                  
-                  <div class="col-md-6">
-                    {{ form.arrest_status.label(class="form-label fw-bold") }}
-                    {% for subfield in form.arrest_status %}
-                        <div class="form-check form-check-inline">
-                            {{ subfield(class="form-check-input") }}
-                            {{ subfield.label(class="form-check-label") }}
-                        </div>
-                    {% endfor %}
-                  </div>
-                  <div class="col-md-6">
-                    {{ form.custody_status.label(class="form-label fw-bold") }}
-                    <div class="mb-0">
-                    {% for subfield in form.custody_status %}
-                        <div class="form-check">
-                            {{ subfield(class="form-check-input") }}
-                            {{ subfield.label(class="form-check-label") }}
-                        </div>
-                    {% endfor %}
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    {{ form.incident_description.label(class="form-label fw-bold") }}
-                    {{ form.incident_description(class="form-control", rows="3") }}
-                  </div>
-
-                  <div class="col-12 mt-4">
-                    <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold">Submit for Review</button>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </div>
@@ -481,29 +299,77 @@
     </div>
   </section>
 
-  <!-- 7. Footer -->
-  <footer class="bg-dark text-white py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <h2 data-i18n="tfs.footer.phone" class="display-5 fw-bold text-danger mb-4">tfs.footer.phone fallback</h2>
-          <div class="d-flex gap-2 mb-4">
-            <a id="sns121" href="https://www.facebook.com/share/1G9ZVXTRKj/" class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold" style="width: 36px; height: 36px; font-size: 10px; text-decoration: none;" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
-            <a id="sns123" href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx" class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold" style="width: 36px; height: 36px; font-size: 10px; text-decoration: none;" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-          </div>
-          <p class="small text-secondary lh-sm mb-0" data-i18n="tfs.footer.address">tfs.footer.address fallback</p>
+  <footer class="border-top bg-dark text-white">
+    <div class="py-5 container">
+      <div class="row mb-4 align-items-center">
+        <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
+          <h4 class="mb-0 text-uppercase fw-bold" data-i18n="wizard.footerBrand">wizard.footerBrand fallback</h4>
+          <p class="small text-white-50 lh-sm mt-2 mb-0" data-i18n="tfs.footer.address">tfs.footer.address fallback</p>
         </div>
-        <div class="col-lg-8">
-          <ul class="nav justify-content-end mb-2">
-            <li class="nav-item"><a href="#" class="nav-link text-white fw-bold px-3 py-0" data-i18n="tfs.footer.nav.home">tfs.footer.nav.home fallback</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-white fw-bold px-3 py-0" data-i18n="tfs.footer.nav.motorVehicles">tfs.footer.nav.motorVehicles fallback</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-danger fw-bold px-3 py-0" data-i18n="tfs.footer.nav.personalInjury">tfs.footer.nav.personalInjury fallback</a></li>
+        <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
+          <!-- Social Media Icons -->
+          <a id="sns121" href="https://www.facebook.com/share/1G9ZVXTRKj/"
+             class="fs-5 me-3 text-decoration-none"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a id="sns123" href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx"
+             class="fs-5 me-3 text-decoration-none"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-top"></div>
+      <div class="row my-4 align-items-center">
+        <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
+          <small class="text-white-50"
+                 data-i18n="footer.copyrightOffice">
+            footer.copyrightOffice fallback
+          </small>
+        </div>
+        <div class="col-md-7 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.faqs">footer.faqs fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.corporateInformation">footer.corporateInformation fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.privacyNotice">footer.privacyNotice fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.cookieNotice">footer.cookieNotice fallback</small>
+              </a>
+            </li>
+            <li class="list-inline-item ms-lg-2">
+              <a href="#"
+                 class="text-decoration-none text-white">
+                <small data-i18n="footer.termsOfUse">footer.termsOfUse fallback</small>
+              </a>
+            </li>
           </ul>
-          <hr class="border-secondary my-3">
-          <div class="small text-secondary text-end lh-sm">
-            <p class="mb-3" style="font-size: 0.8rem;" data-i18n="tfs.footer.disclaimerText">tfs.footer.disclaimerText fallback</p>
-            <a href="#" class="text-white text-decoration-none fw-bold small" data-i18n="tfs.footer.privacyPolicy">tfs.footer.privacyPolicy fallback</a>
-          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-0 text-white-50">
+            <small data-i18n="footer.importantNote">
+              footer.importantNote fallback
+            </small>
+          </p>
         </div>
       </div>
     </div>
@@ -511,6 +377,6 @@
 
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
-  <script type="module" src="{{ url_for('static', filename='js/index247_demo2.js') }}"></script>
+  <script type="module" src="/static/index.js"></script>
 </body>
 </html>

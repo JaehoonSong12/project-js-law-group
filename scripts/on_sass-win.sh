@@ -39,7 +39,7 @@ npm install --save-dev sass@1.77.6
 # npx sass --load-path=node_modules src/scss/custom.scss src/css/custom.css --style=expanded
 # npx sass --load-path=node_modules src/scss/custom.scss src/css/custom.min.css --style=compressed
 # npx sass --watch --load-path=node_modules src/scss/custom.scss:src/css/custom.css --style=expanded
-npx sass --watch --load-path=node_modules src/scss/custom.scss:src/css/custom.min.css --style=compressed
+npx sass --watch --load-path=node_modules static/scss/custom.scss:static/css/custom.min.css --style=compressed
 
 
 

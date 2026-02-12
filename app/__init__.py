@@ -181,18 +181,20 @@ def demo1():
 
     return render_template('index247_demo1.html', form=form)
 
-@app.route('/247/demo2', methods=['GET', 'POST'])
+@app.route('/247/demo2')
 def demo2():
-    form = CriminalCaseForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'criminal_defense')
-        flash('Criminal case intake submitted. We are reviewing your details.', 'success')
-        return redirect(url_for('demo2'))
-    elif form.errors:
-        print("Form errors:", form.errors)
-        flash('There was an error with your submission. Please check the form.', 'danger')
+    """Legacy URL: redirects to motor vehicle accident page."""
+    return redirect(url_for('motor_vehicle_accident'))
 
-    return render_template('index247_demo2.html', form=form)
+@app.route('/motor-vehicle-accident')
+def motor_vehicle_accident():
+    """Motor vehicle accident info page (nav: Motor Vehicles)."""
+    return render_template('motor_vehicle_accident.html')
+
+@app.route('/personal-injury')
+def personal_injury():
+    """Personal injury practice areas page (nav: Personal Injury)."""
+    return render_template('personal_injury.html')
 
 # ==========================================
 # New Final Website Routes
