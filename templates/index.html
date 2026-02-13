@@ -3,20 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS Law Group - Prototype Index</title>
-  
-  <!-- Standard project CSS -->
-  <link href="/static/css/custom.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <title data-i18n="index.pageTitle">pageTitle.index fallback</title>
 
-  
+  <!-- Bootstrap 5 CSS -->
+  <link href="/static/css/custom.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Flag Icons (CDN) -->
+  <link href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" rel="stylesheet">
+
   <style>
     /* Minimal custom styles for Wizard specific layout */
     .wizard-section {
@@ -76,6 +71,13 @@
       background-color: var(--bs-primary-bg-subtle);
       color: var(--bs-primary);
     }
+
+    /* Compensation Section Background */
+    .bg-compensation {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+    }
   </style>
 </head>
 <body debug-i18n="false" class="bg-light">
@@ -88,12 +90,12 @@
         <a class="navbar-brand d-flex align-items-center" 
            href="{{ url_for('index') }}">
           <div class="d-flex flex-column">
-            <h1 data-i18n="tfs.secondaryNav.phone"
+            <h1 data-i18n="shared.secondaryNav.phone"
                 class="h2 fw-bold mb-0 lh-1 text-dark" 
                 style="letter-spacing: -1px;">
               tfs.secondaryNav.phone fallback
             </h1>
-            <small data-i18n="tfs.secondaryNav.firmName"
+            <small data-i18n="shared.secondaryNav.firmName"
                    class="text-primary fw-bold" 
                    style="font-size: 10px; letter-spacing: 0.5px;">
               tfs.secondaryNav.firmName fallback
@@ -113,31 +115,31 @@
              id="secondaryMainNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
-              <a data-i18n="tfs.secondaryNav.home"
+              <a data-i18n="shared.secondaryNav.home"
                  class="nav-link fw-bold px-3 text-primary" 
                  href="{{ url_for('index') }}">
                 tfs.secondaryNav.home fallback
               </a>
             </li>
             <li class="nav-item">
-              <a data-i18n="tfs.secondaryNav.motorVehicles"
+              <a data-i18n="shared.secondaryNav.motorVehicles"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('motor_vehicle_accident') }}">
                 tfs.secondaryNav.motorVehicles fallback
               </a>
-              <a data-i18n="tfs.secondaryNav.motorVehicles"
+              <a data-i18n="shared.secondaryNav.motorVehicles"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('motor_vehicle_accident') }}">
                 tfs.secondaryNav.motorVehicles fallback
               </a>
             </li>
             <li class="nav-item">
-              <a data-i18n="tfs.secondaryNav.personalInjury"
+              <a data-i18n="shared.secondaryNav.personalInjury"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('personal_injury') }}">
                 tfs.secondaryNav.personalInjury fallback
               </a>
-              <a data-i18n="tfs.secondaryNav.personalInjury"
+              <a data-i18n="shared.secondaryNav.personalInjury"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('personal_injury') }}">
                 tfs.secondaryNav.personalInjury fallback
@@ -147,19 +149,19 @@
           <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
             <div class="d-flex flex-column align-items-end me-xl-3">
               <p class="mb-1 fw-bold lh-1 small text-muted" 
-                 data-i18n="tfs.secondaryNav.visitWebsite">
+                 data-i18n="shared.secondaryNav.visitWebsite">
                 tfs.secondaryNav.visitWebsite fallback
               </p>
               <a href="https://www.jslawgroup.net/" 
                  class="btn btn-outline-primary btn-sm rounded-3" 
-                 data-i18n="tfs.secondaryNav.goToWebsite">
+                 data-i18n="shared.secondaryNav.goToWebsite">
                 tfs.secondaryNav.goToWebsite fallback
               </a>
             </div>
             <a href="tel:7702224444" 
                class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
               <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
-              <span data-i18n="tfs.secondaryNav.phoneNumber"
+              <span data-i18n="shared.secondaryNav.phoneNumber"
                     class="fw-bold fs-5">
                 tfs.secondaryNav.phoneNumber fallback
               </span>
@@ -219,35 +221,35 @@
                   <!-- Step 1: Accident Type -->
                   <div id="step1"
                      class="step-transition active">
-                    <h3 class="fw-bold mb-3" data-i18n="wizard.step1Title">wizard.step1Title fallback</h3>
-                    <p class="text-muted mb-4" data-i18n="wizard.step1Subtitle">wizard.step1Subtitle fallback</p>
-                    <h5 class="fw-semibold mb-4" data-i18n="wizard.step1Question">wizard.step1Question fallback</h5>
+                    <h3 class="fw-bold mb-3" data-i18n="index.wizard.step1.title">wizard.step1Title fallback</h3>
+                    <p class="text-muted mb-4" data-i18n="index.wizard.step1.subtitle">wizard.step1Subtitle fallback</p>
+                    <h5 class="fw-semibold mb-4" data-i18n="index.wizard.step1.question">wizard.step1Question fallback</h5>
 
                     <div class="d-grid gap-3">
                       <button type="button"
                             class="btn btn-option p-3 rounded-3"
                             onclick="next(1, 'accident_type', 'Car Accident')">
-                        <i class="fas fa-car me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Car">wizard.step1Car fallback</span>
+                        <i class="fas fa-car me-3 fa-lg text-secondary"></i><span data-i18n="index.wizard.step1.car">wizard.step1Car fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3 rounded-3"
                             onclick="next(1, 'accident_type', 'Motorcycle Accident')">
-                        <i class="fas fa-motorcycle me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Motorcycle">wizard.step1Motorcycle fallback</span>
+                        <i class="fas fa-motorcycle me-3 fa-lg text-secondary"></i><span data-i18n="index.wizard.step1.motorcycle">wizard.step1Motorcycle fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3 rounded-3"
                             onclick="next(1, 'accident_type', 'Truck Accident')">
-                        <i class="fas fa-truck-moving me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Truck">wizard.step1Truck fallback</span>
+                        <i class="fas fa-truck-moving me-3 fa-lg text-secondary"></i><span data-i18n="index.wizard.step1.truck">wizard.step1Truck fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3 rounded-3"
                             onclick="next(1, 'accident_type', 'Pedestrian')">
-                        <i class="fas fa-walking me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Pedestrian">wizard.step1Pedestrian fallback</span>
+                        <i class="fas fa-walking me-3 fa-lg text-secondary"></i><span data-i18n="index.wizard.step1.pedestrian">wizard.step1Pedestrian fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3 rounded-3"
                             onclick="next(1, 'accident_type', 'Rideshare')">
-                        <i class="fas fa-taxi me-3 fa-lg text-secondary"></i><span data-i18n="wizard.step1Rideshare">wizard.step1Rideshare fallback</span>
+                        <i class="fas fa-taxi me-3 fa-lg text-secondary"></i><span data-i18n="index.wizard.step1.rideshare">wizard.step1Rideshare fallback</span>
                       </button>
                     </div>
                   </div>
@@ -255,39 +257,39 @@
                   <!-- Step 2: Zip Code -->
                   <div id="step2"
                      class="step-transition">
-                    <h4 class="fw-bold mb-4" data-i18n="wizard.step2Question">wizard.step2Question fallback</h4>
+                    <h4 class="fw-bold mb-4" data-i18n="index.wizard.step2.question">wizard.step2Question fallback</h4>
                     <div class="form-floating mb-4">
                       {{ form.zip_code(class="form-control form-control-lg text-center fs-4", placeholder="Zip Code", id="zip_code") }}
-                      <label for="zip_code" data-i18n="wizard.step2ZipLabel">wizard.step2ZipLabel fallback</label>
-                      <div class="invalid-feedback" data-i18n="wizard.step2ZipInvalid">wizard.step2ZipInvalid fallback</div>
+                      <label for="zip_code" data-i18n="index.wizard.step2.zipLabel">wizard.step2ZipLabel fallback</label>
+                      <div class="invalid-feedback" data-i18n="index.wizard.step2.zipInvalid">wizard.step2ZipInvalid fallback</div>
                     </div>
                     <button type="button"
                           class="btn btn-primary btn-lg w-100 mb-3"
                           onclick="validateAndNext(2)">
-                      <span data-i18n="wizard.next">wizard.next fallback</span>
+                      <span data-i18n="index.wizard.step2.next">wizard.next fallback</span>
                     </button>
-                    <div class="text-muted small"><i class="fas fa-lock me-1"></i> <span data-i18n="wizard.secure">wizard.secure fallback</span></div>
+                    <div class="text-muted small"><i class="fas fa-lock me-1"></i> <span data-i18n="index.wizard.step2.secure">wizard.secure fallback</span></div>
                   </div>
 
                   <!-- Step 3: Medical Treatment -->
                   <div id="step3"
                      class="step-transition">
-                    <h4 class="fw-bold mb-4" data-i18n="wizard.step3Question">wizard.step3Question fallback</h4>
+                    <h4 class="fw-bold mb-4" data-i18n="index.wizard.step3.question">wizard.step3Question fallback</h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(3, 'medical_treatment', 'Hospital')">
-                        <span data-i18n="wizard.step3Hospital">wizard.step3Hospital fallback</span>
+                        <span data-i18n="index.wizard.step3.hospital">wizard.step3Hospital fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(3, 'medical_treatment', 'Doctor')">
-                        <span data-i18n="wizard.step3Doctor">wizard.step3Doctor fallback</span>
+                        <span data-i18n="index.wizard.step3.doctor">wizard.step3Doctor fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(3, 'medical_treatment', 'No')">
-                        <span data-i18n="wizard.step3No">wizard.step3No fallback</span>
+                        <span data-i18n="index.wizard.step3.no">wizard.step3No fallback</span>
                       </button>
                     </div>
                   </div>
@@ -295,17 +297,17 @@
                   <!-- Step 4: Police Report -->
                   <div id="step4"
                      class="step-transition">
-                    <h4 class="fw-bold mb-4" data-i18n="wizard.step4Question">wizard.step4Question fallback</h4>
+                    <h4 class="fw-bold mb-4" data-i18n="index.wizard.step4.question">wizard.step4Question fallback</h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(4, 'police_report', 'Yes')">
-                        <span data-i18n="wizard.yes">wizard.yes fallback</span>
+                        <span data-i18n="index.wizard.step4.yes">wizard.yes fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(4, 'police_report', 'No')">
-                        <span data-i18n="wizard.no">wizard.no fallback</span>
+                        <span data-i18n="index.wizard.step4.no">wizard.no fallback</span>
                       </button>
                     </div>
                   </div>
@@ -313,22 +315,22 @@
                   <!-- Step 5: At Fault -->
                   <div id="step5"
                      class="step-transition">
-                    <h4 class="fw-bold mb-4" data-i18n="wizard.step5Question">wizard.step5Question fallback</h4>
+                    <h4 class="fw-bold mb-4" data-i18n="index.wizard.step5.question">wizard.step5Question fallback</h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(5, 'at_fault', 'No')">
-                        <span data-i18n="wizard.no">wizard.no fallback</span>
+                        <span data-i18n="index.wizard.step5.no">wizard.no fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(5, 'at_fault', 'Yes')">
-                        <span data-i18n="wizard.yes">wizard.yes fallback</span>
+                        <span data-i18n="index.wizard.step5.yes">wizard.yes fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(5, 'at_fault', 'Unknown')">
-                        <span data-i18n="wizard.step5Unknown">wizard.step5Unknown fallback</span>
+                        <span data-i18n="index.wizard.step5.unknown">wizard.step5Unknown fallback</span>
                       </button>
                     </div>
                   </div>
@@ -336,22 +338,22 @@
                   <!-- Step 6: Lawyer -->
                   <div id="step6"
                      class="step-transition">
-                    <h4 class="fw-bold mb-4" data-i18n="wizard.step6Question">wizard.step6Question fallback</h4>
+                    <h4 class="fw-bold mb-4" data-i18n="index.wizard.step6.question">wizard.step6Question fallback</h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(6, 'has_lawyer', 'No')">
-                        <span data-i18n="wizard.no">wizard.no fallback</span>
+                        <span data-i18n="index.wizard.step6.no">wizard.no fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(6, 'has_lawyer', 'Yes')">
-                        <span data-i18n="wizard.yes">wizard.yes fallback</span>
+                        <span data-i18n="index.wizard.step6.yes">wizard.yes fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(6, 'has_lawyer', 'Yes - Want New')">
-                        <span data-i18n="wizard.step6WantNew">wizard.step6WantNew fallback</span>
+                        <span data-i18n="index.wizard.step6.wantNew">wizard.step6WantNew fallback</span>
                       </button>
                     </div>
                   </div>
@@ -359,27 +361,27 @@
                   <!-- Step 7: Date -->
                   <div id="step7"
                      class="step-transition">
-                    <h4 class="fw-bold mb-4" data-i18n="wizard.step7Question">wizard.step7Question fallback</h4>
+                    <h4 class="fw-bold mb-4" data-i18n="index.wizard.step7.question">wizard.step7Question fallback</h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(7, 'accident_date', 'Within 30 days')">
-                        <span data-i18n="wizard.step7Thirty">wizard.step7Thirty fallback</span>
+                        <span data-i18n="index.wizard.step7.thirty">wizard.step7Thirty fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(7, 'accident_date', 'Within 1 year')">
-                        <span data-i18n="wizard.step7OneYear">wizard.step7OneYear fallback</span>
+                        <span data-i18n="index.wizard.step7.oneYear">wizard.step7OneYear fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(7, 'accident_date', 'Within 2 years')">
-                        <span data-i18n="wizard.step7TwoYears">wizard.step7TwoYears fallback</span>
+                        <span data-i18n="index.wizard.step7.twoYears">wizard.step7TwoYears fallback</span>
                       </button>
                       <button type="button"
                             class="btn btn-option p-3"
                             onclick="next(7, 'accident_date', 'Over 2 years')">
-                        <span data-i18n="wizard.step7OverTwo">wizard.step7OverTwo fallback</span>
+                        <span data-i18n="index.wizard.step7.overTwo">wizard.step7OverTwo fallback</span>
                       </button>
                     </div>
                   </div>
@@ -387,75 +389,75 @@
                   <!-- Step 8: Primary Injury -->
                   <div id="step8"
                      class="step-transition">
-                    <h4 class="fw-bold mb-4" data-i18n="wizard.step8Question">wizard.step8Question fallback</h4>
+                    <h4 class="fw-bold mb-4" data-i18n="index.wizard.step8.question">wizard.step8Question fallback</h4>
                     <div class="mb-4">
                       <select id="primary_injury"
                             class="form-select form-select-lg"
                             name="primary_injury">
-                        <option value="" disabled selected data-i18n="wizard.step8SelectPlaceholder">wizard.step8SelectPlaceholder fallback</option>
-                        <option value="Broken Bones" data-i18n="wizard.step8BrokenBones">wizard.step8BrokenBones fallback</option>
-                        <option value="Head Injury" data-i18n="wizard.step8HeadInjury">wizard.step8HeadInjury fallback</option>
-                        <option value="Back Pain" data-i18n="wizard.step8BackPain">wizard.step8BackPain fallback</option>
-                        <option value="Scrapes" data-i18n="wizard.step8Scrapes">wizard.step8Scrapes fallback</option>
-                        <option value="Other" data-i18n="wizard.step8Other">wizard.step8Other fallback</option>
+                        <option value="" disabled selected data-i18n="index.wizard.step8.selectPlaceholder">wizard.step8SelectPlaceholder fallback</option>
+                        <option value="Broken Bones" data-i18n="index.wizard.step8.brokenBones">wizard.step8BrokenBones fallback</option>
+                        <option value="Head Injury" data-i18n="index.wizard.step8.headInjury">wizard.step8HeadInjury fallback</option>
+                        <option value="Back Pain" data-i18n="index.wizard.step8.backPain">wizard.step8BackPain fallback</option>
+                        <option value="Scrapes" data-i18n="index.wizard.step8.scrapes">wizard.step8Scrapes fallback</option>
+                        <option value="Other" data-i18n="index.wizard.step8.other">wizard.step8Other fallback</option>
                       </select>
-                      <div class="invalid-feedback" data-i18n="wizard.step8Invalid">wizard.step8Invalid fallback</div>
+                      <div class="invalid-feedback" data-i18n="index.wizard.step8.invalid">wizard.step8Invalid fallback</div>
                     </div>
                     <button type="button"
                           class="btn btn-primary btn-lg w-100"
                           onclick="validateAndNext(8)">
-                      <span data-i18n="wizard.next">wizard.next fallback</span>
+                      <span data-i18n="index.wizard.step8.next">wizard.next fallback</span>
                     </button>
                   </div>
 
                   <!-- Step 9: Name -->
                   <div id="step9"
                      class="step-transition">
-                    <h4 class="fw-bold mb-2" data-i18n="wizard.step9Question">wizard.step9Question fallback</h4>
-                    <p class="text-muted small mb-4" data-i18n="wizard.step9Privacy">wizard.step9Privacy fallback</p>
+                    <h4 class="fw-bold mb-2" data-i18n="index.wizard.step9.question">wizard.step9Question fallback</h4>
+                    <p class="text-muted small mb-4" data-i18n="index.wizard.step9.privacy">wizard.step9Privacy fallback</p>
                     <div class="row g-3 mb-4">
                       <div class="col-6">
                         <div class="form-floating">
                           {{ form.first_name(class="form-control", placeholder="First", id="first_name") }}
-                          <label for="first_name" data-i18n="wizard.step9FirstName">wizard.step9FirstName fallback</label>
-                          <div class="invalid-feedback" data-i18n="wizard.required">wizard.required fallback</div>
+                          <label for="first_name" data-i18n="index.wizard.step9.firstName">wizard.step9FirstName fallback</label>
+                          <div class="invalid-feedback" data-i18n="index.wizard.step9.required">wizard.required fallback</div>
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-floating">
                           {{ form.last_name(class="form-control", placeholder="Last", id="last_name") }}
-                          <label for="last_name" data-i18n="wizard.step9LastName">wizard.step9LastName fallback</label>
-                          <div class="invalid-feedback" data-i18n="wizard.required">wizard.required fallback</div>
+                          <label for="last_name" data-i18n="index.wizard.step9.lastName">wizard.step9LastName fallback</label>
+                          <div class="invalid-feedback" data-i18n="index.wizard.step9.required">wizard.required fallback</div>
                         </div>
                       </div>
                     </div>
                     <button type="button"
                           class="btn btn-primary btn-lg w-100"
                           onclick="validateAndNext(9)">
-                      <span data-i18n="wizard.next">wizard.next fallback</span>
+                      <span data-i18n="index.wizard.step9.next">wizard.next fallback</span>
                     </button>
                   </div>
 
                   <!-- Step 10: Contact -->
                   <div id="step10"
                      class="step-transition">
-                    <h4 class="fw-bold mb-2" data-i18n="wizard.step10Title">wizard.step10Title fallback</h4>
-                    <p class="text-muted small mb-4" data-i18n="wizard.step10Subtitle">wizard.step10Subtitle fallback</p>
+                    <h4 class="fw-bold mb-2" data-i18n="index.wizard.step10.title">wizard.step10Title fallback</h4>
+                    <p class="text-muted small mb-4" data-i18n="index.wizard.step10.subtitle">wizard.step10Subtitle fallback</p>
                     <div class="form-floating mb-3">
                       {{ form.email(class="form-control", placeholder="name@example.com", id="email", required=True) }}
-                      <label for="email" data-i18n="wizard.step10EmailLabel">wizard.step10EmailLabel fallback</label>
+                      <label for="email" data-i18n="index.wizard.step10.emailLabel">wizard.step10EmailLabel fallback</label>
                     </div>
                     <div class="form-floating mb-4">
                       {{ form.phone(class="form-control", placeholder="Phone", id="phone", required=True) }}
-                      <label for="phone" data-i18n="wizard.step10PhoneLabel">wizard.step10PhoneLabel fallback</label>
+                      <label for="phone" data-i18n="index.wizard.step10.phoneLabel">wizard.step10PhoneLabel fallback</label>
                     </div>
                     <button type="submit"
                           class="btn btn-primary btn-lg w-100 mb-3 fw-bold">
-                      <span data-i18n="wizard.submit">wizard.submit fallback</span>
+                      <span data-i18n="index.wizard.step10.submit">wizard.submit fallback</span>
                     </button>
                     <p class="text-muted x-small"
                        style="font-size: 0.75rem; text-align: justify;"
-                       data-i18n="wizard.step10Consent">
+                       data-i18n="index.wizard.step10.consent">
                       wizard.step10Consent fallback
                     </p>
                   </div>
@@ -469,31 +471,243 @@
     </div>
   </section>
 
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-md-10 text-center">
-        <h1 class="display-4 fw-bold mb-4" data-i18n="wizard.prototypesTitle">wizard.prototypesTitle fallback</h1>
-
-        <!-- Navigation Links -->
-        <div class="d-grid gap-3 col-md-8 mx-auto mb-5">
-          <a href="/final" 
-             class="btn btn-outline-danger btn-lg p-4 border-2">
-            <h3 class="h5 fw-bold mb-0" data-i18n="wizard.finalPrototype">wizard.finalPrototype fallback</h3>
-            <small data-i18n="wizard.finalPrototypeSmall">wizard.finalPrototypeSmall fallback</small>
-          </a>
-          <a href="/home" 
-             class="btn btn-outline-primary btn-lg p-4">
-            <h3 class="h5 fw-bold mb-0" data-i18n="wizard.mainWebsite">wizard.mainWebsite fallback</h3>
-            <small data-i18n="wizard.mainWebsiteSmall">wizard.mainWebsiteSmall fallback</small>
-          </a>
-          <a href="{{ url_for('motor_vehicle_accident') }}"
-             class="btn btn-outline-dark w-100 p-3">
-            <span class="fw-bold" data-i18n="wizard.demo2">wizard.demo2 fallback</span>
-          </a>
+  <!-- CONTENT SECTION 1: Legal Expertise -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="fw-bold mb-3 text-primary">Legal Expertise That Delivers Results</h2>
+          <p class="text-muted mb-4">
+            After a car crash, you need more than just legal advice; you need a winning team. We offer personalized attention, guiding you through every step of the legal process. You focus on healing, while we focus on securing the maximum settlement you deserve.
+          </p>
+          <button class="btn btn-primary text-white px-4 py-2">Your Case Starts Here</button>
+        </div>
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+               alt="Legal Team" 
+               class="img-fluid rounded shadow-sm">
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- CONTENT SECTION 2: Elite Attorneys -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center flex-column-reverse flex-md-row">
+        <div class="col-md-6 mt-4 mt-md-0">
+          <img src="https://images.unsplash.com/photo-1634547902508-3a13725b7d60?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+               alt="Car Accident Injury" 
+               class="img-fluid rounded shadow-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-3 text-primary">Elite Attorneys. Unmatched Support</h2>
+          <p class="text-muted mb-4">
+            We represent people affected by car accidents with independent attorneys across the US. Whether you're looking for a swift settlement or a complex trial, our network of elite attorneys handles a wide range of cases. From severe injuries to simple claims, we fight for your rights.
+          </p>
+          <button class="btn btn-primary text-white px-4 py-2">Don't Settle for Less</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION 3: Tailored Approach -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="fw-bold mb-3 text-primary">Why Your Case Needs a Tailored Approach</h2>
+          <p class="text-muted mb-4">
+            No two accidents are the same. Details matter—who was at fault, the road conditions, and the severity of injuries. Our attorneys analyze every angle to build a strong case. We don't just use a template; we build a strategy specifically for you to ensure the best possible outcome.
+          </p>
+          <button class="btn btn-primary text-white px-4 py-2">Secure Your Rights Today</button>
+        </div>
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+               alt="Handshake" 
+               class="img-fluid rounded shadow-sm">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION 4: Practice Areas -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Where Our Experience Can Make a Difference</h2>
+        <p class="text-muted">From devastating crashes to minor fender benders, we connect you with experienced attorneys.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="fas fa-truck fa-2x mb-3 text-primary"></i>
+              <h5 class="fw-bold">Trucking and 18-Wheeler Accidents</h5>
+              <p class="text-muted small">These cases require specialized litigation. We connect you with the right experts to fight trucking companies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="fas fa-bicycle fa-2x mb-3 text-primary"></i>
+              <h5 class="fw-bold">Pedestrian and Bicycle Accidents</h5>
+              <p class="text-muted small">If you were hit while biking or walking, your case deserves special attention. Our attorneys ensure you are protected.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="fas fa-motorcycle fa-2x mb-3 text-primary"></i>
+              <h5 class="fw-bold">Motorcycle Accidents</h5>
+              <p class="text-muted small">Motorcyclists often face severe injuries. We can help maximize compensation for medical bills.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="fas fa-car-crash fa-2x mb-3 text-primary"></i>
+              <h5 class="fw-bold">Rideshare and Commercial Vehicle Accidents</h5>
+              <p class="text-muted small">Accidents involving Uber, Lyft, or company vehicles often have complex insurance policies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="fas fa-road fa-2x mb-3 text-primary"></i>
+              <h5 class="fw-bold">Intersection / T-Bone / Rear-End Accidents</h5>
+              <p class="text-muted small">Simple accidents can still cause long-term pain. We handle the gritty details for you.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="fas fa-user-injured fa-2x mb-3 text-primary"></i>
+              <h5 class="fw-bold">Low Impact or Delayed Injury Accidents</h5>
+              <p class="text-muted small">Some injuries appear weeks later. Don't sign anything until you talk to a professional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION 5: Common Injuries -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5 text-primary">Common Car Crash Injuries</h2>
+      
+      <div class="row g-5 mb-5">
+        <div class="col-6 col-md-4">
+          <i class="fas fa-crutch fa-3x mb-3 text-secondary"></i>
+          <h6 class="fw-bold">Whiplash and Neck Injuries</h6>
+        </div>
+        <div class="col-6 col-md-4">
+          <i class="fas fa-brain fa-3x mb-3 text-secondary"></i>
+          <h6 class="fw-bold">Concussions and Head Trauma</h6>
+        </div>
+        <div class="col-6 col-md-4">
+          <i class="fas fa-spine fa-3x mb-3 text-secondary"></i>
+          <h6 class="fw-bold">Back and Spinal Pain</h6>
+        </div>
+        <div class="col-6 col-md-4">
+          <i class="fas fa-bone fa-3x mb-3 text-secondary"></i>
+          <h6 class="fw-bold">Bone Fractures and Breaks</h6>
+        </div>
+        <div class="col-6 col-md-4">
+          <i class="fas fa-band-aid fa-3x mb-3 text-secondary"></i>
+          <h6 class="fw-bold">Internal Bleeding and Soft Tissue</h6>
+        </div>
+        <div class="col-6 col-md-4">
+          <i class="fas fa-wheelchair fa-3x mb-3 text-secondary"></i>
+          <h6 class="fw-bold">Long-Term Disability</h6>
+        </div>
+      </div>
+
+      <button class="btn btn-primary text-white px-5 py-2">Talk to a Lawyer Now</button>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION 6: Compensation -->
+  <section class="py-5 position-relative bg-compensation">
+    <div class="container text-center text-white">
+      <h2 class="fw-bold mb-3">Real Compensation for Real Losses</h2>
+      <p class="mx-auto mb-0" style="max-width: 700px;">
+        Medical bills, lost wages, and emotional distress are real costs. If you are entitled to compensation, we ensure you get it. Our partners have helped thousands of clients recover millions in settlements.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION 7: FAQ -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h3 class="fw-bold text-center mb-5">Frequently Asked Questions</h3>
+      
+      <div class="accordion accordion-flush" id="faqAccordion" style="max-width: 800px; margin: 0 auto;">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+              Do I need a lawyer if I wasn't at fault?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">Yes, insurance companies often try to minimize payouts regardless of fault. A lawyer ensures you get fair treatment.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+              What if I was a pedestrian or a passenger?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">You still have rights. Passengers and pedestrians are often entitled to significant compensation.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
+              Is it expensive to hire a lawyer?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">Most personal injury lawyers work on a contingency basis, meaning you only pay if you win.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour">
+              Is there a deadline to file?
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">Yes, statutes of limitation vary by state. It is crucial to act quickly.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFive">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive">
+              How do I start?
+            </button>
+          </h2>
+          <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">Click the button below to fill out a simple form and get connected with an expert.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION 8: CTA -->
+  <section class="py-5 text-center bg-white">
+    <button class="btn btn-primary text-white px-5 py-3 fw-bold shadow">Claim Your Free Review</button>
+  </section>
 
   <!-- Success Modal -->
   <div id="successModal" 
@@ -505,17 +719,29 @@
         <div class="mb-4 text-success display-1">
           <i class="fas fa-check-circle"></i>
         </div>
-        <h2 class="fw-bold mb-3" data-i18n="wizard.successTitle">wizard.successTitle fallback</h2>
-        <p class="text-muted mb-4 lead" data-i18n="wizard.successMessage">wizard.successMessage fallback</p>
+        <h2 class="fw-bold mb-3" data-i18n="index.wizard.successModal.title">wizard.successTitle fallback</h2>
+        <p class="text-muted mb-4 lead" data-i18n="index.wizard.successModal.message">wizard.successMessage fallback</p>
         <button type="button" 
                 class="btn btn-primary btn-lg px-5 rounded-pill" 
                 data-bs-dismiss="modal">
-          <span data-i18n="wizard.close">wizard.close fallback</span>
+          <span data-i18n="index.wizard.successModal.close">wizard.close fallback</span>
         </button>
       </div>
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+  
   <!-- Floating Language Switcher (Bottom Right) -->
   <div class="position-fixed bottom-0 end-0 p-4 lang-switcher-float" 
        style="margin-bottom: 20px; z-index: 1040;">
@@ -529,14 +755,14 @@
         <i class="fa-solid fa-globe fa-lg"></i>
       </button>
       <ul class="dropdown-menu dropdown-menu-end shadow rounded-4 p-2">
-        <li><h6 class="dropdown-header" data-i18n="wizard.selectLanguage">wizard.selectLanguage fallback</h6></li>
+        <li><h6 class="dropdown-header" data-i18n="shared.langSwitcher.selectLanguage">wizard.selectLanguage fallback</h6></li>
         <li>
           <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" 
              href="#" 
              id="i18n001" 
              value-i18n="en-US">
             <span class="fi fi-us dropdown-flag" aria-hidden="true" title="United States"></span>
-            <span data-i18n="wizard.langEn">wizard.langEn fallback</span>
+            <span data-i18n="shared.langSwitcher.langEn">wizard.langEn fallback</span>
           </a>
         </li>
         <li>
@@ -545,7 +771,7 @@
              id="i18n002" 
              value-i18n="ko-KR">
             <span class="fi fi-kr dropdown-flag" aria-hidden="true" title="South Korea"></span>
-            <span data-i18n="wizard.langKo">wizard.langKo fallback</span>
+            <span data-i18n="shared.langSwitcher.langKo">wizard.langKo fallback</span>
           </a>
         </li>
         <li>
@@ -554,7 +780,7 @@
              id="i18n006" 
              value-i18n="es-US">
             <span class="fi fi-es dropdown-flag" aria-hidden="true" title="Spain"></span>
-            <span data-i18n="wizard.langEs">wizard.langEs fallback</span>
+            <span data-i18n="shared.langSwitcher.langEs">wizard.langEs fallback</span>
           </a>
         </li>
         <li>
@@ -563,19 +789,31 @@
              id="i18n005" 
              value-i18n="ja-JP">
             <span class="fi fi-jp dropdown-flag" aria-hidden="true" title="Japan"></span>
-            <span data-i18n="wizard.langJa">wizard.langJa fallback</span>
+            <span data-i18n="shared.langSwitcher.langJa">wizard.langJa fallback</span>
           </a>
         </li>
       </ul>
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
   <footer class="border-top bg-dark text-white">
     <div class="py-5 container">
       <div class="row mb-4 align-items-center">
         <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
-          <h4 class="mb-0 text-uppercase fw-bold" data-i18n="wizard.footerBrand">wizard.footerBrand fallback</h4>
-          <p class="small text-white-50 lh-sm mt-2 mb-0" data-i18n="tfs.footer.address">tfs.footer.address fallback</p>
+          <h4 class="mb-0 text-uppercase fw-bold" data-i18n="shared.footer.brand">wizard.footerBrand fallback</h4>
+          <p class="small text-white-50 lh-sm mt-2 mb-0" data-i18n="shared.footer.address">tfs.footer.address fallback</p>
         </div>
         <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
           <!-- Social Media Icons -->
@@ -595,7 +833,7 @@
       <div class="row my-4 align-items-center">
         <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
           <small class="text-white-50"
-                 data-i18n="footer.copyrightOffice">
+                 data-i18n="shared.footer.copyrightOffice">
             footer.copyrightOffice fallback
           </small>
         </div>
@@ -604,31 +842,31 @@
             <li class="list-inline-item">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.faqs">footer.faqs fallback</small>
+                <small data-i18n="shared.footer.faqs">footer.faqs fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.corporateInformation">footer.corporateInformation fallback</small>
+                <small data-i18n="shared.footer.corporateInformation">footer.corporateInformation fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.privacyNotice">footer.privacyNotice fallback</small>
+                <small data-i18n="shared.footer.privacyNotice">footer.privacyNotice fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.cookieNotice">footer.cookieNotice fallback</small>
+                <small data-i18n="shared.footer.cookieNotice">footer.cookieNotice fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.termsOfUse">footer.termsOfUse fallback</small>
+                <small data-i18n="shared.footer.termsOfUse">footer.termsOfUse fallback</small>
               </a>
             </li>
           </ul>
@@ -637,7 +875,7 @@
       <div class="row">
         <div class="col-12">
           <p class="mb-0 text-white-50">
-            <small data-i18n="footer.importantNote">
+            <small data-i18n="shared.footer.importantNote">
               footer.importantNote fallback
             </small>
           </p>

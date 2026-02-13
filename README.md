@@ -219,9 +219,10 @@ pyinstaller main.py --onefile --name jslawgroup --add-data "static;static" --add
 │   ├── forms.py            # WTForms Definitions (Validation logic)
 │   └── gmailproxy.py       # Email Service (SMTP/Gmail integration)
 ├── templates/              # HTML Templates (Jinja2)
-│   ├── final*.html         # Production-ready pages
 │   ├── index.html          # Prototype Hub & Wizard
-│   └── form_*.html         # Form fragments (for modals/iframes)
+│   ├── motor_vehicle_accident.html # Motor Vehicle Accident Page
+│   ├── personal_injury.html        # Personal Injury Page
+│   └── ...                 # Other templates
 ├── static/                 # Static Assets
 │   ├── css/                # Compiled Styles
 │   ├── js/                 # Frontend Scripts

@@ -27,4 +27,17 @@ export default async function main() {
         console.error('[motor-vehicle-accident] Error: Failed to initialize i18n:', error);
         return;
     }
+
+    // Wire floating language switcher (same IDs as index wizard)
+    const switcherIds = ['i18n001', 'i18n002', 'i18n005', 'i18n006'];
+    switcherIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                const localeCode = el.getAttribute('value-i18n');
+                if (localeCode) multiLang.switchLanguage(localeCode);
+            });
+        }
+    });
 }

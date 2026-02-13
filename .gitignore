@@ -1,15 +1,11 @@
-# --- Generated from ./.gitignores on Wed Feb 11 17:29:37 2026 ---
+# --- Generated from ./.gitignores on Thu Feb 12 20:33:36 2026 ---
 
 #############################################
 # A.gitignore
 #############################################
 #################### ALL PURPOSE GITIGNORE ####################
 project2305*
-_*
 _*/
-# Do not ignore Python dunder files (e.g. __init__.py, __main__.py)
-!__*__
-!__*__/
 tmp*/
 remote*/
 VSLive*/
