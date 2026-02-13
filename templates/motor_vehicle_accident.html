@@ -3,31 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="tfs.title">JS Law Group - 24/7 Emergency Legal Help (서조은 법률 그룹)</title>
+  <title data-i18n="motorVehicleAccident.pageTitle">pageTitle.motorVehicleAccident fallback</title>
 
-  <!-- Font Awesome 6 CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Standard project CSS (theme + primary color) -->
+  <!-- Bootstrap 5 CSS -->
   <link href="/static/css/custom.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Flag Icons (CDN) - for language switcher -->
+  <link href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Internal Stylesheet -->
+  <!-- Page-specific: scroll-behavior (body font from custom.min.css) -->
   <style>
-    /* Global Styles */
-    body {
-      font-family: 'Inter', 'Noto Sans KR', sans-serif;
-      /* Smooth scrolling for anchor links */
-      scroll-behavior: smooth;
-      /* No padding-top needed for demo2 as navbar might not be fixed or handled differently */
-      /* But Section 14 says "sticky-top". */
-    }
+    body { scroll-behavior: smooth; }
   </style>
 </head>
 <body debug-i18n="false">
@@ -54,12 +41,12 @@
         <a class="navbar-brand d-flex align-items-center"
            href="{{ url_for('index') }}">
           <div class="d-flex flex-column">
-            <h1 data-i18n="tfs.secondaryNav.phone"
+            <h1 data-i18n="shared.secondaryNav.phone"
                 class="h2 fw-bold mb-0 lh-1 text-dark"
                 style="letter-spacing: -1px;">
               tfs.secondaryNav.phone fallback
             </h1>
-            <small data-i18n="tfs.secondaryNav.firmName"
+            <small data-i18n="shared.secondaryNav.firmName"
                    class="text-primary fw-bold"
                    style="font-size: 10px; letter-spacing: 0.5px;">
               tfs.secondaryNav.firmName fallback
@@ -79,31 +66,31 @@
              id="secondaryMainNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
-              <a data-i18n="tfs.secondaryNav.home"
+              <a data-i18n="shared.secondaryNav.home"
                  class="nav-link fw-bold px-3"
                  href="{{ url_for('index') }}">
                 tfs.secondaryNav.home fallback
               </a>
             </li>
             <li class="nav-item">
-              <a data-i18n="tfs.secondaryNav.motorVehicles"
+              <a data-i18n="shared.secondaryNav.motorVehicles"
                  class="nav-link fw-bold text-primary px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('motor_vehicle_accident') }}">
                 tfs.secondaryNav.motorVehicles fallback
               </a>
-              <a data-i18n="tfs.secondaryNav.motorVehicles"
+              <a data-i18n="shared.secondaryNav.motorVehicles"
                  class="nav-link fw-bold text-primary d-xl-none"
                  href="{{ url_for('motor_vehicle_accident') }}">
                 tfs.secondaryNav.motorVehicles fallback
               </a>
             </li>
             <li class="nav-item">
-              <a data-i18n="tfs.secondaryNav.personalInjury"
+              <a data-i18n="shared.secondaryNav.personalInjury"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('personal_injury') }}">
                 tfs.secondaryNav.personalInjury fallback
               </a>
-              <a data-i18n="tfs.secondaryNav.personalInjury"
+              <a data-i18n="shared.secondaryNav.personalInjury"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('personal_injury') }}">
                 tfs.secondaryNav.personalInjury fallback
@@ -113,19 +100,19 @@
           <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
             <div class="d-flex flex-column align-items-end me-xl-3">
               <p class="mb-1 fw-bold lh-1 small text-muted"
-                 data-i18n="tfs.secondaryNav.visitWebsite">
+                 data-i18n="shared.secondaryNav.visitWebsite">
                 tfs.secondaryNav.visitWebsite fallback
               </p>
               <a href="https://www.jslawgroup.net/"
                  class="btn btn-outline-primary btn-sm rounded-3"
-                 data-i18n="tfs.secondaryNav.goToWebsite">
+                 data-i18n="shared.secondaryNav.goToWebsite">
                 tfs.secondaryNav.goToWebsite fallback
               </a>
             </div>
             <a href="tel:7702224444"
                class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm">
               <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
-              <span data-i18n="tfs.secondaryNav.phoneNumber"
+              <span data-i18n="shared.secondaryNav.phoneNumber"
                     class="fw-bold fs-5">
                 tfs.secondaryNav.phoneNumber fallback
               </span>
@@ -140,8 +127,8 @@
   <section id="accident-steps" class="py-5 bg-white">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 data-i18n="tfs.accidentSteps.title1" class="h1 fw-bold text-dark mb-0">tfs.accidentSteps.title1 fallback</h2>
-        <h2 data-i18n="tfs.accidentSteps.title2" class="h1 fw-bold text-danger">tfs.accidentSteps.title2 fallback</h2>
+        <h2 data-i18n="motorVehicleAccident.accidentSteps.title1" class="h1 fw-bold text-dark mb-0">tfs.accidentSteps.title1 fallback</h2>
+        <h2 data-i18n="motorVehicleAccident.accidentSteps.title2" class="h1 fw-bold text-danger">tfs.accidentSteps.title2 fallback</h2>
       </div>
       <div class="row align-items-center g-5">
         <div class="col-lg-5">
@@ -152,27 +139,27 @@
             <!-- Steps (1-6) -->
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" style="width: 22px; height: 22px; font-size: 12px;">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="tfs.accidentSteps.step1.title">tfs.accidentSteps.step1.title fallback</span> - <span data-i18n="tfs.accidentSteps.step1.desc">tfs.accidentSteps.step1.desc fallback</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="motorVehicleAccident.accidentSteps.step1.title">tfs.accidentSteps.step1.title fallback</span> - <span data-i18n="motorVehicleAccident.accidentSteps.step1.desc">tfs.accidentSteps.step1.desc fallback</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" style="width: 22px; height: 22px; font-size: 12px;">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="tfs.accidentSteps.step2.title">tfs.accidentSteps.step2.title fallback</span> - <span data-i18n="tfs.accidentSteps.step2.desc">tfs.accidentSteps.step2.desc fallback</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="motorVehicleAccident.accidentSteps.step2.title">tfs.accidentSteps.step2.title fallback</span> - <span data-i18n="motorVehicleAccident.accidentSteps.step2.desc">tfs.accidentSteps.step2.desc fallback</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" style="width: 22px; height: 22px; font-size: 12px;">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="tfs.accidentSteps.step3.title">tfs.accidentSteps.step3.title fallback</span> - <span data-i18n="tfs.accidentSteps.step3.desc">tfs.accidentSteps.step3.desc fallback</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="motorVehicleAccident.accidentSteps.step3.title">tfs.accidentSteps.step3.title fallback</span> - <span data-i18n="motorVehicleAccident.accidentSteps.step3.desc">tfs.accidentSteps.step3.desc fallback</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" style="width: 22px; height: 22px; font-size: 12px;">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="tfs.accidentSteps.step4.title">tfs.accidentSteps.step4.title fallback</span> - <span data-i18n="tfs.accidentSteps.step4.desc">tfs.accidentSteps.step4.desc fallback</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="motorVehicleAccident.accidentSteps.step4.title">tfs.accidentSteps.step4.title fallback</span> - <span data-i18n="motorVehicleAccident.accidentSteps.step4.desc">tfs.accidentSteps.step4.desc fallback</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" style="width: 22px; height: 22px; font-size: 12px;">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="tfs.accidentSteps.step5.title">tfs.accidentSteps.step5.title fallback</span> - <span data-i18n="tfs.accidentSteps.step5.desc">tfs.accidentSteps.step5.desc fallback</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="motorVehicleAccident.accidentSteps.step5.title">tfs.accidentSteps.step5.title fallback</span> - <span data-i18n="motorVehicleAccident.accidentSteps.step5.desc">tfs.accidentSteps.step5.desc fallback</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-danger text-white rounded-1 d-flex align-items-center justify-content-center fw-bold" style="width: 22px; height: 22px; font-size: 12px;">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="tfs.accidentSteps.step6.title">tfs.accidentSteps.step6.title fallback</span> - <span data-i18n="tfs.accidentSteps.step6.desc">tfs.accidentSteps.step6.desc fallback</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="motorVehicleAccident.accidentSteps.step6.title">tfs.accidentSteps.step6.title fallback</span> - <span data-i18n="motorVehicleAccident.accidentSteps.step6.desc">tfs.accidentSteps.step6.desc fallback</span></p></div>
             </div>
           </div>
         </div>
@@ -185,19 +172,19 @@
     <div class="container py-lg-5">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
-          <h2 data-i18n="tfs.process.title" class="display-5 fw-bold text-dark mb-5">tfs.process.title fallback</h2>
+          <h2 data-i18n="motorVehicleAccident.process.title" class="display-5 fw-bold text-dark mb-5">tfs.process.title fallback</h2>
           <!-- Steps 1-3 -->
           <div class="d-flex mb-4">
             <div class="flex-shrink-0"><div class="bg-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;"><img src="https://picsum.photos/30/30?random=101" alt="person" class="rounded-circle"></div></div>
-            <div class="ms-4"><h4 data-i18n="tfs.process.step1.title" class="fw-bold text-dark">tfs.process.step1.title fallback</h4><p data-i18n="tfs.process.step1.desc" class="text-secondary">tfs.process.step1.desc fallback</p></div>
+            <div class="ms-4"><h4 data-i18n="motorVehicleAccident.process.step1.title" class="fw-bold text-dark">tfs.process.step1.title fallback</h4><p data-i18n="motorVehicleAccident.process.step1.desc" class="text-secondary">tfs.process.step1.desc fallback</p></div>
           </div>
           <div class="d-flex mb-4">
             <div class="flex-shrink-0"><div class="bg-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;"><img src="https://picsum.photos/30/30?random=102" alt="legal" class="rounded-circle"></div></div>
-            <div class="ms-4"><h4 data-i18n="tfs.process.step2.title" class="fw-bold text-dark">tfs.process.step2.title fallback</h4><p data-i18n="tfs.process.step2.desc" class="text-secondary">tfs.process.step2.desc fallback</p></div>
+            <div class="ms-4"><h4 data-i18n="motorVehicleAccident.process.step2.title" class="fw-bold text-dark">tfs.process.step2.title fallback</h4><p data-i18n="motorVehicleAccident.process.step2.desc" class="text-secondary">tfs.process.step2.desc fallback</p></div>
           </div>
           <div class="d-flex">
             <div class="flex-shrink-0"><div class="bg-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;"><img src="https://picsum.photos/30/30?random=103" alt="gavel" class="rounded-circle"></div></div>
-            <div class="ms-4"><h4 data-i18n="tfs.process.step3.title" class="fw-bold text-dark">tfs.process.step3.title fallback</h4><p data-i18n="tfs.process.step3.desc" class="text-secondary">tfs.process.step3.desc fallback</p></div>
+            <div class="ms-4"><h4 data-i18n="motorVehicleAccident.process.step3.title" class="fw-bold text-dark">tfs.process.step3.title fallback</h4><p data-i18n="motorVehicleAccident.process.step3.desc" class="text-secondary">tfs.process.step3.desc fallback</p></div>
           </div>
         </div>
         <div class="col-lg-6 position-relative">
@@ -213,8 +200,8 @@
   <section id="vehicle-accidents" class="py-5 bg-light">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="h1 fw-bold text-dark"><span data-i18n="tfs.vehicleAccidents.title">tfs.vehicleAccidents.title fallback</span></h2>
-        <p class="text-secondary mx-auto" style="max-width: 750px;" data-i18n="tfs.vehicleAccidents.subtitle">tfs.vehicleAccidents.subtitle fallback</p>
+        <h2 class="h1 fw-bold text-dark"><span data-i18n="motorVehicleAccident.vehicleAccidents.title">tfs.vehicleAccidents.title fallback</span></h2>
+        <p class="text-secondary mx-auto" style="max-width: 750px;" data-i18n="motorVehicleAccident.vehicleAccidents.subtitle">tfs.vehicleAccidents.subtitle fallback</p>
       </div>
       <div class="row g-4">
         <!-- Car Accidents Card -->
@@ -225,13 +212,13 @@
                 <img src="https://picsum.photos/800/600?random=1" class="w-100 h-100 object-fit-cover" alt="Car Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" style="width: 70px; height: 70px;"><span class="text-dark fw-bold" style="font-size: 10px;">CAR ICON</span></div>
-                  <h3 data-i18n="tfs.vehicleAccidents.car.title" class="h4 fw-bold mb-3">tfs.vehicleAccidents.car.title fallback</h3>
-                  <button class="btn btn-danger rounded-pill px-5 fw-bold shadow" onclick="document.getElementById('inner-car-card').style.transform='rotateY(180deg)'" data-i18n="tfs.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
+                  <h3 data-i18n="motorVehicleAccident.vehicleAccidents.car.title" class="h4 fw-bold mb-3">tfs.vehicleAccidents.car.title fallback</h3>
+                  <button class="btn btn-danger rounded-pill px-5 fw-bold shadow" onclick="document.getElementById('inner-car-card').style.transform='rotateY(180deg)'" data-i18n="motorVehicleAccident.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
                 </div>
               </div>
               <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" style="backface-visibility: hidden; transform: rotateY(180deg);">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" onclick="document.getElementById('inner-car-card').style.transform='rotateY(0deg)'"></button>
-                <p data-i18n="tfs.vehicleAccidents.car.desc" class="text-secondary small">tfs.vehicleAccidents.car.desc fallback</p>
+                <p data-i18n="motorVehicleAccident.vehicleAccidents.car.desc" class="text-secondary small">tfs.vehicleAccidents.car.desc fallback</p>
               </div>
             </div>
           </div>
@@ -244,13 +231,13 @@
                 <img src="https://picsum.photos/800/600?random=2" class="w-100 h-100 object-fit-cover" alt="Motorcycle Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" style="width: 70px; height: 70px;"><span class="text-danger fw-bold" style="font-size: 10px;">MOTO ICON</span></div>
-                  <h3 data-i18n="tfs.vehicleAccidents.motorcycle.title" class="h4 fw-bold mb-3">tfs.vehicleAccidents.motorcycle.title fallback</h3>
-                  <button class="btn btn-light rounded-pill px-5 fw-bold text-danger shadow" onclick="document.getElementById('inner-moto-card').style.transform='rotateY(180deg)'" data-i18n="tfs.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
+                  <h3 data-i18n="motorVehicleAccident.vehicleAccidents.motorcycle.title" class="h4 fw-bold mb-3">tfs.vehicleAccidents.motorcycle.title fallback</h3>
+                  <button class="btn btn-light rounded-pill px-5 fw-bold text-danger shadow" onclick="document.getElementById('inner-moto-card').style.transform='rotateY(180deg)'" data-i18n="motorVehicleAccident.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
                 </div>
               </div>
               <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" style="backface-visibility: hidden; transform: rotateY(180deg);">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" onclick="document.getElementById('inner-moto-card').style.transform='rotateY(0deg)'"></button>
-                <p data-i18n="tfs.vehicleAccidents.motorcycle.desc" class="text-secondary small">tfs.vehicleAccidents.motorcycle.desc fallback</p>
+                <p data-i18n="motorVehicleAccident.vehicleAccidents.motorcycle.desc" class="text-secondary small">tfs.vehicleAccidents.motorcycle.desc fallback</p>
               </div>
             </div>
           </div>
@@ -263,14 +250,14 @@
                 <img src="https://picsum.photos/800/600?random=3" class="w-100 h-100 object-fit-cover" alt="Rideshare">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" style="width: 70px; height: 70px;"><span class="text-danger fw-bold" style="font-size: 10px;">RIDE ICON</span></div>
-                  <h3 data-i18n="tfs.vehicleAccidents.rideshare.title" class="h4 fw-bold mb-3">tfs.vehicleAccidents.rideshare.title fallback</h3>
-                  <button class="btn btn-light rounded-pill px-5 fw-bold text-danger shadow" onclick="document.getElementById('inner-ride-card').style.transform='rotateY(180deg)'" data-i18n="tfs.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
+                  <h3 data-i18n="motorVehicleAccident.vehicleAccidents.rideshare.title" class="h4 fw-bold mb-3">tfs.vehicleAccidents.rideshare.title fallback</h3>
+                  <button class="btn btn-light rounded-pill px-5 fw-bold text-danger shadow" onclick="document.getElementById('inner-ride-card').style.transform='rotateY(180deg)'" data-i18n="motorVehicleAccident.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
                 </div>
               </div>
               <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" style="backface-visibility: hidden; transform: rotateY(180deg);">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" onclick="document.getElementById('inner-ride-card').style.transform='rotateY(0deg)'"></button>
-                <h5 data-i18n="tfs.vehicleAccidents.rideshare.backTitle" class="fw-bold text-danger mb-3">tfs.vehicleAccidents.rideshare.backTitle fallback</h5>
-                <p data-i18n="tfs.vehicleAccidents.rideshare.desc" class="text-secondary small">tfs.vehicleAccidents.rideshare.desc fallback</p>
+                <h5 data-i18n="motorVehicleAccident.vehicleAccidents.rideshare.backTitle" class="fw-bold text-danger mb-3">tfs.vehicleAccidents.rideshare.backTitle fallback</h5>
+                <p data-i18n="motorVehicleAccident.vehicleAccidents.rideshare.desc" class="text-secondary small">tfs.vehicleAccidents.rideshare.desc fallback</p>
               </div>
             </div>
           </div>
@@ -283,14 +270,14 @@
                 <img src="https://picsum.photos/800/600?random=4" class="w-100 h-100 object-fit-cover" alt="Truck Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow" style="width: 70px; height: 70px;"><span class="text-dark fw-bold" style="font-size: 10px;">TRUCK ICON</span></div>
-                  <h3 data-i18n="tfs.vehicleAccidents.truck.title" class="h4 fw-bold mb-3 text-center">tfs.vehicleAccidents.truck.title fallback</h3>
-                  <button class="btn btn-danger rounded-pill px-5 fw-bold shadow" onclick="document.getElementById('inner-truck-card').style.transform='rotateY(180deg)'" data-i18n="tfs.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
+                  <h3 data-i18n="motorVehicleAccident.vehicleAccidents.truck.title" class="h4 fw-bold mb-3 text-center">tfs.vehicleAccidents.truck.title fallback</h3>
+                  <button class="btn btn-danger rounded-pill px-5 fw-bold shadow" onclick="document.getElementById('inner-truck-card').style.transform='rotateY(180deg)'" data-i18n="motorVehicleAccident.vehicleAccidents.seeMore">tfs.vehicleAccidents.seeMore fallback</button>
                 </div>
               </div>
               <div class="position-absolute w-100 h-100 top-0 start-0 bg-white rounded-5 p-5 d-flex flex-column align-items-center justify-content-center text-center shadow" style="backface-visibility: hidden; transform: rotateY(180deg);">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-danger" onclick="document.getElementById('inner-truck-card').style.transform='rotateY(0deg)'"></button>
-                <h5 data-i18n="tfs.vehicleAccidents.truck.backTitle" class="fw-bold text-dark mb-3">tfs.vehicleAccidents.truck.backTitle fallback</h5>
-                <p data-i18n="tfs.vehicleAccidents.truck.desc" class="text-secondary small">tfs.vehicleAccidents.truck.desc fallback</p>
+                <h5 data-i18n="motorVehicleAccident.vehicleAccidents.truck.backTitle" class="fw-bold text-dark mb-3">tfs.vehicleAccidents.truck.backTitle fallback</h5>
+                <p data-i18n="motorVehicleAccident.vehicleAccidents.truck.desc" class="text-secondary small">tfs.vehicleAccidents.truck.desc fallback</p>
               </div>
             </div>
           </div>
@@ -299,12 +286,48 @@
     </div>
   </section>
 
+  <!-- Floating Language Switcher (Bottom Right) -->
+  <div class="position-fixed bottom-0 end-0 p-4 lang-switcher-float" style="margin-bottom: 20px; z-index: 1040;">
+    <div class="dropup">
+      <button type="button" class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center btn-lang-switcher" style="width: 50px; height: 50px;" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select Language">
+        <i class="fa-solid fa-globe fa-lg"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow rounded-4 p-2">
+        <li><h6 class="dropdown-header" data-i18n="shared.langSwitcher.selectLanguage">wizard.selectLanguage fallback</h6></li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" href="#" id="i18n001" value-i18n="en-US">
+            <span class="fi fi-us dropdown-flag" aria-hidden="true" title="United States"></span>
+            <span data-i18n="shared.langSwitcher.langEn">wizard.langEn fallback</span>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" href="#" id="i18n002" value-i18n="ko-KR">
+            <span class="fi fi-kr dropdown-flag" aria-hidden="true" title="South Korea"></span>
+            <span data-i18n="shared.langSwitcher.langKo">wizard.langKo fallback</span>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" href="#" id="i18n006" value-i18n="es-US">
+            <span class="fi fi-es dropdown-flag" aria-hidden="true" title="Spain"></span>
+            <span data-i18n="shared.langSwitcher.langEs">wizard.langEs fallback</span>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 rounded-2" href="#" id="i18n005" value-i18n="ja-JP">
+            <span class="fi fi-jp dropdown-flag" aria-hidden="true" title="Japan"></span>
+            <span data-i18n="shared.langSwitcher.langJa">wizard.langJa fallback</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <footer class="border-top bg-dark text-white">
     <div class="py-5 container">
       <div class="row mb-4 align-items-center">
         <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
-          <h4 class="mb-0 text-uppercase fw-bold" data-i18n="wizard.footerBrand">wizard.footerBrand fallback</h4>
-          <p class="small text-white-50 lh-sm mt-2 mb-0" data-i18n="tfs.footer.address">tfs.footer.address fallback</p>
+          <h4 class="mb-0 text-uppercase fw-bold" data-i18n="shared.footer.brand">wizard.footerBrand fallback</h4>
+          <p class="small text-white-50 lh-sm mt-2 mb-0" data-i18n="shared.footer.address">tfs.footer.address fallback</p>
         </div>
         <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
           <!-- Social Media Icons -->
@@ -324,7 +347,7 @@
       <div class="row my-4 align-items-center">
         <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
           <small class="text-white-50"
-                 data-i18n="footer.copyrightOffice">
+                 data-i18n="shared.footer.copyrightOffice">
             footer.copyrightOffice fallback
           </small>
         </div>
@@ -333,31 +356,31 @@
             <li class="list-inline-item">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.faqs">footer.faqs fallback</small>
+                <small data-i18n="shared.footer.faqs">footer.faqs fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.corporateInformation">footer.corporateInformation fallback</small>
+                <small data-i18n="shared.footer.corporateInformation">footer.corporateInformation fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.privacyNotice">footer.privacyNotice fallback</small>
+                <small data-i18n="shared.footer.privacyNotice">footer.privacyNotice fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.cookieNotice">footer.cookieNotice fallback</small>
+                <small data-i18n="shared.footer.cookieNotice">footer.cookieNotice fallback</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a href="#"
                  class="text-decoration-none text-white">
-                <small data-i18n="footer.termsOfUse">footer.termsOfUse fallback</small>
+                <small data-i18n="shared.footer.termsOfUse">footer.termsOfUse fallback</small>
               </a>
             </li>
           </ul>
@@ -366,7 +389,7 @@
       <div class="row">
         <div class="col-12">
           <p class="mb-0 text-white-50">
-            <small data-i18n="footer.importantNote">
+            <small data-i18n="shared.footer.importantNote">
               footer.importantNote fallback
             </small>
           </p>
