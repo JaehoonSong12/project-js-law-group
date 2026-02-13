@@ -25,10 +25,10 @@
         <a class="navbar-brand d-flex align-items-center"
            href="{{ url_for('index') }}">
           <div class="d-flex flex-column">
-            <h1 data-i18n="nav.phone"
+            <h1 data-i18n="nav.title"
                 class="h2 fw-bold mb-0 lh-1 text-dark"
                 style="letter-spacing: -1px;">
-              nav.phone
+              nav.title
             </h1>
             <small data-i18n="nav.firmName"
                    class="text-primary fw-bold"
@@ -110,7 +110,8 @@
   <!-- Wizard: full-width background section -->
   <section class="wizard wizard-section py-5">
     <div id="wizard-container"
-         class="shadow-lg mb-5">
+         class="shadow-lg mb-5"
+         style="background-image: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
@@ -536,8 +537,8 @@
     <div class="container">
       <div class="row align-items-center flex-column-reverse flex-md-row">
         <div class="col-md-6 mt-4 mt-md-0">
-          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Car Accident Injury"
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+               alt="Lawyer consulting with client"
                class="img-fluid rounded shadow-sm">
         </div>
         <div class="col-md-6">
@@ -755,7 +756,8 @@
   </section>
 
   <!-- CONTENT SECTION 6: Compensation -->
-  <section class="banner py-5 position-relative banner-bg-compensation">
+  <section class="banner py-5 position-relative banner-bg-compensation"
+           style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
     <div class="container text-center text-white">
       <h2 data-i18n="index.banner.title"
           class="fw-bold mb-3">
@@ -766,6 +768,37 @@
          style="max-width: 700px;">
         index.banner.paragraph
       </p>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION: Criminal Defense (Split Hero) -->
+  <section id="criminal-defense" class="split-hero py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div id="cd-content" data-i18n="pi.splitHero.criminalDefense.content">
+            pi.splitHero.criminalDefense.content
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+               class="img-fluid rounded-4 shadow-sm"
+               alt="Criminal Defense">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION: Criminal Defense (Article) -->
+  <section id="criminal-defense-article" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div id="cd-article-content" class="article-content" data-i18n="pi.article.criminalDefense">
+            pi.article.criminalDefense
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -9,9 +9,18 @@
 // variables and small overrides take effect.
 
 @use "bootstrap/scss/bootstrap" with ( // implies @charset "utf-8";
-  $primary: #c8102e, // red
+  // $primary: #910dfd,
+  // $primary: #c8102e, // red
+  $primary: #6610f2, // indigo
+  // $primary: #198754, // green
+  // $primary: #6f42c1, // purple
+  // $primary: #0dcaf0, // cyan
+  // $primary: #910dfd,
+  // $primary: var(--bs-indigo),
+  // $primary-rgb: #ffffff,
+  // $body-color: #212529,
+  // $body-bg: #fff,
 );
-
 
 // Google Fonts - Plus Jakarta Sans
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
@@ -125,7 +134,6 @@ footer {
 }
 
 #wizard-container {
-  background-image: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1767972463877-b64ba4283cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -246,20 +254,137 @@ footer {
 // [hero] / [banner] Hero & Backgrounds (pi.hero, index.banner)
 // ----------------------------------------------------------------------------
 .hero-bg-pi {
-  background-image: url('https://picsum.photos/1920/1080?random=1'); 
   background-size: cover; 
   background-position: center; 
   min-height: 60vh;
 }
 
 .banner-bg-compensation {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
   background-size: cover;
   background-position: center;
 }
 
 .hero-cta-offset {
   margin-top: -5rem;
+}
+
+
+// ----------------------------------------------------------------------------
+// [splitHero] Split Hero Section (index.splitHero, pi.splitHero)
+// ----------------------------------------------------------------------------
+.split-hero {
+  // Ensure consistent vertical spacing and alignment
+  display: flex;
+  align-items: center;
+  
+  h2 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--bs-dark);
+  }
+
+  p {
+    font-size: 1.15rem;
+    color: var(--bs-secondary-color);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      position: relative;
+      margin-bottom: 0.75rem;
+      padding-left: 2rem;
+      font-size: 1.1rem;
+      color: var(--bs-body-color);
+
+      i {
+        position: absolute;
+        left: 0;
+        top: 4px;
+        color: var(--bs-primary);
+        font-style: normal;
+        
+        &::before {
+          content: "\f00c"; // FontAwesome checkmark
+          font-family: "Font Awesome 6 Free";
+          font-weight: 900;
+        }
+      }
+    }
+  }
+  
+  img {
+    // Enhance image presentation
+    transition: transform 0.3s ease;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175); // shadow-lg
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// [article] Long-form Content (pi.article)
+// ----------------------------------------------------------------------------
+.article-content {
+  // Improve readability for long text
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--bs-secondary-color);
+  
+  h2 {
+    font-weight: 800;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--bs-dark);
+    font-size: 2rem;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  h3 {
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--bs-primary);
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+  }
+  
+  ul, ol {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  hr {
+    margin: 3rem 0;
+    opacity: 0.15;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--bs-primary);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background-color: var(--bs-light);
+    font-style: italic;
+    color: var(--bs-dark);
+    border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
+  }
 }
 
 

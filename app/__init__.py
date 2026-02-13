@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
-from .forms import GeneralContactForm, PersonalInjuryForm, CriminalCaseForm, AutoAccidentWizardForm
+from .forms import AutoAccidentWizardForm
 from .gmailproxy import GmailProxy
 import os
 import json
@@ -10,19 +10,6 @@ app = Flask(__name__, static_folder='../static', template_folder='../templates')
 # Load SECRET_KEY from environment variable, fallback to dev key if not set
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-prod')
 
-@app.route('/wizard', methods=['GET', 'POST'])
-def wizard():
-    form = AutoAccidentWizardForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'auto_accident_wizard')
-        flash('Assessment complete! We are analyzing your case.', 'success')
-        return redirect(url_for('wizard'))
-    elif form.errors:
-        print("Form errors:", form.errors)
-        flash('Please fill in all required fields.', 'danger')
-        
-    return render_template('wizard.html', form=form)
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = AutoAccidentWizardForm()
@@ -31,6 +18,16 @@ def index():
         flash('Assessment complete! We are analyzing your case.', 'success')
         return redirect(url_for('index'))
     return render_template('index.html', form=form)
+
+@app.route('/motor-vehicle-accident')
+def motor_vehicle_accident():
+    """Motor vehicle accident info page (nav: Motor Vehicles)."""
+    return render_template('motor_vehicle_accident.html')
+
+@app.route('/personal-injury')
+def personal_injury():
+    """Personal injury practice areas page (nav: Personal Injury)."""
+    return render_template('personal_injury.html')
 
 @app.route('/robots.txt')
 def robots():
@@ -154,103 +151,3 @@ def save_submission(form_data, form_type):
             print(f"Failed to send email: {error}")
     except Exception as e:
         print(f"Error in email sending block: {e}")
-
-@app.route('/home', methods=['GET', 'POST'])
-def home():
-    form = GeneralContactForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'general_contact')
-        flash('Thank you for your inquiry. We will contact you shortly.', 'success')
-        return redirect(url_for('home'))
-    elif form.errors:
-        print("Form errors:", form.errors)
-        flash('There was an error with your submission. Please check the form.', 'danger')
-        
-    return render_template('index_home.html', form=form)
-
-@app.route('/247/demo1', methods=['GET', 'POST'])
-def demo1():
-    form = PersonalInjuryForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'personal_injury')
-        flash('Case evaluation request submitted. We will review it immediately.', 'success')
-        return redirect(url_for('demo1'))
-    elif form.errors:
-        print("Form errors:", form.errors)
-        flash('There was an error with your submission. Please check the form.', 'danger')
-
-    return render_template('index247_demo1.html', form=form)
-
-@app.route('/247/demo2')
-def demo2():
-    """Legacy URL: redirects to motor vehicle accident page."""
-    return redirect(url_for('motor_vehicle_accident'))
-
-@app.route('/motor-vehicle-accident')
-def motor_vehicle_accident():
-    """Motor vehicle accident info page (nav: Motor Vehicles)."""
-    return render_template('motor_vehicle_accident.html')
-
-@app.route('/personal-injury')
-def personal_injury():
-    """Personal injury practice areas page (nav: Personal Injury)."""
-    return render_template('personal_injury.html')
-
-# ==========================================
-# New Final Website Routes
-# ==========================================
-
-@app.route('/final')
-def final():
-    return render_template('final.html')
-
-@app.route('/final/about')
-def final_about():
-    return render_template('final-about.html')
-
-@app.route('/final/accident')
-def final_accident():
-    return render_template('final-accident.html')
-
-@app.route('/final/personal-injury')
-def final_personal_injury():
-    return render_template('final-personal_injury.html')
-
-@app.route('/final/criminal')
-def final_criminal():
-    return render_template('final-criminal.html')
-
-@app.route('/final/contact')
-def final_contact():
-    return render_template('final-contact.html')
-
-# ==========================================
-# Form Fragment Routes (for Iframe)
-# ==========================================
-
-@app.route('/form/general', methods=['GET', 'POST'])
-def form_general():
-    form = GeneralContactForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'general_contact')
-        flash('Message sent! We will contact you soon.', 'success')
-        return redirect(url_for('form_general'))
-    return render_template('form_general.html', form=form)
-
-@app.route('/form/pi', methods=['GET', 'POST'])
-def form_pi():
-    form = PersonalInjuryForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'personal_injury')
-        flash('Request submitted! Reviewing now.', 'success')
-        return redirect(url_for('form_pi'))
-    return render_template('form_pi.html', form=form)
-
-@app.route('/form/cd', methods=['GET', 'POST'])
-def form_cd():
-    form = CriminalCaseForm()
-    if form.validate_on_submit():
-        save_submission(form.data, 'criminal_defense')
-        flash('Intake received. Confidential review in progress.', 'success')
-        return redirect(url_for('form_cd'))
-    return render_template('form_cd.html', form=form)
