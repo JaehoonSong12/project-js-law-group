@@ -1,178 +1,103 @@
 {
-  "shared": {
-    "secondaryNav": {
-      "phone": "(770) 222-4444",
-      "firmName": "JS Law Group, LLC",
-      "home": "Inicio",
-      "motorVehicles": "Accidente de vehículo",
-      "personalInjury": "Lesiones personales",
-      "visitWebsite": "Visite nuestro sitio",
-      "goToWebsite": "Ir al sitio",
-      "phoneNumber": "(770) 222-4444"
-    },
-    "footer": {
-      "brand": "Js Law Group",
-      "address": "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
-      "copyrightOffice": "&copy; JS LAW Group, LLC. 2024 - 2025",
-      "faqs": "Preguntas frecuentes",
-      "corporateInformation": "Información corporativa",
-      "privacyNotice": "Aviso de privacidad",
-      "cookieNotice": "Aviso de cookies",
-      "termsOfUse": "Términos de uso",
-      "importantNote": "<strong>Nota importante:</strong> Este sitio web está diseñado para clientes que buscan representación legal en casos de Lesiones Personales (PI) y Defensa Penal (CD). El sitio web le permite enviar un formulario de consulta para contactar a nuestro bufete. Tenga en cuenta que JS Law Group, LLC nunca cobra honorarios por adelantado o antes de prestar servicios legales. No solicitamos pagos, detalles bancarios o información financiera personal antes de la consulta o evaluación del caso. Todas las consultas iniciales son gratuitas, y los honorarios solo se discuten después de que hayamos revisado su caso y acordado representarlo."
-    },
-    "langSwitcher": {
-      "selectLanguage": "Seleccionar idioma",
-      "langEn": "English",
-      "langKo": "한국어",
-      "langEs": "Español",
-      "langJa": "日本語"
-    }
+  "nav": {
+    "phone": "(770) 222-4444",
+    "firmName": "JS Law Group, LLC",
+    "home": "Inicio",
+    "motorVehicles": "Accidente de vehículo",
+    "personalInjury": "Lesiones personales",
+    "visitWebsite": "Visite nuestro sitio",
+    "goToWebsite": "Ir al sitio",
+    "phoneNumber": "(770) 222-4444"
+  },
+  "footer": {
+    "brand": "Js Law Group",
+    "address": "3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096",
+    "copyrightOffice": "&copy; JS LAW Group, LLC. 2024 - 2025",
+    "faqs": "Preguntas frecuentes",
+    "corporateInformation": "Información corporativa",
+    "privacyNotice": "Aviso de privacidad",
+    "cookieNotice": "Aviso de cookies",
+    "termsOfUse": "Términos de uso",
+    "importantNote": "<strong>Nota importante:</strong> Este sitio web está diseñado para clientes que buscan representación legal en casos de Lesiones Personales (PI) y Defensa Penal (CD). El sitio web le permite enviar un formulario de consulta para contactar a nuestro bufete. Tenga en cuenta que JS Law Group, LLC nunca cobra honorarios por adelantado o antes de prestar servicios legales. No solicitamos pagos, detalles bancarios o información financiera personal antes de la consulta o evaluación del caso. Todas las consultas iniciales son gratuitas, y los honorarios solo se discuten después de que hayamos revisado su caso y acordado representarlo."
+  },
+  "floatingSelector": {
+    "selectLanguage": "Seleccionar idioma",
+    "langEn": "English",
+    "langKo": "한국어",
+    "langEs": "Español",
+    "langJa": "日本語"
   },
   "index": {
     "pageTitle": "JS Law Group",
     "wizard": {
-      "step1": {
-        "title": "Mejores abogados de accidentes automovilísticos",
-        "subtitle": "Compare los mejores abogados y encuentre el más adecuado para su caso.",
-        "question": "¿Qué describe mejor el accidente?",
-        "car": "Accidente de auto",
-        "motorcycle": "Accidente de motocicleta",
-        "truck": "Camión comercial / Semi",
-        "pedestrian": "Peatón / Atropellado",
-        "rideshare": "Viaje compartido (Uber/Lyft)"
-      },
-      "step2": {
-        "question": "¿Cuál es su código postal?",
-        "zipLabel": "Código postal",
-        "zipInvalid": "Ingrese un código postal válido de 5 dígitos.",
-        "next": "Siguiente",
-        "secure": "100% seguro"
-      },
-      "step3": {
-        "question": "¿La persona lesionada recibió tratamiento médico?",
-        "hospital": "Tratado en hospital",
-        "doctor": "Tratado en consultorio",
-        "no": "Aún no / No"
-      },
-      "step4": {
-        "question": "¿Se presentó un reporte policial?",
-        "yes": "Sí",
-        "no": "No"
-      },
-      "step5": {
-        "question": "¿El reporte policial indicó que usted tuvo la culpa?",
-        "yes": "Sí",
-        "no": "No",
-        "unknown": "No sé"
-      },
-      "step6": {
-        "question": "¿Actualmente tiene un abogado que lo represente?",
-        "yes": "Sí",
-        "no": "No",
-        "wantNew": "Sí, pero quiero uno nuevo"
-      },
-      "step7": {
-        "question": "¿Cuándo ocurrió el accidente?",
-        "thirty": "En los últimos 30 días",
-        "oneYear": "En el último año",
-        "twoYears": "En los últimos 2 años",
-        "overTwo": "Hace más de 2 años"
-      },
-      "step8": {
-        "question": "¿Cuál es la lesión principal?",
-        "selectPlaceholder": "Seleccione la lesión principal...",
-        "brokenBones": "Fracturas",
-        "headInjury": "Lesión en la cabeza / Conmoción",
-        "backPain": "Dolor de espalda / cuello",
-        "scrapes": "Rasguños / Moretones",
-        "other": "Otro",
-        "invalid": "Seleccione su lesión principal.",
-        "next": "Siguiente"
-      },
-      "step9": {
-        "question": "¿Cuál es su nombre?",
-        "privacy": "Su información es 100% privada y segura.",
-        "firstName": "Nombre",
-        "lastName": "Apellido",
-        "required": "Requerido",
-        "next": "Siguiente"
-      },
-      "step10": {
-        "title": "Datos de contacto",
-        "subtitle": "Su privacidad es nuestra prioridad.",
-        "emailLabel": "Correo electrónico",
-        "phoneLabel": "Número de teléfono",
-        "submit": "Enviar",
-        "consent": "Al hacer clic en Enviar, acepta nuestros Términos y Política de privacidad. Consiente recibir llamadas y mensajes de nuestro equipo legal. Pueden aplicarse tarifas."
-      },
-      "successModal": {
-        "title": "¡Evaluación completa!",
-        "message": "Hemos recibido sus datos. Nuestro equipo legal está analizando su caso y se pondrá en contacto pronto.",
-        "close": "Cerrar"
-      }
+    "step1": {
+      "title": "Mejores abogados de accidentes automovilísticos",
+      "subtitle": "Compare los mejores abogados y encuentre el más adecuado para su caso.",
+      "question": "¿Qué describe mejor el accidente?",
+      "car": "Accidente de auto",
+      "motorcycle": "Accidente de motocicleta",
+      "truck": "Camión comercial / Semi",
+      "pedestrian": "Peatón / Atropellado",
+      "rideshare": "Viaje compartido (Uber/Lyft)"
     },
-    "content": {
-      "section1": {
-        "title": "Experiencia legal que ofrece resultados",
-        "paragraph": "Después de un accidente automovilístico, necesita más que asesoría legal: un equipo que lo ponga a usted primero. JS Law Group ofrece atención personalizada y comunicación transparente, guiándolo en cada paso del proceso legal. Usted se enfoca en sanar; nosotros en asegurar la compensación que merece.",
-        "cta": "Su caso comienza aquí"
-      },
-      "section2": {
-        "title": "Abogados dedicados. Apoyo centrado en el cliente",
-        "paragraph": "JS Law Group representa a personas afectadas por accidentes de vehículos de motor y otros asuntos de lesiones personales. Ya sea que necesite ayuda para alcanzar un acuerdo justo o prepararse para un juicio, nuestro equipo maneja una amplia gama de casos con experiencia legal y compromiso con su mejor resultado. Desde lesiones graves hasta reclamos directos, luchamos por sus derechos.",
-        "cta": "Obtenga una consulta gratuita"
-      },
-      "section3": {
-        "title": "Por qué su caso necesita un enfoque a la medida",
-        "paragraph": "No hay dos accidentes iguales. Los detalles importan: quién tuvo la culpa, las condiciones del camino y la gravedad de las lesiones. Los abogados de JS Law Group analizan cada ángulo para construir un caso sólido. No dependemos de un enfoque único; construimos una estrategia específica para usted para asegurar el mejor resultado posible.",
-        "cta": "Proteja sus derechos hoy"
-      },
-      "section4": {
-        "title": "Dónde nuestra experiencia puede marcar la diferencia",
-        "subtitle": "Desde choques devastadores hasta golpes menores, JS Law Group maneja casos de vehículos de motor y lesiones personales con experiencia dedicada.",
-        "trucking": { "title": "Accidentes de camiones y tráileres", "desc": "Estos casos requieren litigio especializado. Nuestro equipo está preparado para responsabilizar a las empresas de transporte y luchar por la compensación que merece." },
-        "pedestrian": { "title": "Accidentes de peatones y bicicletas", "desc": "Si lo atropellaron en bicicleta o caminando, su caso merece atención especial. JS Law Group asegura que sus derechos estén protegidos." },
-        "motorcycle": { "title": "Accidentes de motocicleta", "desc": "Los motociclistas suelen sufrir lesiones graves. Ayudamos a maximizar la compensación por gastos médicos y otras pérdidas." },
-        "rideshare": { "title": "Accidentes de viajes compartidos y vehículos comerciales", "desc": "Los accidentes con Uber, Lyft o vehículos de empresa suelen involucrar seguros complejos. Nos encargamos de los detalles para que usted se enfoque en recuperarse." },
-        "intersection": { "title": "Accidentes en intersección / T-Bone / por alcance", "desc": "Incluso los accidentes \"simples\" pueden causar dolor a largo plazo. Nuestros abogados manejan los detalles y luchan por su recuperación." },
-        "delayed": { "title": "Accidentes de bajo impacto o lesiones tardías", "desc": "Algunas lesiones aparecen semanas después. No firme nada ni acepte un acuerdo hasta hablar con nuestro equipo." }
-      },
-      "section5": {
-        "title": "Lesiones comunes en accidentes automovilísticos",
-        "whiplash": "Latigazo cervical y lesiones de cuello",
-        "concussion": "Conmociones y traumatismo craneal",
-        "backSpine": "Dolor de espalda y columna",
-        "fractures": "Fracturas y roturas de huesos",
-        "softTissue": "Hemorragia interna y tejidos blandos",
-        "disability": "Discapacidad a largo plazo",
-        "cta": "Hable con un abogado ahora"
-      },
-      "section6": {
-        "title": "Compensación real por pérdidas reales",
-        "paragraph": "Las facturas médicas, los salarios perdidos y el estrés emocional son costos reales. Si tiene derecho a compensación, JS Law Group luchará para que la reciba. Nuestro equipo está comprometido con la comunicación transparente y asegurar el mejor resultado para cada cliente."
-      },
-      "section7": {
-        "title": "Preguntas frecuentes",
-        "q1": "¿Necesito un abogado si no tuve la culpa?",
-        "a1": "Sí. Las aseguradoras suelen intentar minimizar los pagos sin importar la culpa. Un abogado asegura que reciba un trato justo.",
-        "q2": "¿Y si era peatón o pasajero?",
-        "a2": "Aún tiene derechos. Los pasajeros y peatones suelen tener derecho a una compensación significativa.",
-        "q3": "¿Es caro contratar un abogado?",
-        "a3": "JS Law Group trabaja por contingencia en muchos asuntos de lesiones personales: solo paga si recuperamos para usted. No cobramos honorarios por adelantado antes de prestar servicios legales.",
-        "q4": "¿Hay plazo para presentar?",
-        "a4": "Sí. Los plazos de prescripción varían por estado. Es crucial actuar con rapidez.",
-        "q5": "¿Cómo empiezo?",
-        "a5": "Use el formulario al inicio de esta página para contarnos su caso, o llámenos para una consulta gratuita. Nuestro equipo revisará su situación y le recomendará los siguientes pasos."
-      },
-      "section8": {
-        "cta": "Obtenga su evaluación de caso gratuita"
-      }
+    "step2": { "question": "¿Cuál es su código postal?", "zipLabel": "Código postal", "zipInvalid": "Ingrese un código postal válido de 5 dígitos.", "next": "Siguiente", "secure": "100% seguro" },
+    "step3": { "question": "¿La persona lesionada recibió tratamiento médico?", "hospital": "Tratado en hospital", "doctor": "Tratado en consultorio", "no": "Aún no / No" },
+    "step4": { "question": "¿Se presentó un reporte policial?", "yes": "Sí", "no": "No" },
+    "step5": { "question": "¿El reporte policial indicó que usted tuvo la culpa?", "yes": "Sí", "no": "No", "unknown": "No sé" },
+    "step6": { "question": "¿Actualmente tiene un abogado que lo represente?", "yes": "Sí", "no": "No", "wantNew": "Sí, pero quiero uno nuevo" },
+    "step7": { "question": "¿Cuándo ocurrió el accidente?", "thirty": "En los últimos 30 días", "oneYear": "En el último año", "twoYears": "En los últimos 2 años", "overTwo": "Hace más de 2 años" },
+    "step8": { "question": "¿Cuál es la lesión principal?", "selectPlaceholder": "Seleccione la lesión principal...", "brokenBones": "Fracturas", "headInjury": "Lesión en la cabeza / Conmoción", "backPain": "Dolor de espalda / cuello", "scrapes": "Rasguños / Moretones", "other": "Otro", "invalid": "Seleccione su lesión principal.", "next": "Siguiente" },
+    "step9": { "question": "¿Cuál es su nombre?", "privacy": "Su información es 100% privada y segura.", "firstName": "Nombre", "lastName": "Apellido", "required": "Requerido", "next": "Siguiente" },
+    "step10": { "title": "Datos de contacto", "subtitle": "Su privacidad es nuestra prioridad.", "emailLabel": "Correo electrónico", "phoneLabel": "Número de teléfono", "submit": "Enviar", "consent": "Al hacer clic en Enviar, acepta nuestros Términos y Política de privacidad. Consiente recibir llamadas y mensajes de nuestro equipo legal. Pueden aplicarse tarifas." },
+    "successModal": { "title": "¡Evaluación completa!", "message": "Hemos recibido sus datos. Nuestro equipo legal está analizando su caso y se pondrá en contacto pronto.", "close": "Cerrar" }
+    },
+    "splitHero": {
+      "legalExpertise": { "title": "Experiencia legal que ofrece resultados", "paragraph": "Después de un accidente automovilístico, necesita más que asesoría legal: un equipo que lo ponga a usted primero. JS Law Group ofrece atención personalizada y comunicación transparente, guiándolo en cada paso del proceso legal. Usted se enfoca en sanar; nosotros en asegurar la compensación que merece.", "cta": "Su caso comienza aquí" },
+      "eliteAttorneys": { "title": "Abogados dedicados. Apoyo centrado en el cliente", "paragraph": "JS Law Group representa a personas afectadas por accidentes de vehículos de motor y otros asuntos de lesiones personales. Ya sea que necesite ayuda para alcanzar un acuerdo justo o prepararse para un juicio, nuestro equipo maneja una amplia gama de casos con experiencia legal y compromiso con su mejor resultado. Desde lesiones graves hasta reclamos directos, luchamos por sus derechos.", "cta": "Obtenga una consulta gratuita" },
+      "tailoredApproach": { "title": "Por qué su caso necesita un enfoque a la medida", "paragraph": "No hay dos accidentes iguales. Los detalles importan: quién tuvo la culpa, las condiciones del camino y la gravedad de las lesiones. Los abogados de JS Law Group analizan cada ángulo para construir un caso sólido. No dependemos de un enfoque único; construimos una estrategia específica para usted para asegurar el mejor resultado posible.", "cta": "Proteja sus derechos hoy" }
+    },
+    "cardsGrid": {
+      "title": "Dónde nuestra experiencia puede marcar la diferencia",
+      "subtitle": "Desde choques devastadores hasta golpes menores, JS Law Group maneja casos de vehículos de motor y lesiones personales con experiencia dedicada.",
+      "trucking": { "title": "Accidentes de camiones y tráileres", "desc": "Estos casos requieren litigio especializado. Nuestro equipo está preparado para responsabilizar a las empresas de transporte y luchar por la compensación que merece." },
+      "pedestrian": { "title": "Accidentes de peatones y bicicletas", "desc": "Si lo atropellaron en bicicleta o caminando, su caso merece atención especial. JS Law Group asegura que sus derechos estén protegidos." },
+      "motorcycle": { "title": "Accidentes de motocicleta", "desc": "Los motociclistas suelen sufrir lesiones graves. Ayudamos a maximizar la compensación por gastos médicos y otras pérdidas." },
+      "rideshare": { "title": "Accidentes de viajes compartidos y vehículos comerciales", "desc": "Los accidentes con Uber, Lyft o vehículos de empresa suelen involucrar seguros complejos. Nos encargamos de los detalles para que usted se enfoque en recuperarse." },
+      "intersection": { "title": "Accidentes en intersección / T-Bone / por alcance", "desc": "Incluso los accidentes \"simples\" pueden causar dolor a largo plazo. Nuestros abogados manejan los detalles y luchan por su recuperación." },
+      "delayed": { "title": "Accidentes de bajo impacto o lesiones tardías", "desc": "Algunas lesiones aparecen semanas después. No firme nada ni acepte un acuerdo hasta hablar con nuestro equipo." }
+    },
+    "iconGrid": {
+      "title": "Lesiones comunes en accidentes automovilísticos",
+      "whiplash": "Latigazo cervical y lesiones de cuello",
+      "concussion": "Conmociones y traumatismo craneal",
+      "backSpine": "Dolor de espalda y columna",
+      "fractures": "Fracturas y roturas de huesos",
+      "softTissue": "Hemorragia interna y tejidos blandos",
+      "disability": "Discapacidad a largo plazo",
+      "cta": "Hable con un abogado ahora"
+    },
+    "banner": {
+      "title": "Compensación real por pérdidas reales",
+      "paragraph": "Las facturas médicas, los salarios perdidos y el estrés emocional son costos reales. Si tiene derecho a compensación, JS Law Group luchará para que la reciba. Nuestro equipo está comprometido con la comunicación transparente y asegurar el mejor resultado para cada cliente."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Necesito un abogado si no tuve la culpa?",
+      "a1": "Sí. Las aseguradoras suelen intentar minimizar los pagos sin importar la culpa. Un abogado asegura que reciba un trato justo.",
+      "q2": "¿Y si era peatón o pasajero?",
+      "a2": "Aún tiene derechos. Los pasajeros y peatones suelen tener derecho a una compensación significativa.",
+      "q3": "¿Es caro contratar un abogado?",
+      "a3": "JS Law Group trabaja por contingencia en muchos asuntos de lesiones personales: solo paga si recuperamos para usted. No cobramos honorarios por adelantado antes de prestar servicios legales.",
+      "q4": "¿Hay plazo para presentar?",
+      "a4": "Sí. Los plazos de prescripción varían por estado. Es crucial actuar con rapidez.",
+      "q5": "¿Cómo empiezo?",
+      "a5": "Use el formulario al inicio de esta página para contarnos su caso, o llámenos para una consulta gratuita. Nuestro equipo revisará su situación y le recomendará los siguientes pasos.",
+      "cta": "Obtenga su evaluación de caso gratuita"
     }
   },
-  "motorVehicleAccident": {
+  "mvAccident": {
     "pageTitle": "JS Law Group - Accidente de vehículo de motor",
-    "accidentSteps": {
+    "steppedList": {
       "title1": "Pasos Importantes a Seguir en un",
       "title2": "Accidente de Vehículo Motor",
       "step1": { "title": "Llame a la Policía", "desc": "Es importante presentar un informe policial." },
@@ -182,13 +107,13 @@
       "step5": { "title": "Busque Asesoramiento Legal", "desc": "No hable con representantes de seguros (excepto el suyo) hasta que haya recibido orientación de un abogado. Pueden animarle a admitir la culpa para pagarle menos." },
       "step6": { "title": "Sea Paciente", "desc": "Su salud es lo más importante. Si decide dejarnos luchar su caso, nosotros nos preocuparemos por los aspectos legales mientras usted se concentra en su plan de tratamiento de recuperación." }
     },
-    "process": {
+    "imageList": {
       "title": "¿Qué sucede cuando llama?",
       "step1": { "title": "Hablará con una persona real.", "desc": "Estamos siempre disponibles las 24 horas del día, los 7 días de la semana. Cuando llame, será conectado con nuestro equipo multilingüe que escuchará su descripción del accidente y hará preguntas de seguimiento." },
       "step2": { "title": "Obtendrá asesoramiento directamente de nuestros abogados.", "desc": "Una vez que tengamos los aspectos básicos del caso, JS Law Group determinará si puede ser elegible para compensación. Si creemos que tiene un caso sólido, puede decidir si desea que luchemos por usted." },
       "step3": { "title": "Trabajaremos para ganar su caso.", "desc": "Una vez que firme con JS Law Group, nosotros nos encargaremos del resto. Su abogado asignado luchará contra la parte infractora para obtener la máxima compensación que se le debe según la ley estatal." }
     },
-    "vehicleAccidents": {
+    "floatingGrid": {
       "title": "Confíe en <span class=\"text-primary\">(770) 222-4444</span> después de su Accidente de Vehículo Motor",
       "subtitle": "Nuestros abogados en JS Law Group se especializan en casos de accidentes automovilísticos y de vehículos motorizados. Nuestro objetivo es siempre la máxima compensación para la parte lesionada.",
       "seeMore": "Ver Más",
@@ -198,15 +123,15 @@
       "truck": { "title": "Accidentes de Camiones Comerciales", "backTitle": "Responsabilidad de Transporte", "desc": "Los accidentes de vehículos comerciales a menudo involucran violaciones de seguridad federal y múltiples partes responsables. Nuestros abogados luchan contra las compañías de transporte para asegurar pagos máximos." }
     }
   },
-  "personalInjury": {
+  "pi": {
     "pageTitle": "JS Law Group - Lesiones personales",
-    "heroCta": {
+    "hero": {
       "title": "Abogados de Lesiones Personales",
       "subtitle": "Confíe en <span class=\"text-primary fw-bold\">(770) 222-4444</span> para defender su caso de lesiones personales",
       "message": "Cuando usted o un ser querido sufre una lesión grave debido a la negligencia de otra persona, necesita asesoramiento legal en el que pueda confiar.",
       "claim": "JS Law Group está preparado para defender su reclamación."
     },
-    "practiceAreas": {
+    "cardsGrid": {
       "slipFall": "Resbalones y Caídas",
       "bicycleCrash": "Accidentes de Bicicleta",
       "pedestrianCollision": "Colisión de Peatones",
@@ -214,21 +139,23 @@
       "workersComp": "Compensación Laboral",
       "otherInjuries": "Otros Casos de Lesiones Corporales"
     },
-    "process": {
+    "imageList": {
       "title": "¿Qué sucede cuando llama?",
       "step1": { "title": "Hablará con una persona real.", "desc": "Estamos siempre disponibles las 24 horas del día, los 7 días de la semana. Cuando llame, será conectado con nuestro equipo multilingüe que escuchará su descripción del accidente y hará preguntas de seguimiento." },
       "step2": { "title": "Obtendrá asesoramiento directamente de nuestros abogados.", "desc": "Una vez que tengamos los aspectos básicos del caso, JS Law Group determinará si puede ser elegible para compensación. Si creemos que tiene un caso sólido, puede decidir si desea que luchemos por usted." },
       "step3": { "title": "Trabajaremos para ganar su caso.", "desc": "Una vez que firme con JS Law Group, nosotros nos encargaremos del resto. Su abogado asignado luchará contra la parte infractora para obtener la máxima compensación que se le debe según la ley estatal." }
     },
-    "sections": {
+    "splitHero": {
       "personalInjury": {
-        "content": "<h2>Lesiones personales</h2><p>Navegar las secuelas de una lesión es abrumador, pero no está solo. Estamos dedicados a luchar por sus derechos y asegurar la compensación que se merece para que pueda concentrarse en sanar y reconstruir su vida.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>Accidentes de vehículos motorizados</li><li><i class=\"fa-solid fa-check-circle\"></i>Resbalones y caídas</li><li><i class=\"fa-solid fa-check-circle\"></i>Muerte por negligencia</li><li><i class=\"fa-solid fa-check-circle\"></i>Productos defectuosos</li></ul>",
-        "article": "<h2>Entender su reclamación por lesiones personales</h2><p>Cuando resulta lesionado debido a la negligencia de otra persona, las secuelas legales y financieras pueden ser tan dolorosas como la lesión misma. Entender sus derechos y obtener ayuda legal es el primer paso hacia la recuperación.</p><hr><p>Las lesiones personales pueden ser una experiencia devastadora. Nunca es un evento esperado, y estamos aquí para ayudarle durante este momento difícil. Si está enfrentando lesiones personales, daños o muerte por negligencia debido a la negligencia de otros, nuestro equipo de abogados experimentados está aquí para proteger sus derechos y obtener la compensación que se merece. Nuestro equipo realmente entiende el dolor por el que está pasando, y queremos obtener lo que necesita para comenzar a recuperarse.</p><p>Como abogados que se enfocan en una experiencia centrada en el cliente, solo queremos el mejor resultado. A través de experiencia legal, comunicación transparente y soluciones efectivas, aseguraremos sus derechos y la compensación que está buscando.</p><h3>¿Qué constituye una reclamación?</h3><p>Si necesita buscar compensación por daño emocional, físico o psicológico causado por otra parte, entonces nuestro equipo de abogados está aquí para usted. Si la otra parte cometió daño debido a negligencia, imprudencia o actos intencionales, entonces podría tener una reclamación. Cuando fueron sus acciones - o su falta de acciones - la causa directa de su dolor, entonces son potencialmente responsables del daño que sufrió. Si su situación se ajusta a estos criterios, entonces programe una consulta gratuita con nosotros ahora para ver qué podemos hacer por usted.</p><h3>Nuestro proceso: de la investigación a la resolución</h3><p>Aunque cada caso es personal y diferente, puede tener expectativas amplias de varias consultas, seguidas de investigación dedicada y recopilación de evidencia. Una vez que se obtienen todos los registros, nuestros abogados probablemente procederán a presentar una reclamación y demanda de compensación. Si no se alcanza un acuerdo en este punto, entonces podemos proceder a juicio, donde lucharemos ferozmente por sus derechos y la compensación que se merece.</p>"
+        "content": "<h2>Lesiones personales</h2><p>Navegar las secuelas de una lesión es abrumador, pero no está solo. Estamos dedicados a luchar por sus derechos y asegurar la compensación que se merece para que pueda concentrarse en sanar y reconstruir su vida.</p><ul><li><i></i>Accidentes de vehículos motorizados</li><li><i></i>Resbalones y caídas</li><li><i></i>Muerte por negligencia</li><li><i></i>Productos defectuosos</li></ul>"
       },
       "criminalDefense": {
-        "content": "<h2>Defensa penal</h2><p>Enfrentar cargos penales puede ser una de las experiencias más estresantes de su vida, pero no tiene que enfrentarlo solo. Brindamos una defensa sólida y estratégica para proteger su libertad, sus derechos y su futuro.</p><ul><li><i class=\"fa-solid fa-check-circle\"></i>DUI / DWI</li><li><i class=\"fa-solid fa-check-circle\"></i>Delitos de drogas</li><li><i class=\"fa-solid fa-check-circle\"></i>Crímenes violentos</li><li><i class=\"fa-solid fa-check-circle\"></i>Crímenes de cuello blanco</li></ul>",
-        "article": "<h2>Navegar su defensa penal</h2><p>Un cargo penal puede sentirse como el fin del mundo, pero no tiene que definirle a usted o su futuro. Una defensa estratégica y agresiva es crítica durante este tiempo. Permítanos ser los que le ayuden.</p><hr><p>Ser acusado, independientemente de si es un cargo por delito grave o un delito menor, puede ser uno de los momentos más difíciles en su vida. Nuestro equipo entiende esto y está aquí para ayudar. Como abogados experimentados capaces de navegar el juicio con experiencia legal y soluciones hábiles, trabajaremos con usted para obtener los mejores resultados posibles. Defender no solo sus derechos, sino también su inocencia es nuestra mayor prioridad.</p><h3>Sus derechos son primordiales</h3><p>Sus derechos constitucionales siempre están en vigor, y esto incluye cuando es arrestado y es retenido para interrogatorio. Entenderlos es su primera línea de defensa.</p><ul><li>Protección de la Cuarta Enmienda contra registros e incautaciones irrazonables</li><li>Derecho de la Quinta Enmienda a permanecer en silencio</li><li>Derecho de la Sexta Enmienda a asesoramiento legal y a ser informado de los cargos</li></ul><h3>Estrategias de defensa comunes</h3><p>Cada caso es diferente, pero nuestros hábiles abogados están listos para cualquier cosa. Incluso antes de que los cargos vayan a juicio, estaremos activos y podemos intentar desafiar la evidencia, negociar un acuerdo de declaración de culpabilidad, o incluso intentar desestimar el caso. Exploraremos cada vía para proteger sus derechos. Nuestro equipo podría argumentar su inocencia, citando una coartada o una identidad errónea. Podríamos notar que sus acciones se cometieron bajo una circunstancia legalmente excusable, como coacción o defensa propia. Nuestro equipo podría plantear dudas razonables contra el caso de la fiscalía, llevando a un resultado favorable. Independientemente del método específico, sepa que nuestro equipo está listo para asistir y defender su caso con experiencia legal, soluciones efectivas y maniobras hábiles en el juicio. Permítanos ofrecerle una consulta gratuita con nosotros hoy.</p>"
+        "content": "<h2>Defensa penal</h2><p>Enfrentar cargos penales puede ser una de las experiencias más estresantes de su vida, pero no tiene que enfrentarlo solo. Brindamos una defensa sólida y estratégica para proteger su libertad, sus derechos y su futuro.</p><ul><li><i></i>DUI / DWI</li><li><i></i>Delitos de drogas</li><li><i></i>Crímenes violentos</li><li><i></i>Crímenes de cuello blanco</li></ul>"
       }
+    },
+    "article": {
+      "personalInjury": "<h2>Entender su reclamación por lesiones personales</h2><p>Cuando resulta lesionado debido a la negligencia de otra persona, las secuelas legales y financieras pueden ser tan dolorosas como la lesión misma. Entender sus derechos y obtener ayuda legal es el primer paso hacia la recuperación.</p><hr><p>Las lesiones personales pueden ser una experiencia devastadora. Nunca es un evento esperado, y estamos aquí para ayudarle durante este momento difícil. Si está enfrentando lesiones personales, daños o muerte por negligencia debido a la negligencia de otros, nuestro equipo de abogados experimentados está aquí para proteger sus derechos y obtener la compensación que se merece. Nuestro equipo realmente entiende el dolor por el que está pasando, y queremos obtener lo que necesita para comenzar a recuperarse.</p><p>Como abogados que se enfocan en una experiencia centrada en el cliente, solo queremos el mejor resultado. A través de experiencia legal, comunicación transparente y soluciones efectivas, aseguraremos sus derechos y la compensación que está buscando.</p><h3>¿Qué constituye una reclamación?</h3><p>Si necesita buscar compensación por daño emocional, físico o psicológico causado por otra parte, entonces nuestro equipo de abogados está aquí para usted. Si la otra parte cometió daño debido a negligencia, imprudencia o actos intencionales, entonces podría tener una reclamación. Cuando fueron sus acciones - o su falta de acciones - la causa directa de su dolor, entonces son potencialmente responsables del daño que sufrió. Si su situación se ajusta a estos criterios, entonces programe una consulta gratuita con nosotros ahora para ver qué podemos hacer por usted.</p><h3>Nuestro proceso: de la investigación a la resolución</h3><p>Aunque cada caso es personal y diferente, puede tener expectativas amplias de varias consultas, seguidas de investigación dedicada y recopilación de evidencia. Una vez que se obtienen todos los registros, nuestros abogados probablemente procederán a presentar una reclamación y demanda de compensación. Si no se alcanza un acuerdo en este punto, entonces podemos proceder a juicio, donde lucharemos ferozmente por sus derechos y la compensación que se merece.</p>",
+      "criminalDefense": "<h2>Navegar su defensa penal</h2><p>Un cargo penal puede sentirse como el fin del mundo, pero no tiene que definirle a usted o su futuro. Una defensa estratégica y agresiva es crítica durante este tiempo. Permítanos ser los que le ayuden.</p><hr><p>Ser acusado, independientemente de si es un cargo por delito grave o un delito menor, puede ser uno de los momentos más difíciles en su vida. Nuestro equipo entiende esto y está aquí para ayudar. Como abogados experimentados capaces de navegar el juicio con experiencia legal y soluciones hábiles, trabajaremos con usted para obtener los mejores resultados posibles. Defender no solo sus derechos, sino también su inocencia es nuestra mayor prioridad.</p><h3>Sus derechos son primordiales</h3><p>Sus derechos constitucionales siempre están en vigor, y esto incluye cuando es arrestado y es retenido para interrogatorio. Entenderlos es su primera línea de defensa.</p><ul><li>Protección de la Cuarta Enmienda contra registros e incautaciones irrazonables</li><li>Derecho de la Quinta Enmienda a permanecer en silencio</li><li>Derecho de la Sexta Enmienda a asesoramiento legal y a ser informado de los cargos</li></ul><h3>Estrategias de defensa comunes</h3><p>Cada caso es diferente, pero nuestros hábiles abogados están listos para cualquier cosa. Incluso antes de que los cargos vayan a juicio, estaremos activos y podemos intentar desafiar la evidencia, negociar un acuerdo de declaración de culpabilidad, o incluso intentar desestimar el caso. Exploraremos cada vía para proteger sus derechos. Nuestro equipo podría argumentar su inocencia, citando una coartada o una identidad errónea. Podríamos notar que sus acciones se cometieron bajo una circunstancia legalmente excusable, como coacción o defensa propia. Nuestro equipo podría plantear dudas razonables contra el caso de la fiscalía, llevando a un resultado favorable. Independientemente del método específico, sepa que nuestro equipo está listo para asistir y defender su caso con experiencia legal, soluciones efectivas y maniobras hábiles en el juicio. Permítanos ofrecerle una consulta gratuita con nosotros hoy.</p>"
     }
   }
 }
