@@ -17,7 +17,7 @@
 <body class="bg-light"
       debug-i18n="false">
 
-  <!-- Secondary Navigation Bar (Bootstrap theme colors, fallback strings for i18n) -->
+  <!-- Nav (Bootstrap theme colors, fallback strings for i18n) -->
   <div id="secondary-nav"
        class="bg-white sticky-top shadow-sm">
     <nav class="navbar navbar-expand-xl navbar-light py-3">
@@ -25,15 +25,15 @@
         <a class="navbar-brand d-flex align-items-center"
            href="{{ url_for('index') }}">
           <div class="d-flex flex-column">
-            <h1 data-i18n="shared.secondaryNav.phone"
+            <h1 data-i18n="nav.phone"
                 class="h2 fw-bold mb-0 lh-1 text-dark"
                 style="letter-spacing: -1px;">
-              shared.secondaryNav.phone
+              nav.phone
             </h1>
-            <small data-i18n="shared.secondaryNav.firmName"
+            <small data-i18n="nav.firmName"
                    class="text-primary fw-bold"
                    style="font-size: 10px; letter-spacing: 0.5px;">
-              shared.secondaryNav.firmName
+              nav.firmName
             </small>
           </div>
         </a>
@@ -50,55 +50,55 @@
              id="secondaryMainNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
-              <a data-i18n="shared.secondaryNav.home"
+              <a data-i18n="nav.home"
                  class="nav-link fw-bold px-3 text-primary"
                  href="{{ url_for('index') }}">
-                shared.secondaryNav.home
+                nav.home
               </a>
             </li>
             <li class="nav-item">
-              <a data-i18n="shared.secondaryNav.motorVehicles"
+              <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                shared.secondaryNav.motorVehicles
+                nav.motorVehicles
               </a>
-              <a data-i18n="shared.secondaryNav.motorVehicles"
+              <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                shared.secondaryNav.motorVehicles
+                nav.motorVehicles
               </a>
             </li>
             <li class="nav-item">
-              <a data-i18n="shared.secondaryNav.personalInjury"
+              <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('personal_injury') }}">
-                shared.secondaryNav.personalInjury
+                nav.personalInjury
               </a>
-              <a data-i18n="shared.secondaryNav.personalInjury"
+              <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('personal_injury') }}">
-                shared.secondaryNav.personalInjury
+                nav.personalInjury
               </a>
             </li>
           </ul>
           <div class="d-flex align-items-center flex-column flex-xl-row text-end gap-3">
             <div class="d-flex flex-column align-items-end me-xl-3">
-              <p data-i18n="shared.secondaryNav.visitWebsite"
+              <p data-i18n="nav.visitWebsite"
                  class="mb-1 fw-bold lh-1 small text-muted">
-                shared.secondaryNav.visitWebsite
+                nav.visitWebsite
               </p>
-              <a data-i18n="shared.secondaryNav.goToWebsite"
+              <a data-i18n="nav.goToWebsite"
                  class="btn btn-outline-primary btn-sm rounded-3"
                  href="https://www.jslawgroup.net/">
-                shared.secondaryNav.goToWebsite
+                nav.goToWebsite
               </a>
             </div>
             <a class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
                href="tel:7702224444">
               <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
-              <span data-i18n="shared.secondaryNav.phoneNumber"
+              <span data-i18n="nav.phoneNumber"
                     class="fw-bold fs-5">
-                shared.secondaryNav.phoneNumber
+                nav.phoneNumber
               </span>
             </a>
           </div>
@@ -108,7 +108,7 @@
   </div>
 
   <!-- Wizard: full-width background section -->
-  <section class="wizard-section py-5">
+  <section class="wizard wizard-section py-5">
     <div id="wizard-container"
          class="shadow-lg mb-5">
       <div class="container">
@@ -158,15 +158,15 @@
                        class="step-transition active">
                     <h3 data-i18n="index.wizard.step1.title"
                         class="fw-bold mb-3">
-                      index.wizard.step1.title
+                      wizard.step1.title
                     </h3>
                     <p data-i18n="index.wizard.step1.subtitle"
                        class="text-muted mb-4">
-                      index.wizard.step1.subtitle
+                      wizard.step1.subtitle
                     </p>
                     <h5 data-i18n="index.wizard.step1.question"
                         class="fw-semibold mb-4">
-                      index.wizard.step1.question
+                      wizard.step1.question
                     </h5>
 
                     <div class="d-grid gap-3">
@@ -208,17 +208,17 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step2.question"
                         class="fw-bold mb-4">
-                      index.wizard.step2.question
+                      wizard.step2.question
                     </h4>
                     <div class="form-floating mb-4">
                       {{ form.zip_code(class="form-control form-control-lg text-center fs-4", placeholder="Zip Code", id="zip_code") }}
                       <label data-i18n="index.wizard.step2.zipLabel"
                              for="zip_code">
-                        index.wizard.step2.zipLabel
+                        wizard.step2.zipLabel
                       </label>
                       <div data-i18n="index.wizard.step2.zipInvalid"
                            class="invalid-feedback">
-                        index.wizard.step2.zipInvalid
+                        wizard.step2.zipInvalid
                       </div>
                     </div>
                     <button type="button"
@@ -237,7 +237,7 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step3.question"
                         class="fw-bold mb-4">
-                      index.wizard.step3.question
+                      wizard.step3.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
@@ -263,7 +263,7 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step4.question"
                         class="fw-bold mb-4">
-                      index.wizard.step4.question
+                      wizard.step4.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
@@ -284,7 +284,7 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step5.question"
                         class="fw-bold mb-4">
-                      index.wizard.step5.question
+                      wizard.step5.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
@@ -310,7 +310,7 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step6.question"
                         class="fw-bold mb-4">
-                      index.wizard.step6.question
+                      wizard.step6.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
@@ -336,7 +336,7 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step7.question"
                         class="fw-bold mb-4">
-                      index.wizard.step7.question
+                      wizard.step7.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
@@ -367,7 +367,7 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step8.question"
                         class="fw-bold mb-4">
-                      index.wizard.step8.question
+                      wizard.step8.question
                     </h4>
                     <div class="mb-4">
                       <select id="primary_injury"
@@ -377,32 +377,32 @@
                                 disabled
                                 selected
                                 data-i18n="index.wizard.step8.selectPlaceholder">
-                          index.wizard.step8.selectPlaceholder
+                          wizard.step8.selectPlaceholder
                         </option>
                         <option value="Broken Bones"
                                 data-i18n="index.wizard.step8.brokenBones">
-                          index.wizard.step8.brokenBones
+                          wizard.step8.brokenBones
                         </option>
                         <option value="Head Injury"
                                 data-i18n="index.wizard.step8.headInjury">
-                          index.wizard.step8.headInjury
+                          wizard.step8.headInjury
                         </option>
                         <option value="Back Pain"
                                 data-i18n="index.wizard.step8.backPain">
-                          index.wizard.step8.backPain
+                          wizard.step8.backPain
                         </option>
                         <option value="Scrapes"
                                 data-i18n="index.wizard.step8.scrapes">
-                          index.wizard.step8.scrapes
+                          wizard.step8.scrapes
                         </option>
                         <option value="Other"
                                 data-i18n="index.wizard.step8.other">
-                          index.wizard.step8.other
+                          wizard.step8.other
                         </option>
                       </select>
                       <div data-i18n="index.wizard.step8.invalid"
                            class="invalid-feedback">
-                        index.wizard.step8.invalid
+                        wizard.step8.invalid
                       </div>
                     </div>
                     <button type="button"
@@ -417,11 +417,11 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step9.question"
                         class="fw-bold mb-2">
-                      index.wizard.step9.question
+                      wizard.step9.question
                     </h4>
                     <p data-i18n="index.wizard.step9.privacy"
                        class="text-muted small mb-4">
-                      index.wizard.step9.privacy
+                      wizard.step9.privacy
                     </p>
                     <div class="row g-3 mb-4">
                       <div class="col-6">
@@ -429,11 +429,11 @@
                           {{ form.first_name(class="form-control", placeholder="First", id="first_name") }}
                           <label data-i18n="index.wizard.step9.firstName"
                                  for="first_name">
-                            index.wizard.step9.firstName
+                            wizard.step9.firstName
                           </label>
                           <div data-i18n="index.wizard.step9.required"
                                class="invalid-feedback">
-                            index.wizard.step9.required
+                            wizard.step9.required
                           </div>
                         </div>
                       </div>
@@ -442,11 +442,11 @@
                           {{ form.last_name(class="form-control", placeholder="Last", id="last_name") }}
                           <label data-i18n="index.wizard.step9.lastName"
                                  for="last_name">
-                            index.wizard.step9.lastName
+                            wizard.step9.lastName
                           </label>
                           <div data-i18n="index.wizard.step9.required"
                                class="invalid-feedback">
-                            index.wizard.step9.required
+                            wizard.step9.required
                           </div>
                         </div>
                       </div>
@@ -463,24 +463,24 @@
                        class="step-transition">
                     <h4 data-i18n="index.wizard.step10.title"
                         class="fw-bold mb-2">
-                      index.wizard.step10.title
+                      wizard.step10.title
                     </h4>
                     <p data-i18n="index.wizard.step10.subtitle"
                        class="text-muted small mb-4">
-                      index.wizard.step10.subtitle
+                      wizard.step10.subtitle
                     </p>
                     <div class="form-floating mb-3">
                       {{ form.email(class="form-control", placeholder="name@example.com", id="email", required=True) }}
                       <label data-i18n="index.wizard.step10.emailLabel"
                              for="email">
-                        index.wizard.step10.emailLabel
+                        wizard.step10.emailLabel
                       </label>
                     </div>
                     <div class="form-floating mb-4">
                       {{ form.phone(class="form-control", placeholder="Phone", id="phone", required=True) }}
                       <label data-i18n="index.wizard.step10.phoneLabel"
                              for="phone">
-                        index.wizard.step10.phoneLabel
+                        wizard.step10.phoneLabel
                       </label>
                     </div>
                     <button type="submit"
@@ -490,7 +490,7 @@
                     <p data-i18n="index.wizard.step10.consent"
                        class="text-muted x-small"
                        style="font-size: 0.75rem; text-align: justify;">
-                      index.wizard.step10.consent
+                      wizard.step10.consent
                     </p>
                   </div>
 
@@ -504,22 +504,22 @@
   </section>
 
   <!-- CONTENT SECTION 1: Legal Expertise -->
-  <section class="py-5 bg-white">
+  <section class="split-hero py-5 bg-white">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
-          <h2 data-i18n="index.content.section1.title"
+          <h2 data-i18n="index.splitHero.legalExpertise.title"
               class="fw-bold mb-3 text-primary">
-            index.content.section1.title
+            index.splitHero.legalExpertise.title
           </h2>
-          <p data-i18n="index.content.section1.paragraph"
+          <p data-i18n="index.splitHero.legalExpertise.paragraph"
              class="text-muted mb-4">
-            index.content.section1.paragraph
+            index.splitHero.legalExpertise.paragraph
           </p>
-          <a data-i18n="index.content.section1.cta"
+          <a data-i18n="index.splitHero.legalExpertise.cta"
              class="btn btn-primary text-white px-4 py-2"
              href="#wizard-container">
-            index.content.section1.cta
+            index.splitHero.legalExpertise.cta
           </a>
         </div>
         <div class="col-md-6">
@@ -532,27 +532,27 @@
   </section>
 
   <!-- CONTENT SECTION 2: Elite Attorneys -->
-  <section class="py-5 bg-light">
+  <section class="split-hero py-5 bg-light">
     <div class="container">
       <div class="row align-items-center flex-column-reverse flex-md-row">
         <div class="col-md-6 mt-4 mt-md-0">
-          <img src="https://images.unsplash.com/photo-1634547902508-3a13725b7d60?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                alt="Car Accident Injury"
                class="img-fluid rounded shadow-sm">
         </div>
         <div class="col-md-6">
-          <h2 data-i18n="index.content.section2.title"
+          <h2 data-i18n="index.splitHero.eliteAttorneys.title"
               class="fw-bold mb-3 text-primary">
-            index.content.section2.title
+            index.splitHero.eliteAttorneys.title
           </h2>
-          <p data-i18n="index.content.section2.paragraph"
+          <p data-i18n="index.splitHero.eliteAttorneys.paragraph"
              class="text-muted mb-4">
-            index.content.section2.paragraph
+            index.splitHero.eliteAttorneys.paragraph
           </p>
-          <a data-i18n="index.content.section2.cta"
+          <a data-i18n="index.splitHero.eliteAttorneys.cta"
              class="btn btn-primary text-white px-4 py-2"
              href="#wizard-container">
-            index.content.section2.cta
+            index.splitHero.eliteAttorneys.cta
           </a>
         </div>
       </div>
@@ -560,22 +560,22 @@
   </section>
 
   <!-- CONTENT SECTION 3: Tailored Approach -->
-  <section class="py-5 bg-white">
+  <section class="split-hero py-5 bg-white">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
-          <h2 data-i18n="index.content.section3.title"
+          <h2 data-i18n="index.splitHero.tailoredApproach.title"
               class="fw-bold mb-3 text-primary">
-            index.content.section3.title
+            index.splitHero.tailoredApproach.title
           </h2>
-          <p data-i18n="index.content.section3.paragraph"
+          <p data-i18n="index.splitHero.tailoredApproach.paragraph"
              class="text-muted mb-4">
-            index.content.section3.paragraph
+            index.splitHero.tailoredApproach.paragraph
           </p>
-          <a data-i18n="index.content.section3.cta"
+          <a data-i18n="index.splitHero.tailoredApproach.cta"
              class="btn btn-primary text-white px-4 py-2"
              href="#wizard-container">
-            index.content.section3.cta
+            index.splitHero.tailoredApproach.cta
           </a>
         </div>
         <div class="col-md-6">
@@ -588,16 +588,16 @@
   </section>
 
   <!-- CONTENT SECTION 4: Practice Areas -->
-  <section class="py-5 bg-white">
+  <section class="cards-grid py-5 bg-white">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 data-i18n="index.content.section4.title"
+        <h2 data-i18n="index.cardsGrid.title"
             class="fw-bold text-primary">
-          index.content.section4.title
+          cardsGrid.title
         </h2>
-        <p data-i18n="index.content.section4.subtitle"
+        <p data-i18n="index.cardsGrid.subtitle"
            class="text-muted">
-          index.content.section4.subtitle
+          cardsGrid.subtitle
         </p>
       </div>
 
@@ -606,13 +606,13 @@
           <div class="card h-100 border-0 shadow-sm p-3">
             <div class="card-body">
               <i class="fas fa-truck fa-2x mb-3 text-primary"></i>
-              <h5 data-i18n="index.content.section4.trucking.title"
+              <h5 data-i18n="index.cardsGrid.trucking.title"
                   class="fw-bold">
-                index.content.section4.trucking.title
+                cardsGrid.trucking.title
               </h5>
-              <p data-i18n="index.content.section4.trucking.desc"
+              <p data-i18n="index.cardsGrid.trucking.desc"
                  class="text-muted small">
-                index.content.section4.trucking.desc
+                cardsGrid.trucking.desc
               </p>
             </div>
           </div>
@@ -621,13 +621,13 @@
           <div class="card h-100 border-0 shadow-sm p-3">
             <div class="card-body">
               <i class="fas fa-bicycle fa-2x mb-3 text-primary"></i>
-              <h5 data-i18n="index.content.section4.pedestrian.title"
+              <h5 data-i18n="index.cardsGrid.pedestrian.title"
                   class="fw-bold">
-                index.content.section4.pedestrian.title
+                cardsGrid.pedestrian.title
               </h5>
-              <p data-i18n="index.content.section4.pedestrian.desc"
+              <p data-i18n="index.cardsGrid.pedestrian.desc"
                  class="text-muted small">
-                index.content.section4.pedestrian.desc
+                cardsGrid.pedestrian.desc
               </p>
             </div>
           </div>
@@ -636,13 +636,13 @@
           <div class="card h-100 border-0 shadow-sm p-3">
             <div class="card-body">
               <i class="fas fa-motorcycle fa-2x mb-3 text-primary"></i>
-              <h5 data-i18n="index.content.section4.motorcycle.title"
+              <h5 data-i18n="index.cardsGrid.motorcycle.title"
                   class="fw-bold">
-                index.content.section4.motorcycle.title
+                cardsGrid.motorcycle.title
               </h5>
-              <p data-i18n="index.content.section4.motorcycle.desc"
+              <p data-i18n="index.cardsGrid.motorcycle.desc"
                  class="text-muted small">
-                index.content.section4.motorcycle.desc
+                cardsGrid.motorcycle.desc
               </p>
             </div>
           </div>
@@ -651,13 +651,13 @@
           <div class="card h-100 border-0 shadow-sm p-3">
             <div class="card-body">
               <i class="fas fa-car-crash fa-2x mb-3 text-primary"></i>
-              <h5 data-i18n="index.content.section4.rideshare.title"
+              <h5 data-i18n="index.cardsGrid.rideshare.title"
                   class="fw-bold">
-                index.content.section4.rideshare.title
+                cardsGrid.rideshare.title
               </h5>
-              <p data-i18n="index.content.section4.rideshare.desc"
+              <p data-i18n="index.cardsGrid.rideshare.desc"
                  class="text-muted small">
-                Accidents involving Uber, Lyft, or company vehicles often involve complex insurance. We handle the details so you can focus on recovery.
+                cardsGrid.rideshare.desc
               </p>
             </div>
           </div>
@@ -666,11 +666,11 @@
           <div class="card h-100 border-0 shadow-sm p-3">
             <div class="card-body">
               <i class="fas fa-road fa-2x mb-3 text-primary"></i>
-              <h5 data-i18n="index.content.section4.intersection.title"
+              <h5 data-i18n="index.cardsGrid.intersection.title"
                   class="fw-bold">
-                Intersection / T-Bone / Rear-End Accidents
+                cardsGrid.intersection.title
               </h5>
-              <p class="text-muted small" data-i18n="index.content.section4.intersection.desc">Even “simple” accidents can cause long-term pain. Our attorneys handle the details and fight for your recovery.</p>
+              <p class="text-muted small" data-i18n="index.cardsGrid.intersection.desc">index.cardsGrid.intersection.desc</p>
             </div>
           </div>
         </div>
@@ -678,11 +678,14 @@
           <div class="card h-100 border-0 shadow-sm p-3">
             <div class="card-body">
               <i class="fas fa-user-injured fa-2x mb-3 text-primary"></i>
-              <h5 data-i18n="index.content.section4.delayed.title"
+              <h5 data-i18n="index.cardsGrid.delayed.title"
                   class="fw-bold">
-                Low Impact or Delayed Injury Accidents
+                cardsGrid.delayed.title
               </h5>
-              <p class="text-muted small" data-i18n="index.content.section4.delayed.desc">Some injuries appear weeks later. Don’t sign anything or settle until you’ve spoken with our team.</p>
+              <p data-i18n="index.cardsGrid.delayed.desc"
+                 class="text-muted small">
+                cardsGrid.delayed.desc
+              </p>
             </div>
           </div>
         </div>
@@ -691,87 +694,87 @@
   </section>
 
   <!-- CONTENT SECTION 5: Common Injuries -->
-  <section class="py-5 bg-light">
+  <section class="icon-grid py-5 bg-light">
     <div class="container text-center">
-      <h2 data-i18n="index.content.section5.title"
+      <h2 data-i18n="index.iconGrid.title"
           class="fw-bold mb-5 text-primary">
-        index.content.section5.title
+        index.iconGrid.title
       </h2>
 
       <div class="row g-5 mb-5">
         <div class="col-6 col-md-4">
           <i class="fas fa-crutch fa-3x mb-3 text-secondary"></i>
-          <h6 data-i18n="index.content.section5.whiplash"
+          <h6 data-i18n="index.iconGrid.whiplash"
               class="fw-bold">
-            index.content.section5.whiplash
+            index.iconGrid.whiplash
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-brain fa-3x mb-3 text-secondary"></i>
-          <h6 data-i18n="index.content.section5.concussion"
+          <h6 data-i18n="index.iconGrid.concussion"
               class="fw-bold">
-            index.content.section5.concussion
+            index.iconGrid.concussion
           </h6>
         </div>
         <div class="col-6 col-md-4">
-          <i class="fas fa-spine fa-3x mb-3 text-secondary"></i>
-          <h6 data-i18n="index.content.section5.backSpine"
+          <i class="fas fa-bone fa-3x mb-3 text-secondary" aria-hidden="true"></i>
+          <h6 data-i18n="index.iconGrid.backSpine"
               class="fw-bold">
-            index.content.section5.backSpine
+            index.iconGrid.backSpine
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-bone fa-3x mb-3 text-secondary"></i>
-          <h6 data-i18n="index.content.section5.fractures"
+          <h6 data-i18n="index.iconGrid.fractures"
               class="fw-bold">
-            index.content.section5.fractures
+            index.iconGrid.fractures
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-band-aid fa-3x mb-3 text-secondary"></i>
-          <h6 data-i18n="index.content.section5.softTissue"
+          <h6 data-i18n="index.iconGrid.softTissue"
               class="fw-bold">
-            index.content.section5.softTissue
+            index.iconGrid.softTissue
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-wheelchair fa-3x mb-3 text-secondary"></i>
-          <h6 data-i18n="index.content.section5.disability"
+          <h6 data-i18n="index.iconGrid.disability"
               class="fw-bold">
-            index.content.section5.disability
+            index.iconGrid.disability
           </h6>
         </div>
       </div>
 
-      <a data-i18n="index.content.section5.cta"
+      <a data-i18n="index.iconGrid.cta"
          class="btn btn-primary text-white px-5 py-2"
          href="#wizard-container">
-        index.content.section5.cta
+        index.iconGrid.cta
       </a>
     </div>
   </section>
 
   <!-- CONTENT SECTION 6: Compensation -->
-  <section class="py-5 position-relative bg-compensation">
+  <section class="banner py-5 position-relative bg-compensation">
     <div class="container text-center text-white">
-      <h2 data-i18n="index.content.section6.title"
+      <h2 data-i18n="index.banner.title"
           class="fw-bold mb-3">
-        index.content.section6.title
+        index.banner.title
       </h2>
-      <p data-i18n="index.content.section6.paragraph"
+      <p data-i18n="index.banner.paragraph"
          class="mx-auto mb-0"
          style="max-width: 700px;">
-        index.content.section6.paragraph
+        index.banner.paragraph
       </p>
     </div>
   </section>
 
   <!-- CONTENT SECTION 7: FAQ -->
-  <section class="py-5 bg-white">
+  <section class="faq py-5 bg-white">
     <div class="container">
-      <h3 data-i18n="index.content.section7.title"
+      <h3 data-i18n="index.faq.title"
           class="fw-bold text-center mb-5">
-        index.content.section7.title
+        index.faq.title
       </h3>
       
       <div class="accordion accordion-flush" id="faqAccordion" style="max-width: 800px; margin: 0 auto;">
@@ -779,18 +782,18 @@
           <h2 class="accordion-header" id="flush-headingOne">
             <button type="button"
                     class="accordion-button collapsed fw-bold"
-                    data-i18n="index.content.section7.q1"
+                    data-i18n="index.faq.q1"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseOne">
-              index.content.section7.q1
+              index.faq.q1
             </button>
           </h2>
           <div id="flush-collapseOne"
                class="accordion-collapse collapse"
                data-bs-parent="#faqAccordion">
-            <div data-i18n="index.content.section7.a1"
+            <div data-i18n="index.faq.a1"
                  class="accordion-body text-muted">
-              index.content.section7.a1
+              index.faq.a1
             </div>
           </div>
         </div>
@@ -798,18 +801,18 @@
           <h2 class="accordion-header" id="flush-headingTwo">
             <button type="button"
                     class="accordion-button collapsed fw-bold"
-                    data-i18n="index.content.section7.q2"
+                    data-i18n="index.faq.q2"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseTwo">
-              index.content.section7.q2
+              index.faq.q2
             </button>
           </h2>
           <div id="flush-collapseTwo"
                class="accordion-collapse collapse"
                data-bs-parent="#faqAccordion">
-            <div data-i18n="index.content.section7.a2"
+            <div data-i18n="index.faq.a2"
                  class="accordion-body text-muted">
-              index.content.section7.a2
+              index.faq.a2
             </div>
           </div>
         </div>
@@ -817,18 +820,18 @@
           <h2 class="accordion-header" id="flush-headingThree">
             <button type="button"
                     class="accordion-button collapsed fw-bold"
-                    data-i18n="index.content.section7.q3"
+                    data-i18n="index.faq.q3"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseThree">
-              index.content.section7.q3
+              index.faq.q3
             </button>
           </h2>
           <div id="flush-collapseThree"
                class="accordion-collapse collapse"
                data-bs-parent="#faqAccordion">
-            <div data-i18n="index.content.section7.a3"
+            <div data-i18n="index.faq.a3"
                  class="accordion-body text-muted">
-              index.content.section7.a3
+              index.faq.a3
             </div>
           </div>
         </div>
@@ -836,18 +839,18 @@
           <h2 class="accordion-header" id="flush-headingFour">
             <button type="button"
                     class="accordion-button collapsed fw-bold"
-                    data-i18n="index.content.section7.q4"
+                    data-i18n="index.faq.q4"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseFour">
-              index.content.section7.q4
+              index.faq.q4
             </button>
           </h2>
           <div id="flush-collapseFour"
                class="accordion-collapse collapse"
                data-bs-parent="#faqAccordion">
-            <div data-i18n="index.content.section7.a4"
+            <div data-i18n="index.faq.a4"
                  class="accordion-body text-muted">
-              index.content.section7.a4
+              index.faq.a4
             </div>
           </div>
         </div>
@@ -855,31 +858,30 @@
           <h2 class="accordion-header" id="flush-headingFive">
             <button type="button"
                     class="accordion-button collapsed fw-bold"
-                    data-i18n="index.content.section7.q5"
+                    data-i18n="index.faq.q5"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseFive">
-              index.content.section7.q5
+              index.faq.q5
             </button>
           </h2>
           <div id="flush-collapseFive"
                class="accordion-collapse collapse"
                data-bs-parent="#faqAccordion">
-            <div data-i18n="index.content.section7.a5"
+            <div data-i18n="index.faq.a5"
                  class="accordion-body text-muted">
-              index.content.section7.a5
+              index.faq.a5
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <!-- CONTENT SECTION 8: CTA -->
-  <section class="py-5 text-center bg-white">
-    <a data-i18n="index.content.section8.cta"
+  <section class="faq-cta py-5 text-center bg-white">
+    <a data-i18n="index.faq.cta"
        class="btn btn-primary text-white px-5 py-3 fw-bold shadow"
        href="#wizard-container">
-      index.content.section8.cta
+      index.faq.cta
     </a>
   </section>
 
@@ -895,11 +897,11 @@
         </div>
         <h2 data-i18n="index.wizard.successModal.title"
             class="fw-bold mb-3">
-          index.wizard.successModal.title
+          wizard.successModal.title
         </h2>
         <p data-i18n="index.wizard.successModal.message"
            class="text-muted mb-4 lead">
-          index.wizard.successModal.message
+          wizard.successModal.message
         </p>
         <button type="button"
                 class="btn btn-primary btn-lg px-5 rounded-pill"
@@ -923,7 +925,7 @@
 
   
   <!-- Floating Language Switcher (Bottom Right) -->
-  <div class="position-fixed bottom-0 end-0 p-4 lang-switcher-container"
+  <div class="floating-selector position-fixed bottom-0 end-0 p-4 lang-switcher-container"
        style="margin-bottom: 20px; z-index: 1040;">
     <div class="dropup">
       <button type="button"
@@ -936,9 +938,9 @@
       </button>
       <ul class="dropdown-menu dropdown-menu-end shadow rounded-4 p-2">
         <li>
-          <h6 data-i18n="shared.langSwitcher.selectLanguage"
+          <h6 data-i18n="floatingSelector.selectLanguage"
               class="dropdown-header">
-            shared.langSwitcher.selectLanguage
+            floatingSelector.selectLanguage
           </h6>
         </li>
         <li>
@@ -947,7 +949,7 @@
              id="i18n001"
              value-i18n="en-US">
             <span class="fi fi-us dropdown-flag" aria-hidden="true" title="United States"></span>
-            <span data-i18n="shared.langSwitcher.langEn">shared.langSwitcher.langEn</span>
+            <span data-i18n="floatingSelector.langEn">floatingSelector.langEn</span>
           </a>
         </li>
         <li>
@@ -956,7 +958,7 @@
              id="i18n002"
              value-i18n="ko-KR">
             <span class="fi fi-kr dropdown-flag" aria-hidden="true" title="South Korea"></span>
-            <span data-i18n="shared.langSwitcher.langKo">shared.langSwitcher.langKo</span>
+            <span data-i18n="floatingSelector.langKo">floatingSelector.langKo</span>
           </a>
         </li>
         <li>
@@ -965,7 +967,7 @@
              id="i18n006"
              value-i18n="es-US">
             <span class="fi fi-es dropdown-flag" aria-hidden="true" title="Spain"></span>
-            <span data-i18n="shared.langSwitcher.langEs">shared.langSwitcher.langEs</span>
+            <span data-i18n="floatingSelector.langEs">floatingSelector.langEs</span>
           </a>
         </li>
         <li>
@@ -974,7 +976,7 @@
              id="i18n005"
              value-i18n="ja-JP">
             <span class="fi fi-jp dropdown-flag" aria-hidden="true" title="Japan"></span>
-            <span data-i18n="shared.langSwitcher.langJa">shared.langSwitcher.langJa</span>
+            <span data-i18n="floatingSelector.langJa">floatingSelector.langJa</span>
           </a>
         </li>
       </ul>
@@ -997,13 +999,13 @@
     <div class="py-5 container">
       <div class="row mb-4 align-items-center">
         <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
-          <h4 data-i18n="shared.footer.brand"
+          <h4 data-i18n="footer.brand"
               class="mb-0 text-uppercase fw-bold">
-            shared.footer.brand
+            footer.brand
           </h4>
-          <p data-i18n="shared.footer.address"
+          <p data-i18n="footer.address"
              class="small text-white-50 lh-sm mt-2 mb-0">
-            shared.footer.address
+            footer.address
           </p>
         </div>
         <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
@@ -1023,9 +1025,9 @@
       <div class="border-top"></div>
       <div class="row my-4 align-items-center">
         <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
-          <small data-i18n="shared.footer.copyrightOffice"
+          <small data-i18n="footer.copyrightOffice"
                  class="text-white-50">
-            shared.footer.copyrightOffice
+            footer.copyrightOffice
           </small>
         </div>
         <div class="col-md-7 text-center text-md-end">
@@ -1033,31 +1035,31 @@
             <li class="list-inline-item">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="shared.footer.faqs">shared.footer.faqs</small>
+                <small data-i18n="footer.faqs">footer.faqs</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="shared.footer.corporateInformation">shared.footer.corporateInformation</small>
+                <small data-i18n="footer.corporateInformation">footer.corporateInformation</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="shared.footer.privacyNotice">shared.footer.privacyNotice</small>
+                <small data-i18n="footer.privacyNotice">footer.privacyNotice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="shared.footer.cookieNotice">shared.footer.cookieNotice</small>
+                <small data-i18n="footer.cookieNotice">footer.cookieNotice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="shared.footer.termsOfUse">shared.footer.termsOfUse</small>
+                <small data-i18n="footer.termsOfUse">footer.termsOfUse</small>
               </a>
             </li>
           </ul>
@@ -1066,8 +1068,8 @@
       <div class="row">
         <div class="col-12">
           <p class="mb-0 text-white-50">
-            <small data-i18n="shared.footer.importantNote">
-              shared.footer.importantNote
+            <small data-i18n="footer.importantNote">
+              footer.importantNote
             </small>
           </p>
         </div>
