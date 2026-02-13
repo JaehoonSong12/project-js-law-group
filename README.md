@@ -215,11 +215,22 @@ The project includes a GitHub Actions workflow (`.github/workflows/release.yml`)
 
 To build locally:
 
-```bash
-pyinstaller main.py --onefile --name jslawgroup --add-data "static;static" --add-data "templates;templates" --add-data "submissions;submissions"
-```
+1.  **Install PyInstaller:**
+    ```bash
+    pip install pyinstaller
+    ```
 
-*(Note: Separators for `--add-data` use `;` on Windows and `:` on Linux/Mac.)*
+2.  **Run Build Command:**
+
+    **Windows:**
+    ```bash
+    pyinstaller main.py --onefile --name jslawgroup --add-data "static;static" --add-data "templates;templates" --add-data "submissions;submissions"
+    ```
+
+    **Linux / MacOS:**
+    ```bash
+    pyinstaller main.py --onefile --name jslawgroup --hidden-import gunicorn.glogging --hidden-import gunicorn.workers.sync --add-data "static:static" --add-data "templates:templates" --add-data "submissions:submissions"
+    ```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
