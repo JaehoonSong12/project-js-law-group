@@ -20,7 +20,7 @@
   <!-- Flash Messages -->
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-      <div class="container mt-3 fixed-top flash-messages-container">
+      <div class="container mt-3 fixed-top shared-flash-messages">
         {% for category, message in messages %}
           <div class="alert alert-{{ category }} alert-dismissible fade show shadow" role="alert">
             {{ message }}
@@ -142,27 +142,27 @@
           <div class="d-flex flex-column gap-4">
             <!-- Steps (1-6) -->
             <div class="d-flex">
-              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold step-number-icon">V</div></div>
+              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
               <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step1.title">mvAccident.steppedList.step1.title</span> - <span data-i18n="mvAccident.steppedList.step1.desc">mvAccident.steppedList.step1.desc</span></p></div>
             </div>
             <div class="d-flex">
-              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold step-number-icon">V</div></div>
+              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
               <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step2.title">mvAccident.steppedList.step2.title</span> - <span data-i18n="mvAccident.steppedList.step2.desc">mvAccident.steppedList.step2.desc</span></p></div>
             </div>
             <div class="d-flex">
-              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold step-number-icon">V</div></div>
+              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
               <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step3.title">mvAccident.steppedList.step3.title</span> - <span data-i18n="mvAccident.steppedList.step3.desc">mvAccident.steppedList.step3.desc</span></p></div>
             </div>
             <div class="d-flex">
-              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold step-number-icon">V</div></div>
+              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
               <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step4.title">mvAccident.steppedList.step4.title</span> - <span data-i18n="mvAccident.steppedList.step4.desc">mvAccident.steppedList.step4.desc</span></p></div>
             </div>
             <div class="d-flex">
-              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold step-number-icon">V</div></div>
+              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
               <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step5.title">mvAccident.steppedList.step5.title</span> - <span data-i18n="mvAccident.steppedList.step5.desc">mvAccident.steppedList.step5.desc</span></p></div>
             </div>
             <div class="d-flex">
-              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold step-number-icon">V</div></div>
+              <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
               <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step6.title">mvAccident.steppedList.step6.title</span> - <span data-i18n="mvAccident.steppedList.step6.desc">mvAccident.steppedList.step6.desc</span></p></div>
             </div>
           </div>
@@ -181,7 +181,7 @@
             mvAccident.imageList.title
           </h2>
           <div class="d-flex mb-4">
-            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center process-icon-circle"><img src="https://picsum.photos/30/30?random=101" alt="person" class="rounded-circle"></div></div>
+            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center image-list-icon"><img src="https://picsum.photos/30/30?random=101" alt="person" class="rounded-circle"></div></div>
             <div class="ms-4">
               <h4 data-i18n="mvAccident.imageList.step1.title"
                   class="fw-bold text-dark">
@@ -194,7 +194,7 @@
             </div>
           </div>
           <div class="d-flex mb-4">
-            <div class="flex-shrink-0"><div class="bg-dark rounded-circle d-flex align-items-center justify-content-center process-icon-circle"><img src="https://picsum.photos/30/30?random=102" alt="legal" class="rounded-circle"></div></div>
+            <div class="flex-shrink-0"><div class="bg-dark rounded-circle d-flex align-items-center justify-content-center image-list-icon"><img src="https://picsum.photos/30/30?random=102" alt="legal" class="rounded-circle"></div></div>
             <div class="ms-4">
               <h4 data-i18n="mvAccident.imageList.step2.title"
                   class="fw-bold text-dark">
@@ -207,7 +207,7 @@
             </div>
           </div>
           <div class="d-flex">
-            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center process-icon-circle"><img src="https://picsum.photos/30/30?random=103" alt="gavel" class="rounded-circle"></div></div>
+            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center image-list-icon"><img src="https://picsum.photos/30/30?random=103" alt="gavel" class="rounded-circle"></div></div>
             <div class="ms-4">
               <h4 data-i18n="mvAccident.imageList.step3.title"
                   class="fw-bold text-dark">
@@ -249,7 +249,7 @@
               <div class="flip-card-face rounded-5">
                 <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Car Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
-                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow card-icon-circle"><span class="text-dark fw-bold fs-xs">CAR ICON</span></div>
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-dark fw-bold fs-xs">CAR ICON</span></div>
                   <h3 data-i18n="mvAccident.floatingGrid.car.title" class="h4 fw-bold mb-3">mvAccident.floatingGrid.car.title</h3>
                   <button class="btn btn-primary rounded-pill px-5 fw-bold shadow" data-flip-target="inner-car-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
                 </div>
@@ -268,7 +268,7 @@
               <div class="flip-card-face rounded-5">
                 <img src="https://images.unsplash.com/photo-1558981806-ec52705784a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Motorcycle Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
-                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow card-icon-circle"><span class="text-primary fw-bold fs-xs">MOTO ICON</span></div>
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-primary fw-bold fs-xs">MOTO ICON</span></div>
                   <h3 data-i18n="mvAccident.floatingGrid.motorcycle.title" class="h4 fw-bold mb-3">mvAccident.floatingGrid.motorcycle.title</h3>
                   <button class="btn btn-outline-light rounded-pill px-5 fw-bold shadow" data-flip-target="inner-moto-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
                 </div>
@@ -287,7 +287,7 @@
               <div class="flip-card-face rounded-5">
                 <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Rideshare">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
-                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow card-icon-circle"><span class="text-primary fw-bold fs-xs">RIDE ICON</span></div>
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-primary fw-bold fs-xs">RIDE ICON</span></div>
                   <h3 data-i18n="mvAccident.floatingGrid.rideshare.title" class="h4 fw-bold mb-3">mvAccident.floatingGrid.rideshare.title</h3>
                   <button class="btn btn-outline-light rounded-pill px-5 fw-bold shadow" data-flip-target="inner-ride-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
                 </div>
@@ -307,7 +307,7 @@
               <div class="flip-card-face rounded-5">
                 <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Truck Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
-                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow card-icon-circle"><span class="text-dark fw-bold fs-xs">TRUCK ICON</span></div>
+                  <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-dark fw-bold fs-xs">TRUCK ICON</span></div>
                   <h3 data-i18n="mvAccident.floatingGrid.truck.title" class="h4 fw-bold mb-3 text-center">mvAccident.floatingGrid.truck.title</h3>
                   <button class="btn btn-primary rounded-pill px-5 fw-bold shadow" data-flip-target="inner-truck-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
                 </div>
@@ -325,11 +325,11 @@
   </section>
 
   <!-- Floating Language Switcher (Bottom Right) -->
-  <div class="floating-selector position-fixed bottom-0 end-0 p-4 lang-switcher-container"
+  <div class="floating-selector position-fixed bottom-0 end-0 p-4 floating-selector-container"
        style="margin-bottom: 20px; z-index: 1040;">
     <div class="dropup">
       <button type="button"
-              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center btn-lang-switcher"
+              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center floating-selector-btn"
               style="width: 50px; height: 50px;"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -348,7 +348,7 @@
              href="#"
              id="i18n001"
              value-i18n="en-US">
-            <span class="fi fi-us dropdown-flag" aria-hidden="true" title="United States"></span>
+            <span class="fi fi-us floating-selector-flag" aria-hidden="true" title="United States"></span>
             <span data-i18n="floatingSelector.langEn">floatingSelector.langEn</span>
           </a>
         </li>
@@ -357,7 +357,7 @@
              href="#"
              id="i18n002"
              value-i18n="ko-KR">
-            <span class="fi fi-kr dropdown-flag" aria-hidden="true" title="South Korea"></span>
+            <span class="fi fi-kr floating-selector-flag" aria-hidden="true" title="South Korea"></span>
             <span data-i18n="floatingSelector.langKo">floatingSelector.langKo</span>
           </a>
         </li>
@@ -366,7 +366,7 @@
              href="#"
              id="i18n006"
              value-i18n="es-US">
-            <span class="fi fi-es dropdown-flag" aria-hidden="true" title="Spain"></span>
+            <span class="fi fi-es floating-selector-flag" aria-hidden="true" title="Spain"></span>
             <span data-i18n="floatingSelector.langEs">floatingSelector.langEs</span>
           </a>
         </li>
@@ -375,7 +375,7 @@
              href="#"
              id="i18n005"
              value-i18n="ja-JP">
-            <span class="fi fi-jp dropdown-flag" aria-hidden="true" title="Japan"></span>
+            <span class="fi fi-jp floating-selector-flag" aria-hidden="true" title="Japan"></span>
             <span data-i18n="floatingSelector.langJa">floatingSelector.langJa</span>
           </a>
         </li>
