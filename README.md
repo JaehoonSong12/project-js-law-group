@@ -326,7 +326,7 @@ To ensure the app keeps running after a reboot or crash on Linux servers, create
 
 ## Frontend
 - **HTML5** - Semantic markup
-- **CSS3 / SCSS** - Styling and theming
+- **CSS3 / SCSS** - Modular styling with Bootstrap 5 integration
 - **Bootstrap 5** - Responsive framework
 - **Jinja2** - Templating engine
 - **JavaScript (ES6+)** - Modern JavaScript with modules; client-side validation and interactivity
@@ -397,7 +397,11 @@ The project uses a custom i18n system:
 
 - **SCSS Source**: `static/scss/custom.scss`
 - **Compiled CSS**: `static/css/custom.min.css`
-- **Bootstrap Customization**: Custom variables and overrides in SCSS
+- **Architecture**:
+  - `custom.scss` serves as the main entry point.
+  - Imports and overrides Bootstrap 5 variables.
+  - Contains all custom component styles (Wizard, Flip Cards, Hero sections) and utility classes.
+  - Organized by feature (Global, Navigation, Buttons, Components).
 
 To compile SCSS:
 ```bash
