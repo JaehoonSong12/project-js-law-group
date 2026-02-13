@@ -94,9 +94,9 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
     - [Building Executables](#building-executables)
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
-- [Deployment & Production Hardening](#deployment--production-hardening)
-  - [Environment Variables (.env)](#environment-variables-env)
+- [Deployment \& Production Hardening](#deployment--production-hardening)
   - [Persistent Service (Systemd)](#persistent-service-systemd)
+  - [Maintenance \& Monitoring](#maintenance--monitoring)
 - [Technologies](#technologies)
   - [Backend](#backend)
   - [Frontend](#frontend)
@@ -108,11 +108,30 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
   - [Internationalization (i18n)](#internationalization-i18n)
   - [Styling](#styling)
   - [Features in Detail](#features-in-detail)
-- [SEO & Roadmap](#seo--roadmap)
+    - [Bilingual Support](#bilingual-support)
+    - [Contact Forms](#contact-forms)
+    - [Responsive Design](#responsive-design)
+    - [Performance](#performance)
+- [SEO \& Roadmap](#seo--roadmap)
+  - [1. Domain \& Server Configuration (Done)](#1-domain--server-configuration-done)
+  - [2. Frontend \& UX Improvements (Done)](#2-frontend--ux-improvements-done)
+  - [3. SEO Optimization (Pending)](#3-seo-optimization-pending)
+    - [A. Technical SEO](#a-technical-seo)
+    - [B. Content \& Meta Data](#b-content--meta-data)
+    - [C. Google Tools](#c-google-tools)
 - [Contributing](#contributing)
   - [For Developers](#for-developers)
   - [For Copywriters](#for-copywriters)
 - [References](#references)
+  - [Website References](#website-references)
+  - [Official Law Firm Website Examples](#official-law-firm-website-examples)
+  - [Contact Form Examples](#contact-form-examples)
+  - [24/7 Commercial/Marketing Websites](#247-commercialmarketing-websites)
+  - [UI/UX Resources](#uiux-resources)
+  - [Additional Resources](#additional-resources)
+    - [Documentation \& Frameworks](#documentation--frameworks)
+    - [Standards \& Guidelines](#standards--guidelines)
+    - [Development Tools](#development-tools-1)
 - [License](#license)
 - [Contact](#contact)
 
@@ -214,18 +233,19 @@ pyinstaller main.py --onefile --name jslawgroup --add-data "static;static" --add
 ```
 /
 ├── app/                    # Backend Application Logic
-│   ├── __init__.py         # Flask App Factory & Route Logic
+│   ├── __init__.py         # Flask App Factory & Route Logic (/, /motor-vehicle-accident, /personal-injury)
 │   ├── __main__.py         # Server Entry Point (Waitress/Gunicorn selection)
 │   ├── forms.py            # WTForms Definitions (Validation logic)
 │   └── gmailproxy.py       # Email Service (SMTP/Gmail integration)
 ├── templates/              # HTML Templates (Jinja2)
-│   ├── index.html          # Prototype Hub & Wizard
+│   ├── index.html          # Main Page (Wizard & General Info)
 │   ├── motor_vehicle_accident.html # Motor Vehicle Accident Page
-│   ├── personal_injury.html        # Personal Injury Page
-│   └── ...                 # Other templates
+│   ├── personal_injury.html        # Personal Injury & Criminal Defense Page
 ├── static/                 # Static Assets
 │   ├── css/                # Compiled Styles
 │   ├── js/                 # Frontend Scripts
+│   ├── scss/               # Source SCSS (Custom styles grouped by UI component)
+│   ├── locales/            # i18n JSON files (en-US, es-US, ja-JP, ko-KR)
 │   └── images/             # Visual Assets
 ├── submissions/            # Local storage for form submissions (JSON/CSV)
 ├── main.py                 # Application Wrapper Script
@@ -446,30 +466,34 @@ sass static/scss/custom.scss static/css/custom.min.css --style compressed
 
 # SEO & Roadmap
 
-## 1. Domain & Server Configuration (Done)
-- [x] **Domain Acquisition:** `jslawgroup.net` acquired.
+## 1. Domain & Server Configuration
+- [x] **Main Domain:** `24-7autoaccidents.com` (Canonical)
+- [x] **Alias Domains (Redirects):**
+  - `24-7autoaccident.com`
+  - `247autoaccidents.com`
+  - `247autoaccident.com`
+  - `247caraccident.com`
+  - `247caraccidents.com`
 - [x] **DNS Setup:** Pointed to OCI IP address.
 - [x] **Infrastructure:** OCI Instance configured.
 - [x] **Web Server:** Nginx configured as reverse proxy.
 - [x] **SSL/HTTPS:** Enabled and working (Let's Encrypt/Certbot).
 - [x] **Email Integration:** `GmailProxy` implemented with attachments (JSON/CSV) and HTML body.
-- [x] **App Architecture:** Reorganized into `app/__init__.py` (Flask App) and `app/__main__.py` (Server Entry Point), with `main.py` wrapper.
-- [x] **Wizard Integration:** Embedded 'Auto Accident Wizard' multi-step form into `index.html` with WTForms (`AutoAccidentWizardForm`) and backend processing.
-- [x] **Build Pipeline:** Updated PyInstaller builds to bundle dependencies and configurations.
+- [x] **App Architecture:** Flask App with `main.py` wrapper.
 
 ## 2. Frontend & UX Improvements (Done)
 - [x] **Prototype Index (`index.html`):** Consistent validation, success feedback modal, and layout fixes.
 - [x] **Dependencies:** Installed `email-validator` to resolve backend validation issues.
 
-## 3. SEO Optimization (Pending)
+## 3. SEO Optimization (In Progress - Technical Setup Complete)
 ### A. Technical SEO
 - [x] **Robots.txt:** Created and serving at `/robots.txt`.
-- [x] **Sitemap.xml:** Serving at `/sitemap.xml` (Ensure content is up to date).
-- [ ] **Canonical Tags:** Verify `<link rel="canonical" href="...">` is present in templates.
-- [ ] **Submission:** Submit `https://www.jslawgroup.net/sitemap.xml` to Google Search Console.
+- [x] **Sitemap.xml:** Serving at `/sitemap.xml` (Updated for `24-7autoaccidents.com`).
+- [x] **Canonical Tags:** Verify `<link rel="canonical" href="...">` is present in templates.
+- [ ] **Submission:** Submit `https://24-7autoaccidents.com/sitemap.xml` to Google Search Console.
 
 ### B. Content & Meta Data
-- [ ] **Title Tags:** Ensure unique titles for `/final/about`, `/final/accident`, etc.
+- [ ] **Title Tags:** Ensure unique titles for all pages.
 - [ ] **Meta Descriptions:** Add description tags to all final templates.
 - [ ] **Open Graph (OG) Tags:** Add for social sharing.
 - [ ] **Schema.org:** Add JSON-LD for "LegalService".
@@ -497,13 +521,13 @@ sass static/scss/custom.scss static/css/custom.min.css --style compressed
 
 ## For Copywriters
 
-The translation workspace is located in `scripts-*/` directories:
-- **English**: `scripts-en-US/`
-- **Korean**: `scripts-ko-KR/`
-- **Japanese**: `scripts-ja-JP/`
-- **Spanish**: `scripts-es-US/`
+The translation workspace is located in `static/locales/`:
+- **English**: `static/locales/en-US.json`
+- **Korean**: `static/locales/ko-KR.json`
+- **Japanese**: `static/locales/ja-JP.json`
+- **Spanish**: `static/locales/es-US.json`
 
-Translation files are managed in JSON format in `static/locales/`.
+Translation files are managed in JSON format.
 
 
 
