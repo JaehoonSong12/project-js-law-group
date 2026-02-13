@@ -2,11 +2,19 @@ from flask import Flask, render_template, request, flash, redirect, url_for, sen
 from .forms import AutoAccidentWizardForm
 from .gmailproxy import GmailProxy
 import os
+import sys
 import json
 import csv
 from datetime import datetime, date
 
-app = Flask(__name__, static_folder='../static', template_folder='../templates')
+if getattr(sys, 'frozen', False):
+    # PyInstaller Bundle: Use absolute paths from _MEIPASS
+    template_folder = os.path.join(sys._MEIPASS, 'templates')
+    static_folder = os.path.join(sys._MEIPASS, 'static')
+    app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+else:
+    # Development: Use relative paths
+    app = Flask(__name__, static_folder='../static', template_folder='../templates')
 # Load SECRET_KEY from environment variable, fallback to dev key if not set
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-prod')
 
