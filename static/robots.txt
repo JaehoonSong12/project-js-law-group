@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.jslawgroup.net/sitemap.xml
+Sitemap: https://www.24-7autoaccidents.com/sitemap.xml
