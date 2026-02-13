@@ -9,43 +9,21 @@
 // variables and small overrides take effect.
 
 @use "bootstrap/scss/bootstrap" with ( // implies @charset "utf-8";
-  // $primary: #910dfd,
   $primary: #c8102e, // red
-  // $primary: #6610f2, // indigo
-  // $primary: #198754, // green
-  // $primary: #6f42c1, // purple
-  // $primary: #0dcaf0, // cyan
-  // $primary: #910dfd,
-  // $primary: var(--bs-indigo),
-  // $primary-rgb: #ffffff,
-  // $body-color: #212529,
-  // $body-bg: #fff,
 );
 
 
 // Google Fonts - Plus Jakarta Sans
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
 
-// ============================================================================
-// 2. Global Typography & Base Styles
-// ============================================================================
-
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 600; 
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-  scroll-behavior: smooth; /* Global smooth scroll */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-}
 
 // ============================================================================
-// 3. Navigation & Footer
+// 1. UI Components (Grouped by i18n Key/Module Name)
 // ============================================================================
 
+// ----------------------------------------------------------------------------
+// [nav] Navigation
+// ----------------------------------------------------------------------------
 /* Nav Links: Bright to Primary on Hover */
 .nav-link {
   transition: color 0.60s ease;
@@ -56,6 +34,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// ----------------------------------------------------------------------------
+// [footer] Footer
+// ----------------------------------------------------------------------------
 /* Footer Links */
 footer {
   a {
@@ -102,12 +83,10 @@ footer {
   }
 }
 
-// ============================================================================
-// 4. Buttons & Interactive Elements
-// ============================================================================
-
-/* Language Switcher Components */
-.lang-switcher-container {
+// ----------------------------------------------------------------------------
+// [floatingSelector] Language Switcher
+// ----------------------------------------------------------------------------
+.floating-selector-container {
   margin-bottom: 20px; 
   z-index: 1040;
 
@@ -119,7 +98,7 @@ footer {
 }
 
 /* Floating Action Button (FAB) for Language Switcher */
-.btn-lang-switcher {
+.floating-selector-btn {
   transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
 
   &:hover {
@@ -130,7 +109,7 @@ footer {
 }
 
 /* Flag Icon Helper */
-.dropdown-flag.dropdown-flag {
+.floating-selector-flag.floating-selector-flag {
   width: 1.5em;
   height: 1em;
   display: inline-block;
@@ -138,8 +117,50 @@ footer {
   flex-shrink: 0;
 }
 
+// ----------------------------------------------------------------------------
+// [wizard] Auto Accident Wizard (index.wizard)
+// ----------------------------------------------------------------------------
+.wizard-section {
+  width: 100%;
+}
+
+#wizard-container {
+  background-image: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1767972463877-b64ba4283cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 1rem;
+  border-radius: 0;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.wizard-card {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border: none;
+}
+
+.wizard-step-transition {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: none;
+  
+  &.active {
+    opacity: 1;
+    display: block;
+  }
+}
+
 /* Wizard Option Buttons */
-.btn-option {
+.wizard-btn-option {
   transition: all 0.2s ease;
   text-align: left;
   border: 1px solid #dee2e6;
@@ -154,11 +175,10 @@ footer {
   }
 }
 
-// ============================================================================
-// 5. Cards & Layout Components
-// ============================================================================
-
-/* --- Flip Card Component --- */
+// ----------------------------------------------------------------------------
+// [floatingGrid] Vehicle Accidents Categories (mvAccident.floatingGrid)
+// ----------------------------------------------------------------------------
+/* Flip Card Component */
 .flip-card-wrapper {
   perspective: 1000px; 
   height: 400px;
@@ -198,55 +218,33 @@ footer {
   text-align: center;
 }
 
-/* --- Practice Area Cards --- */
-.practice-area-card {
+// ----------------------------------------------------------------------------
+// [cardsGrid] Practice Areas (pi.cardsGrid)
+// ----------------------------------------------------------------------------
+.cards-grid-card {
   height: 250px;
 }
 
-/* --- Wizard Component --- */
-.wizard-section {
-  width: 100%;
+// ----------------------------------------------------------------------------
+// [steppedList] Accident Steps (mvAccident.steppedList)
+// ----------------------------------------------------------------------------
+.stepped-list-icon {
+  width: 22px; 
+  height: 22px; 
+  font-size: 12px;
 }
 
-#wizard-container {
-  background-image: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1767972463877-b64ba4283cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 3rem 1rem;
-  border-radius: 0;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+// ----------------------------------------------------------------------------
+// [imageList] Process Info (mvAccident.imageList, pi.imageList)
+// ----------------------------------------------------------------------------
+.image-list-icon {
+  width: 65px; 
+  height: 65px;
 }
 
-.wizard-card {
-  width: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border: none;
-}
-
-.step-transition {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  display: none;
-  
-  &.active {
-    opacity: 1;
-    display: block;
-  }
-}
-
-// ============================================================================
-// 6. Hero & Section Backgrounds
-// ============================================================================
-
+// ----------------------------------------------------------------------------
+// [hero] / [banner] Hero & Backgrounds (pi.hero, index.banner)
+// ----------------------------------------------------------------------------
 .hero-bg-pi {
   background-image: url('https://picsum.photos/1920/1080?random=1'); 
   background-size: cover; 
@@ -254,7 +252,7 @@ footer {
   min-height: 60vh;
 }
 
-.bg-compensation {
+.banner-bg-compensation {
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
   background-size: cover;
   background-position: center;
@@ -264,29 +262,19 @@ footer {
   margin-top: -5rem;
 }
 
+
 // ============================================================================
-// 7. Utilities & Icons
+// 2. Utilities (Shared helpers, icons, etc.)
 // ============================================================================
 
 /* Flash Messages */
-.flash-messages-container {
+.shared-flash-messages {
   z-index: 2000; 
   top: 80px;
 }
 
-/* Icon Sizing & Containers */
-.step-number-icon {
-  width: 22px; 
-  height: 22px; 
-  font-size: 12px;
-}
-
-.process-icon-circle {
-  width: 65px; 
-  height: 65px;
-}
-
-.card-icon-circle {
+/* Shared Icon Containers */
+.shared-icon-circle {
   width: 70px; 
   height: 70px;
 }
@@ -294,4 +282,21 @@ footer {
 /* Small Text Utility */
 .fs-xs {
   font-size: 10px;
+}
+
+
+// ============================================================================
+// 3. General Styling (Global)
+// ============================================================================
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600; 
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth; /* Global smooth scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
 }

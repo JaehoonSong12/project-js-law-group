@@ -19,7 +19,7 @@
 
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-      <div class="container mt-3 fixed-top flash-messages-container">
+      <div class="container mt-3 fixed-top shared-flash-messages">
         {% for category, message in messages %}
           <div class="alert alert-{{ category }} alert-dismissible fade show shadow" role="alert">
             {{ message }}
@@ -171,7 +171,7 @@
             pi.imageList.title
           </h2>
           <div class="d-flex mb-4">
-            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center process-icon-circle"><img src="https://picsum.photos/30/30?random=101" alt="person" class="rounded-circle"></div></div>
+            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center image-list-icon"><img src="https://picsum.photos/30/30?random=101" alt="person" class="rounded-circle"></div></div>
             <div class="ms-4">
               <h4 data-i18n="pi.imageList.step1.title"
                   class="fw-bold text-dark">
@@ -184,7 +184,7 @@
             </div>
           </div>
           <div class="d-flex mb-4">
-            <div class="flex-shrink-0"><div class="bg-dark rounded-circle d-flex align-items-center justify-content-center process-icon-circle"><img src="https://picsum.photos/30/30?random=102" alt="legal" class="rounded-circle"></div></div>
+            <div class="flex-shrink-0"><div class="bg-dark rounded-circle d-flex align-items-center justify-content-center image-list-icon"><img src="https://picsum.photos/30/30?random=102" alt="legal" class="rounded-circle"></div></div>
             <div class="ms-4">
               <h4 data-i18n="pi.imageList.step2.title"
                   class="fw-bold text-dark">
@@ -197,7 +197,7 @@
             </div>
           </div>
           <div class="d-flex">
-            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center process-icon-circle"><img src="https://picsum.photos/30/30?random=103" alt="gavel" class="rounded-circle"></div></div>
+            <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center image-list-icon"><img src="https://picsum.photos/30/30?random=103" alt="gavel" class="rounded-circle"></div></div>
             <div class="ms-4">
               <h4 data-i18n="pi.imageList.step3.title"
                   class="fw-bold text-dark">
@@ -225,10 +225,10 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm practice-area-card">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm cards-grid-card">
             <img src="https://picsum.photos/600/400?random=10" class="w-100 h-100 object-fit-cover position-absolute" alt="Slip and Fall">
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 card-icon-circle"><img src="https://picsum.photos/40/40?random=11" alt="icon" class="rounded-circle"></div>
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=11" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.slipFall"
                   class="h5 fw-bold text-center">
                 pi.cardsGrid.slipFall
@@ -237,10 +237,10 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm practice-area-card">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm cards-grid-card">
             <img src="https://picsum.photos/600/400?random=20" class="w-100 h-100 object-fit-cover position-absolute" alt="Bicycle Crash">
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 card-icon-circle"><img src="https://picsum.photos/40/40?random=21" alt="icon" class="rounded-circle"></div>
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=21" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.bicycleCrash"
                   class="h5 fw-bold text-center">
                 pi.cardsGrid.bicycleCrash
@@ -249,10 +249,10 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm practice-area-card">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm cards-grid-card">
             <img src="https://picsum.photos/600/400?random=30" class="w-100 h-100 object-fit-cover position-absolute" alt="Pedestrian">
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 card-icon-circle"><img src="https://picsum.photos/40/40?random=31" alt="icon" class="rounded-circle"></div>
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=31" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.pedestrianCollision"
                   class="h5 fw-bold text-center">
                 pi.cardsGrid.pedestrianCollision
@@ -261,10 +261,10 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm practice-area-card">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm cards-grid-card">
             <img src="https://picsum.photos/600/400?random=40" class="w-100 h-100 object-fit-cover position-absolute" alt="Premises">
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 card-icon-circle"><img src="https://picsum.photos/40/40?random=41" alt="icon" class="rounded-circle"></div>
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=41" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.premisesLiability"
                   class="h5 fw-bold text-center">
                 pi.cardsGrid.premisesLiability
@@ -273,10 +273,10 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm practice-area-card">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm cards-grid-card">
             <img src="https://picsum.photos/600/400?random=50" class="w-100 h-100 object-fit-cover position-absolute" alt="Workers Comp">
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 card-icon-circle"><img src="https://picsum.photos/40/40?random=51" alt="icon" class="rounded-circle"></div>
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=51" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.workersComp"
                   class="h5 fw-bold text-center">
                 pi.cardsGrid.workersComp
@@ -285,10 +285,10 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="position-relative rounded-4 overflow-hidden shadow-sm practice-area-card">
+          <div class="position-relative rounded-4 overflow-hidden shadow-sm cards-grid-card">
             <img src="https://picsum.photos/600/400?random=60" class="w-100 h-100 object-fit-cover position-absolute" alt="Other Injuries">
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-3">
-              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 card-icon-circle"><img src="https://picsum.photos/40/40?random=61" alt="icon" class="rounded-circle"></div>
+              <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=61" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.otherInjuries"
                   class="h5 fw-bold text-center">
                 pi.cardsGrid.otherInjuries
@@ -367,11 +367,11 @@
 
 
   <!-- Floating Language Switcher (Bottom Right) -->
-  <div class="floating-selector position-fixed bottom-0 end-0 p-4 lang-switcher-container"
+  <div class="floating-selector position-fixed bottom-0 end-0 p-4 floating-selector-container"
        style="margin-bottom: 20px; z-index: 1040;">
     <div class="dropup">
       <button type="button"
-              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center btn-lang-switcher"
+              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center floating-selector-btn"
               style="width: 50px; height: 50px;"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -390,7 +390,7 @@
              href="#"
              id="i18n001"
              value-i18n="en-US">
-            <span class="fi fi-us dropdown-flag" aria-hidden="true" title="United States"></span>
+            <span class="fi fi-us floating-selector-flag" aria-hidden="true" title="United States"></span>
             <span data-i18n="floatingSelector.langEn">floatingSelector.langEn</span>
           </a>
         </li>
@@ -399,7 +399,7 @@
              href="#"
              id="i18n002"
              value-i18n="ko-KR">
-            <span class="fi fi-kr dropdown-flag" aria-hidden="true" title="South Korea"></span>
+            <span class="fi fi-kr floating-selector-flag" aria-hidden="true" title="South Korea"></span>
             <span data-i18n="floatingSelector.langKo">floatingSelector.langKo</span>
           </a>
         </li>
@@ -408,7 +408,7 @@
              href="#"
              id="i18n006"
              value-i18n="es-US">
-            <span class="fi fi-es dropdown-flag" aria-hidden="true" title="Spain"></span>
+            <span class="fi fi-es floating-selector-flag" aria-hidden="true" title="Spain"></span>
             <span data-i18n="floatingSelector.langEs">floatingSelector.langEs</span>
           </a>
         </li>
@@ -417,7 +417,7 @@
              href="#"
              id="i18n005"
              value-i18n="ja-JP">
-            <span class="fi fi-jp dropdown-flag" aria-hidden="true" title="Japan"></span>
+            <span class="fi fi-jp floating-selector-flag" aria-hidden="true" title="Japan"></span>
             <span data-i18n="floatingSelector.langJa">floatingSelector.langJa</span>
           </a>
         </li>

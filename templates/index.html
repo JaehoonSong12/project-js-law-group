@@ -155,7 +155,7 @@
 
                   <!-- Step 1: Accident Type -->
                   <div id="step1"
-                       class="step-transition active">
+                       class="wizard-step-transition active">
                     <h3 data-i18n="index.wizard.step1.title"
                         class="fw-bold mb-3">
                       wizard.step1.title
@@ -171,31 +171,31 @@
 
                     <div class="d-grid gap-3">
                       <button type="button"
-                              class="btn btn-option p-3 rounded-3"
+                              class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Car Accident')">
                         <i class="fas fa-car me-3 fa-lg text-secondary"></i>
                         <span data-i18n="index.wizard.step1.car">index.wizard.step1.car</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3 rounded-3"
+                              class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Motorcycle Accident')">
                         <i class="fas fa-motorcycle me-3 fa-lg text-secondary"></i>
                         <span data-i18n="index.wizard.step1.motorcycle">index.wizard.step1.motorcycle</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3 rounded-3"
+                              class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Truck Accident')">
                         <i class="fas fa-truck-moving me-3 fa-lg text-secondary"></i>
                         <span data-i18n="index.wizard.step1.truck">index.wizard.step1.truck</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3 rounded-3"
+                              class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Pedestrian')">
                         <i class="fas fa-walking me-3 fa-lg text-secondary"></i>
                         <span data-i18n="index.wizard.step1.pedestrian">index.wizard.step1.pedestrian</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3 rounded-3"
+                              class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Rideshare')">
                         <i class="fas fa-taxi me-3 fa-lg text-secondary"></i>
                         <span data-i18n="index.wizard.step1.rideshare">index.wizard.step1.rideshare</span>
@@ -205,7 +205,7 @@
 
                   <!-- Step 2: Zip Code -->
                   <div id="step2"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step2.question"
                         class="fw-bold mb-4">
                       wizard.step2.question
@@ -234,24 +234,24 @@
 
                   <!-- Step 3: Medical Treatment -->
                   <div id="step3"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step3.question"
                         class="fw-bold mb-4">
                       wizard.step3.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(3, 'medical_treatment', 'Hospital')">
                         <span data-i18n="index.wizard.step3.hospital">index.wizard.step3.hospital</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(3, 'medical_treatment', 'Doctor')">
                         <span data-i18n="index.wizard.step3.doctor">index.wizard.step3.doctor</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(3, 'medical_treatment', 'No')">
                         <span data-i18n="index.wizard.step3.no">index.wizard.step3.no</span>
                       </button>
@@ -260,19 +260,19 @@
 
                   <!-- Step 4: Police Report -->
                   <div id="step4"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step4.question"
                         class="fw-bold mb-4">
                       wizard.step4.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(4, 'police_report', 'Yes')">
                         <span data-i18n="index.wizard.step4.yes">index.wizard.step4.yes</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(4, 'police_report', 'No')">
                         <span data-i18n="index.wizard.step4.no">index.wizard.step4.no</span>
                       </button>
@@ -281,24 +281,24 @@
 
                   <!-- Step 5: At Fault -->
                   <div id="step5"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step5.question"
                         class="fw-bold mb-4">
                       wizard.step5.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(5, 'at_fault', 'No')">
                         <span data-i18n="index.wizard.step5.no">index.wizard.step5.no</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(5, 'at_fault', 'Yes')">
                         <span data-i18n="index.wizard.step5.yes">index.wizard.step5.yes</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(5, 'at_fault', 'Unknown')">
                         <span data-i18n="index.wizard.step5.unknown">index.wizard.step5.unknown</span>
                       </button>
@@ -307,24 +307,24 @@
 
                   <!-- Step 6: Lawyer -->
                   <div id="step6"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step6.question"
                         class="fw-bold mb-4">
                       wizard.step6.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(6, 'has_lawyer', 'No')">
                         <span data-i18n="index.wizard.step6.no">index.wizard.step6.no</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(6, 'has_lawyer', 'Yes')">
                         <span data-i18n="index.wizard.step6.yes">index.wizard.step6.yes</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(6, 'has_lawyer', 'Yes - Want New')">
                         <span data-i18n="index.wizard.step6.wantNew">index.wizard.step6.wantNew</span>
                       </button>
@@ -333,29 +333,29 @@
 
                   <!-- Step 7: Date -->
                   <div id="step7"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step7.question"
                         class="fw-bold mb-4">
                       wizard.step7.question
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Within 30 days')">
                         <span data-i18n="index.wizard.step7.thirty">index.wizard.step7.thirty</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Within 1 year')">
                         <span data-i18n="index.wizard.step7.oneYear">index.wizard.step7.oneYear</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Within 2 years')">
                         <span data-i18n="index.wizard.step7.twoYears">index.wizard.step7.twoYears</span>
                       </button>
                       <button type="button"
-                              class="btn btn-option p-3"
+                              class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Over 2 years')">
                         <span data-i18n="index.wizard.step7.overTwo">index.wizard.step7.overTwo</span>
                       </button>
@@ -364,7 +364,7 @@
 
                   <!-- Step 8: Primary Injury -->
                   <div id="step8"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step8.question"
                         class="fw-bold mb-4">
                       wizard.step8.question
@@ -414,7 +414,7 @@
 
                   <!-- Step 9: Name -->
                   <div id="step9"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step9.question"
                         class="fw-bold mb-2">
                       wizard.step9.question
@@ -460,7 +460,7 @@
 
                   <!-- Step 10: Contact -->
                   <div id="step10"
-                       class="step-transition">
+                       class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step10.title"
                         class="fw-bold mb-2">
                       wizard.step10.title
@@ -755,7 +755,7 @@
   </section>
 
   <!-- CONTENT SECTION 6: Compensation -->
-  <section class="banner py-5 position-relative bg-compensation">
+  <section class="banner py-5 position-relative banner-bg-compensation">
     <div class="container text-center text-white">
       <h2 data-i18n="index.banner.title"
           class="fw-bold mb-3">
@@ -925,11 +925,11 @@
 
   
   <!-- Floating Language Switcher (Bottom Right) -->
-  <div class="floating-selector position-fixed bottom-0 end-0 p-4 lang-switcher-container"
+  <div class="floating-selector position-fixed bottom-0 end-0 p-4 floating-selector-container"
        style="margin-bottom: 20px; z-index: 1040;">
     <div class="dropup">
       <button type="button"
-              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center btn-lang-switcher"
+              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center floating-selector-btn"
               style="width: 50px; height: 50px;"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -948,7 +948,7 @@
              href="#"
              id="i18n001"
              value-i18n="en-US">
-            <span class="fi fi-us dropdown-flag" aria-hidden="true" title="United States"></span>
+            <span class="fi fi-us floating-selector-flag" aria-hidden="true" title="United States"></span>
             <span data-i18n="floatingSelector.langEn">floatingSelector.langEn</span>
           </a>
         </li>
@@ -957,7 +957,7 @@
              href="#"
              id="i18n002"
              value-i18n="ko-KR">
-            <span class="fi fi-kr dropdown-flag" aria-hidden="true" title="South Korea"></span>
+            <span class="fi fi-kr floating-selector-flag" aria-hidden="true" title="South Korea"></span>
             <span data-i18n="floatingSelector.langKo">floatingSelector.langKo</span>
           </a>
         </li>
@@ -966,7 +966,7 @@
              href="#"
              id="i18n006"
              value-i18n="es-US">
-            <span class="fi fi-es dropdown-flag" aria-hidden="true" title="Spain"></span>
+            <span class="fi fi-es floating-selector-flag" aria-hidden="true" title="Spain"></span>
             <span data-i18n="floatingSelector.langEs">floatingSelector.langEs</span>
           </a>
         </li>
@@ -975,7 +975,7 @@
              href="#"
              id="i18n005"
              value-i18n="ja-JP">
-            <span class="fi fi-jp dropdown-flag" aria-hidden="true" title="Japan"></span>
+            <span class="fi fi-jp floating-selector-flag" aria-hidden="true" title="Japan"></span>
             <span data-i18n="floatingSelector.langJa">floatingSelector.langJa</span>
           </a>
         </li>
@@ -1088,7 +1088,7 @@
     }
 
     function showStep(stepId) {
-      document.querySelectorAll('.step-transition').forEach(el => {
+      document.querySelectorAll('.wizard-step-transition').forEach(el => {
         el.classList.remove('active');
       });
       const nextStep = document.getElementById('step' + stepId);
