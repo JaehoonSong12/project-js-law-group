@@ -111,6 +111,63 @@
         "message": "Hemos recibido sus datos. Nuestro equipo legal está analizando su caso y se pondrá en contacto pronto.",
         "close": "Cerrar"
       }
+    },
+    "content": {
+      "section1": {
+        "title": "Experiencia legal que ofrece resultados",
+        "paragraph": "Después de un accidente automovilístico, necesita más que asesoría legal: un equipo que lo ponga a usted primero. JS Law Group ofrece atención personalizada y comunicación transparente, guiándolo en cada paso del proceso legal. Usted se enfoca en sanar; nosotros en asegurar la compensación que merece.",
+        "cta": "Su caso comienza aquí"
+      },
+      "section2": {
+        "title": "Abogados dedicados. Apoyo centrado en el cliente",
+        "paragraph": "JS Law Group representa a personas afectadas por accidentes de vehículos de motor y otros asuntos de lesiones personales. Ya sea que necesite ayuda para alcanzar un acuerdo justo o prepararse para un juicio, nuestro equipo maneja una amplia gama de casos con experiencia legal y compromiso con su mejor resultado. Desde lesiones graves hasta reclamos directos, luchamos por sus derechos.",
+        "cta": "Obtenga una consulta gratuita"
+      },
+      "section3": {
+        "title": "Por qué su caso necesita un enfoque a la medida",
+        "paragraph": "No hay dos accidentes iguales. Los detalles importan: quién tuvo la culpa, las condiciones del camino y la gravedad de las lesiones. Los abogados de JS Law Group analizan cada ángulo para construir un caso sólido. No dependemos de un enfoque único; construimos una estrategia específica para usted para asegurar el mejor resultado posible.",
+        "cta": "Proteja sus derechos hoy"
+      },
+      "section4": {
+        "title": "Dónde nuestra experiencia puede marcar la diferencia",
+        "subtitle": "Desde choques devastadores hasta golpes menores, JS Law Group maneja casos de vehículos de motor y lesiones personales con experiencia dedicada.",
+        "trucking": { "title": "Accidentes de camiones y tráileres", "desc": "Estos casos requieren litigio especializado. Nuestro equipo está preparado para responsabilizar a las empresas de transporte y luchar por la compensación que merece." },
+        "pedestrian": { "title": "Accidentes de peatones y bicicletas", "desc": "Si lo atropellaron en bicicleta o caminando, su caso merece atención especial. JS Law Group asegura que sus derechos estén protegidos." },
+        "motorcycle": { "title": "Accidentes de motocicleta", "desc": "Los motociclistas suelen sufrir lesiones graves. Ayudamos a maximizar la compensación por gastos médicos y otras pérdidas." },
+        "rideshare": { "title": "Accidentes de viajes compartidos y vehículos comerciales", "desc": "Los accidentes con Uber, Lyft o vehículos de empresa suelen involucrar seguros complejos. Nos encargamos de los detalles para que usted se enfoque en recuperarse." },
+        "intersection": { "title": "Accidentes en intersección / T-Bone / por alcance", "desc": "Incluso los accidentes \"simples\" pueden causar dolor a largo plazo. Nuestros abogados manejan los detalles y luchan por su recuperación." },
+        "delayed": { "title": "Accidentes de bajo impacto o lesiones tardías", "desc": "Algunas lesiones aparecen semanas después. No firme nada ni acepte un acuerdo hasta hablar con nuestro equipo." }
+      },
+      "section5": {
+        "title": "Lesiones comunes en accidentes automovilísticos",
+        "whiplash": "Latigazo cervical y lesiones de cuello",
+        "concussion": "Conmociones y traumatismo craneal",
+        "backSpine": "Dolor de espalda y columna",
+        "fractures": "Fracturas y roturas de huesos",
+        "softTissue": "Hemorragia interna y tejidos blandos",
+        "disability": "Discapacidad a largo plazo",
+        "cta": "Hable con un abogado ahora"
+      },
+      "section6": {
+        "title": "Compensación real por pérdidas reales",
+        "paragraph": "Las facturas médicas, los salarios perdidos y el estrés emocional son costos reales. Si tiene derecho a compensación, JS Law Group luchará para que la reciba. Nuestro equipo está comprometido con la comunicación transparente y asegurar el mejor resultado para cada cliente."
+      },
+      "section7": {
+        "title": "Preguntas frecuentes",
+        "q1": "¿Necesito un abogado si no tuve la culpa?",
+        "a1": "Sí. Las aseguradoras suelen intentar minimizar los pagos sin importar la culpa. Un abogado asegura que reciba un trato justo.",
+        "q2": "¿Y si era peatón o pasajero?",
+        "a2": "Aún tiene derechos. Los pasajeros y peatones suelen tener derecho a una compensación significativa.",
+        "q3": "¿Es caro contratar un abogado?",
+        "a3": "JS Law Group trabaja por contingencia en muchos asuntos de lesiones personales: solo paga si recuperamos para usted. No cobramos honorarios por adelantado antes de prestar servicios legales.",
+        "q4": "¿Hay plazo para presentar?",
+        "a4": "Sí. Los plazos de prescripción varían por estado. Es crucial actuar con rapidez.",
+        "q5": "¿Cómo empiezo?",
+        "a5": "Use el formulario al inicio de esta página para contarnos su caso, o llámenos para una consulta gratuita. Nuestro equipo revisará su situación y le recomendará los siguientes pasos."
+      },
+      "section8": {
+        "cta": "Obtenga su evaluación de caso gratuita"
+      }
     }
   },
   "motorVehicleAccident": {
@@ -132,7 +189,7 @@
       "step3": { "title": "Trabajaremos para ganar su caso.", "desc": "Una vez que firme con JS Law Group, nosotros nos encargaremos del resto. Su abogado asignado luchará contra la parte infractora para obtener la máxima compensación que se le debe según la ley estatal." }
     },
     "vehicleAccidents": {
-      "title": "Confíe en <span class=\"text-danger\">(770) 222-4444</span> después de su Accidente de Vehículo Motor",
+      "title": "Confíe en <span class=\"text-primary\">(770) 222-4444</span> después de su Accidente de Vehículo Motor",
       "subtitle": "Nuestros abogados en JS Law Group se especializan en casos de accidentes automovilísticos y de vehículos motorizados. Nuestro objetivo es siempre la máxima compensación para la parte lesionada.",
       "seeMore": "Ver Más",
       "car": { "title": "Accidentes Automovilísticos", "desc": "Las lesiones como resultado de un accidente de vehículo motor pueden ser devastadoras. Si ha estado involucrado en un accidente automovilístico y resultó lesionado, podría tener derecho a compensación por tratamiento médico, reparación del vehículo y otros gastos. JS Law Group defenderá su reclamación y luchará por los resultados que se merece." },
@@ -145,7 +202,7 @@
     "pageTitle": "JS Law Group - Lesiones personales",
     "heroCta": {
       "title": "Abogados de Lesiones Personales",
-      "subtitle": "Confíe en <span class=\"text-danger fw-bold\">(770) 222-4444</span> para defender su caso de lesiones personales",
+      "subtitle": "Confíe en <span class=\"text-primary fw-bold\">(770) 222-4444</span> para defender su caso de lesiones personales",
       "message": "Cuando usted o un ser querido sufre una lesión grave debido a la negligencia de otra persona, necesita asesoramiento legal en el que pueda confiar.",
       "claim": "JS Law Group está preparado para defender su reclamación."
     },

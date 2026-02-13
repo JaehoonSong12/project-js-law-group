@@ -111,6 +111,63 @@
         "message": "We have received your details. Our legal team is analyzing your case and will contact you shortly.",
         "close": "Close"
       }
+    },
+    "content": {
+      "section1": {
+        "title": "Legal Expertise That Delivers Results",
+        "paragraph": "After a car crash, you need more than just legal advice—you need a team that puts you first. JS Law Group offers personalized attention and transparent communication, guiding you through every step of the legal process. You focus on healing; we focus on securing the compensation you deserve.",
+        "cta": "Your Case Starts Here"
+      },
+      "section2": {
+        "title": "Dedicated Attorneys. Client-Centered Support",
+        "paragraph": "JS Law Group represents people affected by motor vehicle accidents and other personal injury matters. Whether you need help reaching a fair settlement or preparing for trial, our team handles a wide range of cases with legal expertise and a commitment to your best outcome. From severe injuries to straightforward claims, we fight for your rights.",
+        "cta": "Get a Free Consultation"
+      },
+      "section3": {
+        "title": "Why Your Case Needs a Tailored Approach",
+        "paragraph": "No two accidents are the same. Details matter—who was at fault, the road conditions, and the severity of injuries. The attorneys at JS Law Group analyze every angle to build a strong case. We don't rely on a one-size-fits-all approach; we build a strategy specifically for you to secure the best possible outcome.",
+        "cta": "Secure Your Rights Today"
+      },
+      "section4": {
+        "title": "Where Our Experience Can Make a Difference",
+        "subtitle": "From devastating crashes to minor fender benders, JS Law Group handles motor vehicle and personal injury cases with dedicated expertise.",
+        "trucking": { "title": "Trucking and 18-Wheeler Accidents", "desc": "These cases require specialized litigation. Our team is prepared to hold trucking companies accountable and fight for the compensation you deserve." },
+        "pedestrian": { "title": "Pedestrian and Bicycle Accidents", "desc": "If you were hit while biking or walking, your case deserves special attention. JS Law Group ensures your rights are protected." },
+        "motorcycle": { "title": "Motorcycle Accidents", "desc": "Motorcyclists often face severe injuries. We help maximize compensation for medical bills and other losses." },
+        "rideshare": { "title": "Rideshare and Commercial Vehicle Accidents", "desc": "Accidents involving Uber, Lyft, or company vehicles often involve complex insurance. We handle the details so you can focus on recovery." },
+        "intersection": { "title": "Intersection / T-Bone / Rear-End Accidents", "desc": "Even \"simple\" accidents can cause long-term pain. Our attorneys handle the details and fight for your recovery." },
+        "delayed": { "title": "Low Impact or Delayed Injury Accidents", "desc": "Some injuries appear weeks later. Don't sign anything or settle until you've spoken with our team." }
+      },
+      "section5": {
+        "title": "Common Car Crash Injuries",
+        "whiplash": "Whiplash and Neck Injuries",
+        "concussion": "Concussions and Head Trauma",
+        "backSpine": "Back and Spinal Pain",
+        "fractures": "Bone Fractures and Breaks",
+        "softTissue": "Internal Bleeding and Soft Tissue",
+        "disability": "Long-Term Disability",
+        "cta": "Talk to a Lawyer Now"
+      },
+      "section6": {
+        "title": "Real Compensation for Real Losses",
+        "paragraph": "Medical bills, lost wages, and emotional distress are real costs. If you are entitled to compensation, JS Law Group will fight to see that you receive it. Our team is committed to transparent communication and securing the best outcome for every client."
+      },
+      "section7": {
+        "title": "Frequently Asked Questions",
+        "q1": "Do I need a lawyer if I wasn't at fault?",
+        "a1": "Yes, insurance companies often try to minimize payouts regardless of fault. A lawyer ensures you get fair treatment.",
+        "q2": "What if I was a pedestrian or a passenger?",
+        "a2": "You still have rights. Passengers and pedestrians are often entitled to significant compensation.",
+        "q3": "Is it expensive to hire a lawyer?",
+        "a3": "JS Law Group works on a contingency basis for many personal injury matters—you only pay if we recover for you. We do not charge upfront fees before providing legal services.",
+        "q4": "Is there a deadline to file?",
+        "a4": "Yes, statutes of limitation vary by state. It is crucial to act quickly.",
+        "q5": "How do I start?",
+        "a5": "Use the form at the top of this page to tell us about your case, or call us for a free consultation. Our team will review your situation and recommend the next steps."
+      },
+      "section8": {
+        "cta": "Get Your Free Case Evaluation"
+      }
     }
   },
   "motorVehicleAccident": {
@@ -132,7 +189,7 @@
       "step3": { "title": "We'll work to win your case.", "desc": "Once you sign with JS Law Group, we'll handle the rest. Your attorney will fight the opposing party to get the compensation owed to you by law." }
     },
     "vehicleAccidents": {
-      "title": "Trust <span class=\"text-danger\">(770) 222-4444</span> After Your Motor Vehicle Accident",
+      "title": "Trust <span class=\"text-primary\">(770) 222-4444</span> After Your Motor Vehicle Accident",
       "subtitle": "Our attorneys at JS Law Group specialize in motor vehicle accident cases. Our goal is always to get you the maximum compensation you deserve.",
       "seeMore": "See More",
       "car": { "title": "Car Accidents", "desc": "If you have been involved in a car accident and were injured as a result, you could be entitled to compensation for medical treatment, vehicle repair, and other related expenses. JS Law Group will defend your claim and fight for the results you deserve." },
@@ -145,7 +202,7 @@
     "pageTitle": "JS Law Group - Personal Injury",
     "heroCta": {
       "title": "Personal Injury Lawyers",
-      "subtitle": "Trust <span class=\"text-danger fw-bold\">(770) 222-4444</span> to spearhead your Personal Injury Case",
+      "subtitle": "Trust <span class=\"text-primary fw-bold\">(770) 222-4444</span> to spearhead your Personal Injury Case",
       "message": "When you and your loved ones suffer damages due to someone else's negligence, you need legal counsel you can trust.",
       "claim": "JS Law Group is prepared to defend your claim."
     },

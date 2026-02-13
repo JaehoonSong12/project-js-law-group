@@ -1,13 +1,35 @@
-// static/temp/scss/custom.scss
-// Use bootstrap's main entry so internal ordering is correct.
-// We pass a few variable overrides via the `with` block.
+// static/scss/custom.scss
+// Main SCSS entry point.
+// Includes Bootstrap configuration, global styles, and custom components.
 
-@use "bootstrap/scss/bootstrap" with (
-  $primary: #c8102e, // red
+// NOTE: We no longer @use Bootstrap's SCSS here because that makes the Sass
+// compiler parse node_modules/bootstrap and produce deprecation warnings.
+// Instead include Bootstrap's compiled CSS (bootstrap.min.css) in your HTML
+// or JS bundler, then load this compiled custom.css after it so your CSS
+// variables and small overrides take effect.
+
+@use "bootstrap/scss/bootstrap" with ( // implies @charset "utf-8";
+  // $primary: #910dfd,
+  // $primary: #c8102e, // red
+  $primary: #6610f2, // indigo
+  // $primary: #198754, // green
+  // $primary: #6f42c1, // purple
+  // $primary: #0dcaf0, // cyan
+  // $primary: #910dfd,
+  // $primary: var(--bs-indigo),
+  // $primary-rgb: #ffffff,
+  // $body-color: #212529,
+  // $body-bg: #fff,
 );
+
 
 // Google Fonts - Plus Jakarta Sans
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+// ============================================================================
+// 2. Global Typography & Base Styles
+// ============================================================================
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600; 
@@ -20,31 +42,32 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* Links / nav-links: bright to primary on hover */
-footer a {
-  color: white !important;
+// ============================================================================
+// 3. Navigation & Footer
+// ============================================================================
+
+/* Nav Links: Bright to Primary on Hover */
+.nav-link {
   transition: color 0.60s ease;
 
-  &:hover {
-    color: var(--bs-link-color, var(--bs-primary)) !important;
-  }
-}
-
-footer li {
   &:hover {
     color: var(--bs-link-color, var(--bs-primary));
     text-decoration: underline;
   }
 }
 
-[data-bs-theme="dark"] {
-  footer a {
+/* Footer Links */
+footer {
+  a {
     color: white !important;
+    transition: color 0.60s ease;
+
     &:hover {
       color: var(--bs-link-color, var(--bs-primary)) !important;
     }
   }
-  footer li {
+
+  li {
     &:hover {
       color: var(--bs-link-color, var(--bs-primary));
       text-decoration: underline;
@@ -52,7 +75,50 @@ footer li {
   }
 }
 
-// Floating language switcher: primary shade on hover (match other components)
+/* Dark Mode Overrides for Nav/Footer */
+[data-bs-theme="dark"] {
+  .nav-link {
+    color: white;
+    &:hover {
+      color: var(--bs-link-color, var(--bs-primary));
+      text-decoration: underline;
+    }
+  }
+
+  footer {
+    a {
+      color: white !important;
+      &:hover {
+        color: var(--bs-link-color, var(--bs-primary)) !important;
+      }
+    }
+    
+    li {
+      &:hover {
+        color: var(--bs-link-color, var(--bs-primary));
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// 4. Buttons & Interactive Elements
+// ============================================================================
+
+/* Language Switcher Components */
+.lang-switcher-container {
+  margin-bottom: 20px; 
+  z-index: 1040;
+
+  /* Dropdown Item Hover Effect (Light BG, Primary Text) */
+  .dropdown-item:hover {
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(--bs-primary);
+  }
+}
+
+/* Floating Action Button (FAB) for Language Switcher */
 .btn-lang-switcher {
   transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
 
@@ -63,7 +129,7 @@ footer li {
   }
 }
 
-// Language dropdown: national flag icons
+/* Flag Icon Helper */
 .dropdown-flag.dropdown-flag {
   width: 1.5em;
   height: 1em;
@@ -72,81 +138,27 @@ footer li {
   flex-shrink: 0;
 }
 
-// Nav links
-.nav-link {
-  transition: color 0.60s ease;
-
+/* Wizard Option Buttons */
+.btn-option {
+  transition: all 0.2s ease;
+  text-align: left;
+  border: 1px solid #dee2e6;
+  background: white;
+  
   &:hover {
-    color: var(--bs-link-color, var(--bs-primary));
-    text-decoration: underline;
-  }
-}
-[data-bs-theme="dark"] {
-  .nav-link {
-    color: white;
-    &:hover {
-      color: var(--bs-link-color, var(--bs-primary));
-      text-decoration: underline;
-    }
+    border-color: var(--bs-primary);
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(--bs-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
 }
 
-/* =========================================
-   Custom Components & Utilities
-   ========================================= */
+// ============================================================================
+// 5. Cards & Layout Components
+// ============================================================================
 
-/* Flash Messages Container */
-.flash-messages-container {
-  z-index: 2000; 
-  top: 80px;
-}
-
-/* Icon Circles */
-.step-number-icon {
-  width: 22px; 
-  height: 22px; 
-  font-size: 12px;
-}
-
-.process-icon-circle {
-  width: 65px; 
-  height: 65px;
-}
-
-.card-icon-circle {
-  width: 70px; 
-  height: 70px;
-}
-
-/* Font Sizes */
-.fs-xs {
-  font-size: 10px;
-}
-
-/* Floating Language Switcher Position */
-.lang-switcher-container {
-  margin-bottom: 20px; 
-  z-index: 1040;
-}
-
-/* Hero Backgrounds */
-.hero-bg-pi {
-  background-image: url('https://picsum.photos/1920/1080?random=1'); 
-  background-size: cover; 
-  background-position: center; 
-  min-height: 60vh;
-}
-
-.hero-cta-offset {
-  margin-top: -5rem;
-}
-
-/* Practice Area Cards */
-.practice-area-card {
-  height: 250px;
-}
-
-/* Flip Card Component */
+/* --- Flip Card Component --- */
 .flip-card-wrapper {
   perspective: 1000px; 
   height: 400px;
@@ -184,4 +196,102 @@ footer li {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+/* --- Practice Area Cards --- */
+.practice-area-card {
+  height: 250px;
+}
+
+/* --- Wizard Component --- */
+.wizard-section {
+  width: 100%;
+}
+
+#wizard-container {
+  background-image: linear-gradient(rgba(33, 37, 41, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1767972463877-b64ba4283cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 1rem;
+  border-radius: 0;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.wizard-card {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border: none;
+}
+
+.step-transition {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: none;
+  
+  &.active {
+    opacity: 1;
+    display: block;
+  }
+}
+
+// ============================================================================
+// 6. Hero & Section Backgrounds
+// ============================================================================
+
+.hero-bg-pi {
+  background-image: url('https://picsum.photos/1920/1080?random=1'); 
+  background-size: cover; 
+  background-position: center; 
+  min-height: 60vh;
+}
+
+.bg-compensation {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-cta-offset {
+  margin-top: -5rem;
+}
+
+// ============================================================================
+// 7. Utilities & Icons
+// ============================================================================
+
+/* Flash Messages */
+.flash-messages-container {
+  z-index: 2000; 
+  top: 80px;
+}
+
+/* Icon Sizing & Containers */
+.step-number-icon {
+  width: 22px; 
+  height: 22px; 
+  font-size: 12px;
+}
+
+.process-icon-circle {
+  width: 65px; 
+  height: 65px;
+}
+
+.card-icon-circle {
+  width: 70px; 
+  height: 70px;
+}
+
+/* Small Text Utility */
+.fs-xs {
+  font-size: 10px;
 }

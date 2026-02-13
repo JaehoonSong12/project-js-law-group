@@ -5,37 +5,11 @@
 // DOM Manipulation Utilities
 // ============================================================================
 
-
-
-
-
-// js/core-module.js
-// Core utility functions and component implementations used by page modules.
-
 /**
  * Setup click handler to center a section element when a button is clicked.
  * @param {string} buttonId - The ID of the button element that triggers the centering
  * @param {string} sectionId - The ID of the section element to be centered
  * @returns {void}
- * 
- * @example
- * // Setup centering for a button and section
- * clickToCenter('center-btn', 'content-section');
- * 
- * // Use in page initialization
- * export default function initPage() {
- *   renderHeading('Welcome');
- *   
- *   // Setup centering functionality
- *   clickToCenter('center-button', 'main-content');
- * }
- * 
- * // HTML structure needed:
- * // <button id="center-button">Center Content</button>
- * // <section id="main-content">Content to be centered</section>
- * 
- * @throws {Error} Throws an error if the button element is not found
- * @throws {Error} Throws an error if the section element is not found
  */
 export function clickToCenter(buttonId, sectionId) {
   // another button to center any elements by IDs
@@ -61,26 +35,6 @@ export function clickToCenter(buttonId, sectionId) {
  * When clicked, elements will navigate to their href attribute value, or 'index.html' if no href is present.
  * @param {string} className - The class name of elements to enable redirect functionality
  * @returns {void}
- * 
- * @example
- * // Enable redirect for all navigation buttons
- * enableButtonRedirect('nav-button');
- * 
- * // Use in page initialization
- * export default function initPage() {
- *   renderHeading('Navigation');
- *   
- *   // Enable redirect for all menu items
- *   enableButtonRedirect('menu-link');
- * }
- * 
- * // HTML structure needed:
- * // <a href="/about.html" class="menu-link">About</a>
- * // <a href="/contact.html" class="menu-link">Contact</a>
- * // <a class="menu-link">Home</a> (will redirect to index.html)
- * 
- * @throws {Error} Throws an error if className is not a string
- * @throws {Error} Throws an error if no elements with the specified class are found
  */
 export function enableButtonRedirect(className) {
   // Accept a class name and enable redirect functionality for all buttons with that class
@@ -106,10 +60,6 @@ export function enableButtonRedirect(className) {
   });
 }
 
-
-
-
-
 // ============================================================================
 // Component Functions
 // ============================================================================
@@ -119,29 +69,6 @@ export function enableButtonRedirect(className) {
  * @param {string} containerId - ID of container element to fill
  * @param {string} url - Path to the HTML fragment
  * @returns {Promise<void>} Promise that resolves when fragment is loaded
- * 
- * @example
- * // Load a navigation fragment
- * await loadFragment('nav-container', './fragments/navigation.html');
- * 
- * // Load content into main area
- * await loadFragment('main-content', './fragments/article-content.html');
- * 
- * // Handle loading with error handling
- * try {
- *   await loadFragment('sidebar', './fragments/sidebar.html');
- *   console.log('Sidebar loaded successfully');
- * } catch (error) {
- *   console.error('Failed to load sidebar:', error);
- * }
- * 
- * // Load multiple fragments
- * await Promise.all([
- *   loadFragment('header', './fragments/header.html'),
- *   loadFragment('footer', './fragments/footer.html')
- * ]);
- * 
- * @throws {Error} Throws an error if the container element is not found
  */
 export async function loadFragment(containerId, url) {
   try {
@@ -169,22 +96,6 @@ export async function loadFragment(containerId, url) {
  * Setup window focus refresh functionality.
  * Refreshes the page when the window gains focus.
  * @returns {void}
- * 
- * @example
- * // Basic usage - refresh on focus
- * setupWindowFocusRefresh();
- * 
- * // Use in page initialization
- * export default function initPage() {
- *   // Setup other page functionality
- *   renderHeading('Welcome');
- *   
- *   // Enable auto-refresh on focus
- *   setupWindowFocusRefresh();
- * }
- * 
- * // Note: This will reload the entire page when window gains focus
- * // Use sparingly and inform users about this behavior
  */
 export function setupWindowFocusRefresh() {
   window.addEventListener('focus', () => {
@@ -192,30 +103,9 @@ export function setupWindowFocusRefresh() {
   });
 }
 
-
-
-
-
-
 /**
  * Setup year element functionality.
  * @returns {void}
- * 
- * @example
- * // Basic usage - setup year element
- * setupYearElement();
- * 
- * // Use in page initialization
- * export default function initPage() {
- *   // Setup other page functionality
- *   renderHeading('Welcome');
- *   
- *   // Setup year element
- *   setupYearElement();
- * }
- * 
- * // HTML structure needed:
- * // <span id="year"></span>
  */
 export function setupYearElement() {
   const yearElement = document.getElementById('year');
@@ -224,22 +114,11 @@ export function setupYearElement() {
   }
 }
 
-
-
 /**
  * Debug function to highlight elements with a specific attribute when debug mode is enabled.
  * @param {string} debugFlagAttr - The attribute name that flags debug status (e.g., 'debug-i18n')
  * @param {string} targetAttr - The attribute to detect and display (e.g., 'data-i18n')
  * @returns {void}
- * 
- * @example
- * // Enable debug mode for i18n elements
- * enableDebugMode('debug-i18n', 'data-i18n');
- * 
- * // HTML structure needed:
- * // <body debug-i18n="true">
- * // <h1 data-i18n="hero.title">Title</h1>
- * // <p data-i18n="hero.subtitle">Subtitle</p>
  */
 export function enableDebugMode(debugFlagAttr, targetAttr) {
   // Check if debug flag is set on body
@@ -310,4 +189,41 @@ export function enableDebugMode(debugFlagAttr, targetAttr) {
   });
 
   console.log(`[enableDebugMode] Debug mode enabled for "${targetAttr}". Found ${elements.length} element(s).`);
+}
+
+/**
+ * Initializes flip card functionality.
+ * Looks for elements with class 'flip-card-inner' and allows toggling via buttons with data-flip-target attribute.
+ * @returns {void}
+ */
+export function enableFlipCards() {
+  const triggers = document.querySelectorAll('[data-flip-target]');
+  
+  if (triggers.length === 0) {
+    return;
+  }
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = trigger.getAttribute('data-flip-target');
+      const target = document.getElementById(targetId);
+      
+      if (target && target.classList.contains('flip-card-inner')) {
+        const action = trigger.getAttribute('data-flip-action'); // 'flip' or 'unflip' or toggle (default)
+        
+        if (action === 'flip') {
+          target.classList.add('is-flipped');
+        } else if (action === 'unflip') {
+          target.classList.remove('is-flipped');
+        } else {
+          target.classList.toggle('is-flipped');
+        }
+      } else {
+        console.warn(`[enableFlipCards] Target with ID "${targetId}" not found or missing "flip-card-inner" class.`);
+      }
+    });
+  });
+  
+  console.log(`[enableFlipCards] Initialized ${triggers.length} flip triggers.`);
 }

@@ -19,6 +19,7 @@ export default async function main() {
     });
 
     Util.enableDebugMode('debug-i18n', 'data-i18n');
+    Util.enableFlipCards();
 
     try {
         await multiLang.initI18n(multiLang.getBaseLocale());
