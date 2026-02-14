@@ -1,38 +1,19 @@
 #!/bin/bash
 set -e
 
-# Load configuration
-
-# ==============================================================================
-# APP CONFIGURATION
-# ==============================================================================
-# The name of the Dokku app
-export APP_NAME="jslawgroup247"
-
-# The domain(s) for the application (space separated)
-export APP_DOMAINS="24-7autoaccidents.com www.24-7autoaccidents.com"
-
-# Email for SSL certificate (Let's Encrypt)
-export LETSENCRYPT_EMAIL="info.jslawgroup.bot@gmail.com"
-
-# The public IP address of the OCI server
-# You should update this if it changes or retrieve it dynamically
-export OCI_SERVER_IP="152.70.198.43"
-
-# SSH Key for Client Deployment (Relative to project root or absolute)
-export SSH_PRIVATE_KEY="ssh-key-amd-e2-ubuntu.key"
-
+# CONFIGURATION VARIABLES
 # ==============================================================================
 # DOKKU VERSION
 # ==============================================================================
 export DOKKU_VERSION="v0.34.6"
-
-
-
-
-
-
-
+# ==============================================================================
+# APP CONFIGURATION
+# ==============================================================================
+export APP_NAME="jslawgroup247"                                                 # The name of the Dokku app
+export APP_DOMAINS="24-7autoaccidents.com www.24-7autoaccidents.com"            # The domain(s) for the application (space separated)
+export LETSENCRYPT_EMAIL="info.jslawgroup.bot@gmail.com"                         # Email address for SSL registration       
+export OCI_SERVER_IP="152.70.198.43"                                             # The public IP address of the OCI server
+export SSH_PRIVATE_KEY="ssh-key-amd-e2-ubuntu.key"                               # SSH Key for Client Deployment (Relative to project root or absolute)
 
 echo "=============================================================================="
 echo " DOKKU CLIENT DEPLOY: $APP_NAME"
@@ -101,5 +82,8 @@ echo "Note: If you are using a different branch, modify the push command."
 git push dokku main:master
 
 echo "=============================================================================="
-echo " DEPLOYMENT INITIATED"
+echo " DEPLOYMENT COMPLETE"
+for domain in $APP_DOMAINS; do
+    echo " Access your app at: https://$domain"
+done
 echo "=============================================================================="

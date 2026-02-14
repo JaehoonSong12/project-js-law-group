@@ -16,6 +16,7 @@ export APP_DOMAINS="app.$OCI_SERVER_IP.sslip.io"            # Magic Domain: This
 export LETSENCRYPT_EMAIL="info.jslawgroup.bot@gmail.com"    # Email for SSL certificate (Let's Encrypt works with sslip.io!)
 export SSH_PRIVATE_KEY="ssh-key-amd-e2-ubuntu.key"          # SSH Key for Client Deployment (Relative to project root)
 
+
 echo "=============================================================================="
 echo " DOKKU CLIENT DEPLOY: $APP_NAME"
 echo " Target: $OCI_SERVER_IP (sslip.io)"
