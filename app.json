@@ -1,0 +1,20 @@
+    {
+      "name": "jslawgroup-app",
+      "description": "Flask Application for JSLawGroup",
+      "dokku": {
+        "proxy": {
+          "map": [
+            {
+              "scheme": "http",
+              "container_port": 5000,
+              "host_port": 80
+            },
+            {
+              "scheme": "https",
+              "container_port": 5000,
+              "host_port": 443
+            }
+          ]
+        }
+      }
+    }
