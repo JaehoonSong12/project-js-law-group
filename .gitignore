@@ -1,4 +1,4 @@
-# --- Generated from ./.gitignores on Thu Feb 12 20:33:36 2026 ---
+# --- Generated from ./.gitignores on Sat Feb 14 12:04:39 2026 ---
 
 #############################################
 # A.gitignore
@@ -12,6 +12,8 @@ VSLive*/
 vscode*/
 pyright*/
 cursor*/
+*.key
+*.key.pub
 
 ################################################################
 # General Ignores (Large Media Files & Common File Types)
