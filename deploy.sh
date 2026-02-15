@@ -51,6 +51,9 @@ cat > app.json <<EOF
 {
   "name": "$APP_NAME",
   "description": "Flask App auto-configured for Dokku",
+  "env": {
+    "DOKKU_PROXY_PORT_MAP": "http:$HTTP_EXTERNAL_PORT:$INTERNAL_PORT https:$HTTPS_EXTERNAL_PORT:$INTERNAL_PORT"
+  },
   "dokku": {
     "proxy": {
       "map": [
