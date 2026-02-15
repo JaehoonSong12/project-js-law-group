@@ -1,20 +1,20 @@
 {
-  "name": "jslawgroup-ip",
+  "name": "jslawgroup247",
   "description": "Flask App auto-configured for Dokku",
   "env": {
-    "DOKKU_PROXY_PORT_MAP": "http:80:5000 https:443:5000"
+    "DOKKU_PROXY_PORT_MAP": "http:80:80 https:443:80"
   },
   "dokku": {
     "proxy": {
       "map": [
         {
           "scheme": "http",
-          "container_port": 5000,
+          "container_port": 80,
           "host_port": 80
         },
         {
           "scheme": "https",
-          "container_port": 5000,
+          "container_port": 80,
           "host_port": 443
         }
       ]

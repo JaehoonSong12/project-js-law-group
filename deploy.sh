@@ -17,7 +17,7 @@ export SSH_PRIVATE_KEY="ssh-key-amd-e2-ubuntu.key"          # SSH Key for Client
 export LETSENCRYPT_EMAIL="info.jslawgroup.bot@gmail.com"    # Email for SSL certificate (Let's Encrypt works with sslip.io!)
 export HTTP_EXTERNAL_PORT="80"
 export HTTPS_EXTERNAL_PORT="443"
-export INTERNAL_PORT="5000"
+export INTERNAL_PORT="80"
 # 1=production (custom domains), 2=ip (sslip.io, no DNS)
 read -r -p "Mode: 1=production, 2=ip [1]: " choice
 case "${choice:-1}" in
@@ -44,34 +44,6 @@ echo " DOKKU CLIENT DEPLOY: $APP_NAME"
 echo " Target: $OCI_SERVER_IP"
 echo "=============================================================================="
 
-# 1. Generate app.json (Auto-configure Ports)
-# ------------------------------------------------------------------------------
-echo ">> Generating app.json to configure Nginx ports ($HTTP_EXTERNAL_PORT->$INTERNAL_PORT)..."
-cat > app.json <<EOF
-{
-  "name": "$APP_NAME",
-  "description": "Flask App auto-configured for Dokku",
-  "env": {
-    "DOKKU_PROXY_PORT_MAP": "http:$HTTP_EXTERNAL_PORT:$INTERNAL_PORT https:$HTTPS_EXTERNAL_PORT:$INTERNAL_PORT"
-  },
-  "dokku": {
-    "proxy": {
-      "map": [
-        {
-          "scheme": "http",
-          "container_port": $INTERNAL_PORT,
-          "host_port": $HTTP_EXTERNAL_PORT
-        },
-        {
-          "scheme": "https",
-          "container_port": $INTERNAL_PORT,
-          "host_port": $HTTPS_EXTERNAL_PORT
-        }
-      ]
-    }
-  }
-}
-EOF
 
 # 2. Configure Git Remote
 # ------------------------------------------------------------------------------
