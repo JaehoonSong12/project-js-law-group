@@ -24,7 +24,7 @@ case "${choice:-1}" in
     1) export APP_NAME="jslawgroup247"
        export APP_DOMAINS="24-7autoaccidents.com www.24-7autoaccidents.com" ;;
     2) export APP_NAME="jslawgroup-ip"
-       export APP_DOMAINS="app.$OCI_SERVER_IP.sslip.io" ;;
+       export APP_DOMAINS="$APP_NAME.$OCI_SERVER_IP.sslip.io" ;;
     *) echo "Invalid choice. Please enter 1 or 2."
        exit 1 ;;
 esac
