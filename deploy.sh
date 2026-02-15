@@ -15,9 +15,6 @@ export DOKKU_VERSION="v0.34.6"
 export OCI_SERVER_IP="152.70.198.43"                        # The public IP address of the OCI server
 export SSH_PRIVATE_KEY="ssh-key-amd-e2-ubuntu.key"          # SSH Key for Client Deployment (Relative to project root)
 export LETSENCRYPT_EMAIL="info.jslawgroup.bot@gmail.com"    # Email for SSL certificate (Let's Encrypt works with sslip.io!)
-export HTTP_EXTERNAL_PORT="80"
-export HTTPS_EXTERNAL_PORT="443"
-export INTERNAL_PORT="80"
 # 1=production (custom domains), 2=ip (sslip.io, no DNS)
 read -r -p "Mode: 1=production, 2=ip [1]: " choice
 case "${choice:-1}" in
