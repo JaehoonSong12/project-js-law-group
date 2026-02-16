@@ -371,19 +371,19 @@
 
 
 
-  <!-- Floating Language Switcher (Bottom Right) -->
-  <div class="floating-selector position-fixed bottom-0 end-0 p-4 floating-selector-container"
-       style="margin-bottom: 20px; z-index: 1040;">
+  <!-- Floating Language Switcher (Bottom Left) -->
+  <div class="floating-selector position-fixed bottom-0 start-0 p-4 floating-selector-container">
     <div class="dropup">
       <button type="button"
-              class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center floating-selector-btn"
-              style="width: 50px; height: 50px;"
+              class="btn btn-light rounded-3 shadow d-flex align-items-center gap-2 floating-selector-btn"
+              style="min-width: 52px; height: 44px; padding-left: 14px; padding-right: 14px;"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               aria-label="Select Language">
-        <i class="fa-solid fa-globe fa-lg"></i>
+        <i class="fa-solid fa-language fa-xl" aria-hidden="true"></i>
+        <span class="d-none d-sm-inline small fw-semibold" data-i18n="floatingSelector.selectLanguage">Select Language</span>
       </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow rounded-4 p-2">
+      <ul class="dropdown-menu dropdown-menu-start shadow rounded-4 p-2">
         <li>
           <h6 data-i18n="floatingSelector.selectLanguage"
               class="dropdown-header">
@@ -449,14 +449,16 @@
              href="https://www.facebook.com/share/1G9ZVXTRKj/"
              class="fs-5 me-3 text-decoration-none"
              target="_blank"
-             rel="noopener noreferrer">
+             rel="noopener noreferrer"
+             aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
           <a id="sns123"
-             href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx"
+             href="https://www.instagram.com/jslawgroupllc"
              class="fs-5 me-3 text-decoration-none"
              target="_blank"
-             rel="noopener noreferrer">
+             rel="noopener noreferrer"
+             aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </div>
