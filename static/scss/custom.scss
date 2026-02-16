@@ -93,10 +93,11 @@ footer {
 }
 
 // ----------------------------------------------------------------------------
-// [floatingSelector] Language Switcher
+// [floatingSelector] Language Switcher (bottom-left, rectangle)
 // ----------------------------------------------------------------------------
 .floating-selector-container {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
+  margin-left: 0;
   z-index: 1040;
 
   /* Dropdown Item Hover Effect (Light BG, Primary Text) */
@@ -109,11 +110,16 @@ footer {
 /* Floating Action Button (FAB) for Language Switcher */
 .floating-selector-btn {
   transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 
   &:hover {
     background-color: var(--bs-primary) !important;
     color: var(--bs-white) !important;
     border-color: var(--bs-primary);
+  }
+
+  .fa-language {
+    opacity: 0.9;
   }
 }
 
