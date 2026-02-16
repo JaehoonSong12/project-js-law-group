@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="mvAccident.pageTitle">
-    mvAccident.pageTitle
-  </title>
+  <title>JS Law Group - Motor Vehicle Accident</title>
 
   <!-- Bootstrap 5 CSS -->
   <link href="/static/css/custom.min.css" rel="stylesheet">
@@ -44,12 +42,12 @@
             <h1 data-i18n="nav.title"
                 class="h2 fw-bold mb-0 lh-1 text-dark"
                 style="letter-spacing: -1px;">
-              nav.title
+              24/7 Legal Rescue
             </h1>
             <small data-i18n="nav.firmName"
                    class="text-primary fw-bold"
                    style="font-size: 10px; letter-spacing: 0.5px;">
-              nav.firmName
+              JS Law Group, LLC
             </small>
           </div>
         </a>
@@ -67,33 +65,38 @@
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
               <a data-i18n="nav.home"
-                 class="nav-link fw-bold px-3"
+                 class="nav-link fw-bold px-3 d-none d-xl-block"
                  href="{{ url_for('index') }}">
-                nav.home
+                Home
+              </a>
+              <a data-i18n="nav.home"
+                 class="nav-link fw-bold d-xl-none"
+                 href="{{ url_for('index') }}">
+                Home
               </a>
             </li>
             <li class="nav-item">
               <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold text-primary px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                nav.motorVehicles
+                Motor Vehicle Accident
               </a>
               <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold text-primary d-xl-none"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                nav.motorVehicles
+                Motor Vehicle Accident
               </a>
             </li>
             <li class="nav-item">
               <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('personal_injury') }}">
-                nav.personalInjury
+                Personal Injury
               </a>
               <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('personal_injury') }}">
-                nav.personalInjury
+                Personal Injury
               </a>
             </li>
           </ul>
@@ -101,12 +104,12 @@
             <div class="d-flex flex-column align-items-end me-xl-3">
               <p data-i18n="nav.visitWebsite"
                  class="mb-1 fw-bold lh-1 small text-muted">
-                nav.visitWebsite
+                Visit our website
               </p>
               <a data-i18n="nav.goToWebsite"
                  class="btn btn-outline-primary btn-sm rounded-3"
                  href="https://www.jslawgroup.net/">
-                nav.goToWebsite
+                Go to website
               </a>
             </div>
             <a class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
@@ -114,7 +117,7 @@
               <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
               <span data-i18n="nav.phoneNumber"
                     class="fw-bold fs-5">
-                nav.phoneNumber
+                (770) 222-4444
               </span>
             </a>
           </div>
@@ -129,11 +132,11 @@
       <div class="text-center mb-5">
         <h2 data-i18n="mvAccident.steppedList.title1"
             class="h1 fw-bold text-dark mb-0">
-          mvAccident.steppedList.title1
+          Your Next Steps After a
         </h2>
         <h2 data-i18n="mvAccident.steppedList.title2"
             class="h1 fw-bold text-primary">
-          mvAccident.steppedList.title2
+          Motor Vehicle Accident
         </h2>
       </div>
       <div class="row align-items-center g-5">
@@ -145,27 +148,27 @@
             <!-- Steps (1-6) -->
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step1.title">mvAccident.steppedList.step1.title</span> - <span data-i18n="mvAccident.steppedList.step1.desc">mvAccident.steppedList.step1.desc</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step1.title">Call the Police</span> - <span data-i18n="mvAccident.steppedList.step1.desc">It's important to ensure your safety and document the incident.</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step2.title">mvAccident.steppedList.step2.title</span> - <span data-i18n="mvAccident.steppedList.step2.desc">mvAccident.steppedList.step2.desc</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step2.title">Take Photographs and Recordings</span> - <span data-i18n="mvAccident.steppedList.step2.desc">Secure all the information you can, including of witnesses, the scene, and the accident.</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step3.title">mvAccident.steppedList.step3.title</span> - <span data-i18n="mvAccident.steppedList.step3.desc">mvAccident.steppedList.step3.desc</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step3.title">Pay Attention</span> - <span data-i18n="mvAccident.steppedList.step3.desc">Listen and record details from the other party, especially any admittance or what they believe caused the accident. These answers can be used in court.</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step4.title">mvAccident.steppedList.step4.title</span> - <span data-i18n="mvAccident.steppedList.step4.desc">mvAccident.steppedList.step4.desc</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step4.title">Seek Medical Attention</span> - <span data-i18n="mvAccident.steppedList.step4.desc">Cooperate with emergency medical personnel or seek your doctor/physician as soon as possible. Documentation of your injuries also helps build your case.</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step5.title">mvAccident.steppedList.step5.title</span> - <span data-i18n="mvAccident.steppedList.step5.desc">mvAccident.steppedList.step5.desc</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step5.title">Seek Legal Advice</span> - <span data-i18n="mvAccident.steppedList.step5.desc">Call and trust your attorneys. Cooperate with law enforcement as required, but consider consulting your attorney before providing detailed or recorded statements, especially to insurance representatives or other non-emergency parties.</span></p></div>
             </div>
             <div class="d-flex">
               <div class="flex-shrink-0 mt-1"><div class="bg-primary text-white rounded-1 d-flex align-items-center justify-content-center fw-bold stepped-list-icon">V</div></div>
-              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step6.title">mvAccident.steppedList.step6.title</span> - <span data-i18n="mvAccident.steppedList.step6.desc">mvAccident.steppedList.step6.desc</span></p></div>
+              <div class="ms-3"><p class="mb-0 text-dark"><span class="fw-bold" data-i18n="mvAccident.steppedList.step6.title">Be Patient</span> - <span data-i18n="mvAccident.steppedList.step6.desc">Your health is what's most important. Let JS Law Group handle your case. We'll worry about the legalities while you focus on your recovery plan.</span></p></div>
             </div>
           </div>
         </div>
@@ -236,11 +239,11 @@
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="h1 fw-bold text-dark">
-          <span data-i18n="mvAccident.floatingGrid.title">mvAccident.floatingGrid.title</span>
+          <span data-i18n="mvAccident.floatingGrid.title">Trust <span class="text-primary">(770) 222-4444</span> After Your Motor Vehicle Accident</span>
         </h2>
         <p data-i18n="mvAccident.floatingGrid.subtitle"
            class="text-secondary mx-auto w-75">
-          mvAccident.floatingGrid.subtitle
+          Our attorneys at JS Law Group specialize in motor vehicle accident cases. Our goal is always to get you the maximum compensation you deserve.
         </p>
       </div>
       <div class="row g-4">
@@ -252,13 +255,13 @@
                 <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Car Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-dark fw-bold fs-xs">CAR ICON</span></div>
-                  <h3 data-i18n="mvAccident.floatingGrid.car.title" class="h4 fw-bold mb-3">mvAccident.floatingGrid.car.title</h3>
-                  <button class="btn btn-primary rounded-pill px-5 fw-bold shadow" data-flip-target="inner-car-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
+                  <h3 data-i18n="mvAccident.floatingGrid.car.title" class="h4 fw-bold mb-3">Car Accidents</h3>
+                  <button class="btn btn-primary rounded-pill px-5 fw-bold shadow" data-flip-target="inner-car-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">See More</button>
                 </div>
               </div>
               <div class="flip-card-face flip-card-back rounded-5 p-5 shadow">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-primary" data-flip-target="inner-car-card" data-flip-action="unflip"></button>
-                <p data-i18n="mvAccident.floatingGrid.car.desc" class="text-secondary small">mvAccident.floatingGrid.car.desc</p>
+                <p data-i18n="mvAccident.floatingGrid.car.desc" class="text-secondary small">If you have been involved in a car accident and were injured as a result, you could be entitled to compensation for medical treatment, vehicle repair, and other related expenses. JS Law Group will defend your claim and fight for the results you deserve.</p>
               </div>
             </div>
           </div>
@@ -271,13 +274,13 @@
                 <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Motorcycle Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-primary fw-bold fs-xs">MOTO ICON</span></div>
-                  <h3 data-i18n="mvAccident.floatingGrid.motorcycle.title" class="h4 fw-bold mb-3">mvAccident.floatingGrid.motorcycle.title</h3>
-                  <button class="btn btn-outline-light rounded-pill px-5 fw-bold shadow" data-flip-target="inner-moto-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
+                  <h3 data-i18n="mvAccident.floatingGrid.motorcycle.title" class="h4 fw-bold mb-3">Motorcycle Accidents</h3>
+                  <button class="btn btn-outline-light rounded-pill px-5 fw-bold shadow" data-flip-target="inner-moto-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">See More</button>
                 </div>
               </div>
               <div class="flip-card-face flip-card-back rounded-5 p-5 shadow">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-primary" data-flip-target="inner-moto-card" data-flip-action="unflip"></button>
-                <p data-i18n="mvAccident.floatingGrid.motorcycle.desc" class="text-secondary small">mvAccident.floatingGrid.motorcycle.desc</p>
+                <p data-i18n="mvAccident.floatingGrid.motorcycle.desc" class="text-secondary small">Motorcycle accidents have high fatality rates, and injuries are almost guaranteed. Nearby cars have a duty to drive responsibly when motorcyclists are present. JS Law Group provides experienced and compassionate representation for motorcycle accident victims.</p>
               </div>
             </div>
           </div>
@@ -290,14 +293,14 @@
                 <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Rideshare">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-75 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-primary fw-bold fs-xs">RIDE ICON</span></div>
-                  <h3 data-i18n="mvAccident.floatingGrid.rideshare.title" class="h4 fw-bold mb-3">mvAccident.floatingGrid.rideshare.title</h3>
-                  <button class="btn btn-outline-light rounded-pill px-5 fw-bold shadow" data-flip-target="inner-ride-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
+                  <h3 data-i18n="mvAccident.floatingGrid.rideshare.title" class="h4 fw-bold mb-3">Rideshare</h3>
+                  <button class="btn btn-outline-light rounded-pill px-5 fw-bold shadow" data-flip-target="inner-ride-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">See More</button>
                 </div>
               </div>
               <div class="flip-card-face flip-card-back rounded-5 p-5 shadow">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-primary" data-flip-target="inner-ride-card" data-flip-action="unflip"></button>
-                <h5 data-i18n="mvAccident.floatingGrid.rideshare.backTitle" class="fw-bold text-primary mb-3">mvAccident.floatingGrid.rideshare.backTitle</h5>
-                <p data-i18n="mvAccident.floatingGrid.rideshare.desc" class="text-secondary small">mvAccident.floatingGrid.rideshare.desc</p>
+                <h5 data-i18n="mvAccident.floatingGrid.rideshare.backTitle" class="fw-bold text-primary mb-3">Rideshare Accidents</h5>
+                <p data-i18n="mvAccident.floatingGrid.rideshare.desc" class="text-secondary small">Navigating claims for Uber or Lyft accidents requires specialized knowledge of commercial policies. JS Law Group will handle the complexities while you focus on recovery.</p>
               </div>
             </div>
           </div>
@@ -310,14 +313,14 @@
                 <img src="https://images.unsplash.com/photo-1601584115197-04ecc0cd31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Truck Accident">
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white p-4">
                   <div class="bg-white rounded-circle mb-3 d-flex align-items-center justify-content-center shadow shared-icon-circle"><span class="text-dark fw-bold fs-xs">TRUCK ICON</span></div>
-                  <h3 data-i18n="mvAccident.floatingGrid.truck.title" class="h4 fw-bold mb-3 text-center">mvAccident.floatingGrid.truck.title</h3>
-                  <button class="btn btn-primary rounded-pill px-5 fw-bold shadow" data-flip-target="inner-truck-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">mvAccident.floatingGrid.seeMore</button>
+                  <h3 data-i18n="mvAccident.floatingGrid.truck.title" class="h4 fw-bold mb-3 text-center">Commercial Truck Accidents</h3>
+                  <button class="btn btn-primary rounded-pill px-5 fw-bold shadow" data-flip-target="inner-truck-card" data-flip-action="flip" data-i18n="mvAccident.floatingGrid.seeMore">See More</button>
                 </div>
               </div>
               <div class="flip-card-face flip-card-back rounded-5 p-5 shadow">
                 <button class="btn-close position-absolute top-0 end-0 m-4 text-primary" data-flip-target="inner-truck-card" data-flip-action="unflip"></button>
-                <h5 data-i18n="mvAccident.floatingGrid.truck.backTitle" class="fw-bold text-dark mb-3">mvAccident.floatingGrid.truck.backTitle</h5>
-                <p data-i18n="mvAccident.floatingGrid.truck.desc" class="text-secondary small">mvAccident.floatingGrid.truck.desc</p>
+                <h5 data-i18n="mvAccident.floatingGrid.truck.backTitle" class="fw-bold text-dark mb-3">Trucking Liability</h5>
+                <p data-i18n="mvAccident.floatingGrid.truck.desc" class="text-secondary small">Commercial vehicle accidents often involve federal safety violations and multiple liable parties. Our attorneys at JS Law Group will fight parties of companies and corporations to secure maximum payouts.</p>
               </div>
             </div>
           </div>
@@ -342,7 +345,7 @@
         <li>
           <h6 data-i18n="floatingSelector.selectLanguage"
               class="dropdown-header">
-            floatingSelector.selectLanguage
+            Select Language
           </h6>
         </li>
         <li>
@@ -351,7 +354,7 @@
              id="i18n001"
              value-i18n="en-US">
             <span class="fi fi-us floating-selector-flag" aria-hidden="true" title="United States"></span>
-            <span data-i18n="floatingSelector.langEn">floatingSelector.langEn</span>
+            <span data-i18n="floatingSelector.langEn">English</span>
           </a>
         </li>
         <li>
@@ -360,7 +363,7 @@
              id="i18n002"
              value-i18n="ko-KR">
             <span class="fi fi-kr floating-selector-flag" aria-hidden="true" title="South Korea"></span>
-            <span data-i18n="floatingSelector.langKo">floatingSelector.langKo</span>
+            <span data-i18n="floatingSelector.langKo">한국어</span>
           </a>
         </li>
         <li>
@@ -369,7 +372,7 @@
              id="i18n006"
              value-i18n="es-US">
             <span class="fi fi-es floating-selector-flag" aria-hidden="true" title="Spain"></span>
-            <span data-i18n="floatingSelector.langEs">floatingSelector.langEs</span>
+            <span data-i18n="floatingSelector.langEs">Español</span>
           </a>
         </li>
         <li>
@@ -378,7 +381,7 @@
              id="i18n005"
              value-i18n="ja-JP">
             <span class="fi fi-jp floating-selector-flag" aria-hidden="true" title="Japan"></span>
-            <span data-i18n="floatingSelector.langJa">floatingSelector.langJa</span>
+            <span data-i18n="floatingSelector.langJa">日本語</span>
           </a>
         </li>
       </ul>
@@ -391,11 +394,11 @@
         <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
           <h4 data-i18n="footer.brand"
               class="mb-0 text-uppercase fw-bold">
-            footer.brand
+            Js Law Group
           </h4>
           <p data-i18n="footer.address"
              class="small text-white-50 lh-sm mt-2 mb-0">
-            footer.address
+            3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096
           </p>
         </div>
         <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
@@ -421,7 +424,7 @@
         <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
           <small data-i18n="footer.copyrightOffice"
                  class="text-white-50">
-            footer.copyrightOffice
+            &copy; JS LAW Group, LLC. 2024 - 2025
           </small>
         </div>
         <div class="col-md-7 text-center text-md-end">
@@ -429,31 +432,31 @@
             <li class="list-inline-item">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.faqs">footer.faqs</small>
+                <small data-i18n="footer.faqs">FAQs</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.corporateInformation">footer.corporateInformation</small>
+                <small data-i18n="footer.corporateInformation">Corporate information</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.privacyNotice">footer.privacyNotice</small>
+                <small data-i18n="footer.privacyNotice">Privacy notice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.cookieNotice">footer.cookieNotice</small>
+                <small data-i18n="footer.cookieNotice">Cookie notice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.termsOfUse">footer.termsOfUse</small>
+                <small data-i18n="footer.termsOfUse">Terms of use</small>
               </a>
             </li>
           </ul>
@@ -463,7 +466,7 @@
         <div class="col-12">
           <p class="mb-0 text-white-50">
             <small data-i18n="footer.importantNote">
-              footer.importantNote
+              <strong>Important Note:</strong> This website is designed for clients seeking legal representation in Personal Injury (PI) and Criminal Defense (CD) cases. The website allows you to submit an inquiry form to contact our firm. Please be aware that JS Law Group, LLC never charges clients any fees upfront or before providing legal services. We do not request payment, banking details, or personal financial information prior to consultation or case evaluation. All initial consultations are free, and fees are only discussed after we have reviewed your case and agreed to represent you.
             </small>
           </p>
         </div>

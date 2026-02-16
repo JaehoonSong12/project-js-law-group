@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="index.pageTitle">
-    index.pageTitle
-  </title>
+  <title>JS Law Group</title>
 
   <!-- Bootstrap 5 CSS -->
   <link href="/static/css/custom.min.css" rel="stylesheet">
@@ -19,7 +17,7 @@
 <body class="bg-light"
       debug-i18n="false">
 
-  <!-- Nav (Bootstrap theme colors, fallback strings for i18n) -->
+  <!-- Nav -->
   <div id="secondary-nav"
        class="bg-white sticky-top shadow-sm">
     <nav class="navbar navbar-expand-xl navbar-light py-3">
@@ -30,12 +28,12 @@
             <h1 data-i18n="nav.title"
                 class="h2 fw-bold mb-0 lh-1 text-dark"
                 style="letter-spacing: -1px;">
-              nav.title
+              24/7 Legal Rescue
             </h1>
             <small data-i18n="nav.firmName"
                    class="text-primary fw-bold"
                    style="font-size: 10px; letter-spacing: 0.5px;">
-              nav.firmName
+              JS Law Group, LLC
             </small>
           </div>
         </a>
@@ -53,33 +51,38 @@
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
               <a data-i18n="nav.home"
-                 class="nav-link fw-bold px-3 text-primary"
+                 class="nav-link fw-bold px-3 text-primary d-none d-xl-block"
                  href="{{ url_for('index') }}">
-                nav.home
+                Home
+              </a>
+              <a data-i18n="nav.home"
+                 class="nav-link fw-bold text-primary d-xl-none"
+                 href="{{ url_for('index') }}">
+                Home
               </a>
             </li>
             <li class="nav-item">
               <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                nav.motorVehicles
+                Motor Vehicle Accident
               </a>
               <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                nav.motorVehicles
+                Motor Vehicle Accident
               </a>
             </li>
             <li class="nav-item">
               <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('personal_injury') }}">
-                nav.personalInjury
+                Personal Injury
               </a>
               <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('personal_injury') }}">
-                nav.personalInjury
+                Personal Injury
               </a>
             </li>
           </ul>
@@ -87,12 +90,12 @@
             <div class="d-flex flex-column align-items-end me-xl-3">
               <p data-i18n="nav.visitWebsite"
                  class="mb-1 fw-bold lh-1 small text-muted">
-                nav.visitWebsite
+                Visit our website
               </p>
               <a data-i18n="nav.goToWebsite"
                  class="btn btn-outline-primary btn-sm rounded-3"
                  href="https://www.jslawgroup.net/">
-                nav.goToWebsite
+                Go to website
               </a>
             </div>
             <a class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
@@ -100,7 +103,7 @@
               <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
               <span data-i18n="nav.phoneNumber"
                     class="fw-bold fs-5">
-                nav.phoneNumber
+                (770) 222-4444
               </span>
             </a>
           </div>
@@ -161,15 +164,15 @@
                        class="wizard-step-transition active">
                     <h3 data-i18n="index.wizard.step1.title"
                         class="fw-bold mb-3">
-                      wizard.step1.title
+                      Top Auto Accident Lawyers
                     </h3>
                     <p data-i18n="index.wizard.step1.subtitle"
                        class="text-muted mb-4">
-                      wizard.step1.subtitle
+                      Compare top attorneys and find the best match for your case.
                     </p>
                     <h5 data-i18n="index.wizard.step1.question"
                         class="fw-semibold mb-4">
-                      wizard.step1.question
+                      What best describes the accident?
                     </h5>
 
                     <div class="d-grid gap-3">
@@ -177,31 +180,31 @@
                               class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Car Accident')">
                         <i class="fas fa-car me-3 fa-lg text-secondary"></i>
-                        <span data-i18n="index.wizard.step1.car">index.wizard.step1.car</span>
+                        <span data-i18n="index.wizard.step1.car">Car Accident</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Motorcycle Accident')">
                         <i class="fas fa-motorcycle me-3 fa-lg text-secondary"></i>
-                        <span data-i18n="index.wizard.step1.motorcycle">index.wizard.step1.motorcycle</span>
+                        <span data-i18n="index.wizard.step1.motorcycle">Motorcycle Accident</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Truck Accident')">
                         <i class="fas fa-truck-moving me-3 fa-lg text-secondary"></i>
-                        <span data-i18n="index.wizard.step1.truck">index.wizard.step1.truck</span>
+                        <span data-i18n="index.wizard.step1.truck">Commercial Truck / Semi</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Pedestrian')">
                         <i class="fas fa-walking me-3 fa-lg text-secondary"></i>
-                        <span data-i18n="index.wizard.step1.pedestrian">index.wizard.step1.pedestrian</span>
+                        <span data-i18n="index.wizard.step1.pedestrian">Pedestrian / Hit by Car</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3 rounded-3"
                               onclick="next(1, 'accident_type', 'Rideshare')">
                         <i class="fas fa-taxi me-3 fa-lg text-secondary"></i>
-                        <span data-i18n="index.wizard.step1.rideshare">index.wizard.step1.rideshare</span>
+                        <span data-i18n="index.wizard.step1.rideshare">Rideshare (Uber/Lyft)</span>
                       </button>
                     </div>
                   </div>
@@ -211,27 +214,27 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step2.question"
                         class="fw-bold mb-4">
-                      wizard.step2.question
+                      What is your zip code?
                     </h4>
                     <div class="form-floating mb-4">
                       {{ form.zip_code(class="form-control form-control-lg text-center fs-4", placeholder="Zip Code", id="zip_code") }}
                       <label data-i18n="index.wizard.step2.zipLabel"
                              for="zip_code">
-                        wizard.step2.zipLabel
+                        Zip Code
                       </label>
                       <div data-i18n="index.wizard.step2.zipInvalid"
                            class="invalid-feedback">
-                        wizard.step2.zipInvalid
+                        Please enter a valid 5-digit zip code.
                       </div>
                     </div>
                     <button type="button"
                             class="btn btn-primary btn-lg w-100 mb-3"
                             onclick="validateAndNext(2)">
-                      <span data-i18n="index.wizard.step2.next">index.wizard.step2.next</span>
+                      <span data-i18n="index.wizard.step2.next">Next</span>
                     </button>
                     <div class="text-muted small">
                       <i class="fas fa-lock me-1"></i>
-                      <span data-i18n="index.wizard.step2.secure">index.wizard.step2.secure</span>
+                      <span data-i18n="index.wizard.step2.secure">100% Secure</span>
                     </div>
                   </div>
 
@@ -240,23 +243,23 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step3.question"
                         class="fw-bold mb-4">
-                      wizard.step3.question
+                      Did the injured person receive medical treatment?
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(3, 'medical_treatment', 'Hospital')">
-                        <span data-i18n="index.wizard.step3.hospital">index.wizard.step3.hospital</span>
+                        <span data-i18n="index.wizard.step3.hospital">Treated in Hospital</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(3, 'medical_treatment', 'Doctor')">
-                        <span data-i18n="index.wizard.step3.doctor">index.wizard.step3.doctor</span>
+                        <span data-i18n="index.wizard.step3.doctor">Treated in Doctor's Office</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(3, 'medical_treatment', 'No')">
-                        <span data-i18n="index.wizard.step3.no">index.wizard.step3.no</span>
+                        <span data-i18n="index.wizard.step3.no">Not Yet / No</span>
                       </button>
                     </div>
                   </div>
@@ -266,18 +269,18 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step4.question"
                         class="fw-bold mb-4">
-                      wizard.step4.question
+                      Was a police report filed?
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(4, 'police_report', 'Yes')">
-                        <span data-i18n="index.wizard.step4.yes">index.wizard.step4.yes</span>
+                        <span data-i18n="index.wizard.step4.yes">Yes</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(4, 'police_report', 'No')">
-                        <span data-i18n="index.wizard.step4.no">index.wizard.step4.no</span>
+                        <span data-i18n="index.wizard.step4.no">No</span>
                       </button>
                     </div>
                   </div>
@@ -287,23 +290,23 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step5.question"
                         class="fw-bold mb-4">
-                      wizard.step5.question
+                      Did the police report say you are at fault?
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(5, 'at_fault', 'No')">
-                        <span data-i18n="index.wizard.step5.no">index.wizard.step5.no</span>
+                        <span data-i18n="index.wizard.step5.no">No</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(5, 'at_fault', 'Yes')">
-                        <span data-i18n="index.wizard.step5.yes">index.wizard.step5.yes</span>
+                        <span data-i18n="index.wizard.step5.yes">Yes</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(5, 'at_fault', 'Unknown')">
-                        <span data-i18n="index.wizard.step5.unknown">index.wizard.step5.unknown</span>
+                        <span data-i18n="index.wizard.step5.unknown">I don't know</span>
                       </button>
                     </div>
                   </div>
@@ -313,23 +316,23 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step6.question"
                         class="fw-bold mb-4">
-                      wizard.step6.question
+                      Are you currently represented by a lawyer?
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(6, 'has_lawyer', 'No')">
-                        <span data-i18n="index.wizard.step6.no">index.wizard.step6.no</span>
+                        <span data-i18n="index.wizard.step6.no">No</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(6, 'has_lawyer', 'Yes')">
-                        <span data-i18n="index.wizard.step6.yes">index.wizard.step6.yes</span>
+                        <span data-i18n="index.wizard.step6.yes">Yes</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(6, 'has_lawyer', 'Yes - Want New')">
-                        <span data-i18n="index.wizard.step6.wantNew">index.wizard.step6.wantNew</span>
+                        <span data-i18n="index.wizard.step6.wantNew">Yes, but I want a new one</span>
                       </button>
                     </div>
                   </div>
@@ -339,28 +342,28 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step7.question"
                         class="fw-bold mb-4">
-                      wizard.step7.question
+                      When did the accident happen?
                     </h4>
                     <div class="d-grid gap-3">
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Within 30 days')">
-                        <span data-i18n="index.wizard.step7.thirty">index.wizard.step7.thirty</span>
+                        <span data-i18n="index.wizard.step7.thirty">Within last 30 days</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Within 1 year')">
-                        <span data-i18n="index.wizard.step7.oneYear">index.wizard.step7.oneYear</span>
+                        <span data-i18n="index.wizard.step7.oneYear">Within last year</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Within 2 years')">
-                        <span data-i18n="index.wizard.step7.twoYears">index.wizard.step7.twoYears</span>
+                        <span data-i18n="index.wizard.step7.twoYears">Within last 2 years</span>
                       </button>
                       <button type="button"
                               class="btn wizard-btn-option p-3"
                               onclick="next(7, 'accident_date', 'Over 2 years')">
-                        <span data-i18n="index.wizard.step7.overTwo">index.wizard.step7.overTwo</span>
+                        <span data-i18n="index.wizard.step7.overTwo">More than 2 years ago</span>
                       </button>
                     </div>
                   </div>
@@ -370,7 +373,7 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step8.question"
                         class="fw-bold mb-4">
-                      wizard.step8.question
+                      What is the primary injury?
                     </h4>
                     <div class="mb-4">
                       <select id="primary_injury"
@@ -380,38 +383,38 @@
                                 disabled
                                 selected
                                 data-i18n="index.wizard.step8.selectPlaceholder">
-                          wizard.step8.selectPlaceholder
+                          Select primary injury...
                         </option>
                         <option value="Broken Bones"
                                 data-i18n="index.wizard.step8.brokenBones">
-                          wizard.step8.brokenBones
+                          Broken Bones
                         </option>
                         <option value="Head Injury"
                                 data-i18n="index.wizard.step8.headInjury">
-                          wizard.step8.headInjury
+                          Head Injury / Concussion
                         </option>
                         <option value="Back Pain"
                                 data-i18n="index.wizard.step8.backPain">
-                          wizard.step8.backPain
+                          Back / Neck Pain
                         </option>
                         <option value="Scrapes"
                                 data-i18n="index.wizard.step8.scrapes">
-                          wizard.step8.scrapes
+                          Scrapes / Bruises
                         </option>
                         <option value="Other"
                                 data-i18n="index.wizard.step8.other">
-                          wizard.step8.other
+                          Other
                         </option>
                       </select>
                       <div data-i18n="index.wizard.step8.invalid"
                            class="invalid-feedback">
-                        wizard.step8.invalid
+                        Please select your primary injury.
                       </div>
                     </div>
                     <button type="button"
                             class="btn btn-primary btn-lg w-100"
                             onclick="validateAndNext(8)">
-                      <span data-i18n="index.wizard.step8.next">index.wizard.step8.next</span>
+                      <span data-i18n="index.wizard.step8.next">Next</span>
                     </button>
                   </div>
 
@@ -420,11 +423,11 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step9.question"
                         class="fw-bold mb-2">
-                      wizard.step9.question
+                      What is your name?
                     </h4>
                     <p data-i18n="index.wizard.step9.privacy"
                        class="text-muted small mb-4">
-                      wizard.step9.privacy
+                      Your info is 100% private &amp; secure.
                     </p>
                     <div class="row g-3 mb-4">
                       <div class="col-6">
@@ -432,11 +435,11 @@
                           {{ form.first_name(class="form-control", placeholder="First", id="first_name") }}
                           <label data-i18n="index.wizard.step9.firstName"
                                  for="first_name">
-                            wizard.step9.firstName
+                            First Name
                           </label>
                           <div data-i18n="index.wizard.step9.required"
                                class="invalid-feedback">
-                            wizard.step9.required
+                            Required
                           </div>
                         </div>
                       </div>
@@ -445,11 +448,11 @@
                           {{ form.last_name(class="form-control", placeholder="Last", id="last_name") }}
                           <label data-i18n="index.wizard.step9.lastName"
                                  for="last_name">
-                            wizard.step9.lastName
+                            Last Name
                           </label>
                           <div data-i18n="index.wizard.step9.required"
                                class="invalid-feedback">
-                            wizard.step9.required
+                            Required
                           </div>
                         </div>
                       </div>
@@ -457,7 +460,7 @@
                     <button type="button"
                             class="btn btn-primary btn-lg w-100"
                             onclick="validateAndNext(9)">
-                      <span data-i18n="index.wizard.step9.next">index.wizard.step9.next</span>
+                      <span data-i18n="index.wizard.step9.next">Next</span>
                     </button>
                   </div>
 
@@ -466,34 +469,34 @@
                        class="wizard-step-transition">
                     <h4 data-i18n="index.wizard.step10.title"
                         class="fw-bold mb-2">
-                      wizard.step10.title
+                      Contact Details
                     </h4>
                     <p data-i18n="index.wizard.step10.subtitle"
                        class="text-muted small mb-4">
-                      wizard.step10.subtitle
+                      Your Privacy is Our Priority.
                     </p>
                     <div class="form-floating mb-3">
                       {{ form.email(class="form-control", placeholder="name@example.com", id="email", required=True) }}
                       <label data-i18n="index.wizard.step10.emailLabel"
                              for="email">
-                        wizard.step10.emailLabel
+                        Email Address
                       </label>
                     </div>
                     <div class="form-floating mb-4">
                       {{ form.phone(class="form-control", placeholder="Phone", id="phone", required=True) }}
                       <label data-i18n="index.wizard.step10.phoneLabel"
                              for="phone">
-                        wizard.step10.phoneLabel
+                        Phone Number
                       </label>
                     </div>
                     <button type="submit"
                             class="btn btn-primary btn-lg w-100 mb-3 fw-bold">
-                      <span data-i18n="index.wizard.step10.submit">index.wizard.step10.submit</span>
+                      <span data-i18n="index.wizard.step10.submit">Submit</span>
                     </button>
                     <p data-i18n="index.wizard.step10.consent"
                        class="text-muted x-small"
                        style="font-size: 0.75rem; text-align: justify;">
-                      wizard.step10.consent
+                      By clicking Submit, you agree to our Terms &amp; Conditions and Privacy Policy. You consent to receive calls and messages from our legal team about your case. Message and data rates may apply.
                     </p>
                   </div>
 
@@ -513,16 +516,16 @@
         <div class="col-md-6 mb-4 mb-md-0">
           <h2 data-i18n="index.splitHero.legalExpertise.title"
               class="fw-bold mb-3 text-primary">
-            index.splitHero.legalExpertise.title
+            Legal Expertise That Delivers Results
           </h2>
           <p data-i18n="index.splitHero.legalExpertise.paragraph"
              class="text-muted mb-4">
-            index.splitHero.legalExpertise.paragraph
+            After a car crash, you need more than just legal advice—you need a team that puts you first. JS Law Group offers personalized attention and transparent communication, guiding you through every step of the legal process. You focus on healing; we focus on securing the compensation you deserve.
           </p>
           <a data-i18n="index.splitHero.legalExpertise.cta"
              class="btn btn-primary text-white px-4 py-2"
              href="#wizard-container">
-            index.splitHero.legalExpertise.cta
+            Your Case Starts Here
           </a>
         </div>
         <div class="col-md-6">
@@ -546,16 +549,16 @@
         <div class="col-md-6">
           <h2 data-i18n="index.splitHero.eliteAttorneys.title"
               class="fw-bold mb-3 text-primary">
-            index.splitHero.eliteAttorneys.title
+            Dedicated Attorneys. Client-Centered Support
           </h2>
           <p data-i18n="index.splitHero.eliteAttorneys.paragraph"
              class="text-muted mb-4">
-            index.splitHero.eliteAttorneys.paragraph
+            JS Law Group represents people affected by motor vehicle accidents and other personal injury matters. Whether you need help reaching a fair settlement or preparing for trial, our team handles a wide range of cases with legal expertise and a commitment to your best outcome. From severe injuries to straightforward claims, we fight for your rights.
           </p>
           <a data-i18n="index.splitHero.eliteAttorneys.cta"
              class="btn btn-primary text-white px-4 py-2"
              href="#wizard-container">
-            index.splitHero.eliteAttorneys.cta
+            Get a Free Consultation
           </a>
         </div>
       </div>
@@ -569,16 +572,16 @@
         <div class="col-md-6 mb-4 mb-md-0">
           <h2 data-i18n="index.splitHero.tailoredApproach.title"
               class="fw-bold mb-3 text-primary">
-            index.splitHero.tailoredApproach.title
+            Why Your Case Needs a Tailored Approach
           </h2>
           <p data-i18n="index.splitHero.tailoredApproach.paragraph"
              class="text-muted mb-4">
-            index.splitHero.tailoredApproach.paragraph
+            No two accidents are the same. Details matter—who was at fault, the road conditions, and the severity of injuries. The attorneys at JS Law Group analyze every angle to build a strong case. We don't rely on a one-size-fits-all approach; we build a strategy specifically for you to secure the best possible outcome.
           </p>
           <a data-i18n="index.splitHero.tailoredApproach.cta"
              class="btn btn-primary text-white px-4 py-2"
              href="#wizard-container">
-            index.splitHero.tailoredApproach.cta
+            Secure Your Rights Today
           </a>
         </div>
         <div class="col-md-6">
@@ -596,11 +599,11 @@
       <div class="text-center mb-5">
         <h2 data-i18n="index.cardsGrid.title"
             class="fw-bold text-primary">
-          cardsGrid.title
+          Where Our Experience Can Make a Difference
         </h2>
         <p data-i18n="index.cardsGrid.subtitle"
            class="text-muted">
-          cardsGrid.subtitle
+          From devastating crashes to minor fender benders, JS Law Group handles motor vehicle and personal injury cases with dedicated expertise.
         </p>
       </div>
 
@@ -611,11 +614,11 @@
               <i class="fas fa-truck fa-2x mb-3 text-primary"></i>
               <h5 data-i18n="index.cardsGrid.trucking.title"
                   class="fw-bold">
-                cardsGrid.trucking.title
+                Trucking and 18-Wheeler Accidents
               </h5>
               <p data-i18n="index.cardsGrid.trucking.desc"
                  class="text-muted small">
-                cardsGrid.trucking.desc
+                These cases require specialized litigation. Our team is prepared to hold trucking companies accountable and fight for the compensation you deserve.
               </p>
             </div>
           </div>
@@ -626,11 +629,11 @@
               <i class="fas fa-bicycle fa-2x mb-3 text-primary"></i>
               <h5 data-i18n="index.cardsGrid.pedestrian.title"
                   class="fw-bold">
-                cardsGrid.pedestrian.title
+                Pedestrian and Bicycle Accidents
               </h5>
               <p data-i18n="index.cardsGrid.pedestrian.desc"
                  class="text-muted small">
-                cardsGrid.pedestrian.desc
+                If you were hit while biking or walking, your case deserves special attention. JS Law Group ensures your rights are protected.
               </p>
             </div>
           </div>
@@ -641,11 +644,11 @@
               <i class="fas fa-motorcycle fa-2x mb-3 text-primary"></i>
               <h5 data-i18n="index.cardsGrid.motorcycle.title"
                   class="fw-bold">
-                cardsGrid.motorcycle.title
+                Motorcycle Accidents
               </h5>
               <p data-i18n="index.cardsGrid.motorcycle.desc"
                  class="text-muted small">
-                cardsGrid.motorcycle.desc
+                Motorcyclists often face severe injuries. We help maximize compensation for medical bills and other losses.
               </p>
             </div>
           </div>
@@ -656,11 +659,11 @@
               <i class="fas fa-car-crash fa-2x mb-3 text-primary"></i>
               <h5 data-i18n="index.cardsGrid.rideshare.title"
                   class="fw-bold">
-                cardsGrid.rideshare.title
+                Rideshare and Commercial Vehicle Accidents
               </h5>
               <p data-i18n="index.cardsGrid.rideshare.desc"
                  class="text-muted small">
-                cardsGrid.rideshare.desc
+                Accidents involving Uber, Lyft, or company vehicles often involve complex insurance. We handle the details so you can focus on recovery.
               </p>
             </div>
           </div>
@@ -671,9 +674,9 @@
               <i class="fas fa-road fa-2x mb-3 text-primary"></i>
               <h5 data-i18n="index.cardsGrid.intersection.title"
                   class="fw-bold">
-                cardsGrid.intersection.title
+                Intersection / T-Bone / Rear-End Accidents
               </h5>
-              <p class="text-muted small" data-i18n="index.cardsGrid.intersection.desc">index.cardsGrid.intersection.desc</p>
+              <p class="text-muted small" data-i18n="index.cardsGrid.intersection.desc">Even "simple" accidents can cause long-term pain. Our attorneys handle the details and fight for your recovery.</p>
             </div>
           </div>
         </div>
@@ -683,11 +686,11 @@
               <i class="fas fa-user-injured fa-2x mb-3 text-primary"></i>
               <h5 data-i18n="index.cardsGrid.delayed.title"
                   class="fw-bold">
-                cardsGrid.delayed.title
+                Low Impact or Delayed Injury Accidents
               </h5>
               <p data-i18n="index.cardsGrid.delayed.desc"
                  class="text-muted small">
-                cardsGrid.delayed.desc
+                Some injuries appear weeks later. Don't sign anything or settle until you've spoken with our team.
               </p>
             </div>
           </div>
@@ -701,7 +704,7 @@
     <div class="container text-center">
       <h2 data-i18n="index.iconGrid.title"
           class="fw-bold mb-5 text-primary">
-        index.iconGrid.title
+        Common Car Crash Injuries
       </h2>
 
       <div class="row g-5 mb-5">
@@ -709,42 +712,42 @@
           <i class="fas fa-crutch fa-3x mb-3 text-secondary"></i>
           <h6 data-i18n="index.iconGrid.whiplash"
               class="fw-bold">
-            index.iconGrid.whiplash
+            Whiplash and Neck Injuries
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-brain fa-3x mb-3 text-secondary"></i>
           <h6 data-i18n="index.iconGrid.concussion"
               class="fw-bold">
-            index.iconGrid.concussion
+            Concussions and Head Trauma
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-bone fa-3x mb-3 text-secondary" aria-hidden="true"></i>
           <h6 data-i18n="index.iconGrid.backSpine"
               class="fw-bold">
-            index.iconGrid.backSpine
+            Back and Spinal Pain
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-bone fa-3x mb-3 text-secondary"></i>
           <h6 data-i18n="index.iconGrid.fractures"
               class="fw-bold">
-            index.iconGrid.fractures
+            Bone Fractures and Breaks
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-band-aid fa-3x mb-3 text-secondary"></i>
           <h6 data-i18n="index.iconGrid.softTissue"
               class="fw-bold">
-            index.iconGrid.softTissue
+            Internal Bleeding and Soft Tissue
           </h6>
         </div>
         <div class="col-6 col-md-4">
           <i class="fas fa-wheelchair fa-3x mb-3 text-secondary"></i>
           <h6 data-i18n="index.iconGrid.disability"
               class="fw-bold">
-            index.iconGrid.disability
+            Long-Term Disability
           </h6>
         </div>
       </div>
@@ -752,7 +755,7 @@
       <a data-i18n="index.iconGrid.cta"
          class="btn btn-primary text-white px-5 py-2"
          href="#wizard-container">
-        index.iconGrid.cta
+        Talk to a Lawyer Now
       </a>
     </div>
   </section>
@@ -763,12 +766,12 @@
     <div class="container text-center text-white">
       <h2 data-i18n="index.banner.title"
           class="fw-bold mb-3">
-        index.banner.title
+        Real Compensation for Real Losses
       </h2>
       <p data-i18n="index.banner.paragraph"
          class="mx-auto mb-0"
          style="max-width: 700px;">
-        index.banner.paragraph
+        Medical bills, lost wages, and emotional distress are real costs. If you are entitled to compensation, JS Law Group will fight to see that you receive it. Our team is committed to transparent communication and securing the best outcome for every client.
       </p>
     </div>
   </section>
@@ -779,7 +782,7 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
           <div id="cd-content" data-i18n="pi.splitHero.criminalDefense.content">
-            pi.splitHero.criminalDefense.content
+            <h2>Criminal Defense</h2><p>Facing criminal charges can be one of the most stressful experiences of your life, but you don't have to face it alone. We provide a robust, strategic defense to protect your freedom, your rights, and your future.</p><ul><li><i></i>DUI / DWI</li><li><i></i>Drug Offenses</li><li><i></i>Violent Crimes</li><li><i></i>White Collar Crimes</li></ul>
           </div>
         </div>
         <div class="col-lg-6">
@@ -797,7 +800,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div id="cd-article-content" class="article-content" data-i18n="pi.article.criminalDefense">
-            pi.article.criminalDefense
+            <h2>Navigating Your Criminal Defense</h2><p>A criminal charge can feel like the end of the world, but it doesn't have to define you or your future. A strategic, aggressive defense is critical during this time. Let us be the ones to help you.</p><hr><p>Being charged, regardless of if it is a felony charge or a misdemeanor, can be one of the most difficult times in your life. Our team understands this and is here to help. As experienced attorneys capable of navigating trial with legal expertise and skillful solutions, we will work with you to get you the best results possible. Defending not just your rights, but also your innocence is our greatest priority.</p><h3>Your Rights Are Paramount</h3><p>Your constitutional rights are always in effect, and this includes when you get arrested and are held for questioning. Understanding them is your first line of defense.</p><ul><li>Fourth Amendment Protection Against Unreasonable Searches and Seizures</li><li>Fifth Amendment Right to Remain Silent</li><li>Sixth Amendment Right to Legal Counsel and to Be Informed of the Charges</li></ul><h3>Common Defense Strategies</h3><p>Every case is different, but our skilled attorneys are ready for anything. Even before the charges go to trial, we will be active and may try to challenge the evidence, negotiate a plea deal, or even attempt to dismiss the case. We will explore every avenue in order to protect your rights. Our team could argue your innocence, citing an alibi or a mistaken identity. We could note that your actions were committed under a legally excusable circumstance, like duress or self-defense. Our team could raise reasonable doubt against the prosecution's case, leading to a favorable outcome. Regardless of the specific method, know that our team is ready to assist and defend your case with legal expertise, effective solutions, and skillful trial maneuvering. Let us offer you a free consultation with us today.</p>
           </div>
         </div>
       </div>
@@ -809,7 +812,7 @@
     <div class="container">
       <h3 data-i18n="index.faq.title"
           class="fw-bold text-center mb-5">
-        index.faq.title
+        Frequently Asked Questions
       </h3>
       
       <div class="accordion accordion-flush" id="faqAccordion" style="max-width: 800px; margin: 0 auto;">
@@ -820,7 +823,7 @@
                     data-i18n="index.faq.q1"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseOne">
-              index.faq.q1
+              Do I need a lawyer if I wasn't at fault?
             </button>
           </h2>
           <div id="flush-collapseOne"
@@ -828,7 +831,7 @@
                data-bs-parent="#faqAccordion">
             <div data-i18n="index.faq.a1"
                  class="accordion-body text-muted">
-              index.faq.a1
+              Yes, insurance companies often try to minimize payouts regardless of fault. A lawyer ensures you get fair treatment.
             </div>
           </div>
         </div>
@@ -839,7 +842,7 @@
                     data-i18n="index.faq.q2"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseTwo">
-              index.faq.q2
+              What if I was a pedestrian or a passenger?
             </button>
           </h2>
           <div id="flush-collapseTwo"
@@ -847,7 +850,7 @@
                data-bs-parent="#faqAccordion">
             <div data-i18n="index.faq.a2"
                  class="accordion-body text-muted">
-              index.faq.a2
+              You still have rights. Passengers and pedestrians are often entitled to significant compensation.
             </div>
           </div>
         </div>
@@ -858,7 +861,7 @@
                     data-i18n="index.faq.q3"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseThree">
-              index.faq.q3
+              Is it expensive to hire a lawyer?
             </button>
           </h2>
           <div id="flush-collapseThree"
@@ -866,7 +869,7 @@
                data-bs-parent="#faqAccordion">
             <div data-i18n="index.faq.a3"
                  class="accordion-body text-muted">
-              index.faq.a3
+              JS Law Group works on a contingency basis for many personal injury matters—you only pay if we recover for you. We do not charge upfront fees before providing legal services.
             </div>
           </div>
         </div>
@@ -877,7 +880,7 @@
                     data-i18n="index.faq.q4"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseFour">
-              index.faq.q4
+              Is there a deadline to file?
             </button>
           </h2>
           <div id="flush-collapseFour"
@@ -885,7 +888,7 @@
                data-bs-parent="#faqAccordion">
             <div data-i18n="index.faq.a4"
                  class="accordion-body text-muted">
-              index.faq.a4
+              Yes, statutes of limitation vary by state. It is crucial to act quickly.
             </div>
           </div>
         </div>
@@ -896,7 +899,7 @@
                     data-i18n="index.faq.q5"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseFive">
-              index.faq.q5
+              How do I start?
             </button>
           </h2>
           <div id="flush-collapseFive"
@@ -904,7 +907,7 @@
                data-bs-parent="#faqAccordion">
             <div data-i18n="index.faq.a5"
                  class="accordion-body text-muted">
-              index.faq.a5
+              Use the form at the top of this page to tell us about your case, or call us for a free consultation. Our team will review your situation and recommend the next steps.
             </div>
           </div>
         </div>
@@ -916,7 +919,7 @@
     <a data-i18n="index.faq.cta"
        class="btn btn-primary text-white px-5 py-3 fw-bold shadow"
        href="#wizard-container">
-      index.faq.cta
+      Get Your Free Case Evaluation
     </a>
   </section>
 
@@ -932,16 +935,16 @@
         </div>
         <h2 data-i18n="index.wizard.successModal.title"
             class="fw-bold mb-3">
-          wizard.successModal.title
+          Assessment Complete!
         </h2>
         <p data-i18n="index.wizard.successModal.message"
            class="text-muted mb-4 lead">
-          wizard.successModal.message
+          We have received your details. Our legal team is analyzing your case and will contact you shortly.
         </p>
         <button type="button"
                 class="btn btn-primary btn-lg px-5 rounded-pill"
                 data-bs-dismiss="modal">
-          <span data-i18n="index.wizard.successModal.close">index.wizard.successModal.close</span>
+          <span data-i18n="index.wizard.successModal.close">Close</span>
         </button>
       </div>
     </div>
@@ -975,7 +978,7 @@
         <li>
           <h6 data-i18n="floatingSelector.selectLanguage"
               class="dropdown-header">
-            floatingSelector.selectLanguage
+            Select Language
           </h6>
         </li>
         <li>
@@ -984,7 +987,7 @@
              id="i18n001"
              value-i18n="en-US">
             <span class="fi fi-us floating-selector-flag" aria-hidden="true" title="United States"></span>
-            <span data-i18n="floatingSelector.langEn">floatingSelector.langEn</span>
+            <span data-i18n="floatingSelector.langEn">English</span>
           </a>
         </li>
         <li>
@@ -993,7 +996,7 @@
              id="i18n002"
              value-i18n="ko-KR">
             <span class="fi fi-kr floating-selector-flag" aria-hidden="true" title="South Korea"></span>
-            <span data-i18n="floatingSelector.langKo">floatingSelector.langKo</span>
+            <span data-i18n="floatingSelector.langKo">한국어</span>
           </a>
         </li>
         <li>
@@ -1002,7 +1005,7 @@
              id="i18n006"
              value-i18n="es-US">
             <span class="fi fi-es floating-selector-flag" aria-hidden="true" title="Spain"></span>
-            <span data-i18n="floatingSelector.langEs">floatingSelector.langEs</span>
+            <span data-i18n="floatingSelector.langEs">Español</span>
           </a>
         </li>
         <li>
@@ -1011,7 +1014,7 @@
              id="i18n005"
              value-i18n="ja-JP">
             <span class="fi fi-jp floating-selector-flag" aria-hidden="true" title="Japan"></span>
-            <span data-i18n="floatingSelector.langJa">floatingSelector.langJa</span>
+            <span data-i18n="floatingSelector.langJa">日本語</span>
           </a>
         </li>
       </ul>
@@ -1036,11 +1039,11 @@
         <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
           <h4 data-i18n="footer.brand"
               class="mb-0 text-uppercase fw-bold">
-            footer.brand
+            Js Law Group
           </h4>
           <p data-i18n="footer.address"
              class="small text-white-50 lh-sm mt-2 mb-0">
-            footer.address
+            3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096
           </p>
         </div>
         <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
@@ -1062,7 +1065,7 @@
         <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
           <small data-i18n="footer.copyrightOffice"
                  class="text-white-50">
-            footer.copyrightOffice
+            &copy; JS LAW Group, LLC. 2024 - 2025
           </small>
         </div>
         <div class="col-md-7 text-center text-md-end">
@@ -1070,31 +1073,31 @@
             <li class="list-inline-item">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.faqs">footer.faqs</small>
+                <small data-i18n="footer.faqs">FAQs</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.corporateInformation">footer.corporateInformation</small>
+                <small data-i18n="footer.corporateInformation">Corporate information</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.privacyNotice">footer.privacyNotice</small>
+                <small data-i18n="footer.privacyNotice">Privacy notice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.cookieNotice">footer.cookieNotice</small>
+                <small data-i18n="footer.cookieNotice">Cookie notice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.termsOfUse">footer.termsOfUse</small>
+                <small data-i18n="footer.termsOfUse">Terms of use</small>
               </a>
             </li>
           </ul>
@@ -1104,7 +1107,7 @@
         <div class="col-12">
           <p class="mb-0 text-white-50">
             <small data-i18n="footer.importantNote">
-              footer.importantNote
+              <strong>Important Note:</strong> This website is designed for clients seeking legal representation in Personal Injury (PI) and Criminal Defense (CD) cases. The website allows you to submit an inquiry form to contact our firm. Please be aware that JS Law Group, LLC never charges clients any fees upfront or before providing legal services. We do not request payment, banking details, or personal financial information prior to consultation or case evaluation. All initial consultations are free, and fees are only discussed after we have reviewed your case and agreed to represent you.
             </small>
           </p>
         </div>
