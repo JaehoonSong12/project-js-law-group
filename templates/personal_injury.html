@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="pi.pageTitle">
-    pi.pageTitle
-  </title>
+  <title>JS Law Group - Personal Injury</title>
 
   <!-- Bootstrap 5 CSS -->
   <link href="/static/css/custom.min.css" rel="stylesheet">
@@ -43,12 +41,12 @@
             <h1 data-i18n="nav.title"
                 class="h2 fw-bold mb-0 lh-1 text-dark"
                 style="letter-spacing: -1px;">
-              nav.title
+              24/7 Legal Rescue
             </h1>
             <small data-i18n="nav.firmName"
                    class="text-primary fw-bold"
                    style="font-size: 10px; letter-spacing: 0.5px;">
-              nav.firmName
+              JS Law Group, LLC
             </small>
           </div>
         </a>
@@ -66,33 +64,38 @@
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
               <a data-i18n="nav.home"
-                 class="nav-link fw-bold px-3"
+                 class="nav-link fw-bold px-3 d-none d-xl-block"
                  href="{{ url_for('index') }}">
-                nav.home
+                Home
+              </a>
+              <a data-i18n="nav.home"
+                 class="nav-link fw-bold d-xl-none"
+                 href="{{ url_for('index') }}">
+                Home
               </a>
             </li>
             <li class="nav-item">
               <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                nav.motorVehicles
+                Motor Vehicle Accident
               </a>
               <a data-i18n="nav.motorVehicles"
                  class="nav-link fw-bold d-xl-none"
                  href="{{ url_for('motor_vehicle_accident') }}">
-                nav.motorVehicles
+                Motor Vehicle Accident
               </a>
             </li>
             <li class="nav-item">
               <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold text-primary px-3 border-start border-secondary d-none d-xl-block"
                  href="{{ url_for('personal_injury') }}">
-                nav.personalInjury
+                Personal Injury
               </a>
               <a data-i18n="nav.personalInjury"
                  class="nav-link fw-bold text-primary d-xl-none"
                  href="{{ url_for('personal_injury') }}">
-                nav.personalInjury
+                Personal Injury
               </a>
             </li>
           </ul>
@@ -100,12 +103,12 @@
             <div class="d-flex flex-column align-items-end me-xl-3">
               <p data-i18n="nav.visitWebsite"
                  class="mb-1 fw-bold lh-1 small text-muted">
-                nav.visitWebsite
+                Visit our website
               </p>
               <a data-i18n="nav.goToWebsite"
                  class="btn btn-outline-primary btn-sm rounded-3"
                  href="https://www.jslawgroup.net/">
-                nav.goToWebsite
+                Go to website
               </a>
             </div>
             <a class="btn btn-primary rounded-4 px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
@@ -113,7 +116,7 @@
               <i class="fas fa-phone fa-lg" aria-hidden="true"></i>
               <span data-i18n="nav.phoneNumber"
                     class="fw-bold fs-5">
-                nav.phoneNumber
+                (770) 222-4444
               </span>
             </a>
           </div>
@@ -135,10 +138,10 @@
           <div class="col-lg-7 py-5">
             <h1 data-i18n="pi.hero.title"
                 class="display-3 fw-bold text-primary mb-3">
-              pi.hero.title
+              Personal Injury Lawyers
             </h1>
             <p class="lead fs-3 text-dark">
-              <span data-i18n="pi.hero.subtitle">pi.hero.subtitle</span>
+              <span data-i18n="pi.hero.subtitle">Trust <span class="text-primary fw-bold">(770) 222-4444</span> to spearhead your Personal Injury Case</span>
             </p>
           </div>
         </div>
@@ -151,11 +154,11 @@
                class="bg-primary text-white text-center p-4 p-md-5 rounded-5 shadow-lg">
             <p data-i18n="pi.hero.message"
                class="fs-5 mb-2">
-              pi.hero.message
+              When you and your loved ones suffer damages due to someone else's negligence, you need legal counsel you can trust.
             </p>
             <h2 data-i18n="pi.hero.claim"
                 class="h3 fw-bold mb-0">
-              pi.hero.claim
+              JS Law Group is prepared to defend your claim.
             </h2>
           </div>
         </div>
@@ -170,18 +173,18 @@
         <div class="col-lg-6 mb-5 mb-lg-0">
           <h2 data-i18n="pi.imageList.title"
               class="display-5 fw-bold text-dark mb-5">
-            pi.imageList.title
+            What Happens When You Call?
           </h2>
           <div class="d-flex mb-4">
             <div class="flex-shrink-0"><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center image-list-icon"><img src="https://picsum.photos/30/30?random=101" alt="person" class="rounded-circle"></div></div>
             <div class="ms-4">
               <h4 data-i18n="pi.imageList.step1.title"
                   class="fw-bold text-dark">
-                pi.imageList.step1.title
+                You'll talk to a real person.
               </h4>
               <p data-i18n="pi.imageList.step1.desc"
                  class="text-secondary">
-                pi.imageList.step1.desc
+                JS Law Group is always available 24/7. When you call, you'll be connected with our team, who will be ready to offer you assistance.
               </p>
             </div>
           </div>
@@ -190,11 +193,11 @@
             <div class="ms-4">
               <h4 data-i18n="pi.imageList.step2.title"
                   class="fw-bold text-dark">
-                pi.imageList.step2.title
+                We'll recommend your next steps.
               </h4>
               <p data-i18n="pi.imageList.step2.desc"
                  class="text-secondary">
-                pi.imageList.step2.desc
+                With your information, our team will determine your likely chance for compensation. If we think you have a strong case, you can decide if you'd like us to fight for you.
               </p>
             </div>
           </div>
@@ -203,11 +206,11 @@
             <div class="ms-4">
               <h4 data-i18n="pi.imageList.step3.title"
                   class="fw-bold text-dark">
-                pi.imageList.step3.title
+                We'll work to win your case.
               </h4>
               <p data-i18n="pi.imageList.step3.desc"
                  class="text-secondary">
-                pi.imageList.step3.desc
+                Once you sign with JS Law Group, we'll handle the rest. Your attorney will fight the opposing party to get the compensation owed to you by law.
               </p>
             </div>
           </div>
@@ -233,7 +236,7 @@
               <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=11" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.slipFall"
                   class="h5 fw-bold text-center">
-                pi.cardsGrid.slipFall
+                Slip &amp; Fall
               </h3>
             </div>
           </div>
@@ -245,7 +248,7 @@
               <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=21" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.bicycleCrash"
                   class="h5 fw-bold text-center">
-                pi.cardsGrid.bicycleCrash
+                Bicycle Crash
               </h3>
             </div>
           </div>
@@ -257,7 +260,7 @@
               <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=31" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.pedestrianCollision"
                   class="h5 fw-bold text-center">
-                pi.cardsGrid.pedestrianCollision
+                Pedestrian Collision
               </h3>
             </div>
           </div>
@@ -269,7 +272,7 @@
               <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=41" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.premisesLiability"
                   class="h5 fw-bold text-center">
-                pi.cardsGrid.premisesLiability
+                Premises Liability
               </h3>
             </div>
           </div>
@@ -281,7 +284,7 @@
               <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=51" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.workersComp"
                   class="h5 fw-bold text-center">
-                pi.cardsGrid.workersComp
+                Workers' Compensation
               </h3>
             </div>
           </div>
@@ -293,7 +296,7 @@
               <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shared-icon-circle"><img src="https://picsum.photos/40/40?random=61" alt="icon" class="rounded-circle"></div>
               <h3 data-i18n="pi.cardsGrid.otherInjuries"
                   class="h5 fw-bold text-center">
-                pi.cardsGrid.otherInjuries
+                Other Bodily Injury Cases
               </h3>
             </div>
           </div>
@@ -315,7 +318,7 @@
         </div>
         <div class="col-lg-6">
           <div id="pi-content" data-i18n="pi.splitHero.personalInjury.content">
-            pi.splitHero.personalInjury.content
+            <h2>Personal Injury</h2><p>Navigating the aftermath of an injury is overwhelming, but you are not alone. We are dedicated to fighting for your rights and securing the compensation you deserve so you can focus on healing and rebuilding your life.</p><ul><li><i></i>Motor Vehicle Accidents</li><li><i></i>Slip & Fall</li><li><i></i>Wrongful Death</li><li><i></i>Defective Products</li></ul>
           </div>
         </div>
       </div>
@@ -327,7 +330,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div id="pi-article-content" class="article-content" data-i18n="pi.article.personalInjury">
-            pi.article.personalInjury
+            <h2>Understanding Personal Injury Claim</h2><p>When you are injured due to someone else's negligence, the legal and financial aftermath can be just as painful as the injury itself. Understanding your rights and getting legal help is the first step toward recovery.</p><hr><p>Personal injury can be a devastating experience. It's never an expected event, and we're here to help you through this tough time. If you are facing personal injury, damages, or wrongful death from the negligence of others, our team of experienced lawyers is here to protect your rights and get you the compensation you deserve. Our team truly understands the pain that you're going through, and we want to get you what you need to start recovering.</p><p>As attorneys that focus on a client-centered experience, we only want the best outcome. Through legal expertise, transparent communication, and effective solutions, we will secure your rights and the recompense that you're looking for.</p><h3>What Constitutes a Claim?</h3><p>If you need to seek compensation for emotional, physical, or psychological harm done by another party, then our team of attorneys is here for you. If the other party committed harm due to negligence, recklessness, or intentional acts, then you might have a claim. When it was their actions - or their lack of actions - that was the direct cause of your pain, then they are potentially liable for the damage that you took. If your situation fits these criteria, then schedule a free consultation with us now to see what we can do for you.</p><h3>Our Process: Investigation to Resolution</h3><p>Though every case is personal and different, you can have broad expectations of various consultations, followed by dedicated investigation and collection of evidence. Once all records are obtained, then our attorneys will likely move to filing a claim and demand for compensation. If a settlement isn't reached by this point, then we may move to trial, where we will fight fiercely for your rights and the compensation you deserve.</p>
           </div>
         </div>
       </div>
@@ -384,7 +387,7 @@
         <li>
           <h6 data-i18n="floatingSelector.selectLanguage"
               class="dropdown-header">
-            floatingSelector.selectLanguage
+            Select Language
           </h6>
         </li>
         <li>
@@ -393,7 +396,7 @@
              id="i18n001"
              value-i18n="en-US">
             <span class="fi fi-us floating-selector-flag" aria-hidden="true" title="United States"></span>
-            <span data-i18n="floatingSelector.langEn">floatingSelector.langEn</span>
+            <span data-i18n="floatingSelector.langEn">English</span>
           </a>
         </li>
         <li>
@@ -402,7 +405,7 @@
              id="i18n002"
              value-i18n="ko-KR">
             <span class="fi fi-kr floating-selector-flag" aria-hidden="true" title="South Korea"></span>
-            <span data-i18n="floatingSelector.langKo">floatingSelector.langKo</span>
+            <span data-i18n="floatingSelector.langKo">한국어</span>
           </a>
         </li>
         <li>
@@ -411,7 +414,7 @@
              id="i18n006"
              value-i18n="es-US">
             <span class="fi fi-es floating-selector-flag" aria-hidden="true" title="Spain"></span>
-            <span data-i18n="floatingSelector.langEs">floatingSelector.langEs</span>
+            <span data-i18n="floatingSelector.langEs">Español</span>
           </a>
         </li>
         <li>
@@ -420,7 +423,7 @@
              id="i18n005"
              value-i18n="ja-JP">
             <span class="fi fi-jp floating-selector-flag" aria-hidden="true" title="Japan"></span>
-            <span data-i18n="floatingSelector.langJa">floatingSelector.langJa</span>
+            <span data-i18n="floatingSelector.langJa">日本語</span>
           </a>
         </li>
       </ul>
@@ -433,11 +436,11 @@
         <div class="col-lg-4 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
           <h4 data-i18n="footer.brand"
               class="mb-0 text-uppercase fw-bold">
-            footer.brand
+            Js Law Group
           </h4>
           <p data-i18n="footer.address"
              class="small text-white-50 lh-sm mt-2 mb-0">
-            footer.address
+            3296 Summit Ridge Pkwy<br>Suite 1010<br>Duluth, Georgia 30096
           </p>
         </div>
         <div class="col-lg-5 col-md-12 text-center mb-3 mb-lg-0">
@@ -463,7 +466,7 @@
         <div class="col-md-5 text-center text-md-start mb-2 mb-md-0">
           <small data-i18n="footer.copyrightOffice"
                  class="text-white-50">
-            footer.copyrightOffice
+            &copy; JS LAW Group, LLC. 2024 - 2025
           </small>
         </div>
         <div class="col-md-7 text-center text-md-end">
@@ -471,31 +474,31 @@
             <li class="list-inline-item">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.faqs">footer.faqs</small>
+                <small data-i18n="footer.faqs">FAQs</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.corporateInformation">footer.corporateInformation</small>
+                <small data-i18n="footer.corporateInformation">Corporate information</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.privacyNotice">footer.privacyNotice</small>
+                <small data-i18n="footer.privacyNotice">Privacy notice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.cookieNotice">footer.cookieNotice</small>
+                <small data-i18n="footer.cookieNotice">Cookie notice</small>
               </a>
             </li>
             <li class="list-inline-item ms-lg-2">
               <a class="text-decoration-none text-white"
                  href="#">
-                <small data-i18n="footer.termsOfUse">footer.termsOfUse</small>
+                <small data-i18n="footer.termsOfUse">Terms of use</small>
               </a>
             </li>
           </ul>
@@ -505,7 +508,7 @@
         <div class="col-12">
           <p class="mb-0 text-white-50">
             <small data-i18n="footer.importantNote">
-              footer.importantNote
+              <strong>Important Note:</strong> This website is designed for clients seeking legal representation in Personal Injury (PI) and Criminal Defense (CD) cases. The website allows you to submit an inquiry form to contact our firm. Please be aware that JS Law Group, LLC never charges clients any fees upfront or before providing legal services. We do not request payment, banking details, or personal financial information prior to consultation or case evaluation. All initial consultations are free, and fees are only discussed after we have reviewed your case and agreed to represent you.
             </small>
           </p>
         </div>

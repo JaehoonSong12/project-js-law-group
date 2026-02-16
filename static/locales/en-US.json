@@ -28,9 +28,8 @@
     "langJa": "日本語"
   },
   "index": {
-    "pageTitle": "JS Law Group",
     "wizard": {
-    "step1": {
+      "step1": {
       "title": "Top Auto Accident Lawyers",
       "subtitle": "Compare top attorneys and find the best match for your case.",
       "question": "What best describes the accident?",
@@ -39,45 +38,45 @@
       "truck": "Commercial Truck / Semi",
       "pedestrian": "Pedestrian / Hit by Car",
       "rideshare": "Rideshare (Uber/Lyft)"
-    },
-    "step2": {
+      },
+      "step2": {
       "question": "What is your zip code?",
       "zipLabel": "Zip Code",
       "zipInvalid": "Please enter a valid 5-digit zip code.",
       "next": "Next",
       "secure": "100% Secure"
-    },
-    "step3": {
+      },
+      "step3": {
       "question": "Did the injured person receive medical treatment?",
       "hospital": "Treated in Hospital",
       "doctor": "Treated in Doctor's Office",
       "no": "Not Yet / No"
-    },
-    "step4": {
+      },
+      "step4": {
       "question": "Was a police report filed?",
       "yes": "Yes",
       "no": "No"
-    },
-    "step5": {
+      },
+      "step5": {
       "question": "Did the police report say you are at fault?",
       "yes": "Yes",
       "no": "No",
       "unknown": "I don't know"
-    },
-    "step6": {
+      },
+      "step6": {
       "question": "Are you currently represented by a lawyer?",
       "yes": "Yes",
       "no": "No",
       "wantNew": "Yes, but I want a new one"
-    },
-    "step7": {
+      },
+      "step7": {
       "question": "When did the accident happen?",
       "thirty": "Within last 30 days",
       "oneYear": "Within last year",
       "twoYears": "Within last 2 years",
       "overTwo": "More than 2 years ago"
-    },
-    "step8": {
+      },
+      "step8": {
       "question": "What is the primary injury?",
       "selectPlaceholder": "Select primary injury...",
       "brokenBones": "Broken Bones",
@@ -87,28 +86,28 @@
       "other": "Other",
       "invalid": "Please select your primary injury.",
       "next": "Next"
-    },
-    "step9": {
+      },
+      "step9": {
       "question": "What is your name?",
       "privacy": "Your info is 100% private & secure.",
       "firstName": "First Name",
       "lastName": "Last Name",
       "required": "Required",
       "next": "Next"
-    },
-    "step10": {
+      },
+      "step10": {
       "title": "Contact Details",
       "subtitle": "Your Privacy is Our Priority.",
       "emailLabel": "Email Address",
       "phoneLabel": "Phone Number",
       "submit": "Submit",
       "consent": "By clicking Submit, you agree to our Terms & Conditions and Privacy Policy. You consent to receive calls and messages from our legal team about your case. Message and data rates may apply."
-    },
-    "successModal": {
+      },
+      "successModal": {
       "title": "Assessment Complete!",
       "message": "We have received your details. Our legal team is analyzing your case and will contact you shortly.",
       "close": "Close"
-    }
+      }
     },
     "splitHero": {
       "legalExpertise": {
@@ -167,7 +166,6 @@
     }
   },
   "mvAccident": {
-    "pageTitle": "JS Law Group - Motor Vehicle Accident",
     "steppedList": {
       "title1": "Your Next Steps After a",
       "title2": "Motor Vehicle Accident",
@@ -195,7 +193,6 @@
     }
   },
   "pi": {
-    "pageTitle": "JS Law Group - Personal Injury",
     "hero": {
       "title": "Personal Injury Lawyers",
       "subtitle": "Trust <span class=\"text-primary fw-bold\">(770) 222-4444</span> to spearhead your Personal Injury Case",
