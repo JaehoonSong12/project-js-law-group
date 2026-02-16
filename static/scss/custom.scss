@@ -420,12 +420,19 @@ footer {
 // 3. General Styling (Global)
 // ============================================================================
 
+/* Prevent horizontal scroll / right-side gap on mobile (overflow from full-width or vw elements) */
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600; 
   line-height: 1.6;
   letter-spacing: -0.01em;
   scroll-behavior: smooth; /* Global smooth scroll */
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
