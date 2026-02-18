@@ -95,6 +95,7 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
 - [Deployment \& Production Hardening](#deployment--production-hardening)
+  - [Automated Deployment (Dokku on OCI)](#automated-deployment-dokku-on-oci)
   - [Persistent Service (Systemd)](#persistent-service-systemd)
   - [Maintenance \& Monitoring](#maintenance--monitoring)
 - [Technologies](#technologies)
@@ -113,9 +114,9 @@ Copywriter **Nayun** collaborated on this project. Shared assets and PRs:
     - [Responsive Design](#responsive-design)
     - [Performance](#performance)
 - [SEO \& Roadmap](#seo--roadmap)
-  - [1. Domain \& Server Configuration (Done)](#1-domain--server-configuration-done)
+  - [1. Domain \& Server Configuration](#1-domain--server-configuration)
   - [2. Frontend \& UX Improvements (Done)](#2-frontend--ux-improvements-done)
-  - [3. SEO Optimization (Pending)](#3-seo-optimization-pending)
+  - [3. SEO Optimization (In Progress - Technical Setup Complete)](#3-seo-optimization-in-progress---technical-setup-complete)
     - [A. Technical SEO](#a-technical-seo)
     - [B. Content \& Meta Data](#b-content--meta-data)
     - [C. Google Tools](#c-google-tools)
@@ -243,16 +244,16 @@ To build locally:
 
 ```
 /
-├── app/                    # Backend Application Logic
-│   ├── __init__.py         # Flask App Factory & Route Logic (/, /motor-vehicle-accident, /personal-injury)
+├── app/                    # Backend Logic & 3rd-party API Integrations
+│   ├── __init__.py         # Flask App Factory & Route Logic
 │   ├── __main__.py         # Server Entry Point (Waitress/Gunicorn selection)
 │   ├── forms.py            # WTForms Definitions (Validation logic)
 │   └── gmailproxy.py       # Email Service (SMTP/Gmail integration)
-├── templates/              # HTML Templates (Jinja2)
+├── templates/              # HTML Templates (Developer Customization)
 │   ├── index.html          # Main Page (Wizard & General Info)
 │   ├── motor_vehicle_accident.html # Motor Vehicle Accident Page
 │   ├── personal_injury.html        # Personal Injury & Criminal Defense Page
-├── static/                 # Static Assets
+├── static/                 # Static Assets (Developer Customization)
 │   ├── css/                # Compiled Styles
 │   ├── js/                 # Frontend Scripts
 │   ├── scss/               # Source SCSS (Custom styles grouped by UI component)
@@ -305,6 +306,29 @@ SMTP_SECURITY=SSL
 ---
 
 # Deployment & Production Hardening
+
+## Automated Deployment (Dokku on OCI)
+
+The application is deployed on an **Oracle Cloud Infrastructure (OCI)** Compute Instance using **Dokku** (Heroku-like PaaS).
+
+**Instance Specifications:**
+- **OS:** Ubuntu (amd-e2-ubuntu)
+- **Shape:** VM.Standard.E2.1.Micro
+- **CPU:** 1.0 OCPUs (AMD EPYC)
+- **RAM:** 1.0 GB
+- **Storage:** 47 GB SSD
+- **Public IP:** 152.70.198.43
+
+**Key Deployment Files:**
+- **`deploy.sh`**: The master deployment script. Handles git remote configuration and pushes code to the Dokku remote (`dokku@152.70.198.43:jslawgroup247`).
+- **`Dockerfile`**: Defines the runtime environment (Python 3.11-slim) for Dokku.
+- **`Procfile`**: Instructs Dokku to start the web process (`gunicorn` on Linux).
+
+To deploy updates, simply run the deployment script from a Unix-like shell (Git Bash, WSL, or macOS Terminal):
+
+```bash
+./deploy.sh
+```
 
 ## Persistent Service (Systemd)
 
