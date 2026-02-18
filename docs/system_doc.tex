@@ -72,14 +72,39 @@
 
 \tableofcontents
 
+
+% Behavioral Diagrams
+% | Diagram          | Purpose           |
+% | ---------------- | ----------------- |
+% | Use case diagram | user interactions |
+% | Activity diagram | workflows         |
+% | State diagram    | state changes     |
+
+% **Interaction Diagrams (subset of Behavioral)
+% | Diagram               | Purpose              |
+% | --------------------- | -------------------- |
+% | Sequence diagram      | message order        |
+% | Communication diagram | object communication |
+
+
+
+% Structural Diagrams
+% | Diagram            | Purpose                                      |
+% | ------------------ | -------------------------------------------- |
+% | Class diagram      | classes and relationships                    |
+% | Object diagram     | snapshot of objects                          |
+% | Component diagram  | software components                          |
+% | Deployment diagram | hardware (you didn't list, but belongs here) |
+% | Package diagram    | grouping (not listed but structural)         |
+
+
+
+
+
 \newpage
-
-
-
-
-
-
-\newpage
+% -------------------------------------------------------------------
+% \ SECTION 1: REQUIREMENTS: FUNCTIONAL AND NON-FUNCTIONAL
+% -------------------------------------------------------------------
 \section{Requirements: Functional and Non-Functional}\label{sec:requirements}
 This document captures the baseline functional and non-functional 
 requirements for the JS Law Group marketing website. It serves as the 
@@ -96,6 +121,7 @@ application is implemented as a Python Flask backend with server-side
 form processing, validation (Flask-WTF), and email dispatch (GmailProxy).
 
 Payment processing, user authentication, and internal case management systems are intentionally out of scope for this project.
+
 
 % -------------------------------------------------------------------
 % \ FUNCTIONAL REQUIREMENTS
@@ -209,7 +235,7 @@ Payment processing, user authentication, and internal case management systems ar
 This section describes the behavioral specification of the 24/7 Legal Intake Website 
 through use case analysis. It identifies stakeholders and actors, presents a 
 use case diagram, and provides fully dressed use case descriptions for development and QA.\footnote{
-  \textbf{Activity diagrams} and \textbf{state diagrams} have been omitted, 
+  \textbf{Activity diagrams} and \textbf{communication diagrams} have been omitted, 
   as the system does not have the complexity that would warrant those diagrams.
 }
 
@@ -565,7 +591,7 @@ Figure~\ref{fig:seq_diag} illustrates this flow.
   \label{fig:seq_diag}
 \end{figure}
 \newpage
-\subsection{UI Flow Diagram}\label{ss:uiflow}
+\subsection{State Diagram (UI Flow Diagram)}\label{ss:uiflow}
 The diagram in Figure~\ref{fig:uiflow} illustrates the navigation paths and user interaction flow within the application.
 \begin{figure}[htbp]
 \centering
@@ -602,7 +628,7 @@ The diagram in Figure~\ref{fig:uiflow} illustrates the navigation paths and user
 \end{figure}
 \subsubsection{User Interface States}\label{ss:uistates}
 \begin{itemize}
-    \item \textbf{Landing State:} Users see the home page with the Auto Accident Wizard in the hero section, plus call-to-action, main-website link, and practice-area summary (FR-03 in \ref{sec:requirements}). The Floating Action Button (FAB) provides language selection (en-US, ko-KR, ja-JP, es-US) with persistence in LocalStorage (\ref{uc:01}).
+    \item \textbf{Landing State:} Users see the home page with the Auto Accident Wizard in the hero section, plus call-to-action, main-website link, and practice-area summary (FR-03 in \ref{sec:requirements}). The Floating Action Button (FAB) provides language selection (\texttt{en-US}, \texttt{ko-KR}, \texttt{ja-JP}, \texttt{es-US}) with persistence in LocalStorage (\ref{uc:01}).
     \item \textbf{Wizard State:} A single, progressive 10-step form (accident type, ZIP, medical treatment, police report, prior attorney, accident date, injury type, name, contact details, submit). It is the sole form for case inquiries (FR-10 in \ref{sec:requirements}). Practice area pages link back to the wizard (e.g.\ \texttt{\#wizard-container}) for inquiry CTAs.
     \item \textbf{Practice Area State:} Dedicated routes for \texttt{/motor-vehicle-accident} and \texttt{/personal-injury}. The Personal Injury page includes a Criminal Defense section; there is no separate Criminal Defense route. Content is minimal and i18n-enabled (FR-08 in \ref{sec:requirements}).
     \item \textbf{Submission State:} After server-side validation (Flask-WTF, CSRF), the user sees a success modal; data is written to \texttt{submissions/} (JSON, CSV, HTML) and an email is sent via \texttt{GmailProxy}. Twilio follow-up and Mailchimp registration are as specified in \ref{uc:06} and \ref{uc:07}.
@@ -627,7 +653,7 @@ The diagram in Figure~\ref{fig:uiflow} illustrates the navigation paths and user
 \section{Structural Specification: System Architecture}\label{sec:architecture}
 The JS Law Group's 24/7 Legal Intake Website application follows a Model-View-Controller (MVC) 
 pattern adapted for Flask, deployed as a containerized application on cloud infrastructure.\footnote{
-  \textbf{Class diagram} and \textbf{Object diagram} have been omitted, 
+  \textbf{Class diagram}, \textbf{Object diagram}, and \textbf{Package diagram} have been omitted, 
   as the system does not have the complexity that would warrant those diagrams.
 }
 This section aligns with the functional and non-functional requirements (\ref{sec:requirements}), use cases (\ref{sec:usecases}), 
